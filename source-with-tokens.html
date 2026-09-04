@@ -1,0 +1,993 @@
+<title>Trilogy Trading Tools</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Serif:ital@1&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+  /* Midnight Terminal — committed dark design */
+  :root{
+    --brand:#7c7cff; --brand-2:#b18cff; --brand-3:#2fd4f5;
+    --brand-grad:linear-gradient(135deg,#7c7cff 0%,#b18cff 48%,#2fd4f5 100%);
+    --brand-ink:#b3b7ff; --brand-soft:#191d45;
+    --ink:#eef1ff; --ink-2:#a3adcf; --ink-3:#66719b;
+    --bg:#05070f; --surface:#0b0f1e; --surface-2:#111730;
+    --line:#1e2745; --line-soft:#141b33;
+    --gain:#2ee6a8; --gain-ink:#5cf0bd; --gain-soft:#0b2c22;
+    --loss:#ff5d78; --loss-ink:#ff8ba0; --loss-soft:#331420;
+    --warn:#f5b301;
+    --sh-card:0 1px 2px rgba(0,0,0,.5),0 12px 40px rgba(0,0,0,.55);
+    --sh-brand:0 10px 34px rgba(124,124,255,.4);
+    --stage-bg:#04060d; --stage-line:#1a2140; --stage-text:#e8ecff; --stage-dim:#7e88b8;
+    color-scheme:dark;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;background:var(--bg)}
+  body{
+    margin:0; background:transparent; color:var(--ink);
+    font-family:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+    font-size:16px; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:"Bricolage Grotesque","Public Sans",system-ui,sans-serif; line-height:1.08; margin:0; text-wrap:balance}
+  .serif-i{font-family:"Instrument Serif",Georgia,serif; font-style:italic; font-weight:400}
+  .grad-text{background:var(--brand-grad); -webkit-background-clip:text; background-clip:text; color:transparent}
+  a{color:var(--brand-ink)}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 24px}
+  .num{font-variant-numeric:tabular-nums}
+
+  /* ---------- nav ---------- */
+  .nav{position:sticky; top:0; z-index:50; backdrop-filter:blur(14px);
+    background:color-mix(in srgb,var(--bg) 82%,transparent); border-bottom:1px solid var(--line-soft)}
+  .nav-in{display:flex; align-items:center; gap:28px; height:66px}
+  .mark{width:38px;height:38px;border-radius:11px;background:var(--brand-grad);
+    display:grid;place-items:center;box-shadow:var(--sh-brand);flex:none}
+  .mark svg{width:22px;height:22px}
+  .wordmark{display:flex;flex-direction:column;line-height:1.12; text-decoration:none;color:var(--ink)}
+  .wordmark b{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:16px;letter-spacing:.01em}
+  .wordmark b .serif-i{font-size:17px}
+  .wordmark span{font-size:10px;letter-spacing:.22em;color:var(--ink-3);font-weight:600}
+  .nav-links{display:flex;gap:22px;margin-left:auto;align-items:center}
+  .nav-links a{font-size:14px;font-weight:600;color:var(--ink-2);text-decoration:none}
+  .nav-links a:hover{color:var(--brand-ink)}
+  .btn{display:inline-flex;align-items:center;gap:8px;border-radius:12px;padding:11px 20px;
+    font-weight:700;font-size:14.5px;text-decoration:none;border:1px solid transparent;cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease}
+  .btn:focus-visible,a:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+  .btn-brand{background:var(--brand-grad);color:#fff;box-shadow:var(--sh-brand)}
+  .btn-brand:hover{transform:translateY(-1px)}
+  .btn-ghost{border-color:var(--line);color:var(--ink);background:var(--surface)}
+  .btn-ghost:hover{border-color:var(--brand)}
+  .nav .btn{padding:9px 16px}
+  @media (max-width:760px){.nav-links a:not(.btn){display:none}}
+
+  /* ---------- hero ---------- */
+  .hero{padding:84px 0 40px; position:relative; overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:-40% -20% auto -20%;height:120%;pointer-events:none;
+    background:
+      radial-gradient(46% 55% at 22% 30%, color-mix(in srgb,var(--brand) 13%,transparent), transparent 70%),
+      radial-gradient(40% 50% at 78% 22%, color-mix(in srgb,var(--brand-3) 12%,transparent), transparent 70%),
+      radial-gradient(30% 45% at 55% 70%, color-mix(in srgb,var(--brand-2) 9%,transparent), transparent 70%);}
+  .hero-in{position:relative;display:grid;gap:26px;max-width:840px}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11.5px;font-weight:700;
+    letter-spacing:.24em;color:var(--brand-ink);text-transform:uppercase}
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--brand-grad);border-radius:2px}
+  .hero h1{font-size:clamp(42px,7vw,76px);font-weight:800;letter-spacing:-.015em}
+  .hero h1 .serif-i{font-size:1.04em;letter-spacing:0}
+  .hero p.lede{font-size:clamp(17px,2vw,20px);color:var(--ink-2);max-width:56ch;margin:0}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-note{font-size:13px;color:var(--ink-3)}
+
+  /* ticker — trading-floor tape */
+  .ticker{border-block:1px solid #1b2138;background:#080b16;margin-top:44px;overflow:hidden;position:relative}
+  .ticker::before,.ticker::after{content:"";position:absolute;top:0;bottom:0;width:90px;z-index:2;pointer-events:none}
+  .ticker::before{left:0;background:linear-gradient(90deg,#080b16,transparent)}
+  .ticker::after{right:0;background:linear-gradient(-90deg,#080b16,transparent)}
+  .ticker-track{display:flex;gap:0;width:max-content;animation:tick 38s linear infinite;
+    font-family:"IBM Plex Mono",Consolas,monospace}
+  @keyframes tick{to{transform:translateX(-50%)}}
+  .tk{display:flex;align-items:baseline;gap:10px;padding:13px 28px;border-right:1px solid #161c30;white-space:nowrap}
+  .tk b{font-weight:600;font-size:13.5px;color:#f2f5ff;letter-spacing:.06em}
+  .tk .px{color:#8f9ac0;font-size:12.5px}
+  .tk .chg{font-size:12.5px;font-weight:600;letter-spacing:.02em}
+  .tk .chg.up{color:#31e59f;text-shadow:0 0 14px rgba(49,229,159,.55)}
+  .tk .chg.dn{color:#ff5f7a;text-shadow:0 0 14px rgba(255,95,122,.5)}
+  .up{color:var(--gain-ink)} .dn{color:var(--loss-ink)}
+  .tk .fl{font-size:10px;color:#4d587f;letter-spacing:.14em}
+
+  /* ---------- sections ---------- */
+  .section{padding:96px 0;overflow:hidden}
+  .sec-head{position:relative;display:grid;gap:18px;max-width:800px;margin:0 auto 56px;
+    text-align:center;justify-items:center;transform-style:preserve-3d}
+  .ghost-cv{position:relative;z-index:0;width:min(1080px,96vw);height:200px;
+    margin:0 auto -132px;pointer-events:none;
+    -webkit-mask-image:linear-gradient(180deg,#000 60%,transparent);
+    mask-image:linear-gradient(180deg,#000 60%,transparent)}
+  .sec-head::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:0;
+    width:min(480px,80vw);height:190px;pointer-events:none;filter:blur(34px);
+    background:radial-gradient(closest-side,color-mix(in srgb,var(--brand) 18%,transparent),transparent)}
+  .sec-head>*{position:relative;z-index:1}
+  .sec-head h2{font-size:clamp(34px,5vw,58px);font-weight:800;letter-spacing:-.01em;
+    transform:rotateX(6deg);will-change:transform;
+    text-shadow:0 1px 0 #2e3175,0 2px 0 #2a2d6a,0 3px 0 #262960,0 4px 0 #222555,0 5px 0 #1e214b,
+      0 6px 0 #1a1d41,0 9px 20px rgba(0,0,0,.65),
+      0 16px 70px color-mix(in srgb,var(--brand) 60%,transparent)}
+  .sec-head p{color:var(--ink-2);margin:0;font-size:17px;max-width:58ch}
+  .chip{display:inline-flex;align-items:center;gap:8px;align-self:start;
+    background:var(--brand-soft);color:var(--brand-ink);border-radius:999px;
+    padding:6px 14px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+  .chip.gain{background:var(--gain-soft);color:var(--gain-ink)}
+  .price-tag{font-size:13px;font-weight:700;color:var(--ink-3)}
+  .price-tag b{color:var(--ink)}
+
+  .product{display:grid;grid-template-columns:4fr 8fr;gap:44px;align-items:center}
+  .product.flip{grid-template-columns:8fr 4fr}
+  .product.flip .p-copy{order:2}
+  @media (max-width:900px){.product,.product.flip{grid-template-columns:1fr}.product.flip .p-copy{order:0}}
+  .p-copy{display:grid;gap:18px;align-content:start}
+  .p-copy h3{font-size:clamp(26px,3.4vw,36px);font-weight:800}
+  .p-copy>p{color:var(--ink-2);margin:0}
+  .feat{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:14px}
+  .feat li{display:grid;grid-template-columns:auto 1fr;gap:3px 14px;align-items:start;font-size:14.5px;color:var(--ink-2)}
+  .feat li::before{content:"";width:8px;height:8px;border-radius:2.5px;background:var(--brand-grad);
+    transform:rotate(45deg);margin-top:6px;grid-row:1/3}
+  .f-t{grid-column:2;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:var(--ink);font-size:15.5px;line-height:1.35}
+  .f-d{grid-column:2;color:var(--ink-2);font-size:14px;line-height:1.55}
+
+  /* steps rail (the "how it works" captions) */
+  .steps{display:grid;gap:0;border-left:2px solid var(--line);margin-top:6px}
+  .step{padding:10px 0 10px 18px;position:relative;color:var(--ink-3);transition:color .4s}
+  .step::before{content:"";position:absolute;left:-2px;top:0;bottom:0;width:2px;background:var(--brand-grad);
+    transform:scaleY(0);transform-origin:top;transition:transform .5s ease}
+  .step b{display:block;font-weight:700;font-size:15px;color:inherit}
+  .step span{font-size:13.5px}
+  .step.on{color:var(--ink)}
+  .step.on span{color:var(--ink-2)}
+  .step.on::before{transform:scaleY(1)}
+
+  /* ---------- demo stage (app-window frame) ---------- */
+  .stage{background:var(--stage-bg);border-radius:18px;border:1px solid var(--stage-line);
+    box-shadow:var(--sh-card);overflow:hidden;color:var(--stage-text)}
+  .stage-bar{display:flex;align-items:center;gap:8px;padding:11px 16px;border-bottom:1px solid var(--stage-line)}
+  .dot3{display:flex;gap:6px}
+  .dot3 i{width:10px;height:10px;border-radius:50%;background:#3a4270}
+  .stage-url{margin-left:10px;font-size:12px;color:var(--stage-dim);background:rgba(255,255,255,.05);
+    border-radius:7px;padding:4px 12px;letter-spacing:.02em}
+  .stage-live{margin-left:auto;display:flex;align-items:center;gap:7px;font-size:11px;font-weight:700;
+    letter-spacing:.12em;color:var(--gain)}
+  .stage-live i{width:7px;height:7px;border-radius:50%;background:var(--gain);animation:pulse 1.6s infinite}
+  @keyframes pulse{50%{opacity:.35}}
+  .stage-body{padding:18px;min-height:360px;font-size:13px}
+
+  /* scanner stage: real session footage */
+  .stage-video{padding:0;min-height:0;display:grid}
+  .stage-video video{display:block;width:100%;height:auto}
+  .video-note{display:flex;gap:10px;align-items:center;justify-content:center;padding:10px 16px;
+    border-top:1px dashed var(--stage-line);color:var(--stage-dim);font-size:12px}
+
+
+  /* ---------- coming soon ---------- */
+  .soon{background:color-mix(in srgb,var(--surface) 82%,transparent);border-block:1px solid var(--line-soft)}
+  .soon-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch}
+  @media (max-width:760px){.soon-grid{grid-template-columns:1fr}}
+  .soon-card{border:1px solid var(--line);border-radius:18px;padding:30px;display:flex;
+    flex-direction:column;gap:14px;background:var(--surface);box-shadow:var(--sh-card)}
+  .soon-card.live{border:2px solid transparent;background:
+    linear-gradient(var(--surface),var(--surface)) padding-box, var(--brand-grad) border-box}
+  .soon-card h3{font-size:22px}
+  .soon-card p{margin:0;color:var(--ink-2);font-size:15px;line-height:1.6}
+  .soon-card .card-cta{margin-top:auto;padding-top:10px}
+  .soon-tag{align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:.16em;color:var(--warn);
+    border:1px solid color-mix(in srgb,var(--warn) 45%,transparent);border-radius:999px;padding:4px 12px}
+  .soon-tag.live{color:var(--gain-ink);border-color:color-mix(in srgb,var(--gain) 50%,transparent);background:var(--gain-soft)}
+  .soon-meter{display:grid;gap:7px}
+  .soon-meter i{font-style:normal;display:flex;justify-content:space-between;font-size:12px;color:var(--ink-3)}
+  .soon-meter .mtrack{height:9px;border-radius:5px;background:var(--surface-2);overflow:hidden}
+  .soon-meter .mfill{height:100%;width:78%;border-radius:5px;background:var(--brand-grad)}
+
+  /* ---------- pricing ---------- */
+  .plans{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  @media (max-width:1020px){.plans{grid-template-columns:1fr 1fr}}
+  @media (max-width:620px){.plans{grid-template-columns:1fr}}
+  .plan{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;
+    display:grid;gap:14px;align-content:start;box-shadow:var(--sh-card);position:relative}
+  .plan.hl{border-color:transparent;background:
+    linear-gradient(var(--surface),var(--surface)) padding-box, var(--brand-grad) border-box;
+    border:2px solid transparent}
+  .plan h3{font-size:21px}
+  .plan .cycle{font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--brand-ink);text-transform:uppercase}
+  .plan .amount,.bundle .amount{font-family:"Bricolage Grotesque",sans-serif;font-size:38px;font-weight:800;line-height:1}
+  .plan .amount small,.bundle .amount small{font-size:15px;color:var(--ink-3);font-weight:600}
+  .plan p{margin:0;color:var(--ink-2);font-size:14.5px}
+  .plan .feat li{font-size:14px}
+  .plan .btn{justify-self:start;margin-top:6px}
+  .plans-note{margin-top:26px;color:var(--ink-3);font-size:14px;text-align:center}
+
+  /* package deals */
+  .bundles-head{margin:56px 0 24px;display:grid;gap:8px;max-width:640px}
+  .bundles-head h3{font-size:clamp(24px,3vw,32px);font-weight:800}
+  .bundles-head p{margin:0;color:var(--ink-2);font-size:15.5px}
+  .bundles{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media (max-width:880px){.bundles{grid-template-columns:1fr}}
+  .bundle{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;
+    display:grid;gap:10px;align-content:start;box-shadow:var(--sh-card)}
+  .bundle.hl{border:2px solid transparent;background:
+    linear-gradient(var(--surface),var(--surface)) padding-box, var(--brand-grad) border-box}
+  .bundle h3{font-size:20px}
+  .bundle .b-parts{margin:0;color:var(--ink-2);font-size:14px}
+  .bundle .b-price{display:flex;align-items:baseline;gap:12px}
+  .bundle .b-price s{color:var(--ink-3);font-size:15px}
+  .bundle .b-save{justify-self:start;font-size:12px;font-weight:700;color:var(--gain-ink);
+    background:var(--gain-soft);border-radius:999px;padding:4px 12px}
+  .yr-deal{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-2);
+    background:var(--brand-soft);border-radius:10px;padding:8px 12px}
+  .yr-deal b{color:var(--brand-ink);font-weight:800}
+  .yr-deal .pct{margin-left:auto;font-size:10.5px;font-weight:800;letter-spacing:.06em;
+    color:var(--gain-ink);background:var(--gain-soft);border-radius:999px;padding:3px 9px;text-transform:uppercase}
+
+  /* about + contact */
+  .pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media (max-width:820px){.pillar-grid{grid-template-columns:1fr}}
+  .pillar{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;
+    display:grid;gap:8px;box-shadow:var(--sh-card)}
+  .pillar b{font-family:"Bricolage Grotesque",sans-serif;font-size:18px}
+  .pillar span{color:var(--ink-2);font-size:14.5px;line-height:1.6}
+  .contact-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .contact-row .btn{font-size:16px;padding:14px 26px}
+
+  /* legal dialogs */
+  dialog.legal{max-width:680px;width:calc(100vw - 40px);max-height:82vh;border:1px solid var(--line);
+    border-radius:18px;background:var(--surface);color:var(--ink);padding:0;box-shadow:var(--sh-card)}
+  dialog.legal::backdrop{background:rgba(3,5,12,.7);backdrop-filter:blur(4px)}
+  .legal-in{padding:30px 32px;overflow-y:auto;max-height:82vh;display:grid;gap:14px;font-size:14.5px;line-height:1.65;color:var(--ink-2)}
+  .legal-in h3{font-size:24px;color:var(--ink)}
+  .legal-in h4{margin:8px 0 0;font-size:15px;color:var(--ink);font-family:"Bricolage Grotesque",sans-serif}
+  .legal-in ul{margin:0;padding-left:20px;display:grid;gap:6px}
+  .legal-in .updated{font-size:12px;color:var(--ink-3);letter-spacing:.08em}
+  .legal-in .close-x{position:sticky;top:0;justify-self:end;margin:-6px -6px 0 0}
+  .foot-links{display:flex;gap:18px;flex-wrap:wrap;font-size:13.5px}
+  .foot-links a,.foot-links button{color:var(--ink-2);text-decoration:none;font-weight:600;background:none;
+    border:none;padding:0;font:inherit;font-weight:600;cursor:pointer}
+  .foot-links a:hover,.foot-links button:hover{color:var(--brand-ink)}
+
+  /* ---------- footer ---------- */
+  footer{border-top:1px solid var(--line-soft);padding:44px 0 60px;background:var(--surface)}
+  .foot{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+  .foot .wordmark b{font-size:15px}
+  .foot-right{margin-left:auto;color:var(--ink-3);font-size:13px;max-width:52ch}
+
+  /* ---------- stand-out layer ---------- */
+  #cosmos{position:fixed;inset:0;width:100vw;height:100vh;z-index:-1;pointer-events:none}
+  .progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--brand-grad);z-index:60;
+    border-radius:0 3px 3px 0;transition:width .1s linear}
+  .sec-head{perspective:640px}
+  .sec-head.fly .ghost-cv{animation:ghostFly 1.1s cubic-bezier(.16,.85,.3,1) both}
+  @keyframes ghostFly{
+    0%{transform:translateZ(360px) rotateX(16deg);opacity:0;filter:blur(12px)}
+    45%{opacity:1}
+    72%{transform:translateZ(-28px) rotateX(-2deg);filter:blur(0)}
+    100%{transform:translateZ(0) rotateX(0)}
+  }
+  .sec-head.fly h2{animation:h3dFly 1.15s cubic-bezier(.16,.85,.3,1) both,
+    h3dIdle 4.5s ease-in-out 1.3s infinite alternate}
+  @keyframes h3dFly{
+    0%{transform:translateZ(480px) rotateX(34deg);opacity:0;filter:blur(10px)}
+    50%{opacity:1}
+    78%{transform:translateZ(-36px) rotateX(-4deg);filter:blur(0)}
+    100%{transform:translateZ(0) rotateX(6deg)}
+  }
+  @keyframes h3dIdle{
+    from{transform:translateZ(0) rotateX(6deg)}
+    to{transform:translateZ(20px) rotateX(3.5deg)}
+  }
+  #ribbons{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+  .hero .wrap{position:relative}
+  .stage{border:2px solid transparent;background:
+    linear-gradient(var(--stage-bg),var(--stage-bg)) padding-box,
+    linear-gradient(135deg,color-mix(in srgb,var(--brand) 70%,transparent),
+      color-mix(in srgb,var(--brand-2) 55%,transparent),
+      color-mix(in srgb,var(--brand-3) 70%,transparent)) border-box;
+    box-shadow:0 0 40px -6px color-mix(in srgb,var(--brand) 40%,transparent),
+      0 30px 90px -18px color-mix(in srgb,var(--brand-2) 45%,transparent)}
+  .plan,.bundle,.soon-card{position:relative;overflow:hidden}
+  .plan::after,.bundle::after,.soon-card::after{content:"";position:absolute;inset:0;pointer-events:none;
+    opacity:0;transition:opacity .3s;
+    background:radial-gradient(320px circle at var(--mx,50%) var(--my,50%),
+      color-mix(in srgb,var(--brand) 9%,transparent),transparent 70%)}
+  .plan:hover::after,.bundle:hover::after,.soon-card:hover::after{opacity:1}
+  .plan,.bundle{transition:transform .25s ease,box-shadow .25s ease}
+  .plan:hover,.bundle:hover{transform:translateY(-4px);box-shadow:var(--sh-card),var(--sh-brand)}
+  .nav-links a:not(.btn){position:relative}
+  .nav-links a:not(.btn)::after{content:"";position:absolute;left:0;right:100%;bottom:-6px;height:2px;
+    background:var(--brand-grad);border-radius:2px;transition:right .25s ease}
+  .nav-links a:not(.btn):hover::after{right:0}
+  .rv-in{animation:rise .7s cubic-bezier(.22,.8,.28,1) backwards}
+  @keyframes rise{from{opacity:0;transform:translateY(26px)}}
+
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.001s !important;transition-duration:.001s !important}
+    .ticker-track{animation:none}
+  }
+</style>
+<style>__VARIANT_CSS__</style>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <div class="mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round">
+        <path d="M12 3 L21 19 L3 19 Z"/><path d="M12 10 L16.5 19 L7.5 19 Z" opacity=".55"/>
+      </svg>
+    </div>
+    <a class="wordmark" href="#top">
+      <b>Trilogy <span class="serif-i">Trading</span> Tools</b>
+      <span>SCANNER · JOURNAL · WEALTH</span>
+    </a>
+    <div class="nav-links">
+      <a href="#scanner">3T Pro Scanner</a>
+      <a href="#journal">Trilogy Journal</a>
+      <a href="#wealth">Wealth Builder</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-brand" href="#pricing">Get access</a>
+    </div>
+  </div>
+</nav>
+
+<div class="progress" id="progress" aria-hidden="true"></div>
+<header class="hero" id="top">
+  <canvas id="ribbons" aria-hidden="true"></canvas>
+  <div class="wrap hero-in">
+    <span class="eyebrow">Trilogy Trading Tools</span>
+    <h1>Three tools.<br>One <span class="serif-i grad-text">complete</span> trader.</h1>
+    <p class="lede">Find the move with the 3T Pro Scanner. Prove your edge in the Trilogy Journal. Grow what you keep with Wealth Builder. Built by traders who use them live, every session.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-brand" href="#scanner">See the tools</a>
+      <a class="btn btn-ghost" href="#pricing">View pricing</a>
+    </div>
+    <span class="hero-note">Rented month-to-month — no long contracts. Now with the Halal 3T Scanner, and a fully automated trading bot in final testing.</span>
+  </div>
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track" id="tickerTrack"></div>
+  </div>
+</header>
+
+<!-- ============ 3T PRO SCANNER ============ -->
+<section class="section" id="scanner">
+  <div class="wrap">
+    <div class="sec-head">
+      <canvas class="ghost-cv" data-word="SCANNER" aria-hidden="true"></canvas>
+      <span class="chip gain">Live · Monthly rental</span>
+      <h2>3T Pro Scanner finds the <span class="serif-i grad-text">gappers</span> before the crowd</h2>
+      <p>A real-time small-cap gapper scanner streaming live market data — the same board we trade from every premarket.</p>
+    </div>
+    <div class="product">
+      <div class="p-copy">
+        <ul class="feat">
+          <li><span class="f-t">Live gapper board</span><span class="f-d">Real-time price, gap %, volume and float, streaming all session.</span></li>
+          <li><span class="f-t">Dual charts</span><span class="f-d">Independent timeframes, drawing tools and a one-click layout toggle.</span></li>
+          <li><span class="f-t">Audio alerts</span><span class="f-d">Pick a sound, step away, and let the scanner call you back.</span></li>
+          <li><span class="f-t">Built for small-cap momentum</span><span class="f-d">Low float, high relative volume, news-day gaps — the criteria that matter.</span></li>
+        </ul>
+        <div class="steps" data-demo="scanner">
+          <div class="step on"><b>Premarket, the board fills</b><span>Gappers stream in ranked by gap % as the market wakes up.</span></div>
+          <div class="step"><b>The scanner flags the mover</b><span>Float, volume and gap line up — the row lights and the alert fires.</span></div>
+          <div class="step"><b>You're on the chart first</b><span>One click to dual charts and you're planning the trade, not chasing it.</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="stage" data-stage>
+          <div class="stage-bar">
+            <span class="dot3"><i></i><i></i><i></i></span>
+            <span class="stage-url">3T Pro Scanner — Gappers</span>
+            <span class="stage-live"><i></i>LIVE</span>
+          </div>
+          <div class="stage-body stage-video">
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Live recording of the 3T Pro Scanner during a trading session">
+              <source src="__VIDEO_SRC__" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-note">▶ Real footage — the 3T Pro Scanner live during a session</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRILOGY JOURNAL ============ -->
+<section class="section" id="journal" style="background:color-mix(in srgb,var(--surface) 82%,transparent);border-block:1px solid var(--line-soft)">
+  <div class="wrap">
+    <div class="sec-head">
+      <canvas class="ghost-cv" data-word="JOURNAL" aria-hidden="true"></canvas>
+      <span class="chip">Journal · Monthly rental</span>
+      <h2>Trilogy Journal turns trades into an <span class="serif-i grad-text">edge</span></h2>
+      <p>Log every trade in seconds, then watch the journal do the math: win rate, expectancy, and a 3D map of exactly where your money comes from.</p>
+    </div>
+    <div class="product flip">
+      <div class="p-copy">
+        <ul class="feat">
+          <li><span class="f-t">Fast trade logging</span><span class="f-d">Symbol, size, entries and exits, setup tag — done in seconds.</span></li>
+          <li><span class="f-t">Live performance stats</span><span class="f-d">Win rate, profit factor and average R update as you log.</span></li>
+          <li><span class="f-t">3D Edge Surface</span><span class="f-d">A live WebGL map showing which setups and times actually pay you.</span></li>
+          <li><span class="f-t">Seven focused sections</span><span class="f-d">From daily plan to review — one place for your whole process.</span></li>
+        </ul>
+        <div class="steps" data-demo="journal">
+          <div class="step on"><b>1 · Log the trade</b><span>A few fields right after the fill — the journal keeps you honest.</span></div>
+          <div class="step"><b>2 · Stats update live</b><span>Win rate, profit factor and your equity curve redraw as you log.</span></div>
+          <div class="step"><b>3 · Find your edge</b><span>The 3D Edge Surface and profit calendar show which setups actually pay.</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="stage" data-stage>
+          <div class="stage-bar">
+            <span class="dot3"><i></i><i></i><i></i></span>
+            <span class="stage-url">Trilogy Journal — This week</span>
+          </div>
+          <div class="stage-body stage-video">
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Reel of the Trilogy Journal: trade logging, the 3D Edge Surface, analytics, and the profit calendar">
+              <source src="__VIDEO_JR__" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-note">▶ Real footage — inside the Trilogy Journal</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WEALTH BUILDER ============ -->
+<section class="section" id="wealth">
+  <div class="wrap">
+    <div class="sec-head">
+      <canvas class="ghost-cv" data-word="WEALTH" aria-hidden="true"></canvas>
+      <span class="chip">Budgeting · Yearly plan</span>
+      <h2>Wealth Builder keeps what the market <span class="serif-i grad-text">gives</span> you</h2>
+      <p>A budgeting app built around the Trilogy Split — every dollar of income gets a job the moment it lands, and your goals fill on autopilot.</p>
+    </div>
+    <div class="product">
+      <div class="p-copy">
+        <ul class="feat">
+          <li><span class="f-t">The Trilogy Split</span><span class="f-d">55% living · 5% giving · 10% safety · 15% investing · 15% freedom.</span></li>
+          <li><span class="f-t">Bill calendar</span><span class="f-d">See every due date coming before it hits your account.</span></li>
+          <li><span class="f-t">Card interest tracker</span><span class="f-d">Know exactly what carrying a balance really costs.</span></li>
+          <li><span class="f-t">Multiple savings goals</span><span class="f-d">Fund a house, a runway, and a dream at the same time.</span></li>
+        </ul>
+        <div class="steps" data-demo="wealth">
+          <div class="step on"><b>1 · Enter your income</b><span>Paycheck, trading profits, side hustle — add it as it arrives.</span></div>
+          <div class="step"><b>2 · The Split allocates it</b><span>Five buckets fill automatically — no willpower required.</span></div>
+          <div class="step"><b>3 · Goals fill on autopilot</b><span>Watch your freedom fund climb month after month.</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="stage" data-stage>
+          <div class="stage-bar">
+            <span class="dot3"><i></i><i></i><i></i></span>
+            <span class="stage-url">Trilogy Wealth Builder — September</span>
+          </div>
+          <div class="stage-body stage-video">
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Screen recording of the Wealth Builder: the Trilogy Plan, money flow, bill calendar and savings goals">
+              <source src="__VIDEO_WB__" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-note">▶ Real footage — inside the Wealth Builder</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMING SOON ============ -->
+<section class="section soon" id="soon">
+  <div class="wrap">
+    <div class="sec-head">
+      <canvas class="ghost-cv" data-word="NEXT UP" aria-hidden="true"></canvas>
+      <span class="chip">In the workshop</span>
+      <h2>The trilogy is <span class="serif-i grad-text">growing</span></h2>
+    </div>
+    <div class="soon-grid">
+      <div class="soon-card live">
+        <span class="soon-tag live">NOW AVAILABLE</span>
+        <h3>Halal 3T Scanner</h3>
+        <p>The full 3T scanning engine on a Sharia-compliant universe built on AAOIFI screening standards — the same live gapper board, audio alerts and dual charts, with every symbol compliance-screened first.</p>
+        <ul class="feat">
+          <li><span class="f-t">Same engine, screened universe</span><span class="f-d">Momentum scanning with your principles intact.</span></li>
+        </ul>
+        <div class="card-cta"><a class="btn btn-brand" href="#pricing">$250 CAD/month · see pricing</a></div>
+      </div>
+      <div class="soon-card">
+        <span class="soon-tag">IN TESTING</span>
+        <h3>Trilogy Auto-Trader</h3>
+        <p>A fully automated trading bot running our small-cap momentum playbook — backtested, disciplined, and working through live out-of-sample validation right now.</p>
+        <div class="soon-meter">
+          <i><span>Live validation</span><span class="num">In progress</span></i>
+          <div class="mtrack"><div class="mfill"></div></div>
+        </div>
+        <div class="card-cta"><a class="btn btn-ghost" href="#contact">Get notified at launch</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="section" id="pricing">
+  <div class="wrap">
+    <div class="sec-head">
+      <canvas class="ghost-cv" data-word="PRICING" aria-hidden="true"></canvas>
+      <span class="chip">Simple rentals</span>
+      <h2>Rent the tools you <span class="serif-i grad-text">need</span></h2>
+      <p>Month to month on the trading tools, one simple yearly plan on Wealth Builder. All prices in CAD. Cancel anytime.</p>
+    </div>
+    <div class="plans">
+      <div class="plan hl">
+        <span class="cycle">Monthly</span>
+        <h3>3T Pro Scanner</h3>
+        <span class="amount">$300<small> CAD/mo</small></span>
+        <div class="yr-deal num">Year upfront: <b>$3,240</b><span class="pct">save 10%</span></div>
+        <p>Live small-cap gapper scanning, dual charts, audio alerts.</p>
+        <ul class="feat">
+          <li>Real-time market data included</li>
+          <li>Premarket through power hour</li>
+          <li>Cancel anytime</li>
+        </ul>
+        <a class="btn btn-brand" href="#waitlist">Join the launch list</a>
+      </div>
+      <div class="plan">
+        <span class="cycle">Monthly</span>
+        <h3>Halal 3T Scanner</h3>
+        <span class="amount">$250<small> CAD/mo</small></span>
+        <div class="yr-deal num">Year upfront: <b>$2,700</b><span class="pct">save 10%</span></div>
+        <p>The 3T engine on a Sharia-compliant, AAOIFI-screened universe.</p>
+        <ul class="feat">
+          <li>Same live scanning engine</li>
+          <li>Compliance-screened symbols only</li>
+          <li>Cancel anytime</li>
+        </ul>
+        <a class="btn btn-ghost" href="#waitlist">Join the launch list</a>
+      </div>
+      <div class="plan">
+        <span class="cycle">Monthly</span>
+        <h3>Trilogy Journal</h3>
+        <span class="amount">$100<small> CAD/mo</small></span>
+        <div class="yr-deal num">Year upfront: <b>$1,080</b><span class="pct">save 10%</span></div>
+        <p>Trade logging, live stats, and the 3D Edge Surface.</p>
+        <ul class="feat">
+          <li>Unlimited trades &amp; setups</li>
+          <li>Seven-section trading workflow</li>
+          <li>Cancel anytime</li>
+        </ul>
+        <a class="btn btn-ghost" href="#waitlist">Join the launch list</a>
+      </div>
+      <div class="plan">
+        <span class="cycle">Yearly</span>
+        <h3>Wealth Builder</h3>
+        <span class="amount">$200<small> CAD/yr</small></span>
+        <p>The Trilogy Split, bill calendar, and every savings goal in one place.</p>
+        <ul class="feat">
+          <li>One payment, twelve months</li>
+          <li>Adult, teen &amp; student modes</li>
+          <li>All future updates included</li>
+        </ul>
+        <a class="btn btn-ghost" href="#waitlist">Join the launch list</a>
+      </div>
+    </div>
+
+    <div class="bundles-head" id="waitlist">
+      <h3>Package <span class="serif-i grad-text">deals</span></h3>
+      <p>Pair the tools that work together and save every month — then take another <b>10% off any package or monthly tool by paying the year upfront</b>.</p>
+    </div>
+    <div class="bundles">
+      <div class="bundle">
+        <span class="cycle">Bundle · Monthly</span>
+        <h3>Trader Pack</h3>
+        <p class="b-parts">3T Pro Scanner + Trilogy Journal</p>
+        <div class="b-price num"><span class="amount">$350<small> CAD/mo</small></span><s>$400</s></div>
+        <div class="yr-deal num">Year upfront: <b>$3,780</b><span class="pct">save 10%</span></div>
+        <span class="b-save">Save $50 every month</span>
+      </div>
+      <div class="bundle">
+        <span class="cycle">Bundle · Monthly</span>
+        <h3>Halal Trader Pack</h3>
+        <p class="b-parts">Halal 3T Scanner + Trilogy Journal</p>
+        <div class="b-price num"><span class="amount">$300<small> CAD/mo</small></span><s>$350</s></div>
+        <div class="yr-deal num">Year upfront: <b>$3,240</b><span class="pct">save 10%</span></div>
+        <span class="b-save">Save $50 every month</span>
+      </div>
+      <div class="bundle hl">
+        <span class="cycle">Bundle · Best value</span>
+        <h3>The Full Trilogy</h3>
+        <p class="b-parts">Either scanner + Journal + a full year of Wealth Builder</p>
+        <div class="b-price num"><span class="amount">$375<small> CAD/mo</small></span><s>$417</s></div>
+        <div class="yr-deal num">Year upfront: <b>$4,050</b><span class="pct">save 10%</span></div>
+        <span class="b-save">Wealth Builder's year included — save $500+ a year</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <canvas class="ghost-cv" data-word="ABOUT" aria-hidden="true"></canvas>
+      <span class="chip">Who we are</span>
+      <h2>Built by traders who <span class="serif-i grad-text">live</span> in these tools</h2>
+      <p>Trilogy Trading Tools started as the software we built for our own trading — a scanner we watch every premarket, a journal that keeps us honest, and a budget that protects what the market gives us. We rent out the exact tools we run live, and every update we ship is one we wanted for ourselves first.</p>
+    </div>
+    <div class="pillar-grid">
+      <div class="pillar"><b>Find the move</b><span>The 3T scanners put the day's real gappers in front of you before the crowd is awake.</span></div>
+      <div class="pillar"><b>Prove the edge</b><span>The Journal turns your fills into math — so you scale what works and cut what doesn't.</span></div>
+      <div class="pillar"><b>Keep the gains</b><span>Wealth Builder gives every dollar of profit a job the moment it lands.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section" id="contact" style="background:color-mix(in srgb,var(--surface) 82%,transparent);border-block:1px solid var(--line-soft)">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:28px">
+      <canvas class="ghost-cv" data-word="CONTACT" aria-hidden="true"></canvas>
+      <span class="chip">Talk to us</span>
+      <h2>Questions? We <span class="serif-i grad-text">answer</span></h2>
+      <p>Rentals, bundles, the Auto-Trader waitlist, or anything about your data — reach out and a real trader replies, usually within a day.</p>
+    </div>
+    <div class="contact-row">
+      <a class="btn btn-brand" href="mailto:keithharasymiw@gmail.com?subject=Trilogy%20Trading%20Tools">✉ Email us</a>
+      <a class="btn btn-ghost" href="#contact">💬 Join the Discord</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div class="mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round">
+        <path d="M12 3 L21 19 L3 19 Z"/><path d="M12 10 L16.5 19 L7.5 19 Z" opacity=".55"/>
+      </svg>
+    </div>
+    <div class="wordmark">
+      <b>Trilogy <span class="serif-i">Trading</span> Tools</b>
+      <span>SCANNER · JOURNAL · WEALTH</span>
+    </div>
+    <div class="foot-links">
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <button type="button" data-dlg="dlgPrivacy">Privacy</button>
+      <button type="button" data-dlg="dlgTerms">Terms</button>
+    </div>
+    <p class="foot-right">© 2026 Trilogy Trading Tools. Tools for education and process — nothing here is financial advice. Trading involves substantial risk of loss.</p>
+  </div>
+</footer>
+
+<dialog class="legal" id="dlgPrivacy">
+  <div class="legal-in">
+    <button class="btn btn-ghost close-x" type="button" data-close>✕ Close</button>
+    <h3>Privacy Policy</h3>
+    <span class="updated">LAST UPDATED · SEPTEMBER 3, 2026</span>
+    <p>This policy explains what Trilogy Trading Tools ("we", "us") collects when you use our products — the 3T Pro Scanner, Halal 3T Scanner, Trilogy Journal, and Wealth Builder — why we collect it, and the control you have over it. We keep the data we hold to the minimum needed to run the products.</p>
+    <h4>What we collect</h4>
+    <ul>
+      <li><b>Account information</b> — your email address, and a display name if you set one.</li>
+      <li><b>Data you enter</b> — trades, setups, notes, goals, budgets, and preferences inside the apps.</li>
+      <li><b>Ticker lookups</b> — the stock symbols you search, used only to fetch market data.</li>
+      <li><b>Technical data</b> — basic logs and cookies strictly needed to keep you signed in and secure.</li>
+    </ul>
+    <h4>What we deliberately do NOT collect or store</h4>
+    <ul>
+      <li><b>Payment card details</b> — checkout and billing are handled entirely by Stripe. We never see or store your card number.</li>
+      <li><b>Brokerage passwords</b> — any brokerage link is handled by a dedicated secure provider. We never receive your broker login.</li>
+      <li><b>Government IDs, SSN/SIN, or bank account numbers.</b></li>
+    </ul>
+    <h4>Service providers</h4>
+    <p>We use a small set of trusted vendors, each bound to protect your data: Supabase (database &amp; authentication), Stripe (payments, PCI-DSS certified), Railway (hosting), and our market-data providers for the tickers you look up.</p>
+    <h4>How your data is protected</h4>
+    <ul>
+      <li>Encrypted in transit (HTTPS/TLS) and at rest.</li>
+      <li>Row-level security in the database — your records are technically walled off so no other user can read them.</li>
+      <li>Access to production systems is limited and authenticated.</li>
+    </ul>
+    <h4>Your rights</h4>
+    <p>You can access and export everything we hold about you, correct it, or permanently delete your account and all associated data at any time. Depending on where you live you may have additional rights under PIPEDA (Canada), CCPA/CPRA (California), or GDPR (EU/UK) — we honour these requests for all users. To exercise any right, use the contact section above.</p>
+    <h4>Retention, cookies &amp; children</h4>
+    <p>We keep your data while your account is active; deleting your account removes your personal data (limited billing records may be retained by Stripe for tax purposes). We use only essential sign-in cookies — no advertising or third-party tracking cookies. Our products are not intended for anyone under 18.</p>
+    <p style="font-size:12.5px;color:var(--ink-3)">This is general information, not legal advice, and does not itself create a contract.</p>
+  </div>
+</dialog>
+
+<dialog class="legal" id="dlgTerms">
+  <div class="legal-in">
+    <button class="btn btn-ghost close-x" type="button" data-close>✕ Close</button>
+    <h3>Terms of Use</h3>
+    <span class="updated">LAST UPDATED · SEPTEMBER 3, 2026</span>
+    <h4>The service</h4>
+    <p>Trilogy Trading Tools rents access to software: the 3T Pro Scanner, Halal 3T Scanner, and Trilogy Journal on monthly subscriptions, and Wealth Builder on a yearly plan. Your subscription is a licence to use the tools while it is active — not a purchase of the software.</p>
+    <h4>Billing &amp; cancellation</h4>
+    <p>Monthly plans renew each month and can be cancelled anytime — access continues to the end of the paid period. Annual-upfront plans cover twelve months at the discounted rate. Payments are processed by Stripe.</p>
+    <h4>Not financial advice</h4>
+    <p>Every tool is for education and process. Nothing on this site or in the products is investment, financial, legal, or tax advice, and no outcome is promised. Trading involves substantial risk of loss — you alone are responsible for your trading and financial decisions.</p>
+    <h4>Data &amp; market information</h4>
+    <p>Market data is provided by third-party sources and may be delayed or contain errors; the Halal 3T Scanner's compliance screening follows AAOIFI-based criteria but you should verify suitability with your own advisor.</p>
+    <h4>Fair use</h4>
+    <p>One subscription is for one trader. Sharing accounts, reselling access, scraping data, or reverse-engineering the tools ends the licence without refund.</p>
+    <h4>Liability</h4>
+    <p>The tools are provided "as is". To the fullest extent permitted by law, our liability is limited to the amount you paid for the current subscription period.</p>
+    <p style="font-size:12.5px;color:var(--ink-3)">This is a plain-language summary of our terms and not legal advice.</p>
+  </div>
+</dialog>
+
+<script>
+(function(){
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $ = s => document.querySelector(s);
+  const $$ = s => [...document.querySelectorAll(s)];
+
+  /* ---------- stand-out layer ---------- */
+  // scroll progress bar
+  const prog = $('#progress');
+  addEventListener('scroll', ()=>{
+    const d = document.documentElement;
+    prog.style.width = (scrollY / (d.scrollHeight - innerHeight) * 100) + '%';
+  }, {passive:true});
+
+  // cursor spotlight on cards
+  document.addEventListener('pointermove', e=>{
+    const card = e.target.closest?.('.plan,.bundle,.soon-card');
+    if(!card) return;
+    const r = card.getBoundingClientRect();
+    card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+    card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  }, {passive:true});
+
+  // reveal-on-scroll (base state stays visible if JS or IO never runs)
+  if(!reduced && 'IntersectionObserver' in window){
+    const rio = new IntersectionObserver(es=>es.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('rv-in'); rio.unobserve(e.target); }
+    }),{threshold:.15});
+    $$('.sec-head,.p-copy,.stage,.plan,.bundle,.soon-card').forEach((el,i)=>{
+      el.style.animationDelay = (i%4)*0.08 + 's';
+      if(el.getBoundingClientRect().top > innerHeight) rio.observe(el);
+    });
+  }
+
+  // hero ribbons — three flowing gradient ribbons, one per tool
+  (function(){
+    const cv = $('#ribbons'); if(!cv) return;
+    const ctx = cv.getContext('2d');
+    const rootCss = getComputedStyle(document.documentElement);
+    const COLS = ['--brand','--brand-2','--brand-3']
+      .map((v,i)=>rootCss.getPropertyValue(v).trim() || ['#5b5bf0','#8b5cf6','#12b5d6'][i]);
+    let w,h,t0 = performance.now();
+    function size(){ const r = cv.parentElement.getBoundingClientRect();
+      w = cv.width = r.width * devicePixelRatio; h = cv.height = r.height * devicePixelRatio; }
+    size(); addEventListener('resize', size);
+    function draw(now){
+      const t = (now - t0)/1000;
+      ctx.clearRect(0,0,w,h);
+      ctx.globalCompositeOperation = 'lighter';
+      COLS.forEach((c,k)=>{
+        const yBase = h*(.28 + k*.22), amp = h*.09, sp = .35 + k*.12;
+        ctx.beginPath();
+        for(let x=0; x<=w; x+=w/70){
+          const y = yBase + Math.sin(x/w*4.2 + t*sp + k*2.1)*amp
+                          + Math.sin(x/w*9.5 - t*sp*.7 + k)*amp*.35;
+          x===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+        }
+        ctx.strokeStyle = c; ctx.globalAlpha = .17;
+        ctx.lineWidth = 34*devicePixelRatio; ctx.lineCap='round';
+        ctx.filter = `blur(${18*devicePixelRatio}px)`;
+        ctx.stroke();
+        ctx.filter = 'none'; ctx.globalAlpha = .5;
+        ctx.lineWidth = 2*devicePixelRatio;
+        ctx.stroke();
+      });
+      ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
+      if(!reduced) requestAnimationFrame(draw);
+    }
+    requestAnimationFrame(draw);
+  })();
+
+  // legal dialogs
+  $$('[data-dlg]').forEach(b=>b.addEventListener('click',()=>document.getElementById(b.dataset.dlg).showModal()));
+  $$('dialog.legal [data-close]').forEach(b=>b.addEventListener('click',()=>b.closest('dialog').close()));
+  $$('dialog.legal').forEach(d=>d.addEventListener('click',e=>{ if(e.target===d) d.close(); }));
+
+  // cosmos — starfield, meteors and lightning behind the whole page
+  (function(){
+    const cv = document.createElement('canvas'); cv.id='cosmos';
+    document.body.prepend(cv);
+    const ctx = cv.getContext('2d');
+    const DPR = devicePixelRatio;
+    let W,H,stars=[],meteors=[],bolt=null,boltT=0;
+    let nextMet = performance.now()+2200, nextBolt = performance.now()+5000;
+    function size(){
+      W = cv.width = innerWidth*DPR; H = cv.height = innerHeight*DPR;
+      stars = [];
+      const n = Math.min(320, Math.round(W*H/(11000*DPR*DPR)));
+      for(let i=0;i<n;i++) stars.push({x:Math.random()*W, y:Math.random()*H,
+        r:(Math.random()*1.1+.3)*DPR, ph:Math.random()*6.28, sp:.4+Math.random()});
+    }
+    size(); addEventListener('resize', size);
+    function spawnMeteor(){
+      meteors.push({x:Math.random()*W*.85, y:Math.random()*H*.35,
+        vx:(6+Math.random()*7)*DPR, vy:(2.5+Math.random()*3)*DPR, life:1});
+    }
+    function spawnBolt(){
+      const pts=[]; let x=W*(.12+Math.random()*.76), y=-10*DPR;
+      pts.push([x,y]);
+      while(y < H*(.5+Math.random()*.3)){
+        x += (Math.random()-.5)*90*DPR;
+        y += (26+Math.random()*48)*DPR;
+        pts.push([x,y]);
+      }
+      const bi = 1+Math.floor(Math.random()*(pts.length-2));
+      const br=[[...pts[bi]]]; let bx=pts[bi][0], by=pts[bi][1];
+      for(let i=0;i<3;i++){ bx+=(Math.random()-.2)*70*DPR; by+=(20+Math.random()*30)*DPR; br.push([bx,by]); }
+      bolt = {pts, br}; boltT = 1;
+    }
+    function poly(p){ ctx.beginPath(); p.forEach((q,i)=> i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1])); ctx.stroke(); }
+    function draw(now){
+      ctx.clearRect(0,0,W,H);
+      for(const s of stars){
+        const tw = .35+.65*Math.abs(Math.sin(now/1100*s.sp+s.ph));
+        ctx.globalAlpha = tw*.85; ctx.fillStyle = '#cdd6ff';
+        ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,6.283); ctx.fill();
+      }
+      if(now>nextMet){ spawnMeteor(); nextMet = now+2600+Math.random()*5000; }
+      meteors = meteors.filter(m=>m.life>0);
+      for(const m of meteors){
+        m.x+=m.vx; m.y+=m.vy; m.life-=.014;
+        const g = ctx.createLinearGradient(m.x,m.y,m.x-m.vx*13,m.y-m.vy*13);
+        g.addColorStop(0,`rgba(214,225,255,${.95*m.life})`);
+        g.addColorStop(1,'rgba(214,225,255,0)');
+        ctx.globalAlpha=1; ctx.strokeStyle=g; ctx.lineWidth=1.8*DPR; ctx.lineCap='round';
+        ctx.beginPath(); ctx.moveTo(m.x,m.y); ctx.lineTo(m.x-m.vx*13,m.y-m.vy*13); ctx.stroke();
+      }
+      if(now>nextBolt){ spawnBolt(); nextBolt = now+7000+Math.random()*9000; }
+      if(bolt){
+        boltT -= .05;
+        if(boltT<=0) bolt=null;
+        else{
+          ctx.globalAlpha = boltT*(boltT>.72?1:.55);
+          ctx.strokeStyle='#aebcff'; ctx.lineCap='round';
+          ctx.shadowColor='#7c7cff'; ctx.shadowBlur=24*DPR;
+          ctx.lineWidth=2.4*DPR; poly(bolt.pts);
+          ctx.lineWidth=1.3*DPR; poly(bolt.br);
+          ctx.shadowBlur=0;
+          if(boltT>.85){ ctx.globalAlpha=.06; ctx.fillStyle='#7c7cff'; ctx.fillRect(0,0,W,H); }
+        }
+      }
+      ctx.globalAlpha=1;
+      if(!reduced) requestAnimationFrame(draw);
+    }
+    requestAnimationFrame(draw);   // reduced-motion: single static starfield frame
+  })();
+
+  // candlestick typography — ghost words built from live green/red candles
+  (function(){
+    const cvs = $$('.ghost-cv'); if(!cvs.length) return;
+    const css = getComputedStyle(document.documentElement);
+    const GAIN = (css.getPropertyValue('--gain')||'#0eae74').trim();
+    const LOSS = (css.getPropertyValue('--loss')||'#e0455e').trim();
+    function setup(cv){
+      const ctx = cv.getContext('2d');
+      const DPR = devicePixelRatio;
+      let W,H,step=8,cells=[],born=performance.now(),raf=0,running=false;
+      function build(){
+        const r = cv.getBoundingClientRect();
+        W = cv.width = Math.max(2, Math.round(r.width*DPR));
+        H = cv.height = Math.max(2, Math.round(r.height*DPR));
+        const off = document.createElement('canvas'); off.width=W; off.height=H;
+        const o = off.getContext('2d');
+        o.fillStyle='#000';
+        o.font = `800 ${Math.round(H*.72)}px "Bricolage Grotesque",sans-serif`;
+        o.textAlign='center'; o.textBaseline='middle';
+        o.fillText(cv.dataset.word, W/2, H*.46);
+        const px = o.getImageData(0,0,W,H).data;
+        cells=[]; step = Math.max(7*DPR, W/120);
+        for(let x=step/2; x<W; x+=step)
+          for(let y=step/2; y<H; y+=step)
+            if(px[(((y|0)*W)+(x|0))*4+3] > 110)
+              cells.push({x,y, up:Math.random()>.42, ph:Math.random()*6.28,
+                hb:step*(.55+Math.random()*.75), delay:(x/W)*900+Math.random()*250});
+        born = performance.now();
+      }
+      function draw(now){
+        const t = now-born;
+        ctx.clearRect(0,0,W,H);
+        const bw = step*.52;
+        for(const c of cells){
+          const a = Math.min(1,(t-c.delay)/350);
+          if(a<=0) continue;
+          const f = Math.sin(now/640+c.ph);
+          const h = c.hb*(.85+.3*f);
+          if(Math.random()<.0015) c.up=!c.up;   // a print flips the candle
+          ctx.globalAlpha = a*(.4+.28*f*f);
+          ctx.fillStyle = c.up?GAIN:LOSS;
+          ctx.fillRect(c.x-DPR*.7, c.y-h*.85, DPR*1.4, h*1.7);  // wick
+          ctx.fillRect(c.x-bw/2, c.y-h/2, bw, h);               // body
+        }
+        ctx.globalAlpha = 1;
+        if(running && !reduced) raf = requestAnimationFrame(draw);
+      }
+      const head = cv.closest('.sec-head');
+      function start(){ if(running) return; running=true; born=performance.now();
+        head.classList.remove('fly'); void head.offsetWidth; head.classList.add('fly');  // 3D fly-in, every re-entry
+        raf=requestAnimationFrame(draw); }
+      function stop(){ running=false; cancelAnimationFrame(raf); head.classList.remove('fly'); }
+      build();
+      if(reduced){ born = -1e6; draw(performance.now()); }
+      else{
+        const io = new IntersectionObserver(es=>es.forEach(e=> e.isIntersecting?start():stop()),{threshold:.05});
+        io.observe(cv);
+      }
+      addEventListener('resize', ()=>{ stop(); build(); reduced ? (born=-1e6, draw(performance.now())) : start(); });
+    }
+    const go = ()=>cvs.forEach(setup);
+    (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(go).catch(go);
+  })();
+
+  /* ---------- hero ticker ---------- */
+  const names = [
+    ['NRXS','NRx Sustain', 4.18, 42.7],['LGVN','Longeveron', 3.62, 28.4],['CYCC','Cyclacel', 2.09, 21.6],
+    ['GFAI','Guardforce AI', 1.44, 18.2],['MULN','Mullen Auto', 0.87, -6.3],['TOPS','Top Ships', 6.55, 15.9],
+    ['BDRX','Biodexa', 1.92, 33.1],['SINT','SiNtx Tech', 0.61, 12.4],['COSM','Cosmos Health', 1.13, -4.1],
+    ['VERB','Verb Tech', 5.24, 24.8]
+  ];
+  const half = names.map(([s,co,px,ch]) =>
+    `<span class="tk"><b>${s}</b><span class="px num">${px.toFixed(2)}</span>` +
+    `<span class="chg num ${ch>=0?'up':'dn'}">${ch>=0?'▲':'▼'} ${ch>=0?'+':''}${ch.toFixed(2)}%</span>` +
+    `<span class="fl">${co.toUpperCase()}</span></span>`).join('');
+  $('#tickerTrack').innerHTML = half + half;
+
+  /* ---------- step rails: advance in sync with each demo loop ---------- */
+  const rails = {};
+  $$('.steps').forEach(r => rails[r.dataset.demo] = r);
+  function setStep(demo, i){
+    const rail = rails[demo]; if(!rail) return;
+    [...rail.children].forEach((s,j)=>s.classList.toggle('on', j===i));
+  }
+
+  /* ---------- scanner: step rail cycles alongside the live footage ---------- */
+  let scTimer;
+  function scLoop(){
+    let i = 0; setStep('scanner',0);
+    scTimer = setInterval(()=>{ i=(i+1)%3; setStep('scanner',i); }, 4500);
+  }
+
+  /* ---------- journal: step rail cycles alongside the reel ---------- */
+  let jrTimer;
+  function jrLoop(){
+    let i = 0; setStep('journal',0);
+    jrTimer = setInterval(()=>{ i=(i+1)%3; setStep('journal',i); }, 4500);
+  }
+
+  /* ---------- wealth builder: step rail cycles alongside the footage ---------- */
+  let wbTimer;
+  function wbLoop(){
+    let i = 0; setStep('wealth',0);
+    wbTimer = setInterval(()=>{ i=(i+1)%3; setStep('wealth',i); }, 4500);
+  }
+
+  /* ---------- run demos; pause offscreen ---------- */
+  const starters = {scanner:scLoop, journal:jrLoop, wealth:wbLoop};
+  const stoppers = {
+    scanner:()=>clearInterval(scTimer),
+    journal:()=>clearInterval(jrTimer),
+    wealth:()=>clearInterval(wbTimer)
+  };
+  if(reduced){
+    // static resting frames: pause footage, all steps lit
+    $$('.stage-video video').forEach(v=>{ v.removeAttribute('autoplay'); v.setAttribute('controls',''); });
+    Object.keys(rails).forEach(k=>{ [...rails[k].children].forEach(s=>s.classList.add('on')); });
+  } else {
+    const running = {};
+    const io = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        const sec = e.target.closest('section'); if(!sec) return;
+        const key = sec.id==='scanner'?'scanner':sec.id==='journal'?'journal':sec.id==='wealth'?'wealth':null;
+        if(!key) return;
+        if(e.isIntersecting && !running[key]){ running[key]=true; starters[key](); }
+        else if(!e.isIntersecting && running[key]){ running[key]=false; stoppers[key](); }
+      });
+    },{threshold:.25});
+    $$('.stage').forEach(st=>io.observe(st));
+  }
+})();
+</script>
