@@ -327,7 +327,6 @@
     .ticker-track{animation:none}
   }
 </style>
-<style></style>
 
 <nav class="nav">
   <div class="wrap nav-in">
@@ -725,282 +724,438 @@
 </dialog>
 
 <script>
-(function(){
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const $ = s => document.querySelector(s);
-  const $$ = s => [...document.querySelectorAll(s)];
+"use strict";
+(() => {
+  // src/util.ts
+  var reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function $(selector) {
+    return document.querySelector(selector);
+  }
+  function $$(selector) {
+    return [...document.querySelectorAll(selector)];
+  }
+  function cssVar(name, fallback) {
+    const value = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+    return value || fallback;
+  }
 
-  /* ---------- stand-out layer ---------- */
-  // scroll progress bar
-  const prog = $('#progress');
-  addEventListener('scroll', ()=>{
-    const d = document.documentElement;
-    prog.style.width = (scrollY / (d.scrollHeight - innerHeight) * 100) + '%';
-  }, {passive:true});
-
-  // cursor spotlight on cards
-  document.addEventListener('pointermove', e=>{
-    const card = e.target.closest?.('.plan,.bundle,.soon-card');
-    if(!card) return;
-    const r = card.getBoundingClientRect();
-    card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-    card.style.setProperty('--my', (e.clientY - r.top) + 'px');
-  }, {passive:true});
-
-  // reveal-on-scroll (base state stays visible if JS or IO never runs)
-  if(!reduced && 'IntersectionObserver' in window){
-    const rio = new IntersectionObserver(es=>es.forEach(e=>{
-      if(e.isIntersecting){ e.target.classList.add('rv-in'); rio.unobserve(e.target); }
-    }),{threshold:.15});
-    $$('.sec-head,.p-copy,.stage,.plan,.bundle,.soon-card').forEach((el,i)=>{
-      el.style.animationDelay = (i%4)*0.08 + 's';
-      if(el.getBoundingClientRect().top > innerHeight) rio.observe(el);
+  // src/chrome.ts
+  function initProgressBar() {
+    const bar = $("#progress");
+    if (!bar) return;
+    addEventListener("scroll", () => {
+      const doc = document.documentElement;
+      bar.style.width = scrollY / (doc.scrollHeight - innerHeight) * 100 + "%";
+    }, { passive: true });
+  }
+  function initCardSpotlight() {
+    document.addEventListener("pointermove", (e) => {
+      const target = e.target;
+      const card = target?.closest?.(".plan,.bundle,.soon-card");
+      if (!card) return;
+      const r = card.getBoundingClientRect();
+      card.style.setProperty("--mx", e.clientX - r.left + "px");
+      card.style.setProperty("--my", e.clientY - r.top + "px");
+    }, { passive: true });
+  }
+  function initRevealOnScroll() {
+    if (reduced || !("IntersectionObserver" in window)) return;
+    const rio = new IntersectionObserver((entries) => entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("rv-in");
+        rio.unobserve(entry.target);
+      }
+    }), { threshold: 0.15 });
+    $$(".sec-head,.p-copy,.stage,.plan,.bundle,.soon-card").forEach((el, i) => {
+      el.style.animationDelay = i % 4 * 0.08 + "s";
+      if (el.getBoundingClientRect().top > innerHeight) rio.observe(el);
     });
   }
+  function initLegalDialogs() {
+    $$("[data-dlg]").forEach((btn) => btn.addEventListener("click", () => {
+      const dlg = document.getElementById(btn.dataset.dlg ?? "");
+      dlg?.showModal();
+    }));
+    $$("dialog.legal [data-close]").forEach((btn) => btn.addEventListener("click", () => {
+      btn.closest("dialog")?.close();
+    }));
+    $$("dialog.legal").forEach((dlg) => dlg.addEventListener("click", (e) => {
+      if (e.target === dlg) dlg.close();
+    }));
+  }
 
-  // hero ribbons — three flowing gradient ribbons, one per tool
-  (function(){
-    const cv = $('#ribbons'); if(!cv) return;
-    const ctx = cv.getContext('2d');
-    const rootCss = getComputedStyle(document.documentElement);
-    const COLS = ['--brand','--brand-2','--brand-3']
-      .map((v,i)=>rootCss.getPropertyValue(v).trim() || ['#5b5bf0','#8b5cf6','#12b5d6'][i]);
-    let w,h,t0 = performance.now();
-    function size(){ const r = cv.parentElement.getBoundingClientRect();
-      w = cv.width = r.width * devicePixelRatio; h = cv.height = r.height * devicePixelRatio; }
-    size(); addEventListener('resize', size);
-    function draw(now){
-      const t = (now - t0)/1000;
-      ctx.clearRect(0,0,w,h);
-      ctx.globalCompositeOperation = 'lighter';
-      COLS.forEach((c,k)=>{
-        const yBase = h*(.28 + k*.22), amp = h*.09, sp = .35 + k*.12;
+  // src/ribbons.ts
+  var FALLBACK_COLORS = ["#5b5bf0", "#8b5cf6", "#12b5d6"];
+  function initHeroRibbons() {
+    const cv = $("#ribbons");
+    if (!cv) return;
+    const ctx = cv.getContext("2d");
+    if (!ctx) return;
+    const colors = ["--brand", "--brand-2", "--brand-3"].map((v, i) => cssVar(v, FALLBACK_COLORS[i]));
+    let w = 0, h = 0;
+    const t0 = performance.now();
+    function size() {
+      const r = cv.parentElement.getBoundingClientRect();
+      w = cv.width = r.width * devicePixelRatio;
+      h = cv.height = r.height * devicePixelRatio;
+    }
+    size();
+    addEventListener("resize", size);
+    function draw(now) {
+      const t = (now - t0) / 1e3;
+      ctx.clearRect(0, 0, w, h);
+      ctx.globalCompositeOperation = "lighter";
+      colors.forEach((color, k) => {
+        const yBase = h * (0.28 + k * 0.22);
+        const amp = h * 0.09;
+        const speed = 0.35 + k * 0.12;
         ctx.beginPath();
-        for(let x=0; x<=w; x+=w/70){
-          const y = yBase + Math.sin(x/w*4.2 + t*sp + k*2.1)*amp
-                          + Math.sin(x/w*9.5 - t*sp*.7 + k)*amp*.35;
-          x===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+        for (let x = 0; x <= w; x += w / 70) {
+          const y = yBase + Math.sin(x / w * 4.2 + t * speed + k * 2.1) * amp + Math.sin(x / w * 9.5 - t * speed * 0.7 + k) * amp * 0.35;
+          x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
         }
-        ctx.strokeStyle = c; ctx.globalAlpha = .17;
-        ctx.lineWidth = 34*devicePixelRatio; ctx.lineCap='round';
-        ctx.filter = `blur(${18*devicePixelRatio}px)`;
+        ctx.strokeStyle = color;
+        ctx.globalAlpha = 0.17;
+        ctx.lineWidth = 34 * devicePixelRatio;
+        ctx.lineCap = "round";
+        ctx.filter = `blur(${18 * devicePixelRatio}px)`;
         ctx.stroke();
-        ctx.filter = 'none'; ctx.globalAlpha = .5;
-        ctx.lineWidth = 2*devicePixelRatio;
+        ctx.filter = "none";
+        ctx.globalAlpha = 0.5;
+        ctx.lineWidth = 2 * devicePixelRatio;
         ctx.stroke();
       });
-      ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
-      if(!reduced) requestAnimationFrame(draw);
+      ctx.globalAlpha = 1;
+      ctx.globalCompositeOperation = "source-over";
+      if (!reduced) requestAnimationFrame(draw);
     }
     requestAnimationFrame(draw);
-  })();
+  }
 
-  // legal dialogs
-  $$('[data-dlg]').forEach(b=>b.addEventListener('click',()=>document.getElementById(b.dataset.dlg).showModal()));
-  $$('dialog.legal [data-close]').forEach(b=>b.addEventListener('click',()=>b.closest('dialog').close()));
-  $$('dialog.legal').forEach(d=>d.addEventListener('click',e=>{ if(e.target===d) d.close(); }));
-
-  // cosmos — starfield, meteors and lightning behind the whole page
-  (function(){
-    const cv = document.createElement('canvas'); cv.id='cosmos';
+  // src/cosmos.ts
+  function initCosmos() {
+    const cv = document.createElement("canvas");
+    cv.id = "cosmos";
     document.body.prepend(cv);
-    const ctx = cv.getContext('2d');
+    const ctx = cv.getContext("2d");
+    if (!ctx) return;
     const DPR = devicePixelRatio;
-    let W,H,stars=[],meteors=[],bolt=null,boltT=0;
-    let nextMet = performance.now()+2200, nextBolt = performance.now()+5000;
-    function size(){
-      W = cv.width = innerWidth*DPR; H = cv.height = innerHeight*DPR;
+    let W = 0, H = 0;
+    let stars = [];
+    let meteors = [];
+    let bolt = null;
+    let boltT = 0;
+    let nextMeteor = performance.now() + 2200;
+    let nextBolt = performance.now() + 5e3;
+    function size() {
+      W = cv.width = innerWidth * DPR;
+      H = cv.height = innerHeight * DPR;
       stars = [];
-      const n = Math.min(320, Math.round(W*H/(11000*DPR*DPR)));
-      for(let i=0;i<n;i++) stars.push({x:Math.random()*W, y:Math.random()*H,
-        r:(Math.random()*1.1+.3)*DPR, ph:Math.random()*6.28, sp:.4+Math.random()});
-    }
-    size(); addEventListener('resize', size);
-    function spawnMeteor(){
-      meteors.push({x:Math.random()*W*.85, y:Math.random()*H*.35,
-        vx:(6+Math.random()*7)*DPR, vy:(2.5+Math.random()*3)*DPR, life:1});
-    }
-    function spawnBolt(){
-      const pts=[]; let x=W*(.12+Math.random()*.76), y=-10*DPR;
-      pts.push([x,y]);
-      while(y < H*(.5+Math.random()*.3)){
-        x += (Math.random()-.5)*90*DPR;
-        y += (26+Math.random()*48)*DPR;
-        pts.push([x,y]);
+      const count = Math.min(320, Math.round(W * H / (11e3 * DPR * DPR)));
+      for (let i = 0; i < count; i++) {
+        stars.push({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          r: (Math.random() * 1.1 + 0.3) * DPR,
+          ph: Math.random() * 6.28,
+          sp: 0.4 + Math.random()
+        });
       }
-      const bi = 1+Math.floor(Math.random()*(pts.length-2));
-      const br=[[...pts[bi]]]; let bx=pts[bi][0], by=pts[bi][1];
-      for(let i=0;i<3;i++){ bx+=(Math.random()-.2)*70*DPR; by+=(20+Math.random()*30)*DPR; br.push([bx,by]); }
-      bolt = {pts, br}; boltT = 1;
     }
-    function poly(p){ ctx.beginPath(); p.forEach((q,i)=> i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1])); ctx.stroke(); }
-    function draw(now){
-      ctx.clearRect(0,0,W,H);
-      for(const s of stars){
-        const tw = .35+.65*Math.abs(Math.sin(now/1100*s.sp+s.ph));
-        ctx.globalAlpha = tw*.85; ctx.fillStyle = '#cdd6ff';
-        ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,6.283); ctx.fill();
+    size();
+    addEventListener("resize", size);
+    function spawnMeteor() {
+      meteors.push({
+        x: Math.random() * W * 0.85,
+        y: Math.random() * H * 0.35,
+        vx: (6 + Math.random() * 7) * DPR,
+        vy: (2.5 + Math.random() * 3) * DPR,
+        life: 1
+      });
+    }
+    function spawnBolt() {
+      const pts = [];
+      let x = W * (0.12 + Math.random() * 0.76);
+      let y = -10 * DPR;
+      pts.push([x, y]);
+      while (y < H * (0.5 + Math.random() * 0.3)) {
+        x += (Math.random() - 0.5) * 90 * DPR;
+        y += (26 + Math.random() * 48) * DPR;
+        pts.push([x, y]);
       }
-      if(now>nextMet){ spawnMeteor(); nextMet = now+2600+Math.random()*5000; }
-      meteors = meteors.filter(m=>m.life>0);
-      for(const m of meteors){
-        m.x+=m.vx; m.y+=m.vy; m.life-=.014;
-        const g = ctx.createLinearGradient(m.x,m.y,m.x-m.vx*13,m.y-m.vy*13);
-        g.addColorStop(0,`rgba(214,225,255,${.95*m.life})`);
-        g.addColorStop(1,'rgba(214,225,255,0)');
-        ctx.globalAlpha=1; ctx.strokeStyle=g; ctx.lineWidth=1.8*DPR; ctx.lineCap='round';
-        ctx.beginPath(); ctx.moveTo(m.x,m.y); ctx.lineTo(m.x-m.vx*13,m.y-m.vy*13); ctx.stroke();
+      const forkAt = 1 + Math.floor(Math.random() * (pts.length - 2));
+      const br = [[...pts[forkAt]]];
+      let bx = pts[forkAt][0], by = pts[forkAt][1];
+      for (let i = 0; i < 3; i++) {
+        bx += (Math.random() - 0.2) * 70 * DPR;
+        by += (20 + Math.random() * 30) * DPR;
+        br.push([bx, by]);
       }
-      if(now>nextBolt){ spawnBolt(); nextBolt = now+7000+Math.random()*9000; }
-      if(bolt){
-        boltT -= .05;
-        if(boltT<=0) bolt=null;
-        else{
-          ctx.globalAlpha = boltT*(boltT>.72?1:.55);
-          ctx.strokeStyle='#aebcff'; ctx.lineCap='round';
-          ctx.shadowColor='#7c7cff'; ctx.shadowBlur=24*DPR;
-          ctx.lineWidth=2.4*DPR; poly(bolt.pts);
-          ctx.lineWidth=1.3*DPR; poly(bolt.br);
-          ctx.shadowBlur=0;
-          if(boltT>.85){ ctx.globalAlpha=.06; ctx.fillStyle='#7c7cff'; ctx.fillRect(0,0,W,H); }
+      bolt = { pts, br };
+      boltT = 1;
+    }
+    function poly(points) {
+      ctx.beginPath();
+      points.forEach((p, i) => i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1]));
+      ctx.stroke();
+    }
+    function draw(now) {
+      ctx.clearRect(0, 0, W, H);
+      for (const s of stars) {
+        const twinkle = 0.35 + 0.65 * Math.abs(Math.sin(now / 1100 * s.sp + s.ph));
+        ctx.globalAlpha = twinkle * 0.85;
+        ctx.fillStyle = "#cdd6ff";
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, 6.283);
+        ctx.fill();
+      }
+      if (now > nextMeteor) {
+        spawnMeteor();
+        nextMeteor = now + 2600 + Math.random() * 5e3;
+      }
+      meteors = meteors.filter((m) => m.life > 0);
+      for (const m of meteors) {
+        m.x += m.vx;
+        m.y += m.vy;
+        m.life -= 0.014;
+        const g = ctx.createLinearGradient(m.x, m.y, m.x - m.vx * 13, m.y - m.vy * 13);
+        g.addColorStop(0, `rgba(214,225,255,${0.95 * m.life})`);
+        g.addColorStop(1, "rgba(214,225,255,0)");
+        ctx.globalAlpha = 1;
+        ctx.strokeStyle = g;
+        ctx.lineWidth = 1.8 * DPR;
+        ctx.lineCap = "round";
+        ctx.beginPath();
+        ctx.moveTo(m.x, m.y);
+        ctx.lineTo(m.x - m.vx * 13, m.y - m.vy * 13);
+        ctx.stroke();
+      }
+      if (now > nextBolt) {
+        spawnBolt();
+        nextBolt = now + 7e3 + Math.random() * 9e3;
+      }
+      if (bolt) {
+        boltT -= 0.05;
+        if (boltT <= 0) bolt = null;
+        else {
+          ctx.globalAlpha = boltT * (boltT > 0.72 ? 1 : 0.55);
+          ctx.strokeStyle = "#aebcff";
+          ctx.lineCap = "round";
+          ctx.shadowColor = "#7c7cff";
+          ctx.shadowBlur = 24 * DPR;
+          ctx.lineWidth = 2.4 * DPR;
+          poly(bolt.pts);
+          ctx.lineWidth = 1.3 * DPR;
+          poly(bolt.br);
+          ctx.shadowBlur = 0;
+          if (boltT > 0.85) {
+            ctx.globalAlpha = 0.06;
+            ctx.fillStyle = "#7c7cff";
+            ctx.fillRect(0, 0, W, H);
+          }
         }
       }
-      ctx.globalAlpha=1;
-      if(!reduced) requestAnimationFrame(draw);
+      ctx.globalAlpha = 1;
+      if (!reduced) requestAnimationFrame(draw);
     }
-    requestAnimationFrame(draw);   // reduced-motion: single static starfield frame
-  })();
+    requestAnimationFrame(draw);
+  }
 
-  // candlestick typography — ghost words built from live green/red candles
-  (function(){
-    const cvs = $$('.ghost-cv'); if(!cvs.length) return;
-    const css = getComputedStyle(document.documentElement);
-    const GAIN = (css.getPropertyValue('--gain')||'#0eae74').trim();
-    const LOSS = (css.getPropertyValue('--loss')||'#e0455e').trim();
-    function setup(cv){
-      const ctx = cv.getContext('2d');
+  // src/candles.ts
+  function initCandleWords() {
+    const canvases = $$(".ghost-cv");
+    if (!canvases.length) return;
+    const GAIN = cssVar("--gain", "#0eae74");
+    const LOSS = cssVar("--loss", "#e0455e");
+    function setup(cv) {
+      const ctx = cv.getContext("2d");
+      if (!ctx) return;
       const DPR = devicePixelRatio;
-      let W,H,step=8,cells=[],born=performance.now(),raf=0,running=false;
-      function build(){
+      let W = 0, H = 0, step = 8;
+      let cells = [];
+      let born = performance.now();
+      let raf = 0;
+      let running = false;
+      function build() {
         const r = cv.getBoundingClientRect();
-        W = cv.width = Math.max(2, Math.round(r.width*DPR));
-        H = cv.height = Math.max(2, Math.round(r.height*DPR));
-        const off = document.createElement('canvas'); off.width=W; off.height=H;
-        const o = off.getContext('2d');
-        o.fillStyle='#000';
-        o.font = `800 ${Math.round(H*.72)}px "Bricolage Grotesque",sans-serif`;
-        o.textAlign='center'; o.textBaseline='middle';
-        o.fillText(cv.dataset.word, W/2, H*.46);
-        const px = o.getImageData(0,0,W,H).data;
-        cells=[]; step = Math.max(7*DPR, W/120);
-        for(let x=step/2; x<W; x+=step)
-          for(let y=step/2; y<H; y+=step)
-            if(px[(((y|0)*W)+(x|0))*4+3] > 110)
-              cells.push({x,y, up:Math.random()>.42, ph:Math.random()*6.28,
-                hb:step*(.55+Math.random()*.75), delay:(x/W)*900+Math.random()*250});
+        W = cv.width = Math.max(2, Math.round(r.width * DPR));
+        H = cv.height = Math.max(2, Math.round(r.height * DPR));
+        const off = document.createElement("canvas");
+        off.width = W;
+        off.height = H;
+        const o = off.getContext("2d");
+        o.fillStyle = "#000";
+        o.font = `800 ${Math.round(H * 0.72)}px "Bricolage Grotesque",sans-serif`;
+        o.textAlign = "center";
+        o.textBaseline = "middle";
+        o.fillText(cv.dataset.word ?? "", W / 2, H * 0.46);
+        const px = o.getImageData(0, 0, W, H).data;
+        cells = [];
+        step = Math.max(7 * DPR, W / 120);
+        for (let x = step / 2; x < W; x += step) {
+          for (let y = step / 2; y < H; y += step) {
+            if (px[((y | 0) * W + (x | 0)) * 4 + 3] > 110) {
+              cells.push({
+                x,
+                y,
+                up: Math.random() > 0.42,
+                ph: Math.random() * 6.28,
+                hb: step * (0.55 + Math.random() * 0.75),
+                delay: x / W * 900 + Math.random() * 250
+              });
+            }
+          }
+        }
         born = performance.now();
       }
-      function draw(now){
-        const t = now-born;
-        ctx.clearRect(0,0,W,H);
-        const bw = step*.52;
-        for(const c of cells){
-          const a = Math.min(1,(t-c.delay)/350);
-          if(a<=0) continue;
-          const f = Math.sin(now/640+c.ph);
-          const h = c.hb*(.85+.3*f);
-          if(Math.random()<.0015) c.up=!c.up;   // a print flips the candle
-          ctx.globalAlpha = a*(.4+.28*f*f);
-          ctx.fillStyle = c.up?GAIN:LOSS;
-          ctx.fillRect(c.x-DPR*.7, c.y-h*.85, DPR*1.4, h*1.7);  // wick
-          ctx.fillRect(c.x-bw/2, c.y-h/2, bw, h);               // body
+      function draw(now) {
+        const t = now - born;
+        ctx.clearRect(0, 0, W, H);
+        const bodyWidth = step * 0.52;
+        for (const c of cells) {
+          const appear = Math.min(1, (t - c.delay) / 350);
+          if (appear <= 0) continue;
+          const flicker = Math.sin(now / 640 + c.ph);
+          const h = c.hb * (0.85 + 0.3 * flicker);
+          if (Math.random() < 15e-4) c.up = !c.up;
+          ctx.globalAlpha = appear * (0.4 + 0.28 * flicker * flicker);
+          ctx.fillStyle = c.up ? GAIN : LOSS;
+          ctx.fillRect(c.x - DPR * 0.7, c.y - h * 0.85, DPR * 1.4, h * 1.7);
+          ctx.fillRect(c.x - bodyWidth / 2, c.y - h / 2, bodyWidth, h);
         }
         ctx.globalAlpha = 1;
-        if(running && !reduced) raf = requestAnimationFrame(draw);
+        if (running && !reduced) raf = requestAnimationFrame(draw);
       }
-      const head = cv.closest('.sec-head');
-      function start(){ if(running) return; running=true; born=performance.now();
-        head.classList.remove('fly'); void head.offsetWidth; head.classList.add('fly');  // 3D fly-in, every re-entry
-        raf=requestAnimationFrame(draw); }
-      function stop(){ running=false; cancelAnimationFrame(raf); head.classList.remove('fly'); }
+      const head = cv.closest(".sec-head");
+      function start() {
+        if (running) return;
+        running = true;
+        born = performance.now();
+        if (head) {
+          head.classList.remove("fly");
+          void head.offsetWidth;
+          head.classList.add("fly");
+        }
+        raf = requestAnimationFrame(draw);
+      }
+      function stop() {
+        running = false;
+        cancelAnimationFrame(raf);
+        head?.classList.remove("fly");
+      }
       build();
-      if(reduced){ born = -1e6; draw(performance.now()); }
-      else{
-        const io = new IntersectionObserver(es=>es.forEach(e=> e.isIntersecting?start():stop()),{threshold:.05});
+      if (reduced) {
+        born = -1e6;
+        draw(performance.now());
+      } else {
+        const io = new IntersectionObserver(
+          (entries) => entries.forEach((e) => e.isIntersecting ? start() : stop()),
+          { threshold: 0.05 }
+        );
         io.observe(cv);
       }
-      addEventListener('resize', ()=>{ stop(); build(); reduced ? (born=-1e6, draw(performance.now())) : start(); });
-    }
-    const go = ()=>cvs.forEach(setup);
-    (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(go).catch(go);
-  })();
-
-  /* ---------- hero ticker ---------- */
-  const names = [
-    ['NRXS','NRx Sustain', 4.18, 42.7],['LGVN','Longeveron', 3.62, 28.4],['CYCC','Cyclacel', 2.09, 21.6],
-    ['GFAI','Guardforce AI', 1.44, 18.2],['MULN','Mullen Auto', 0.87, -6.3],['TOPS','Top Ships', 6.55, 15.9],
-    ['BDRX','Biodexa', 1.92, 33.1],['SINT','SiNtx Tech', 0.61, 12.4],['COSM','Cosmos Health', 1.13, -4.1],
-    ['VERB','Verb Tech', 5.24, 24.8]
-  ];
-  const half = names.map(([s,co,px,ch]) =>
-    `<span class="tk"><b>${s}</b><span class="px num">${px.toFixed(2)}</span>` +
-    `<span class="chg num ${ch>=0?'up':'dn'}">${ch>=0?'▲':'▼'} ${ch>=0?'+':''}${ch.toFixed(2)}%</span>` +
-    `<span class="fl">${co.toUpperCase()}</span></span>`).join('');
-  $('#tickerTrack').innerHTML = half + half;
-
-  /* ---------- step rails: advance in sync with each demo loop ---------- */
-  const rails = {};
-  $$('.steps').forEach(r => rails[r.dataset.demo] = r);
-  function setStep(demo, i){
-    const rail = rails[demo]; if(!rail) return;
-    [...rail.children].forEach((s,j)=>s.classList.toggle('on', j===i));
-  }
-
-  /* ---------- scanner: step rail cycles alongside the live footage ---------- */
-  let scTimer;
-  function scLoop(){
-    let i = 0; setStep('scanner',0);
-    scTimer = setInterval(()=>{ i=(i+1)%3; setStep('scanner',i); }, 4500);
-  }
-
-  /* ---------- journal: step rail cycles alongside the reel ---------- */
-  let jrTimer;
-  function jrLoop(){
-    let i = 0; setStep('journal',0);
-    jrTimer = setInterval(()=>{ i=(i+1)%3; setStep('journal',i); }, 4500);
-  }
-
-  /* ---------- wealth builder: step rail cycles alongside the footage ---------- */
-  let wbTimer;
-  function wbLoop(){
-    let i = 0; setStep('wealth',0);
-    wbTimer = setInterval(()=>{ i=(i+1)%3; setStep('wealth',i); }, 4500);
-  }
-
-  /* ---------- run demos; pause offscreen ---------- */
-  const starters = {scanner:scLoop, journal:jrLoop, wealth:wbLoop};
-  const stoppers = {
-    scanner:()=>clearInterval(scTimer),
-    journal:()=>clearInterval(jrTimer),
-    wealth:()=>clearInterval(wbTimer)
-  };
-  if(reduced){
-    // static resting frames: pause footage, all steps lit
-    $$('.stage-video video').forEach(v=>{ v.removeAttribute('autoplay'); v.setAttribute('controls',''); });
-    Object.keys(rails).forEach(k=>{ [...rails[k].children].forEach(s=>s.classList.add('on')); });
-  } else {
-    const running = {};
-    const io = new IntersectionObserver(entries=>{
-      entries.forEach(e=>{
-        const sec = e.target.closest('section'); if(!sec) return;
-        const key = sec.id==='scanner'?'scanner':sec.id==='journal'?'journal':sec.id==='wealth'?'wealth':null;
-        if(!key) return;
-        if(e.isIntersecting && !running[key]){ running[key]=true; starters[key](); }
-        else if(!e.isIntersecting && running[key]){ running[key]=false; stoppers[key](); }
+      addEventListener("resize", () => {
+        stop();
+        build();
+        if (reduced) {
+          born = -1e6;
+          draw(performance.now());
+        } else start();
       });
-    },{threshold:.25});
-    $$('.stage').forEach(st=>io.observe(st));
+    }
+    const go = () => canvases.forEach(setup);
+    (document.fonts?.ready ?? Promise.resolve()).then(go).catch(go);
   }
+
+  // src/ticker.ts
+  var ENTRIES = [
+    { symbol: "NRXS", company: "NRx Sustain", price: 4.18, changePct: 42.7 },
+    { symbol: "LGVN", company: "Longeveron", price: 3.62, changePct: 28.4 },
+    { symbol: "CYCC", company: "Cyclacel", price: 2.09, changePct: 21.6 },
+    { symbol: "GFAI", company: "Guardforce AI", price: 1.44, changePct: 18.2 },
+    { symbol: "MULN", company: "Mullen Auto", price: 0.87, changePct: -6.3 },
+    { symbol: "TOPS", company: "Top Ships", price: 6.55, changePct: 15.9 },
+    { symbol: "BDRX", company: "Biodexa", price: 1.92, changePct: 33.1 },
+    { symbol: "SINT", company: "SiNtx Tech", price: 0.61, changePct: 12.4 },
+    { symbol: "COSM", company: "Cosmos Health", price: 1.13, changePct: -4.1 },
+    { symbol: "VERB", company: "Verb Tech", price: 5.24, changePct: 24.8 }
+  ];
+  function initTicker() {
+    const track = $("#tickerTrack");
+    if (!track) return;
+    const half = ENTRIES.map(({ symbol, company, price, changePct }) => {
+      const up = changePct >= 0;
+      return `<span class="tk"><b>${symbol}</b><span class="px num">${price.toFixed(2)}</span><span class="chg num ${up ? "up" : "dn"}">${up ? "▲" : "▼"} ${up ? "+" : ""}${changePct.toFixed(2)}%</span><span class="fl">${company.toUpperCase()}</span></span>`;
+    }).join("");
+    track.innerHTML = half + half;
+  }
+
+  // src/stages.ts
+  var STEP_INTERVAL_MS = 4500;
+  function initStages() {
+    const rails = /* @__PURE__ */ new Map();
+    $$(".steps").forEach((rail) => {
+      const key = rail.dataset.demo;
+      if (key) rails.set(key, rail);
+    });
+    function setStep(demo, index) {
+      const rail = rails.get(demo);
+      if (!rail) return;
+      [...rail.children].forEach((step, j) => step.classList.toggle("on", j === index));
+    }
+    const timers = /* @__PURE__ */ new Map();
+    function startLoop(key) {
+      let i = 0;
+      setStep(key, 0);
+      timers.set(key, window.setInterval(() => {
+        i = (i + 1) % 3;
+        setStep(key, i);
+      }, STEP_INTERVAL_MS));
+    }
+    function stopLoop(key) {
+      const t = timers.get(key);
+      if (t !== void 0) {
+        clearInterval(t);
+        timers.delete(key);
+      }
+    }
+    if (reduced) {
+      $$(".stage-video video").forEach((v) => {
+        v.removeAttribute("autoplay");
+        v.setAttribute("controls", "");
+      });
+      rails.forEach((rail) => [...rail.children].forEach((s) => s.classList.add("on")));
+      return;
+    }
+    const running = /* @__PURE__ */ new Set();
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const section = entry.target.closest("section");
+        if (!section) return;
+        const key = ["scanner", "journal", "wealth"].find((k) => k === section.id);
+        if (!key) return;
+        if (entry.isIntersecting && !running.has(key)) {
+          running.add(key);
+          startLoop(key);
+        } else if (!entry.isIntersecting && running.has(key)) {
+          running.delete(key);
+          stopLoop(key);
+        }
+      });
+    }, { threshold: 0.25 });
+    $$(".stage").forEach((stage) => io.observe(stage));
+  }
+
+  // src/main.ts
+  initProgressBar();
+  initCardSpotlight();
+  initRevealOnScroll();
+  initLegalDialogs();
+  initHeroRibbons();
+  initCosmos();
+  initCandleWords();
+  initTicker();
+  initStages();
 })();
 </script>
 
