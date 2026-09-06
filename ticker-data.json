@@ -1,0 +1,77 @@
+{
+  "updated": "2026-09-06",
+  "entries": [
+    {
+      "symbol": "IMRN",
+      "company": "Immuron Limited",
+      "price": 1.8,
+      "changePct": 62.16216
+    },
+    {
+      "symbol": "CDTG",
+      "company": "CDT Environmental Technolo",
+      "price": 1.32,
+      "changePct": 46.71557
+    },
+    {
+      "symbol": "BANL",
+      "company": "CBL International Limited",
+      "price": 9.01,
+      "changePct": -40.72368
+    },
+    {
+      "symbol": "AOUT",
+      "company": "American Outdoor Brands, I",
+      "price": 14.48,
+      "changePct": 44.65534
+    },
+    {
+      "symbol": "ONCO",
+      "company": "Onconetix, Inc.",
+      "price": 1.02,
+      "changePct": 38.02436
+    },
+    {
+      "symbol": "LULG",
+      "company": "Leverage Shares 2x Long LU",
+      "price": 4.27,
+      "changePct": -35.10638
+    },
+    {
+      "symbol": "GRNQ",
+      "company": "Greenpro Capital Corp.",
+      "price": 18.7,
+      "changePct": 30.76923
+    },
+    {
+      "symbol": "RIBBR",
+      "company": "Ribbon Acquisition Corp.",
+      "price": 0.3,
+      "changePct": 28.75536
+    },
+    {
+      "symbol": "CMND",
+      "company": "Clearmind Medicine Inc.",
+      "price": 1.16,
+      "changePct": -31.76471
+    },
+    {
+      "symbol": "NRSN",
+      "company": "NeuroSense Therapeutics Lt",
+      "price": 0.5108,
+      "changePct": 27.19124
+    },
+    {
+      "symbol": "GRI",
+      "company": "GRI Bio, Inc.",
+      "price": 2.88,
+      "changePct": 25.76419
+    },
+    {
+      "symbol": "IPEXU",
+      "company": "Inflection Point Acquisiti",
+      "price": 8.72,
+      "changePct": -31.01266
+    }
+  ]
+}
