@@ -41,6 +41,25 @@ export function initRevealOnScroll(): void {
   });
 }
 
+/** Hamburger menu on small screens: toggle, close on link tap or Escape. */
+export function initMobileNav(): void {
+  const burger = $('#navBurger') as HTMLButtonElement | null;
+  const links = $('#navLinks');
+  if (!burger || !links) return;
+  const setOpen = (open: boolean): void => {
+    links.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  };
+  burger.addEventListener('click', () => setOpen(!links.classList.contains('open')));
+  links.addEventListener('click', e => {
+    if ((e.target as Element).closest('a')) setOpen(false);   // navigating closes the menu
+  });
+  addEventListener('keydown', e => {
+    if (e.key === 'Escape' && links.classList.contains('open')) { setOpen(false); burger.focus(); }
+  });
+}
+
 /** Privacy / Terms <dialog> open + close wiring. */
 export function initLegalDialogs(): void {
   $$('[data-dlg]').forEach(btn => btn.addEventListener('click', () => {

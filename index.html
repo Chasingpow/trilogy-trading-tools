@@ -73,7 +73,30 @@
   .btn-ghost{border-color:var(--line);color:var(--ink);background:var(--surface)}
   .btn-ghost:hover{border-color:var(--brand)}
   .nav .btn{padding:12px 22px;font-size:15.5px}
-  @media (max-width:760px){.nav-links a:not(.btn){display:none}}
+  .nav-burger{display:none;margin-left:auto;background:var(--surface);border:1px solid var(--line);
+    border-radius:10px;width:46px;height:46px;cursor:pointer;
+    flex-direction:column;justify-content:center;align-items:center;gap:5px;flex:none}
+  .nav-burger span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:transform .2s ease,opacity .2s ease}
+  .nav-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .nav-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .nav-burger:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+  @media (max-width:860px){
+    .nav-in{position:relative;height:72px;gap:16px}
+    .mark{width:44px;height:44px;border-radius:12px}
+    .mark svg{width:25px;height:25px}
+    .wordmark b{font-size:17px}.wordmark b .serif-i{font-size:18px}
+    .wordmark span{font-size:10px}
+    .nav-burger{display:flex}
+    .nav-links{display:none;position:absolute;top:100%;left:-24px;right:-24px;z-index:49;
+      flex-direction:column;align-items:stretch;gap:0;margin-left:0;
+      background:var(--surface);border-bottom:1px solid var(--line);
+      padding:6px 24px 18px;box-shadow:var(--sh-card)}
+    .nav-links.open{display:flex}
+    .nav-links a:not(.btn){padding:13px 4px;font-size:16px;border-bottom:1px solid var(--line-soft)}
+    .nav-links a:not(.btn)::after{content:none}
+    .nav-links .btn{margin-top:12px;justify-content:center}
+  }
 
   /* ---------- hero ---------- */
   .hero{padding:84px 0 40px; position:relative; overflow:hidden}
@@ -86,7 +109,7 @@
   .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11.5px;font-weight:700;
     letter-spacing:.24em;color:var(--brand-ink);text-transform:uppercase}
   .eyebrow::before{content:"";width:26px;height:2px;background:var(--brand-grad);border-radius:2px}
-  .hero h1{font-size:clamp(42px,7vw,76px);font-weight:800;letter-spacing:-.015em}
+  .hero h1{font-size:clamp(30px,8.5vw,76px);font-weight:800;letter-spacing:-.015em}
   .hero h1 .serif-i{font-size:1.04em;letter-spacing:0}
   .hero p.lede{font-size:clamp(17px,2vw,20px);color:var(--ink-2);max-width:56ch;margin:0}
   .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
@@ -196,8 +219,8 @@
 
   /* ---------- coming soon ---------- */
   .soon{background:color-mix(in srgb,var(--surface) 82%,transparent);border-block:1px solid var(--line-soft)}
-  .soon-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch}
-  @media (max-width:760px){.soon-grid{grid-template-columns:1fr}}
+  .soon-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+  @media (max-width:980px){.soon-grid{grid-template-columns:1fr}}
   .soon-card{border:1px solid var(--line);border-radius:18px;padding:30px;display:flex;
     flex-direction:column;gap:14px;background:var(--surface);box-shadow:var(--sh-card)}
   .soon-card.live{border-color:var(--brand)}
@@ -332,6 +355,25 @@
   .rv-in{animation:rise .7s cubic-bezier(.22,.8,.28,1) backwards}
   @keyframes rise{from{opacity:0;transform:translateY(26px)}}
 
+  /* ---------- small screens ---------- */
+  @media (max-width:640px){
+    .wrap{padding:0 18px}
+    .hero{padding:56px 0 28px}
+    .hero-in{gap:20px}
+    .section{padding:60px 0}
+    .sec-head{margin-bottom:40px;gap:14px}
+    .ghost-cv{height:clamp(96px,26vw,200px);margin-bottom:-10px}
+    .sec-head::before{height:120px}
+    .product,.product.flip{gap:26px}
+    .stage-bar{padding:9px 12px}
+    .soon-card,.plan,.bundle{padding:22px}
+    .bundles-head{margin:40px 0 18px}
+    .contact-row .btn{width:100%;justify-content:center}
+    .aud-strip{padding:40px 0 0}
+    .ticker{margin-top:32px}
+    .foot-right{margin-left:0}
+  }
+
   @media (prefers-reduced-motion:reduce){
     *,*::before,*::after{animation-duration:.001s !important;transition-duration:.001s !important}
     .ticker-track{animation:none}
@@ -349,7 +391,10 @@
       <b>Trilogy <span class="serif-i">Trading</span> Tools</b>
       <span>SCANNER · JOURNAL · WEALTH</span>
     </a>
-    <div class="nav-links">
+    <button class="nav-burger" id="navBurger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
       <a href="#scanner">3T Pro Scanner</a>
       <a href="#journal">Trilogy Journal</a>
       <a href="#wealth">Wealth Builder</a>
@@ -545,6 +590,15 @@
           <li><span class="f-t">Nine events, one workflow</span><span class="f-d">NFP · CPI · FOMC · PCE · PPI · retail · GDP · JOLTS · ISM, plus a release calendar with countdowns.</span></li>
         </ul>
         <div class="card-cta"><a class="btn btn-brand" href="#contact">Get notified at launch</a></div>
+      </div>
+      <div class="soon-card">
+        <span class="soon-tag">COMING SOON</span>
+        <h3>Trilogy Tax Edge</h3>
+        <p>An AI tax agent built for traders, covering the CRA and the IRS. Ask it anything about your trading taxes and it answers only from canada.ca and irs.gov — with calculators for capital gains, wash sales and superficial losses, which account each holding belongs in, and contribution room.</p>
+        <ul class="feat">
+          <li><span class="f-t">Canada + US, cited answers</span><span class="f-d">A curated trader rulebook, five calculators, and every answer sourced from the tax authority itself.</span></li>
+        </ul>
+        <div class="card-cta"><a class="btn btn-ghost" href="#contact">Get notified at launch</a></div>
       </div>
       <div class="soon-card">
         <span class="soon-tag">IN TESTING</span>
@@ -811,6 +865,26 @@
     $$(".sec-head,.p-copy,.stage,.plan,.bundle,.soon-card").forEach((el, i) => {
       el.style.animationDelay = i % 4 * 0.08 + "s";
       if (el.getBoundingClientRect().top > innerHeight) rio.observe(el);
+    });
+  }
+  function initMobileNav() {
+    const burger = $("#navBurger");
+    const links = $("#navLinks");
+    if (!burger || !links) return;
+    const setOpen = (open) => {
+      links.classList.toggle("open", open);
+      burger.setAttribute("aria-expanded", String(open));
+      burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    };
+    burger.addEventListener("click", () => setOpen(!links.classList.contains("open")));
+    links.addEventListener("click", (e) => {
+      if (e.target.closest("a")) setOpen(false);
+    });
+    addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && links.classList.contains("open")) {
+        setOpen(false);
+        burger.focus();
+      }
     });
   }
   function initLegalDialogs() {
@@ -1201,6 +1275,7 @@
   }
 
   // src/main.ts
+  initMobileNav();
   initProgressBar();
   initCardSpotlight();
   initRevealOnScroll();
