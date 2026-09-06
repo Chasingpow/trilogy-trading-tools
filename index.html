@@ -108,6 +108,7 @@
   .tk .chg.dn{color:#ff5f7a;text-shadow:0 0 14px rgba(255,95,122,.5)}
   .up{color:var(--gain-ink)} .dn{color:var(--loss-ink)}
   .tk .fl{font-size:10px;color:#4d587f;letter-spacing:.14em}
+  .tk .tape-label{color:var(--brand-ink);letter-spacing:.18em;font-size:11px}
 
   /* ---------- audience strip ---------- */
   .aud-strip{padding:56px 0 8px}
@@ -1121,14 +1122,26 @@
     { symbol: "COSM", company: "Cosmos Health", price: 1.13, changePct: -4.1 },
     { symbol: "VERB", company: "Verb Tech", price: 5.24, changePct: 24.8 }
   ];
+  function render(track, entries, label) {
+    const cells = entries.map(({ symbol, company, price, changePct }) => {
+      const up = changePct >= 0;
+      return `<span class="tk"><b>${symbol}</b><span class="px num">${price.toFixed(2)}</span><span class="chg num ${up ? "up" : "dn"}">${up ? "▲" : "▼"} ${up ? "+" : ""}${changePct.toFixed(2)}%</span><span class="fl">${company.toUpperCase()}</span></span>`;
+    });
+    if (label) cells.unshift(`<span class="tk"><b class="tape-label">${label}</b></span>`);
+    const half = cells.join("");
+    track.innerHTML = half + half;
+  }
   function initTicker() {
     const track = $("#tickerTrack");
     if (!track) return;
-    const half = ENTRIES.map(({ symbol, company, price, changePct }) => {
-      const up = changePct >= 0;
-      return `<span class="tk"><b>${symbol}</b><span class="px num">${price.toFixed(2)}</span><span class="chg num ${up ? "up" : "dn"}">${up ? "▲" : "▼"} ${up ? "+" : ""}${changePct.toFixed(2)}%</span><span class="fl">${company.toUpperCase()}</span></span>`;
-    }).join("");
-    track.innerHTML = half + half;
+    render(track, ENTRIES);
+    fetch("ticker-data.json", { cache: "no-store" }).then((r) => r.ok ? r.json() : Promise.reject(new Error(String(r.status)))).then((data) => {
+      if (!Array.isArray(data.entries) || data.entries.length < 4) return;
+      const [y, m, d] = data.updated.split("-").map(Number);
+      const label = new Date(y, m - 1, d).toLocaleDateString("en-US", { month: "short", day: "numeric" });
+      render(track, data.entries, `TOP MOVERS · ${label}`);
+    }).catch(() => {
+    });
   }
 
   // src/stages.ts

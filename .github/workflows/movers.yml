@@ -1,0 +1,33 @@
+name: Update daily movers ticker
+
+on:
+  schedule:
+    # 21:35 UTC, Monday-Friday = shortly after US market close (4:35pm CT / 5:35pm ET).
+    # On market holidays FMP returns the last session, the file doesn't change,
+    # and the commit step is skipped automatically.
+    - cron: '35 21 * * 1-5'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  movers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Fetch top gainers and losers
+        env:
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+        run: node scripts/fetch-movers.mjs
+      - name: Commit if changed
+        run: |
+          git config user.name "movers-bot"
+          git config user.email "actions@github.com"
+          git add ticker-data.json
+          git diff --cached --quiet && echo "No change (market closed?)" && exit 0
+          git commit -m "Daily movers: $(date -u +%F)"
+          git push

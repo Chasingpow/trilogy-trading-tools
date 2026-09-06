@@ -8,7 +8,7 @@ interface TickerEntry {
   changePct: number;
 }
 
-/** Example gappers shown on the tape (marketing copy, not live data). */
+/** Fallback tape used until ticker-data.json loads (or when it can't). */
 const ENTRIES: TickerEntry[] = [
   { symbol: 'NRXS', company: 'NRx Sustain', price: 4.18, changePct: 42.7 },
   { symbol: 'LGVN', company: 'Longeveron', price: 3.62, changePct: 28.4 },
@@ -22,16 +22,36 @@ const ENTRIES: TickerEntry[] = [
   { symbol: 'VERB', company: 'Verb Tech', price: 5.24, changePct: 24.8 },
 ];
 
-export function initTicker(): void {
-  const track = $('#tickerTrack');
-  if (!track) return;
-  const half = ENTRIES.map(({ symbol, company, price, changePct }) => {
+function render(track: HTMLElement, entries: TickerEntry[], label?: string): void {
+  const cells = entries.map(({ symbol, company, price, changePct }) => {
     const up = changePct >= 0;
     return (
       `<span class="tk"><b>${symbol}</b><span class="px num">${price.toFixed(2)}</span>` +
       `<span class="chg num ${up ? 'up' : 'dn'}">${up ? '▲' : '▼'} ${up ? '+' : ''}${changePct.toFixed(2)}%</span>` +
       `<span class="fl">${company.toUpperCase()}</span></span>`
     );
-  }).join('');
+  });
+  if (label) cells.unshift(`<span class="tk"><b class="tape-label">${label}</b></span>`);
+  const half = cells.join('');
   track.innerHTML = half + half;   // doubled so the CSS loop is seamless
+}
+
+interface MoversFile { updated: string; entries: TickerEntry[]; }
+
+export function initTicker(): void {
+  const track = $('#tickerTrack');
+  if (!track) return;
+  render(track, ENTRIES);   // instant paint with the fallback tape
+
+  // Upgrade to the real daily movers, refreshed each trading day by
+  // .github/workflows/movers.yml. Any failure just keeps the fallback.
+  fetch('ticker-data.json', { cache: 'no-store' })
+    .then(r => (r.ok ? (r.json() as Promise<MoversFile>) : Promise.reject(new Error(String(r.status)))))
+    .then(data => {
+      if (!Array.isArray(data.entries) || data.entries.length < 4) return;
+      const [y, m, d] = data.updated.split('-').map(Number);
+      const label = new Date(y, m - 1, d).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+      render(track, data.entries, `TOP MOVERS · ${label}`);
+    })
+    .catch(() => { /* fallback tape stays up */ });
 }
