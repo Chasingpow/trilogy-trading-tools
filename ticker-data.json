@@ -1,77 +1,77 @@
 {
-  "updated": "2026-09-07",
+  "updated": "2026-09-08",
   "entries": [
     {
-      "symbol": "IMRN",
-      "company": "Immuron Limited",
-      "price": 1.8,
-      "changePct": 62.16216
+      "symbol": "GCDT",
+      "company": "Green Circle Decarbonize T",
+      "price": 0.9349,
+      "changePct": 149.90644
     },
     {
-      "symbol": "CDTG",
-      "company": "CDT Environmental Technolo",
-      "price": 1.32,
-      "changePct": 46.71557
+      "symbol": "INDP",
+      "company": "Indaptus Therapeutics, Inc",
+      "price": 1.85,
+      "changePct": 51.63934
     },
     {
-      "symbol": "BANL",
-      "company": "CBL International Limited",
-      "price": 9.01,
-      "changePct": -40.72368
+      "symbol": "FCUV",
+      "company": "Focus Universal Inc.",
+      "price": 5.91,
+      "changePct": -65.23529
     },
     {
-      "symbol": "AOUT",
-      "company": "American Outdoor Brands, I",
-      "price": 14.48,
-      "changePct": 44.65534
+      "symbol": "BNC",
+      "company": "CEA Industries Inc. Common",
+      "price": 5.25,
+      "changePct": 50.4298
     },
     {
-      "symbol": "ONCO",
-      "company": "Onconetix, Inc.",
-      "price": 1.02,
-      "changePct": 38.02436
+      "symbol": "WYHG",
+      "company": "Wing Yip Food Holdings Gro",
+      "price": 5.88,
+      "changePct": 44.82759
     },
     {
-      "symbol": "LULG",
-      "company": "Leverage Shares 2x Long LU",
-      "price": 4.27,
-      "changePct": -35.10638
+      "symbol": "RETO",
+      "company": "ReTo Eco-Solutions, Inc.",
+      "price": 0.5363,
+      "changePct": -49.40566
     },
     {
-      "symbol": "GRNQ",
-      "company": "Greenpro Capital Corp.",
-      "price": 18.7,
-      "changePct": 30.76923
+      "symbol": "TDOT",
+      "company": "21shares Polkadot ETF Shar",
+      "price": 14.9049,
+      "changePct": 41.68156
     },
     {
-      "symbol": "RIBBR",
-      "company": "Ribbon Acquisition Corp.",
+      "symbol": "NUR",
+      "company": "Nuran Wireless Inc",
+      "price": 2.46,
+      "changePct": 38.98305
+    },
+    {
+      "symbol": "BIAF",
+      "company": "bioAffinity Technologies, ",
+      "price": 8.93,
+      "changePct": -41.51932
+    },
+    {
+      "symbol": "MOBX",
+      "company": "Mobix Labs, Inc.",
+      "price": 1.27,
+      "changePct": 36.54446
+    },
+    {
+      "symbol": "PDSB",
+      "company": "PDS Biotechnology Corporat",
       "price": 0.3,
-      "changePct": 28.75536
+      "changePct": 36.36364
     },
     {
-      "symbol": "CMND",
-      "company": "Clearmind Medicine Inc.",
-      "price": 1.16,
-      "changePct": -31.76471
-    },
-    {
-      "symbol": "NRSN",
-      "company": "NeuroSense Therapeutics Lt",
-      "price": 0.5108,
-      "changePct": 27.19124
-    },
-    {
-      "symbol": "GRI",
-      "company": "GRI Bio, Inc.",
-      "price": 2.88,
-      "changePct": 25.76419
-    },
-    {
-      "symbol": "IPEXU",
-      "company": "Inflection Point Acquisiti",
-      "price": 8.72,
-      "changePct": -31.01266
+      "symbol": "LEXX",
+      "company": "Lexaria Bioscience Corp.",
+      "price": 9.37,
+      "changePct": -33.78092
     }
   ]
 }
