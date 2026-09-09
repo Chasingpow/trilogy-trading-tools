@@ -1,77 +1,77 @@
 {
-  "updated": "2026-09-08",
+  "updated": "2026-09-09",
   "entries": [
     {
-      "symbol": "GCDT",
-      "company": "Green Circle Decarbonize T",
-      "price": 0.9349,
-      "changePct": 149.90644
+      "symbol": "MGN",
+      "company": "Megan Holdings Limited Ord",
+      "price": 0.2758,
+      "changePct": 174.7012
     },
     {
-      "symbol": "INDP",
-      "company": "Indaptus Therapeutics, Inc",
-      "price": 1.85,
-      "changePct": 51.63934
+      "symbol": "SUNE",
+      "company": "SUNation Energy Inc.",
+      "price": 4.51,
+      "changePct": 90.29536
     },
     {
-      "symbol": "FCUV",
-      "company": "Focus Universal Inc.",
-      "price": 5.91,
-      "changePct": -65.23529
+      "symbol": "CRMT",
+      "company": "America's Car-Mart, Inc.",
+      "price": 1.475,
+      "changePct": -40.76305
     },
     {
-      "symbol": "BNC",
-      "company": "CEA Industries Inc. Common",
-      "price": 5.25,
-      "changePct": 50.4298
+      "symbol": "YMAT",
+      "company": "J-Star Holding Co., Ltd. O",
+      "price": 2.27,
+      "changePct": 71.32075
     },
     {
-      "symbol": "WYHG",
-      "company": "Wing Yip Food Holdings Gro",
-      "price": 5.88,
-      "changePct": 44.82759
-    },
-    {
-      "symbol": "RETO",
-      "company": "ReTo Eco-Solutions, Inc.",
-      "price": 0.5363,
-      "changePct": -49.40566
-    },
-    {
-      "symbol": "TDOT",
-      "company": "21shares Polkadot ETF Shar",
-      "price": 14.9049,
-      "changePct": 41.68156
+      "symbol": "FTFT",
+      "company": "Future FinTech Group Inc.",
+      "price": 2.09,
+      "changePct": 59.54198
     },
     {
       "symbol": "NUR",
       "company": "Nuran Wireless Inc",
-      "price": 2.46,
-      "changePct": 38.98305
+      "price": 1.55,
+      "changePct": -36.99187
     },
     {
-      "symbol": "BIAF",
-      "company": "bioAffinity Technologies, ",
-      "price": 8.93,
-      "changePct": -41.51932
+      "symbol": "IRHOR",
+      "company": "Iron Horse Acquisitions Co",
+      "price": 0.21,
+      "changePct": 49.46619
     },
     {
-      "symbol": "MOBX",
-      "company": "Mobix Labs, Inc.",
-      "price": 1.27,
-      "changePct": 36.54446
+      "symbol": "ALISR",
+      "company": "Calisa Acquisition Corp Ri",
+      "price": 0.75,
+      "changePct": 36.88629
     },
     {
-      "symbol": "PDSB",
-      "company": "PDS Biotechnology Corporat",
-      "price": 0.3,
-      "changePct": 36.36364
+      "symbol": "TTAN",
+      "company": "ServiceTitan, Inc.",
+      "price": 57.12,
+      "changePct": -29.98284
     },
     {
-      "symbol": "LEXX",
-      "company": "Lexaria Bioscience Corp.",
-      "price": 9.37,
-      "changePct": -33.78092
+      "symbol": "IRD",
+      "company": "Opus Genetics, Inc.",
+      "price": 5.73,
+      "changePct": 32.02765
+    },
+    {
+      "symbol": "ODD",
+      "company": "Oddity Tech Ltd.",
+      "price": 16.48,
+      "changePct": 26.52591
+    },
+    {
+      "symbol": "GCDT",
+      "company": "Green Circle Decarbonize T",
+      "price": 0.6383,
+      "changePct": -29.85714
     }
   ]
 }
