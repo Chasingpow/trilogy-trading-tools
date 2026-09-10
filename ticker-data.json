@@ -1,77 +1,77 @@
 {
-  "updated": "2026-09-09",
+  "updated": "2026-09-10",
   "entries": [
     {
-      "symbol": "MGN",
-      "company": "Megan Holdings Limited Ord",
-      "price": 0.2758,
-      "changePct": 174.7012
+      "symbol": "TNON",
+      "company": "Tenon Medical, Inc.",
+      "price": 5.3,
+      "changePct": 117.21311
     },
     {
-      "symbol": "SUNE",
-      "company": "SUNation Energy Inc.",
-      "price": 4.51,
-      "changePct": 90.29536
+      "symbol": "DBGI",
+      "company": "Digital Brands Group, Inc.",
+      "price": 6.79,
+      "changePct": 81.06667
     },
     {
-      "symbol": "CRMT",
-      "company": "America's Car-Mart, Inc.",
-      "price": 1.475,
-      "changePct": -40.76305
+      "symbol": "CDT",
+      "company": "CDT Equity Inc.",
+      "price": 0.3448,
+      "changePct": -42.54291
     },
     {
-      "symbol": "YMAT",
-      "company": "J-Star Holding Co., Ltd. O",
-      "price": 2.27,
-      "changePct": 71.32075
+      "symbol": "AHMA",
+      "company": "Ambitions Enterprise Manag",
+      "price": 1.77,
+      "changePct": 38.28125
     },
     {
-      "symbol": "FTFT",
-      "company": "Future FinTech Group Inc.",
-      "price": 2.09,
-      "changePct": 59.54198
+      "symbol": "PCLA",
+      "company": "PicoCELA Inc.",
+      "price": 9.72,
+      "changePct": 30.9973
     },
     {
-      "symbol": "NUR",
-      "company": "Nuran Wireless Inc",
-      "price": 1.55,
-      "changePct": -36.99187
+      "symbol": "LEXX",
+      "company": "Lexaria Bioscience Corp.",
+      "price": 4.05,
+      "changePct": -38.63636
     },
     {
-      "symbol": "IRHOR",
-      "company": "Iron Horse Acquisitions Co",
-      "price": 0.21,
-      "changePct": 49.46619
+      "symbol": "PSIG",
+      "company": "PS International Group Ltd",
+      "price": 2.29,
+      "changePct": 28.29132
     },
     {
-      "symbol": "ALISR",
-      "company": "Calisa Acquisition Corp Ri",
-      "price": 0.75,
-      "changePct": 36.88629
+      "symbol": "VIOT",
+      "company": "Viomi Technology Co., Ltd",
+      "price": 1.36,
+      "changePct": 25.92593
     },
     {
-      "symbol": "TTAN",
-      "company": "ServiceTitan, Inc.",
-      "price": 57.12,
-      "changePct": -29.98284
+      "symbol": "HCAI",
+      "company": "Hauchen AI Parking Managem",
+      "price": 2.59,
+      "changePct": -38.33333
     },
     {
-      "symbol": "IRD",
-      "company": "Opus Genetics, Inc.",
-      "price": 5.73,
-      "changePct": 32.02765
+      "symbol": "AEON",
+      "company": "AEON Biopharma, Inc.",
+      "price": 0.29,
+      "changePct": 25.54113
     },
     {
-      "symbol": "ODD",
-      "company": "Oddity Tech Ltd.",
-      "price": 16.48,
-      "changePct": 26.52591
+      "symbol": "NWGL",
+      "company": "CL Workshop Group Limited",
+      "price": 1.33,
+      "changePct": 23.14815
     },
     {
-      "symbol": "GCDT",
-      "company": "Green Circle Decarbonize T",
-      "price": 0.6383,
-      "changePct": -29.85714
+      "symbol": "SKIL",
+      "company": "Skillsoft Corp.",
+      "price": 4.19,
+      "changePct": -34.22292
     }
   ]
 }
