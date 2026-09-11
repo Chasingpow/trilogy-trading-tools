@@ -1,77 +1,77 @@
 {
-  "updated": "2026-09-10",
+  "updated": "2026-09-11",
   "entries": [
     {
-      "symbol": "TNON",
-      "company": "Tenon Medical, Inc.",
-      "price": 5.3,
-      "changePct": 117.21311
+      "symbol": "BDRX",
+      "company": "Biodexa Pharmaceuticals Pl",
+      "price": 1.3,
+      "changePct": 96.93986
     },
     {
-      "symbol": "DBGI",
-      "company": "Digital Brands Group, Inc.",
-      "price": 6.79,
-      "changePct": 81.06667
+      "symbol": "APURR",
+      "company": "Aperture AC",
+      "price": 0.37,
+      "changePct": 89.74359
+    },
+    {
+      "symbol": "UCAR",
+      "company": "U Power Limited",
+      "price": 4.97,
+      "changePct": -32.83784
+    },
+    {
+      "symbol": "TRUG",
+      "company": "TruGolf Holdings, Inc.",
+      "price": 0.6533,
+      "changePct": 76.13912
+    },
+    {
+      "symbol": "ACVA",
+      "company": "ACV Auctions Inc.",
+      "price": 10.41,
+      "changePct": 44.18283
+    },
+    {
+      "symbol": "FIFGX",
+      "company": "Fidelity SAI Inflation-Foc",
+      "price": 100.4,
+      "changePct": -29.87358
+    },
+    {
+      "symbol": "FEIM",
+      "company": "Frequency Electronics, Inc",
+      "price": 88.375,
+      "changePct": 42.40251
+    },
+    {
+      "symbol": "FTFT",
+      "company": "Future FinTech Group Inc.",
+      "price": 2.88,
+      "changePct": 40.4878
     },
     {
       "symbol": "CDT",
       "company": "CDT Equity Inc.",
-      "price": 0.3448,
-      "changePct": -42.54291
+      "price": 0.25,
+      "changePct": -27.4942
     },
     {
-      "symbol": "AHMA",
-      "company": "Ambitions Enterprise Manag",
-      "price": 1.77,
-      "changePct": 38.28125
+      "symbol": "GTBP",
+      "company": "GT Biopharma, Inc.",
+      "price": 8.61,
+      "changePct": 39.32039
     },
     {
-      "symbol": "PCLA",
-      "company": "PicoCELA Inc.",
-      "price": 9.72,
-      "changePct": 30.9973
+      "symbol": "SXTC",
+      "company": "China SXT Pharmaceuticals,",
+      "price": 2.56,
+      "changePct": 32.64249
     },
     {
-      "symbol": "LEXX",
-      "company": "Lexaria Bioscience Corp.",
-      "price": 4.05,
-      "changePct": -38.63636
-    },
-    {
-      "symbol": "PSIG",
-      "company": "PS International Group Ltd",
-      "price": 2.29,
-      "changePct": 28.29132
-    },
-    {
-      "symbol": "VIOT",
-      "company": "Viomi Technology Co., Ltd",
-      "price": 1.36,
-      "changePct": 25.92593
-    },
-    {
-      "symbol": "HCAI",
-      "company": "Hauchen AI Parking Managem",
-      "price": 2.59,
-      "changePct": -38.33333
-    },
-    {
-      "symbol": "AEON",
-      "company": "AEON Biopharma, Inc.",
-      "price": 0.29,
-      "changePct": 25.54113
-    },
-    {
-      "symbol": "NWGL",
-      "company": "CL Workshop Group Limited",
-      "price": 1.33,
-      "changePct": 23.14815
-    },
-    {
-      "symbol": "SKIL",
-      "company": "Skillsoft Corp.",
-      "price": 4.19,
-      "changePct": -34.22292
+      "symbol": "CVV",
+      "company": "CVD Equipment Corporation",
+      "price": 4.68,
+      "changePct": -25.35885
     }
   ]
 }
