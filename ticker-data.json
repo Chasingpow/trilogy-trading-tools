@@ -1,77 +1,77 @@
 {
-  "updated": "2026-09-14",
+  "updated": "2026-09-15",
   "entries": [
-    {
-      "symbol": "FTFT",
-      "company": "Future FinTech Group Inc.",
-      "price": 8.04,
-      "changePct": 179.16667
-    },
-    {
-      "symbol": "NCT",
-      "company": "Intercont (Cayman) Limited",
-      "price": 0.5,
-      "changePct": 66.8335
-    },
-    {
-      "symbol": "QCLS",
-      "company": "Q/C Technologies, Inc.",
-      "price": 0.5601,
-      "changePct": -67.24561
-    },
-    {
-      "symbol": "BMGL",
-      "company": "Basel Medical Group Ltd Or",
-      "price": 7.14,
-      "changePct": 55.8952
-    },
-    {
-      "symbol": "SCNI",
-      "company": "Scinai Immunotherapeutics ",
-      "price": 2.44,
-      "changePct": 46.98795
-    },
-    {
-      "symbol": "CLLS",
-      "company": "Cellectis S.A.",
-      "price": 1.83,
-      "changePct": -40.96774
-    },
     {
       "symbol": "VEEA",
       "company": "Veea Inc.",
-      "price": 2.29,
-      "changePct": 46.79487
+      "price": 5.71,
+      "changePct": 149.34498
     },
     {
-      "symbol": "VNCE",
-      "company": "Vince Holding Corp.",
-      "price": 7.65,
-      "changePct": 45.99237
+      "symbol": "MEDS",
+      "company": "DataMEDS AI, Inc.",
+      "price": 1.62,
+      "changePct": 87.21831
     },
     {
-      "symbol": "HQ",
-      "company": "Horizon Quantum Holdings L",
-      "price": 10.34,
-      "changePct": -32.06307
+      "symbol": "FEED",
+      "company": "NanoVibronix, Inc. Common ",
+      "price": 1.03,
+      "changePct": -69.25373
+    },
+    {
+      "symbol": "FBDT",
+      "company": "First Breach Inc.",
+      "price": 1,
+      "changePct": 55.98191
     },
     {
       "symbol": "PDSB",
       "company": "PDS Biotechnology Corporat",
-      "price": 0.3991,
-      "changePct": 35.33401
+      "price": 0.5853,
+      "changePct": 46.65497
     },
     {
-      "symbol": "GTBP",
-      "company": "GT Biopharma, Inc.",
-      "price": 11.63,
-      "changePct": 35.07549
+      "symbol": "HCAI",
+      "company": "Hauchen AI Parking Managem",
+      "price": 0.6089,
+      "changePct": -67.1752
     },
     {
-      "symbol": "XHLD",
-      "company": "TEN Holdings, Inc. Common ",
-      "price": 8.92,
-      "changePct": -28.81085
+      "symbol": "NWGL",
+      "company": "CL Workshop Group Limited",
+      "price": 1.74,
+      "changePct": 43.80165
+    },
+    {
+      "symbol": "MYSZ",
+      "company": "My Size, Inc.",
+      "price": 2.32,
+      "changePct": 39.75904
+    },
+    {
+      "symbol": "LKSPR",
+      "company": "Lake Superior Acquisition ",
+      "price": 0.7,
+      "changePct": -50.35461
+    },
+    {
+      "symbol": "PSIG",
+      "company": "PS International Group Ltd",
+      "price": 3.42,
+      "changePct": 34.64567
+    },
+    {
+      "symbol": "VRA",
+      "company": "Vera Bradley, Inc.",
+      "price": 4.09,
+      "changePct": 34.53947
+    },
+    {
+      "symbol": "SOBR",
+      "company": "SOBR Safe, Inc.",
+      "price": 0.203,
+      "changePct": -47.96206
     }
   ]
 }
