@@ -1,77 +1,77 @@
 {
-  "updated": "2026-09-15",
+  "updated": "2026-09-16",
   "entries": [
     {
-      "symbol": "VEEA",
-      "company": "Veea Inc.",
-      "price": 5.71,
-      "changePct": 149.34498
+      "symbol": "DLXY",
+      "company": "Delixy Holdings Limited Or",
+      "price": 2.29,
+      "changePct": 451.80723
     },
     {
       "symbol": "MEDS",
       "company": "DataMEDS AI, Inc.",
-      "price": 1.62,
-      "changePct": 87.21831
+      "price": 6.07,
+      "changePct": 274.69136
     },
     {
-      "symbol": "FEED",
-      "company": "NanoVibronix, Inc. Common ",
-      "price": 1.03,
-      "changePct": -69.25373
+      "symbol": "XBIO",
+      "company": "Xenetic Biosciences, Inc.",
+      "price": 2.19,
+      "changePct": -48.71194
     },
     {
-      "symbol": "FBDT",
-      "company": "First Breach Inc.",
-      "price": 1,
-      "changePct": 55.98191
+      "symbol": "SNYR",
+      "company": "Synergy CHC Corp.",
+      "price": 0.2744,
+      "changePct": 233.41434
+    },
+    {
+      "symbol": "QCLS",
+      "company": "Q/C Technologies, Inc.",
+      "price": 0.964,
+      "changePct": 118.4455
+    },
+    {
+      "symbol": "CUPR",
+      "company": "Cuprina Holdings (Cayman) ",
+      "price": 1.6,
+      "changePct": -45.39249
+    },
+    {
+      "symbol": "AEHL",
+      "company": "Antelope Enterprise Holdin",
+      "price": 9.22,
+      "changePct": 78.68217
+    },
+    {
+      "symbol": "ZTG",
+      "company": "Zenta Group Company Limite",
+      "price": 1.18,
+      "changePct": 75.33432
+    },
+    {
+      "symbol": "MYSE",
+      "company": "Myseum Inc.",
+      "price": 2.11,
+      "changePct": -34.67492
     },
     {
       "symbol": "PDSB",
       "company": "PDS Biotechnology Corporat",
-      "price": 0.5853,
-      "changePct": 46.65497
+      "price": 0.9906,
+      "changePct": 69.24654
     },
     {
-      "symbol": "HCAI",
-      "company": "Hauchen AI Parking Managem",
-      "price": 0.6089,
-      "changePct": -67.1752
+      "symbol": "TPST",
+      "company": "Tempest Therapeutics, Inc.",
+      "price": 1.21,
+      "changePct": 60.18004
     },
     {
-      "symbol": "NWGL",
-      "company": "CL Workshop Group Limited",
-      "price": 1.74,
-      "changePct": 43.80165
-    },
-    {
-      "symbol": "MYSZ",
-      "company": "My Size, Inc.",
-      "price": 2.32,
-      "changePct": 39.75904
-    },
-    {
-      "symbol": "LKSPR",
-      "company": "Lake Superior Acquisition ",
-      "price": 0.7,
-      "changePct": -50.35461
-    },
-    {
-      "symbol": "PSIG",
-      "company": "PS International Group Ltd",
-      "price": 3.42,
-      "changePct": 34.64567
-    },
-    {
-      "symbol": "VRA",
-      "company": "Vera Bradley, Inc.",
-      "price": 4.09,
-      "changePct": 34.53947
-    },
-    {
-      "symbol": "SOBR",
-      "company": "SOBR Safe, Inc.",
-      "price": 0.203,
-      "changePct": -47.96206
+      "symbol": "RETO",
+      "company": "ReTo Eco-Solutions, Inc.",
+      "price": 1.84,
+      "changePct": -34.28571
     }
   ]
 }
