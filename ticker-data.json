@@ -1,77 +1,77 @@
 {
-  "updated": "2026-09-17",
+  "updated": "2026-09-18",
   "entries": [
     {
-      "symbol": "AEMD",
-      "company": "Aethlon Medical, Inc.",
-      "price": 6.78,
-      "changePct": 374.12587
+      "symbol": "IMCC",
+      "company": "IM Cannabis Corp.",
+      "price": 4.23,
+      "changePct": 143.10345
+    },
+    {
+      "symbol": "QNME",
+      "company": "Quanome Technologies, Inc.",
+      "price": 0.5583,
+      "changePct": 92.25207
     },
     {
       "symbol": "PAAI",
       "company": "Paradium.AI, Inc.",
-      "price": 3.34,
-      "changePct": 271.15235
+      "price": 1.5,
+      "changePct": -55.08982
     },
     {
-      "symbol": "RETO",
-      "company": "ReTo Eco-Solutions, Inc.",
-      "price": 0.209,
-      "changePct": -88.6413
+      "symbol": "REFR",
+      "company": "Research Frontiers Incorpo",
+      "price": 0.6513,
+      "changePct": 68.49049
+    },
+    {
+      "symbol": "GIPR",
+      "company": "Generation Income Properti",
+      "price": 0.7183,
+      "changePct": 63.43572
+    },
+    {
+      "symbol": "FRGT",
+      "company": "Freight Technologies, Inc.",
+      "price": 0.6302,
+      "changePct": -35.4766
+    },
+    {
+      "symbol": "GEMG",
+      "company": "Leverage Shares 2x Long GE",
+      "price": 12.0261,
+      "changePct": 60.39505
+    },
+    {
+      "symbol": "MRNO",
+      "company": "Murano Global Investments ",
+      "price": 0.3447,
+      "changePct": 56.75307
     },
     {
       "symbol": "DAIC",
       "company": "CID HoldCo, Inc.",
-      "price": 5.3,
-      "changePct": 163.68159
+      "price": 3.55,
+      "changePct": -33.01887
     },
     {
-      "symbol": "DTSS",
-      "company": "Datasea Intelligent Techno",
-      "price": 1.22,
-      "changePct": 106.35995
+      "symbol": "TJGC",
+      "company": "TJGC Group Limited",
+      "price": 16.84,
+      "changePct": 52.95186
     },
     {
-      "symbol": "DLXY",
-      "company": "Delixy Holdings Limited Or",
-      "price": 0.8448,
-      "changePct": -63.10917
+      "symbol": "NBRGR",
+      "company": "Newbridge Acquisition Limi",
+      "price": 0.3639,
+      "changePct": 51.43571
     },
     {
-      "symbol": "BIAF",
-      "company": "bioAffinity Technologies, ",
-      "price": 8.75,
-      "changePct": 63.5514
-    },
-    {
-      "symbol": "SDST",
-      "company": "Stardust Power Inc.",
-      "price": 0.2516,
-      "changePct": 57.64411
-    },
-    {
-      "symbol": "LGVN",
-      "company": "Longeveron Inc.",
-      "price": 2.71,
-      "changePct": -59.43114
-    },
-    {
-      "symbol": "KXIN",
-      "company": "Kaixin Auto Holdings",
-      "price": 1.75,
-      "changePct": 54.86726
-    },
-    {
-      "symbol": "TURB",
-      "company": "Turbo Energy, S.A. America",
-      "price": 1.34,
-      "changePct": 49.97202
-    },
-    {
-      "symbol": "TGL",
-      "company": "Treasure Global Inc.",
-      "price": 2.21,
-      "changePct": -37.03704
+      "symbol": "SMST",
+      "company": "Defiance Daily Target 2x S",
+      "price": 13.84,
+      "changePct": -32.55361
     }
   ]
 }
