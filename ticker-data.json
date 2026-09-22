@@ -2,76 +2,76 @@
   "updated": "2026-09-22",
   "entries": [
     {
+      "symbol": "ZEO",
+      "company": "Zeo Energy Corp.",
+      "price": 0.4898,
+      "changePct": 57.03751
+    },
+    {
+      "symbol": "RAIN",
+      "company": "Rain Enhancement Technolog",
+      "price": 1.02,
+      "changePct": 54.31165
+    },
+    {
+      "symbol": "SOS",
+      "company": "SOS Limited",
+      "price": 0.3486,
+      "changePct": -54.62119
+    },
+    {
       "symbol": "GRML",
       "company": "Greenland Mines Ltd.",
-      "price": 9.42,
-      "changePct": 230.52632
+      "price": 14.15,
+      "changePct": 50.21231
     },
     {
-      "symbol": "GLND",
-      "company": "Greenland Energy Company C",
-      "price": 2.88,
-      "changePct": 140
+      "symbol": "CWD",
+      "company": "CaliberCos Inc.",
+      "price": 0.7283,
+      "changePct": 40.32755
     },
     {
-      "symbol": "SMX",
-      "company": "SMX (Security Matters) Pub",
-      "price": 10.98,
-      "changePct": -35.44974
+      "symbol": "CMPX",
+      "company": "Compass Therapeutics, Inc.",
+      "price": 1.24,
+      "changePct": -31.86813
     },
     {
-      "symbol": "BTTC",
-      "company": "Black Titan Corporation",
-      "price": 0.7948,
-      "changePct": 117.75342
+      "symbol": "FLNA",
+      "company": "Filana Therapeutics, Inc.",
+      "price": 1.03,
+      "changePct": 39.2833
     },
     {
-      "symbol": "VEEE",
-      "company": "Twin Vee Powercats Co.",
-      "price": 17.24,
-      "changePct": 100.9324
+      "symbol": "VKTX",
+      "company": "Viking Therapeutics, Inc.",
+      "price": 40.85,
+      "changePct": 35.66921
     },
     {
-      "symbol": "NBRGR",
-      "company": "Newbridge Acquisition Limi",
-      "price": 0.235,
-      "changePct": -35.42182
+      "symbol": "TGL",
+      "company": "Treasure Global Inc.",
+      "price": 2.09,
+      "changePct": -29.39189
     },
     {
-      "symbol": "CRMU",
-      "company": "Leverage Shares 2x Long CR",
-      "price": 3.45,
-      "changePct": 76.47059
+      "symbol": "ZKIN",
+      "company": "ZK International Group Co.",
+      "price": 1.45,
+      "changePct": 35.51402
     },
     {
-      "symbol": "VRME",
-      "company": "VerifyMe, Inc.",
-      "price": 1.38,
-      "changePct": 73.58491
+      "symbol": "IMCC",
+      "company": "IM Cannabis Corp.",
+      "price": 4.14,
+      "changePct": 34.19773
     },
     {
-      "symbol": "MBRX",
-      "company": "Moleculin Biotech, Inc.",
-      "price": 0.5202,
-      "changePct": -32.71246
-    },
-    {
-      "symbol": "AVAT",
-      "company": "Avalanche Treasury Corpora",
-      "price": 1.87,
-      "changePct": 73.14815
-    },
-    {
-      "symbol": "TXXS",
-      "company": "21Shares 2x Long Sui ETF",
-      "price": 38.5067,
-      "changePct": 53.71936
-    },
-    {
-      "symbol": "DLXY",
-      "company": "Delixy Holdings Limited Or",
-      "price": 0.5979,
-      "changePct": -30.49291
+      "symbol": "HUBC",
+      "company": "HUB Cyber Security Ltd.",
+      "price": 4.24,
+      "changePct": -29.33333
     }
   ]
 }
