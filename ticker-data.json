@@ -1,77 +1,77 @@
 {
-  "updated": "2026-09-18",
+  "updated": "2026-09-22",
   "entries": [
     {
-      "symbol": "IMCC",
-      "company": "IM Cannabis Corp.",
-      "price": 4.23,
-      "changePct": 143.10345
+      "symbol": "GRML",
+      "company": "Greenland Mines Ltd.",
+      "price": 9.42,
+      "changePct": 230.52632
     },
     {
-      "symbol": "QNME",
-      "company": "Quanome Technologies, Inc.",
-      "price": 0.5583,
-      "changePct": 92.25207
+      "symbol": "GLND",
+      "company": "Greenland Energy Company C",
+      "price": 2.88,
+      "changePct": 140
     },
     {
-      "symbol": "PAAI",
-      "company": "Paradium.AI, Inc.",
-      "price": 1.5,
-      "changePct": -55.08982
+      "symbol": "SMX",
+      "company": "SMX (Security Matters) Pub",
+      "price": 10.98,
+      "changePct": -35.44974
     },
     {
-      "symbol": "REFR",
-      "company": "Research Frontiers Incorpo",
-      "price": 0.6513,
-      "changePct": 68.49049
+      "symbol": "BTTC",
+      "company": "Black Titan Corporation",
+      "price": 0.7948,
+      "changePct": 117.75342
     },
     {
-      "symbol": "GIPR",
-      "company": "Generation Income Properti",
-      "price": 0.7183,
-      "changePct": 63.43572
-    },
-    {
-      "symbol": "FRGT",
-      "company": "Freight Technologies, Inc.",
-      "price": 0.6302,
-      "changePct": -35.4766
-    },
-    {
-      "symbol": "GEMG",
-      "company": "Leverage Shares 2x Long GE",
-      "price": 12.0261,
-      "changePct": 60.39505
-    },
-    {
-      "symbol": "MRNO",
-      "company": "Murano Global Investments ",
-      "price": 0.3447,
-      "changePct": 56.75307
-    },
-    {
-      "symbol": "DAIC",
-      "company": "CID HoldCo, Inc.",
-      "price": 3.55,
-      "changePct": -33.01887
-    },
-    {
-      "symbol": "TJGC",
-      "company": "TJGC Group Limited",
-      "price": 16.84,
-      "changePct": 52.95186
+      "symbol": "VEEE",
+      "company": "Twin Vee Powercats Co.",
+      "price": 17.24,
+      "changePct": 100.9324
     },
     {
       "symbol": "NBRGR",
       "company": "Newbridge Acquisition Limi",
-      "price": 0.3639,
-      "changePct": 51.43571
+      "price": 0.235,
+      "changePct": -35.42182
     },
     {
-      "symbol": "SMST",
-      "company": "Defiance Daily Target 2x S",
-      "price": 13.84,
-      "changePct": -32.55361
+      "symbol": "CRMU",
+      "company": "Leverage Shares 2x Long CR",
+      "price": 3.45,
+      "changePct": 76.47059
+    },
+    {
+      "symbol": "VRME",
+      "company": "VerifyMe, Inc.",
+      "price": 1.38,
+      "changePct": 73.58491
+    },
+    {
+      "symbol": "MBRX",
+      "company": "Moleculin Biotech, Inc.",
+      "price": 0.5202,
+      "changePct": -32.71246
+    },
+    {
+      "symbol": "AVAT",
+      "company": "Avalanche Treasury Corpora",
+      "price": 1.87,
+      "changePct": 73.14815
+    },
+    {
+      "symbol": "TXXS",
+      "company": "21Shares 2x Long Sui ETF",
+      "price": 38.5067,
+      "changePct": 53.71936
+    },
+    {
+      "symbol": "DLXY",
+      "company": "Delixy Holdings Limited Or",
+      "price": 0.5979,
+      "changePct": -30.49291
     }
   ]
 }
