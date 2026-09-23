@@ -1,77 +1,77 @@
 {
-  "updated": "2026-09-22",
+  "updated": "2026-09-23",
   "entries": [
     {
-      "symbol": "ZEO",
-      "company": "Zeo Energy Corp.",
-      "price": 0.4898,
-      "changePct": 57.03751
+      "symbol": "BENF",
+      "company": "Beneficient",
+      "price": 2.9,
+      "changePct": 438.73305
     },
     {
-      "symbol": "RAIN",
-      "company": "Rain Enhancement Technolog",
-      "price": 1.02,
-      "changePct": 54.31165
+      "symbol": "WHLR",
+      "company": "Wheeler Real Estate Invest",
+      "price": 5.44,
+      "changePct": 190.90909
     },
     {
-      "symbol": "SOS",
-      "company": "SOS Limited",
-      "price": 0.3486,
-      "changePct": -54.62119
+      "symbol": "JAGX",
+      "company": "Jaguar Health, Inc.",
+      "price": 8.91,
+      "changePct": -74.14393
     },
     {
-      "symbol": "GRML",
-      "company": "Greenland Mines Ltd.",
-      "price": 14.15,
-      "changePct": 50.21231
+      "symbol": "VSA",
+      "company": "VisionSys AI Inc.",
+      "price": 3.64,
+      "changePct": 83.83838
     },
     {
-      "symbol": "CWD",
-      "company": "CaliberCos Inc.",
-      "price": 0.7283,
-      "changePct": 40.32755
+      "symbol": "ARTL",
+      "company": "Artelo Biosciences, Inc.",
+      "price": 7.31,
+      "changePct": 76.14458
     },
     {
-      "symbol": "CMPX",
-      "company": "Compass Therapeutics, Inc.",
-      "price": 1.24,
-      "changePct": -31.86813
+      "symbol": "ADGM",
+      "company": "Adagio Medical Holdings, I",
+      "price": 0.228,
+      "changePct": -53.03811
     },
     {
-      "symbol": "FLNA",
-      "company": "Filana Therapeutics, Inc.",
-      "price": 1.03,
-      "changePct": 39.2833
+      "symbol": "BFRG",
+      "company": "Bullfrog AI Holdings, Inc.",
+      "price": 0.95,
+      "changePct": 58.33333
     },
     {
-      "symbol": "VKTX",
-      "company": "Viking Therapeutics, Inc.",
-      "price": 40.85,
-      "changePct": 35.66921
+      "symbol": "GCDT",
+      "company": "Green Circle Decarbonize T",
+      "price": 0.511,
+      "changePct": 50.02936
     },
     {
-      "symbol": "TGL",
-      "company": "Treasure Global Inc.",
-      "price": 2.09,
-      "changePct": -29.39189
+      "symbol": "HVII",
+      "company": "Hennessy Capital Investmen",
+      "price": 4.46,
+      "changePct": -50.88106
     },
     {
-      "symbol": "ZKIN",
-      "company": "ZK International Group Co.",
-      "price": 1.45,
-      "changePct": 35.51402
+      "symbol": "VTGN",
+      "company": "VistaGen Therapeutics, Inc",
+      "price": 0.3684,
+      "changePct": 46.53938
+    },
+    {
+      "symbol": "IPDN",
+      "company": "Professional Diversity Net",
+      "price": 5.42,
+      "changePct": 38.97436
     },
     {
       "symbol": "IMCC",
       "company": "IM Cannabis Corp.",
-      "price": 4.14,
-      "changePct": 34.19773
-    },
-    {
-      "symbol": "HUBC",
-      "company": "HUB Cyber Security Ltd.",
-      "price": 4.24,
-      "changePct": -29.33333
+      "price": 2.91,
+      "changePct": -29.71014
     }
   ]
 }
