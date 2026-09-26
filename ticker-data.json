@@ -1,77 +1,77 @@
 {
-  "updated": "2026-09-24",
+  "updated": "2026-09-26",
   "entries": [
     {
-      "symbol": "APUS",
-      "company": "Apimeds Pharmaceuticals US",
-      "price": 4.92,
-      "changePct": 114.84716
+      "symbol": "MSGY",
+      "company": "Masonglory Ltd",
+      "price": 8.07,
+      "changePct": 309.64467
     },
     {
-      "symbol": "SRZN",
-      "company": "Surrozen, Inc.",
-      "price": 33.68,
-      "changePct": 108.41584
+      "symbol": "MGLD",
+      "company": "The Marygold Companies, In",
+      "price": 1.93,
+      "changePct": 93.0193
     },
     {
-      "symbol": "BENF",
-      "company": "Beneficient",
-      "price": 1.45,
-      "changePct": -50
+      "symbol": "IPEX",
+      "company": "Inflection Point Acquisiti",
+      "price": 3.16,
+      "changePct": -57.75401
     },
     {
-      "symbol": "GLND",
-      "company": "Greenland Energy Company C",
-      "price": 5.35,
-      "changePct": 83.8488
+      "symbol": "NBRGR",
+      "company": "Newbridge Acquisition Limi",
+      "price": 0.45,
+      "changePct": 91.48936
     },
     {
-      "symbol": "PMAX",
-      "company": "Powell Max Limited Class A",
-      "price": 1.65,
-      "changePct": 80.62397
+      "symbol": "INLF",
+      "company": "INLIF Limited",
+      "price": 5.1,
+      "changePct": 72.88136
     },
     {
-      "symbol": "TRT",
-      "company": "Trio-Tech International",
-      "price": 7.26,
-      "changePct": -36.59389
+      "symbol": "WYY",
+      "company": "WidePoint Corporation",
+      "price": 5.47,
+      "changePct": -50.58717
     },
     {
-      "symbol": "STAK",
-      "company": "STAK Inc. Ordinary Shares",
-      "price": 1.44,
-      "changePct": 53.19149
+      "symbol": "AIFF",
+      "company": "Firefly Neuroscience, Inc.",
+      "price": 2.01,
+      "changePct": 68.90756
     },
     {
-      "symbol": "PFSA",
-      "company": "Profusa, Inc. Common Stock",
-      "price": 3.03,
-      "changePct": 47.80488
-    },
-    {
-      "symbol": "XXII",
-      "company": "22nd Century Group, Inc.",
-      "price": 1.51,
-      "changePct": -35.47009
-    },
-    {
-      "symbol": "YDES",
-      "company": "YD Bio Limited Ordinary Sh",
-      "price": 4.77,
-      "changePct": 47.67802
-    },
-    {
-      "symbol": "FOFO",
-      "company": "Hang Feng Technology Innov",
-      "price": 2.43,
-      "changePct": 38.06818
+      "symbol": "TDIC",
+      "company": "Dreamland Limited Class A ",
+      "price": 3.16,
+      "changePct": 60.40609
     },
     {
       "symbol": "IPEXU",
       "company": "Inflection Point Acquisiti",
-      "price": 6.8,
-      "changePct": -32
+      "price": 3.54,
+      "changePct": -47.94118
+    },
+    {
+      "symbol": "APUS",
+      "company": "Apimeds Pharmaceuticals US",
+      "price": 7.25,
+      "changePct": 47.35772
+    },
+    {
+      "symbol": "WHLR",
+      "company": "Wheeler Real Estate Invest",
+      "price": 5.2,
+      "changePct": 39.03743
+    },
+    {
+      "symbol": "GWH",
+      "company": "ESS Tech, Inc.",
+      "price": 0.21,
+      "changePct": -38.16254
     }
   ]
 }
