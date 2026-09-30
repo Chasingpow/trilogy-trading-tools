@@ -1,77 +1,77 @@
 {
-  "updated": "2026-09-29",
+  "updated": "2026-09-30",
   "entries": [
+    {
+      "symbol": "SDEV",
+      "company": "NovaBay Pharmaceuticals, I",
+      "price": 3.27,
+      "changePct": 108.28025
+    },
+    {
+      "symbol": "BKYI",
+      "company": "BIO-key International, Inc",
+      "price": 3.12,
+      "changePct": 85.71429
+    },
     {
       "symbol": "KNRX",
       "company": "Knorex Ltd.",
-      "price": 1.23,
-      "changePct": 304.60526
+      "price": 0.37,
+      "changePct": -69.96509
     },
     {
-      "symbol": "KOD",
-      "company": "Kodiak Sciences Inc.",
-      "price": 89.92,
-      "changePct": 177.95981
+      "symbol": "DXST",
+      "company": "Decent Holding Inc.",
+      "price": 3.04,
+      "changePct": 55.89744
     },
     {
-      "symbol": "XHLD",
-      "company": "TEN Holdings, Inc. Common ",
-      "price": 0.978,
-      "changePct": -92.44788
-    },
-    {
-      "symbol": "SOAR",
-      "company": "Volato Group, Inc.",
-      "price": 0.3188,
-      "changePct": 77.60446
-    },
-    {
-      "symbol": "LFCR",
-      "company": "Lifecore Biomedical, Inc.",
-      "price": 6.52,
-      "changePct": 55.2381
+      "symbol": "SSTI",
+      "company": "SoundThinking, Inc.",
+      "price": 8.21,
+      "changePct": 50.09141
     },
     {
       "symbol": "NCI",
       "company": "Neo-Concept International ",
-      "price": 2.38,
-      "changePct": -83.75427
-    },
-    {
-      "symbol": "EGG",
-      "company": "Enigmatig Limited",
-      "price": 4.25,
-      "changePct": 51.78571
-    },
-    {
-      "symbol": "CLRO",
-      "company": "ClearOne, Inc.",
-      "price": 5.1,
-      "changePct": 47.82609
+      "price": 1.26,
+      "changePct": -47.05882
     },
     {
       "symbol": "MSGY",
       "company": "Masonglory Ltd",
-      "price": 3.13,
-      "changePct": -61.21437
+      "price": 4.44,
+      "changePct": 41.85304
     },
     {
-      "symbol": "BYSI",
-      "company": "BeyondSpring Inc.",
-      "price": 1.12,
-      "changePct": 44.10705
+      "symbol": "SANG",
+      "company": "Sangoma Technologies Corpo",
+      "price": 4.93,
+      "changePct": 37.32591
     },
     {
-      "symbol": "NAMI",
-      "company": "Jinxin Technology Holding ",
-      "price": 2.24,
-      "changePct": 40.8805
+      "symbol": "DCX",
+      "company": "Digital Currency X Technol",
+      "price": 3.61,
+      "changePct": -41.49109
     },
     {
-      "symbol": "NCT",
-      "company": "Intercont (Cayman) Limited",
-      "price": 2.5,
-      "changePct": -43.56659
+      "symbol": "BGIN",
+      "company": "Bgin Blockchain Limited",
+      "price": 2.57,
+      "changePct": 34.78078
+    },
+    {
+      "symbol": "PFSA",
+      "company": "Profusa, Inc. Common Stock",
+      "price": 2.27,
+      "changePct": 34.31953
+    },
+    {
+      "symbol": "AIXC",
+      "company": "AIxCrypto Holdings, Inc.",
+      "price": 1.01,
+      "changePct": -39.15663
     }
   ]
 }
