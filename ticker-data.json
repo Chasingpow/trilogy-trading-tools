@@ -1,77 +1,77 @@
 {
-  "updated": "2026-09-30",
+  "updated": "2026-10-01",
   "entries": [
     {
-      "symbol": "SDEV",
-      "company": "NovaBay Pharmaceuticals, I",
-      "price": 3.27,
-      "changePct": 108.28025
+      "symbol": "TGE",
+      "company": "Generation Essentials Grou",
+      "price": 1.55,
+      "changePct": 86.74699
     },
     {
-      "symbol": "BKYI",
-      "company": "BIO-key International, Inc",
-      "price": 3.12,
-      "changePct": 85.71429
+      "symbol": "EURKR",
+      "company": "Eureka Acquisition Corp",
+      "price": 0.4055,
+      "changePct": 62.13515
     },
     {
-      "symbol": "KNRX",
-      "company": "Knorex Ltd.",
-      "price": 0.37,
-      "changePct": -69.96509
+      "symbol": "LQDA",
+      "company": "Liquidia Corporation",
+      "price": 30.26,
+      "changePct": -57.19338
     },
     {
-      "symbol": "DXST",
-      "company": "Decent Holding Inc.",
-      "price": 3.04,
-      "changePct": 55.89744
+      "symbol": "CMCT",
+      "company": "Creative Media & Community",
+      "price": 2.93,
+      "changePct": 52.60417
     },
     {
-      "symbol": "SSTI",
-      "company": "SoundThinking, Inc.",
-      "price": 8.21,
-      "changePct": 50.09141
+      "symbol": "TNON",
+      "company": "Tenon Medical, Inc.",
+      "price": 4.09,
+      "changePct": 49.81685
     },
     {
-      "symbol": "NCI",
-      "company": "Neo-Concept International ",
-      "price": 1.26,
-      "changePct": -47.05882
+      "symbol": "DKI",
+      "company": "DarkIris Inc. Class A Ordi",
+      "price": 1.57,
+      "changePct": -38.43137
+    },
+    {
+      "symbol": "AHG",
+      "company": "Akso Health Group",
+      "price": 0.9,
+      "changePct": 30.24602
+    },
+    {
+      "symbol": "GRAN",
+      "company": "Grande Group Limited Class",
+      "price": 1.0914,
+      "changePct": 30.12996
+    },
+    {
+      "symbol": "RFL",
+      "company": "Rafael Holdings, Inc.",
+      "price": 1.32,
+      "changePct": -34.97537
+    },
+    {
+      "symbol": "PACB",
+      "company": "Pacific Biosciences of Cal",
+      "price": 2.37,
+      "changePct": 29.5082
     },
     {
       "symbol": "MSGY",
       "company": "Masonglory Ltd",
-      "price": 4.44,
-      "changePct": 41.85304
+      "price": 5.66,
+      "changePct": 27.47748
     },
     {
-      "symbol": "SANG",
-      "company": "Sangoma Technologies Corpo",
-      "price": 4.93,
-      "changePct": 37.32591
-    },
-    {
-      "symbol": "DCX",
-      "company": "Digital Currency X Technol",
-      "price": 3.61,
-      "changePct": -41.49109
-    },
-    {
-      "symbol": "BGIN",
-      "company": "Bgin Blockchain Limited",
-      "price": 2.57,
-      "changePct": 34.78078
-    },
-    {
-      "symbol": "PFSA",
-      "company": "Profusa, Inc. Common Stock",
-      "price": 2.27,
-      "changePct": 34.31953
-    },
-    {
-      "symbol": "AIXC",
-      "company": "AIxCrypto Holdings, Inc.",
-      "price": 1.01,
-      "changePct": -39.15663
+      "symbol": "CVRX",
+      "company": "CVRx, Inc.",
+      "price": 1.75,
+      "changePct": -33.46008
     }
   ]
 }
