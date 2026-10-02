@@ -1,77 +1,77 @@
 {
-  "updated": "2026-10-01",
+  "updated": "2026-10-02",
   "entries": [
     {
-      "symbol": "TGE",
-      "company": "Generation Essentials Grou",
-      "price": 1.55,
-      "changePct": 86.74699
+      "symbol": "SSM",
+      "company": "Sono Group N.V.",
+      "price": 2.21,
+      "changePct": 97.32143
     },
     {
-      "symbol": "EURKR",
-      "company": "Eureka Acquisition Corp",
-      "price": 0.4055,
-      "changePct": 62.13515
+      "symbol": "NXL",
+      "company": "Nexalin Technology, Inc.",
+      "price": 7.55,
+      "changePct": 76.40187
     },
     {
-      "symbol": "LQDA",
-      "company": "Liquidia Corporation",
-      "price": 30.26,
-      "changePct": -57.19338
+      "symbol": "CTVA",
+      "company": "Corteva, Inc.",
+      "price": 12.57,
+      "changePct": -83.81198
     },
     {
-      "symbol": "CMCT",
-      "company": "Creative Media & Community",
-      "price": 2.93,
-      "changePct": 52.60417
+      "symbol": "VEEA",
+      "company": "Veea Inc.",
+      "price": 3.47,
+      "changePct": 59.90783
     },
     {
-      "symbol": "TNON",
-      "company": "Tenon Medical, Inc.",
-      "price": 4.09,
-      "changePct": 49.81685
+      "symbol": "RPGL",
+      "company": "Republic Power Group Limit",
+      "price": 26.2,
+      "changePct": 59.85357
     },
     {
-      "symbol": "DKI",
-      "company": "DarkIris Inc. Class A Ordi",
-      "price": 1.57,
-      "changePct": -38.43137
+      "symbol": "WCT",
+      "company": "Wellchange Holdings Compan",
+      "price": 1.67,
+      "changePct": -79.35723
     },
     {
-      "symbol": "AHG",
-      "company": "Akso Health Group",
-      "price": 0.9,
-      "changePct": 30.24602
+      "symbol": "XRPN",
+      "company": "Armada Acquisition Corp. I",
+      "price": 23.43,
+      "changePct": 42.86585
     },
     {
-      "symbol": "GRAN",
-      "company": "Grande Group Limited Class",
-      "price": 1.0914,
-      "changePct": 30.12996
+      "symbol": "SDEV",
+      "company": "NovaBay Pharmaceuticals, I",
+      "price": 3.66,
+      "changePct": 41.31274
     },
     {
-      "symbol": "RFL",
-      "company": "Rafael Holdings, Inc.",
-      "price": 1.32,
-      "changePct": -34.97537
+      "symbol": "COLA",
+      "company": "Columbus Acquisition Corp",
+      "price": 2.86,
+      "changePct": -60.82192
     },
     {
-      "symbol": "PACB",
-      "company": "Pacific Biosciences of Cal",
-      "price": 2.37,
-      "changePct": 29.5082
+      "symbol": "SES",
+      "company": "SES AI Corporation",
+      "price": 0.8163,
+      "changePct": 36.05
     },
     {
-      "symbol": "MSGY",
-      "company": "Masonglory Ltd",
-      "price": 5.66,
-      "changePct": 27.47748
+      "symbol": "NAMM",
+      "company": "Namib Minerals",
+      "price": 1.3,
+      "changePct": 35.65689
     },
     {
-      "symbol": "CVRX",
-      "company": "CVRx, Inc.",
-      "price": 1.75,
-      "changePct": -33.46008
+      "symbol": "MI",
+      "company": "NFT Limited",
+      "price": 0.885,
+      "changePct": -59.02778
     }
   ]
 }
