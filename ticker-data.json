@@ -1,77 +1,77 @@
 {
-  "updated": "2026-10-02",
+  "updated": "2026-10-03",
   "entries": [
     {
-      "symbol": "SSM",
-      "company": "Sono Group N.V.",
-      "price": 2.21,
-      "changePct": 97.32143
-    },
-    {
-      "symbol": "NXL",
-      "company": "Nexalin Technology, Inc.",
-      "price": 7.55,
-      "changePct": 76.40187
-    },
-    {
-      "symbol": "CTVA",
-      "company": "Corteva, Inc.",
-      "price": 12.57,
-      "changePct": -83.81198
-    },
-    {
-      "symbol": "VEEA",
-      "company": "Veea Inc.",
-      "price": 3.47,
-      "changePct": 59.90783
-    },
-    {
-      "symbol": "RPGL",
-      "company": "Republic Power Group Limit",
-      "price": 26.2,
-      "changePct": 59.85357
-    },
-    {
-      "symbol": "WCT",
-      "company": "Wellchange Holdings Compan",
-      "price": 1.67,
-      "changePct": -79.35723
-    },
-    {
-      "symbol": "XRPN",
-      "company": "Armada Acquisition Corp. I",
-      "price": 23.43,
-      "changePct": 42.86585
+      "symbol": "AMOD",
+      "company": "Alpha Modus Holdings, Inc.",
+      "price": 3.49,
+      "changePct": 198.2906
     },
     {
       "symbol": "SDEV",
       "company": "NovaBay Pharmaceuticals, I",
-      "price": 3.66,
-      "changePct": 41.31274
+      "price": 7.48,
+      "changePct": 104.37158
     },
     {
-      "symbol": "COLA",
-      "company": "Columbus Acquisition Corp",
-      "price": 2.86,
-      "changePct": -60.82192
+      "symbol": "DRCT",
+      "company": "Direct Digital Holdings, I",
+      "price": 0.91,
+      "changePct": -39.7351
     },
     {
-      "symbol": "SES",
-      "company": "SES AI Corporation",
-      "price": 0.8163,
-      "changePct": 36.05
+      "symbol": "XRPN",
+      "company": "Armada Acquisition Corp. I",
+      "price": 39.42,
+      "changePct": 68.24584
     },
     {
-      "symbol": "NAMM",
-      "company": "Namib Minerals",
-      "price": 1.3,
-      "changePct": 35.65689
+      "symbol": "FLUX",
+      "company": "Flux Power Holdings, Inc.",
+      "price": 0.64,
+      "changePct": 57.40285
     },
     {
-      "symbol": "MI",
-      "company": "NFT Limited",
-      "price": 0.885,
-      "changePct": -59.02778
+      "symbol": "SMX",
+      "company": "SMX (Security Matters) Pub",
+      "price": 3.82,
+      "changePct": -37.98701
+    },
+    {
+      "symbol": "AIXI",
+      "company": "Xiao-I Corporation",
+      "price": 1.81,
+      "changePct": 48.97119
+    },
+    {
+      "symbol": "ZNB",
+      "company": "Zeta Network Group",
+      "price": 1.54,
+      "changePct": 45.28302
+    },
+    {
+      "symbol": "FHTX",
+      "company": "Foghorn Therapeutics Inc.",
+      "price": 2.02,
+      "changePct": -30.82192
+    },
+    {
+      "symbol": "CYCU",
+      "company": "Cycurion, Inc. Common Stoc",
+      "price": 3.82,
+      "changePct": 42.00743
+    },
+    {
+      "symbol": "RPGL",
+      "company": "Republic Power Group Limit",
+      "price": 37.19,
+      "changePct": 41.94656
+    },
+    {
+      "symbol": "WHLR",
+      "company": "Wheeler Real Estate Invest",
+      "price": 2.07,
+      "changePct": -27.36842
     }
   ]
 }
