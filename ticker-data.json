@@ -1,77 +1,77 @@
 {
-  "updated": "2026-10-03",
+  "updated": "2026-10-06",
   "entries": [
     {
-      "symbol": "AMOD",
-      "company": "Alpha Modus Holdings, Inc.",
-      "price": 3.49,
-      "changePct": 198.2906
+      "symbol": "AMPGZ",
+      "company": "Amplitech Group, Inc. Seri",
+      "price": 0.2441,
+      "changePct": 74.48177
     },
     {
-      "symbol": "SDEV",
-      "company": "NovaBay Pharmaceuticals, I",
-      "price": 7.48,
-      "changePct": 104.37158
-    },
-    {
-      "symbol": "DRCT",
-      "company": "Direct Digital Holdings, I",
-      "price": 0.91,
-      "changePct": -39.7351
-    },
-    {
-      "symbol": "XRPN",
-      "company": "Armada Acquisition Corp. I",
-      "price": 39.42,
-      "changePct": 68.24584
-    },
-    {
-      "symbol": "FLUX",
-      "company": "Flux Power Holdings, Inc.",
-      "price": 0.64,
-      "changePct": 57.40285
-    },
-    {
-      "symbol": "SMX",
-      "company": "SMX (Security Matters) Pub",
-      "price": 3.82,
-      "changePct": -37.98701
-    },
-    {
-      "symbol": "AIXI",
-      "company": "Xiao-I Corporation",
-      "price": 1.81,
-      "changePct": 48.97119
-    },
-    {
-      "symbol": "ZNB",
-      "company": "Zeta Network Group",
-      "price": 1.54,
-      "changePct": 45.28302
-    },
-    {
-      "symbol": "FHTX",
-      "company": "Foghorn Therapeutics Inc.",
-      "price": 2.02,
-      "changePct": -30.82192
-    },
-    {
-      "symbol": "CYCU",
-      "company": "Cycurion, Inc. Common Stoc",
-      "price": 3.82,
-      "changePct": 42.00743
-    },
-    {
-      "symbol": "RPGL",
-      "company": "Republic Power Group Limit",
-      "price": 37.19,
-      "changePct": 41.94656
+      "symbol": "VEEA",
+      "company": "Veea Inc.",
+      "price": 5.72,
+      "changePct": 71.77177
     },
     {
       "symbol": "WHLR",
       "company": "Wheeler Real Estate Invest",
-      "price": 2.07,
-      "changePct": -27.36842
+      "price": 1.09,
+      "changePct": -47.343
+    },
+    {
+      "symbol": "PDSB",
+      "company": "PDS Biotechnology Corporat",
+      "price": 1.2,
+      "changePct": 60.32064
+    },
+    {
+      "symbol": "BEAT",
+      "company": "HeartBeam, Inc.",
+      "price": 0.6542,
+      "changePct": 50.52922
+    },
+    {
+      "symbol": "SDEV",
+      "company": "NovaBay Pharmaceuticals, I",
+      "price": 3.94,
+      "changePct": -47.3262
+    },
+    {
+      "symbol": "APUS",
+      "company": "Apimeds Pharmaceuticals US",
+      "price": 4.59,
+      "changePct": 42.54658
+    },
+    {
+      "symbol": "QTEX",
+      "company": "QTREX Quantum Ltd.",
+      "price": 1.54,
+      "changePct": 40
+    },
+    {
+      "symbol": "SSM",
+      "company": "Sono Group N.V.",
+      "price": 1.59,
+      "changePct": -39.65844
+    },
+    {
+      "symbol": "SGLY",
+      "company": "Singularity Future Technol",
+      "price": 0.9799,
+      "changePct": 34.10428
+    },
+    {
+      "symbol": "PTC",
+      "company": "PTC Inc.",
+      "price": 192.26,
+      "changePct": 33.48609
+    },
+    {
+      "symbol": "SBFM",
+      "company": "Sunshine Biopharma, Inc.",
+      "price": 0.4201,
+      "changePct": -36.96924
     }
   ]
 }
