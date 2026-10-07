@@ -1,77 +1,77 @@
 {
-  "updated": "2026-10-06",
+  "updated": "2026-10-07",
   "entries": [
     {
-      "symbol": "AMPGZ",
-      "company": "Amplitech Group, Inc. Seri",
-      "price": 0.2441,
-      "changePct": 74.48177
+      "symbol": "OLB",
+      "company": "The OLB Group, Inc.",
+      "price": 0.41,
+      "changePct": 117.85335
     },
     {
-      "symbol": "VEEA",
-      "company": "Veea Inc.",
-      "price": 5.72,
-      "changePct": 71.77177
+      "symbol": "MOBX",
+      "company": "Mobix Labs, Inc.",
+      "price": 1.12,
+      "changePct": 72.28119
     },
     {
-      "symbol": "WHLR",
-      "company": "Wheeler Real Estate Invest",
-      "price": 1.09,
-      "changePct": -47.343
-    },
-    {
-      "symbol": "PDSB",
-      "company": "PDS Biotechnology Corporat",
-      "price": 1.2,
-      "changePct": 60.32064
-    },
-    {
-      "symbol": "BEAT",
-      "company": "HeartBeam, Inc.",
-      "price": 0.6542,
-      "changePct": 50.52922
-    },
-    {
-      "symbol": "SDEV",
-      "company": "NovaBay Pharmaceuticals, I",
-      "price": 3.94,
-      "changePct": -47.3262
+      "symbol": "MI",
+      "company": "NFT Limited",
+      "price": 1.23,
+      "changePct": -82.42857
     },
     {
       "symbol": "APUS",
       "company": "Apimeds Pharmaceuticals US",
-      "price": 4.59,
-      "changePct": 42.54658
+      "price": 7.13,
+      "changePct": 55.33769
     },
     {
-      "symbol": "QTEX",
-      "company": "QTREX Quantum Ltd.",
-      "price": 1.54,
-      "changePct": 40
+      "symbol": "VCIG",
+      "company": "VCI Global Limited",
+      "price": 1.41,
+      "changePct": 54.77497
     },
     {
-      "symbol": "SSM",
-      "company": "Sono Group N.V.",
-      "price": 1.59,
-      "changePct": -39.65844
+      "symbol": "XRPN",
+      "company": "Armada Acquisition Corp. I",
+      "price": 19.2,
+      "changePct": -50.32342
     },
     {
-      "symbol": "SGLY",
-      "company": "Singularity Future Technol",
-      "price": 0.9799,
-      "changePct": 34.10428
+      "symbol": "XHLD",
+      "company": "TEN Holdings, Inc. Common ",
+      "price": 0.623,
+      "changePct": 51.58151
     },
     {
-      "symbol": "PTC",
-      "company": "PTC Inc.",
-      "price": 192.26,
-      "changePct": 33.48609
+      "symbol": "IPDN",
+      "company": "Professional Diversity Net",
+      "price": 4.61,
+      "changePct": 48.70968
     },
     {
-      "symbol": "SBFM",
-      "company": "Sunshine Biopharma, Inc.",
-      "price": 0.4201,
-      "changePct": -36.96924
+      "symbol": "AVBP",
+      "company": "ArriVent BioPharma, Inc.",
+      "price": 15.09,
+      "changePct": -46.97822
+    },
+    {
+      "symbol": "SMXT",
+      "company": "Solarmax Technology Inc. C",
+      "price": 3.42,
+      "changePct": 44.3038
+    },
+    {
+      "symbol": "OLOX",
+      "company": "Olenox Industries Inc",
+      "price": 1.25,
+      "changePct": 42.04545
+    },
+    {
+      "symbol": "GCDT",
+      "company": "Green Circle Decarbonize T",
+      "price": 0.235,
+      "changePct": -45.23421
     }
   ]
 }
