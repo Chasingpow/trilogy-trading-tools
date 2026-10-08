@@ -1,77 +1,77 @@
 {
-  "updated": "2026-10-07",
+  "updated": "2026-10-08",
   "entries": [
     {
-      "symbol": "OLB",
-      "company": "The OLB Group, Inc.",
-      "price": 0.41,
-      "changePct": 117.85335
+      "symbol": "SXTC",
+      "company": "China SXT Pharmaceuticals,",
+      "price": 2.83,
+      "changePct": 126.4
     },
     {
-      "symbol": "MOBX",
-      "company": "Mobix Labs, Inc.",
-      "price": 1.12,
-      "changePct": 72.28119
+      "symbol": "PFAI",
+      "company": "Pinnacle Food Group Limite",
+      "price": 5.07,
+      "changePct": 116.66667
     },
     {
-      "symbol": "MI",
-      "company": "NFT Limited",
-      "price": 1.23,
-      "changePct": -82.42857
+      "symbol": "INV",
+      "company": "Innventure, Inc.",
+      "price": 0.2686,
+      "changePct": -52.56093
     },
     {
-      "symbol": "APUS",
-      "company": "Apimeds Pharmaceuticals US",
-      "price": 7.13,
-      "changePct": 55.33769
+      "symbol": "CCAQU",
+      "company": "Collective Acquisition Cor",
+      "price": 19.49,
+      "changePct": 82.49064
     },
     {
-      "symbol": "VCIG",
-      "company": "VCI Global Limited",
-      "price": 1.41,
-      "changePct": 54.77497
-    },
-    {
-      "symbol": "XRPN",
-      "company": "Armada Acquisition Corp. I",
-      "price": 19.2,
-      "changePct": -50.32342
-    },
-    {
-      "symbol": "XHLD",
-      "company": "TEN Holdings, Inc. Common ",
-      "price": 0.623,
-      "changePct": 51.58151
-    },
-    {
-      "symbol": "IPDN",
-      "company": "Professional Diversity Net",
-      "price": 4.61,
-      "changePct": 48.70968
-    },
-    {
-      "symbol": "AVBP",
-      "company": "ArriVent BioPharma, Inc.",
-      "price": 15.09,
-      "changePct": -46.97822
-    },
-    {
-      "symbol": "SMXT",
-      "company": "Solarmax Technology Inc. C",
-      "price": 3.42,
-      "changePct": 44.3038
-    },
-    {
-      "symbol": "OLOX",
-      "company": "Olenox Industries Inc",
-      "price": 1.25,
-      "changePct": 42.04545
+      "symbol": "SBFM",
+      "company": "Sunshine Biopharma, Inc.",
+      "price": 0.7,
+      "changePct": 75.9236
     },
     {
       "symbol": "GCDT",
       "company": "Green Circle Decarbonize T",
-      "price": 0.235,
-      "changePct": -45.23421
+      "price": 0.727,
+      "changePct": -48.43972
+    },
+    {
+      "symbol": "BIYA",
+      "company": "Baiya International Group ",
+      "price": 2.3,
+      "changePct": 68.49817
+    },
+    {
+      "symbol": "ALISU",
+      "company": "Calisa Acquisition Corp Un",
+      "price": 16.65,
+      "changePct": 54.02405
+    },
+    {
+      "symbol": "CRBU",
+      "company": "Caribou Biosciences, Inc.",
+      "price": 0.6174,
+      "changePct": -45.60352
+    },
+    {
+      "symbol": "NCPL",
+      "company": "Netcapital Inc.",
+      "price": 1.59,
+      "changePct": 45.87156
+    },
+    {
+      "symbol": "CPHI",
+      "company": "China Pharma Holdings, Inc",
+      "price": 0.85,
+      "changePct": 32.58462
+    },
+    {
+      "symbol": "VCIG",
+      "company": "VCI Global Limited",
+      "price": 0.771,
+      "changePct": -45.31915
     }
   ]
 }
