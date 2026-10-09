@@ -1,77 +1,77 @@
 {
-  "updated": "2026-10-08",
+  "updated": "2026-10-09",
   "entries": [
+    {
+      "symbol": "ALISU",
+      "company": "Calisa Acquisition Corp Un",
+      "price": 40,
+      "changePct": 140.24024
+    },
+    {
+      "symbol": "FLYE",
+      "company": "Fly-E Group, Inc. Common S",
+      "price": 2.32,
+      "changePct": 82.67717
+    },
     {
       "symbol": "SXTC",
       "company": "China SXT Pharmaceuticals,",
-      "price": 2.83,
-      "changePct": 126.4
+      "price": 0.3435,
+      "changePct": -87.86219
     },
     {
-      "symbol": "PFAI",
-      "company": "Pinnacle Food Group Limite",
-      "price": 5.07,
-      "changePct": 116.66667
+      "symbol": "JZ",
+      "company": "Jianzhi Education Technolo",
+      "price": 0.8336,
+      "changePct": 77.43721
     },
     {
-      "symbol": "INV",
-      "company": "Innventure, Inc.",
-      "price": 0.2686,
-      "changePct": -52.56093
+      "symbol": "EURKR",
+      "company": "Eureka Acquisition Corp",
+      "price": 0.4399,
+      "changePct": 62.86561
+    },
+    {
+      "symbol": "DKI",
+      "company": "DarkIris Inc. Class A Ordi",
+      "price": 0.7457,
+      "changePct": -55.34731
+    },
+    {
+      "symbol": "AIXI",
+      "company": "Xiao-I Corporation",
+      "price": 1.93,
+      "changePct": 46.21212
+    },
+    {
+      "symbol": "PCRX",
+      "company": "Pacira BioSciences, Inc.",
+      "price": 36.39,
+      "changePct": 44.40476
     },
     {
       "symbol": "CCAQU",
       "company": "Collective Acquisition Cor",
-      "price": 19.49,
-      "changePct": 82.49064
+      "price": 10.8,
+      "changePct": -44.58697
     },
     {
-      "symbol": "SBFM",
-      "company": "Sunshine Biopharma, Inc.",
-      "price": 0.7,
-      "changePct": 75.9236
+      "symbol": "QNME",
+      "company": "Quanome Technologies, Inc.",
+      "price": 0.829,
+      "changePct": 43.27688
     },
     {
-      "symbol": "GCDT",
-      "company": "Green Circle Decarbonize T",
-      "price": 0.727,
-      "changePct": -48.43972
+      "symbol": "OLB",
+      "company": "The OLB Group, Inc.",
+      "price": 0.549,
+      "changePct": 41.86047
     },
     {
-      "symbol": "BIYA",
-      "company": "Baiya International Group ",
-      "price": 2.3,
-      "changePct": 68.49817
-    },
-    {
-      "symbol": "ALISU",
-      "company": "Calisa Acquisition Corp Un",
-      "price": 16.65,
-      "changePct": 54.02405
-    },
-    {
-      "symbol": "CRBU",
-      "company": "Caribou Biosciences, Inc.",
-      "price": 0.6174,
-      "changePct": -45.60352
-    },
-    {
-      "symbol": "NCPL",
-      "company": "Netcapital Inc.",
-      "price": 1.59,
-      "changePct": 45.87156
-    },
-    {
-      "symbol": "CPHI",
-      "company": "China Pharma Holdings, Inc",
-      "price": 0.85,
-      "changePct": 32.58462
-    },
-    {
-      "symbol": "VCIG",
-      "company": "VCI Global Limited",
-      "price": 0.771,
-      "changePct": -45.31915
+      "symbol": "MI",
+      "company": "NFT Limited",
+      "price": 0.8937,
+      "changePct": -41.96753
     }
   ]
 }
