@@ -1,77 +1,77 @@
 {
-  "updated": "2026-10-09",
+  "updated": "2026-10-10",
   "entries": [
     {
-      "symbol": "ALISU",
-      "company": "Calisa Acquisition Corp Un",
-      "price": 40,
-      "changePct": 140.24024
-    },
-    {
-      "symbol": "FLYE",
-      "company": "Fly-E Group, Inc. Common S",
-      "price": 2.32,
-      "changePct": 82.67717
-    },
-    {
-      "symbol": "SXTC",
-      "company": "China SXT Pharmaceuticals,",
-      "price": 0.3435,
-      "changePct": -87.86219
+      "symbol": "WFF",
+      "company": "WF Holding Limited",
+      "price": 12.29,
+      "changePct": 499.5122
     },
     {
       "symbol": "JZ",
       "company": "Jianzhi Education Technolo",
-      "price": 0.8336,
-      "changePct": 77.43721
+      "price": 1.28,
+      "changePct": 53.55086
     },
     {
-      "symbol": "EURKR",
-      "company": "Eureka Acquisition Corp",
-      "price": 0.4399,
-      "changePct": 62.86561
+      "symbol": "SEQUX",
+      "company": "Sequoia Fund",
+      "price": 51.45,
+      "changePct": -74.78065
+    },
+    {
+      "symbol": "ZYBT",
+      "company": "Zhengye Biotechnology Hold",
+      "price": 1.73,
+      "changePct": 50.44787
+    },
+    {
+      "symbol": "VEEA",
+      "company": "Veea Inc.",
+      "price": 5.7,
+      "changePct": 47.28682
     },
     {
       "symbol": "DKI",
       "company": "DarkIris Inc. Class A Ordi",
-      "price": 0.7457,
-      "changePct": -55.34731
+      "price": 0.3424,
+      "changePct": -54.08341
     },
     {
-      "symbol": "AIXI",
-      "company": "Xiao-I Corporation",
-      "price": 1.93,
-      "changePct": 46.21212
+      "symbol": "QETA",
+      "company": "Quetta Acquisition Corpora",
+      "price": 16.41,
+      "changePct": 41.46552
     },
     {
-      "symbol": "PCRX",
-      "company": "Pacira BioSciences, Inc.",
-      "price": 36.39,
-      "changePct": 44.40476
+      "symbol": "PDSB",
+      "company": "PDS Biotechnology Corporat",
+      "price": 1.38,
+      "changePct": 35.29412
     },
     {
-      "symbol": "CCAQU",
-      "company": "Collective Acquisition Cor",
-      "price": 10.8,
-      "changePct": -44.58697
+      "symbol": "MLEC",
+      "company": "Moolec Science S.A.",
+      "price": 2.2,
+      "changePct": -47.49403
     },
     {
-      "symbol": "QNME",
-      "company": "Quanome Technologies, Inc.",
-      "price": 0.829,
-      "changePct": 43.27688
+      "symbol": "OFAL",
+      "company": "OFA Group",
+      "price": 0.55,
+      "changePct": 33.59242
     },
     {
-      "symbol": "OLB",
-      "company": "The OLB Group, Inc.",
-      "price": 0.549,
-      "changePct": 41.86047
+      "symbol": "NXGL",
+      "company": "NEXGEL, Inc.",
+      "price": 0.2003,
+      "changePct": 33.53333
     },
     {
-      "symbol": "MI",
-      "company": "NFT Limited",
-      "price": 0.8937,
-      "changePct": -41.96753
+      "symbol": "ALISU",
+      "company": "Calisa Acquisition Corp Un",
+      "price": 23.1,
+      "changePct": -42.25
     }
   ]
 }
