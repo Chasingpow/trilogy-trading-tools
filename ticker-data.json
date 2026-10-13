@@ -1,77 +1,77 @@
 {
-  "updated": "2026-10-10",
+  "updated": "2026-10-13",
   "entries": [
+    {
+      "symbol": "MNDR",
+      "company": "Mobile-health Network Solu",
+      "price": 3.04,
+      "changePct": 257.64706
+    },
+    {
+      "symbol": "LNKS",
+      "company": "Linkers Industries Limited",
+      "price": 2.27,
+      "changePct": 138.37026
+    },
+    {
+      "symbol": "YRD",
+      "company": "Yiren Digital Ltd.",
+      "price": 0.5251,
+      "changePct": -47.49
+    },
+    {
+      "symbol": "YMAT",
+      "company": "J-Star Holding Co., Ltd. O",
+      "price": 2.91,
+      "changePct": 125.5814
+    },
+    {
+      "symbol": "BMBL",
+      "company": "Bumble Inc.",
+      "price": 3.8,
+      "changePct": 49.6063
+    },
+    {
+      "symbol": "ABLV",
+      "company": "Able View Inc.",
+      "price": 1.33,
+      "changePct": -44.35146
+    },
+    {
+      "symbol": "SKYA",
+      "company": "SkyAI, Inc.",
+      "price": 2.6,
+      "changePct": 42.85714
+    },
     {
       "symbol": "WFF",
       "company": "WF Holding Limited",
-      "price": 12.29,
-      "changePct": 499.5122
+      "price": 17.28,
+      "changePct": 40.60212
     },
     {
-      "symbol": "JZ",
-      "company": "Jianzhi Education Technolo",
-      "price": 1.28,
-      "changePct": 53.55086
+      "symbol": "VIVK",
+      "company": "Vivakor, Inc.",
+      "price": 2.17,
+      "changePct": -42.89474
     },
     {
-      "symbol": "SEQUX",
-      "company": "Sequoia Fund",
-      "price": 51.45,
-      "changePct": -74.78065
+      "symbol": "NCPL",
+      "company": "Netcapital Inc.",
+      "price": 1.54,
+      "changePct": 35.08772
     },
     {
-      "symbol": "ZYBT",
-      "company": "Zhengye Biotechnology Hold",
-      "price": 1.73,
-      "changePct": 50.44787
+      "symbol": "TCRT",
+      "company": "Alaunos Therapeutics, Inc.",
+      "price": 1.05,
+      "changePct": 33.62179
     },
     {
-      "symbol": "VEEA",
-      "company": "Veea Inc.",
-      "price": 5.7,
-      "changePct": 47.28682
-    },
-    {
-      "symbol": "DKI",
-      "company": "DarkIris Inc. Class A Ordi",
-      "price": 0.3424,
-      "changePct": -54.08341
-    },
-    {
-      "symbol": "QETA",
-      "company": "Quetta Acquisition Corpora",
-      "price": 16.41,
-      "changePct": 41.46552
-    },
-    {
-      "symbol": "PDSB",
-      "company": "PDS Biotechnology Corporat",
-      "price": 1.38,
-      "changePct": 35.29412
-    },
-    {
-      "symbol": "MLEC",
-      "company": "Moolec Science S.A.",
-      "price": 2.2,
-      "changePct": -47.49403
-    },
-    {
-      "symbol": "OFAL",
-      "company": "OFA Group",
-      "price": 0.55,
-      "changePct": 33.59242
-    },
-    {
-      "symbol": "NXGL",
-      "company": "NEXGEL, Inc.",
-      "price": 0.2003,
-      "changePct": 33.53333
-    },
-    {
-      "symbol": "ALISU",
-      "company": "Calisa Acquisition Corp Un",
-      "price": 23.1,
-      "changePct": -42.25
+      "symbol": "CTNM",
+      "company": "Contineum Therapeutics, In",
+      "price": 8.565,
+      "changePct": -35.98655
     }
   ]
 }
