@@ -1,77 +1,77 @@
 {
-  "updated": "2026-10-13",
+  "updated": "2026-10-14",
   "entries": [
     {
-      "symbol": "MNDR",
-      "company": "Mobile-health Network Solu",
-      "price": 3.04,
-      "changePct": 257.64706
-    },
-    {
-      "symbol": "LNKS",
-      "company": "Linkers Industries Limited",
-      "price": 2.27,
-      "changePct": 138.37026
-    },
-    {
-      "symbol": "YRD",
-      "company": "Yiren Digital Ltd.",
-      "price": 0.5251,
-      "changePct": -47.49
-    },
-    {
-      "symbol": "YMAT",
-      "company": "J-Star Holding Co., Ltd. O",
-      "price": 2.91,
-      "changePct": 125.5814
-    },
-    {
-      "symbol": "BMBL",
-      "company": "Bumble Inc.",
-      "price": 3.8,
-      "changePct": 49.6063
-    },
-    {
-      "symbol": "ABLV",
-      "company": "Able View Inc.",
-      "price": 1.33,
-      "changePct": -44.35146
-    },
-    {
-      "symbol": "SKYA",
-      "company": "SkyAI, Inc.",
-      "price": 2.6,
-      "changePct": 42.85714
-    },
-    {
-      "symbol": "WFF",
-      "company": "WF Holding Limited",
-      "price": 17.28,
-      "changePct": 40.60212
-    },
-    {
-      "symbol": "VIVK",
-      "company": "Vivakor, Inc.",
-      "price": 2.17,
-      "changePct": -42.89474
-    },
-    {
-      "symbol": "NCPL",
-      "company": "Netcapital Inc.",
-      "price": 1.54,
-      "changePct": 35.08772
+      "symbol": "JBDI",
+      "company": "JBDI Holdings Limited",
+      "price": 3.43,
+      "changePct": 243
     },
     {
       "symbol": "TCRT",
       "company": "Alaunos Therapeutics, Inc.",
-      "price": 1.05,
-      "changePct": 33.62179
+      "price": 3.03,
+      "changePct": 188.57143
     },
     {
-      "symbol": "CTNM",
-      "company": "Contineum Therapeutics, In",
-      "price": 8.565,
-      "changePct": -35.98655
+      "symbol": "WFF",
+      "company": "WF Holding Limited",
+      "price": 2.12,
+      "changePct": -87.73148
+    },
+    {
+      "symbol": "PFAI",
+      "company": "Pinnacle Food Group Limite",
+      "price": 4.7,
+      "changePct": 80.07663
+    },
+    {
+      "symbol": "FLYE",
+      "company": "Fly-E Group, Inc. Common S",
+      "price": 3.55,
+      "changePct": 73.17073
+    },
+    {
+      "symbol": "TGL",
+      "company": "Treasure Global Inc.",
+      "price": 0.278,
+      "changePct": -66.89688
+    },
+    {
+      "symbol": "BKYI",
+      "company": "BIO-key International, Inc",
+      "price": 2.83,
+      "changePct": 71.51515
+    },
+    {
+      "symbol": "JYD",
+      "company": "Jayud Global Logistics Lim",
+      "price": 1.46,
+      "changePct": 56.97237
+    },
+    {
+      "symbol": "LNKS",
+      "company": "Linkers Industries Limited",
+      "price": 0.9738,
+      "changePct": -57.10132
+    },
+    {
+      "symbol": "BMBL",
+      "company": "Bumble Inc.",
+      "price": 5.95,
+      "changePct": 56.57895
+    },
+    {
+      "symbol": "ELOG",
+      "company": "Eastern International Ltd.",
+      "price": 1.48,
+      "changePct": 46.53465
+    },
+    {
+      "symbol": "MNDR",
+      "company": "Mobile-health Network Solu",
+      "price": 1.46,
+      "changePct": -51.97368
     }
   ]
 }
