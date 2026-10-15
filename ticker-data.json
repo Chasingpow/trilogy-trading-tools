@@ -2,76 +2,76 @@
   "updated": "2026-10-15",
   "entries": [
     {
-      "symbol": "GLND",
-      "company": "Greenland Energy Company C",
-      "price": 3.9,
-      "changePct": 76.47059
+      "symbol": "ESLA",
+      "company": "Estrella Immunopharma, Inc",
+      "price": 0.5352,
+      "changePct": 68.35483
+    },
+    {
+      "symbol": "XLAB",
+      "company": "Exascale Labs Holdings Inc",
+      "price": 1.36,
+      "changePct": 49.6973
+    },
+    {
+      "symbol": "HAIN",
+      "company": "The Hain Celestial Group, ",
+      "price": 0.2819,
+      "changePct": -51.09299
+    },
+    {
+      "symbol": "WETO",
+      "company": "Wetour Robotics Limited",
+      "price": 1.22,
+      "changePct": 46.88177
+    },
+    {
+      "symbol": "DRMA",
+      "company": "Dermata Therapeutics, Inc.",
+      "price": 0.91,
+      "changePct": 37.19282
+    },
+    {
+      "symbol": "SPRC",
+      "company": "SciSparc Ltd.",
+      "price": 2,
+      "changePct": -44.90358
+    },
+    {
+      "symbol": "SVRE",
+      "company": "SaverOne 2014 Ltd",
+      "price": 1.65,
+      "changePct": 35.2459
+    },
+    {
+      "symbol": "BETR",
+      "company": "Better Home & Finance Hold",
+      "price": 10.76,
+      "changePct": 32.51232
     },
     {
       "symbol": "TGL",
       "company": "Treasure Global Inc.",
-      "price": 0.45,
-      "changePct": 61.8705
+      "price": 0.3,
+      "changePct": -33.33333
     },
     {
-      "symbol": "NWGL",
-      "company": "CL Workshop Group Limited",
-      "price": 0.26,
-      "changePct": -78.15126
+      "symbol": "OPEG",
+      "company": "LEVERAGE SHARES 2X LONG OP",
+      "price": 0.8778,
+      "changePct": 30.17945
     },
     {
-      "symbol": "AMTD",
-      "company": "AMTD IDEA Group",
-      "price": 0.58,
-      "changePct": 51.43603
+      "symbol": "INDP",
+      "company": "Indaptus Therapeutics, Inc",
+      "price": 2.85,
+      "changePct": 28.95928
     },
     {
-      "symbol": "NIVF",
-      "company": "NewGenIvf Group Limited",
-      "price": 0.2935,
-      "changePct": 50.20471
-    },
-    {
-      "symbol": "RPGL",
-      "company": "Republic Power Group Limit",
-      "price": 15.49,
-      "changePct": -65.19101
-    },
-    {
-      "symbol": "YRD",
-      "company": "Yiren Digital Ltd.",
-      "price": 0.6496,
-      "changePct": 42.76923
-    },
-    {
-      "symbol": "BSP",
-      "company": "Bending Spoons S.p.A.",
-      "price": 53.46,
-      "changePct": 41.20444
-    },
-    {
-      "symbol": "CDT",
-      "company": "CDT Equity Inc.",
-      "price": 0.24,
-      "changePct": -46.66667
-    },
-    {
-      "symbol": "TDIC",
-      "company": "Dreamland Limited Class A ",
-      "price": 2.28,
-      "changePct": 39.8773
-    },
-    {
-      "symbol": "BDRX",
-      "company": "Biodexa Pharmaceuticals Pl",
-      "price": 0.4849,
-      "changePct": 38.46374
-    },
-    {
-      "symbol": "ZBAO",
-      "company": "Zhibao Technology Inc. Cla",
-      "price": 1.02,
-      "changePct": -46.03175
+      "symbol": "FMC",
+      "company": "FMC Corporation",
+      "price": 5.62,
+      "changePct": -30.53152
     }
   ]
 }
