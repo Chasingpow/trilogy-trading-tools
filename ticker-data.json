@@ -1,77 +1,77 @@
 {
-  "updated": "2026-10-14",
+  "updated": "2026-10-15",
   "entries": [
     {
-      "symbol": "JBDI",
-      "company": "JBDI Holdings Limited",
-      "price": 3.43,
-      "changePct": 243
-    },
-    {
-      "symbol": "TCRT",
-      "company": "Alaunos Therapeutics, Inc.",
-      "price": 3.03,
-      "changePct": 188.57143
-    },
-    {
-      "symbol": "WFF",
-      "company": "WF Holding Limited",
-      "price": 2.12,
-      "changePct": -87.73148
-    },
-    {
-      "symbol": "PFAI",
-      "company": "Pinnacle Food Group Limite",
-      "price": 4.7,
-      "changePct": 80.07663
-    },
-    {
-      "symbol": "FLYE",
-      "company": "Fly-E Group, Inc. Common S",
-      "price": 3.55,
-      "changePct": 73.17073
+      "symbol": "GLND",
+      "company": "Greenland Energy Company C",
+      "price": 3.9,
+      "changePct": 76.47059
     },
     {
       "symbol": "TGL",
       "company": "Treasure Global Inc.",
-      "price": 0.278,
-      "changePct": -66.89688
+      "price": 0.45,
+      "changePct": 61.8705
     },
     {
-      "symbol": "BKYI",
-      "company": "BIO-key International, Inc",
-      "price": 2.83,
-      "changePct": 71.51515
+      "symbol": "NWGL",
+      "company": "CL Workshop Group Limited",
+      "price": 0.26,
+      "changePct": -78.15126
     },
     {
-      "symbol": "JYD",
-      "company": "Jayud Global Logistics Lim",
-      "price": 1.46,
-      "changePct": 56.97237
+      "symbol": "AMTD",
+      "company": "AMTD IDEA Group",
+      "price": 0.58,
+      "changePct": 51.43603
     },
     {
-      "symbol": "LNKS",
-      "company": "Linkers Industries Limited",
-      "price": 0.9738,
-      "changePct": -57.10132
+      "symbol": "NIVF",
+      "company": "NewGenIvf Group Limited",
+      "price": 0.2935,
+      "changePct": 50.20471
     },
     {
-      "symbol": "BMBL",
-      "company": "Bumble Inc.",
-      "price": 5.95,
-      "changePct": 56.57895
+      "symbol": "RPGL",
+      "company": "Republic Power Group Limit",
+      "price": 15.49,
+      "changePct": -65.19101
     },
     {
-      "symbol": "ELOG",
-      "company": "Eastern International Ltd.",
-      "price": 1.48,
-      "changePct": 46.53465
+      "symbol": "YRD",
+      "company": "Yiren Digital Ltd.",
+      "price": 0.6496,
+      "changePct": 42.76923
     },
     {
-      "symbol": "MNDR",
-      "company": "Mobile-health Network Solu",
-      "price": 1.46,
-      "changePct": -51.97368
+      "symbol": "BSP",
+      "company": "Bending Spoons S.p.A.",
+      "price": 53.46,
+      "changePct": 41.20444
+    },
+    {
+      "symbol": "CDT",
+      "company": "CDT Equity Inc.",
+      "price": 0.24,
+      "changePct": -46.66667
+    },
+    {
+      "symbol": "TDIC",
+      "company": "Dreamland Limited Class A ",
+      "price": 2.28,
+      "changePct": 39.8773
+    },
+    {
+      "symbol": "BDRX",
+      "company": "Biodexa Pharmaceuticals Pl",
+      "price": 0.4849,
+      "changePct": 38.46374
+    },
+    {
+      "symbol": "ZBAO",
+      "company": "Zhibao Technology Inc. Cla",
+      "price": 1.02,
+      "changePct": -46.03175
     }
   ]
 }
