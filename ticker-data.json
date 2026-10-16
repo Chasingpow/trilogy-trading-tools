@@ -1,77 +1,77 @@
 {
-  "updated": "2026-10-15",
+  "updated": "2026-10-16",
   "entries": [
-    {
-      "symbol": "ESLA",
-      "company": "Estrella Immunopharma, Inc",
-      "price": 0.5352,
-      "changePct": 68.35483
-    },
     {
       "symbol": "XLAB",
       "company": "Exascale Labs Holdings Inc",
-      "price": 1.36,
-      "changePct": 49.6973
+      "price": 2.35,
+      "changePct": 72.79412
     },
     {
-      "symbol": "HAIN",
-      "company": "The Hain Celestial Group, ",
-      "price": 0.2819,
-      "changePct": -51.09299
+      "symbol": "AACG",
+      "company": "ATA Creativity Global",
+      "price": 0.9543,
+      "changePct": 50.75829
     },
     {
-      "symbol": "WETO",
-      "company": "Wetour Robotics Limited",
-      "price": 1.22,
-      "changePct": 46.88177
+      "symbol": "MDXH",
+      "company": "MDxHealth S.A.",
+      "price": 0.2066,
+      "changePct": -65.77203
     },
     {
-      "symbol": "DRMA",
-      "company": "Dermata Therapeutics, Inc.",
-      "price": 0.91,
-      "changePct": 37.19282
+      "symbol": "CTSO",
+      "company": "Cytosorbents Corporation",
+      "price": 4.11,
+      "changePct": 34.31373
     },
     {
-      "symbol": "SPRC",
-      "company": "SciSparc Ltd.",
-      "price": 2,
-      "changePct": -44.90358
+      "symbol": "SEED",
+      "company": "Origin Agritech Limited",
+      "price": 0.9703,
+      "changePct": 32.53654
     },
     {
-      "symbol": "SVRE",
-      "company": "SaverOne 2014 Ltd",
-      "price": 1.65,
-      "changePct": 35.2459
+      "symbol": "GUTS",
+      "company": "Fractyl Health, Inc.",
+      "price": 1.55,
+      "changePct": -62.74038
     },
     {
-      "symbol": "BETR",
-      "company": "Better Home & Finance Hold",
-      "price": 10.76,
-      "changePct": 32.51232
+      "symbol": "PMI",
+      "company": "Picard Medical, Inc.",
+      "price": 12.75,
+      "changePct": 27.5
     },
     {
-      "symbol": "TGL",
-      "company": "Treasure Global Inc.",
-      "price": 0.3,
-      "changePct": -33.33333
+      "symbol": "SGRX",
+      "company": "Sangrix Inc.",
+      "price": 0.8686,
+      "changePct": 26.78441
     },
     {
-      "symbol": "OPEG",
-      "company": "LEVERAGE SHARES 2X LONG OP",
-      "price": 0.8778,
-      "changePct": 30.17945
+      "symbol": "RBNE",
+      "company": "Robin Energy Ltd.",
+      "price": 0.78,
+      "changePct": -59.79381
     },
     {
-      "symbol": "INDP",
-      "company": "Indaptus Therapeutics, Inc",
-      "price": 2.85,
-      "changePct": 28.95928
+      "symbol": "MMA",
+      "company": "Mixed Martial Arts Group L",
+      "price": 0.341,
+      "changePct": 23.90988
     },
     {
-      "symbol": "FMC",
-      "company": "FMC Corporation",
-      "price": 5.62,
-      "changePct": -30.53152
+      "symbol": "XELB",
+      "company": "Xcel Brands, Inc.",
+      "price": 0.4301,
+      "changePct": 23.23782
+    },
+    {
+      "symbol": "RPGL",
+      "company": "Republic Power Group Limit",
+      "price": 6.89,
+      "changePct": -48.31208
     }
   ]
 }
