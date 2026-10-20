@@ -1,77 +1,77 @@
 {
-  "updated": "2026-10-16",
+  "updated": "2026-10-20",
   "entries": [
     {
-      "symbol": "XLAB",
-      "company": "Exascale Labs Holdings Inc",
-      "price": 2.35,
-      "changePct": 72.79412
+      "symbol": "SLN",
+      "company": "Silence Therapeutics plc",
+      "price": 19.58,
+      "changePct": 125.57604
     },
     {
-      "symbol": "AACG",
-      "company": "ATA Creativity Global",
-      "price": 0.9543,
-      "changePct": 50.75829
+      "symbol": "WORX",
+      "company": "SCWorx Corp.",
+      "price": 2.68,
+      "changePct": 94.2029
     },
     {
-      "symbol": "MDXH",
-      "company": "MDxHealth S.A.",
-      "price": 0.2066,
-      "changePct": -65.77203
+      "symbol": "INLF",
+      "company": "INLIF Limited",
+      "price": 0.318,
+      "changePct": -87.52941
     },
     {
-      "symbol": "CTSO",
-      "company": "Cytosorbents Corporation",
-      "price": 4.11,
-      "changePct": 34.31373
+      "symbol": "XHG",
+      "company": "XChange TEC.INC",
+      "price": 3.2,
+      "changePct": 60
     },
     {
-      "symbol": "SEED",
-      "company": "Origin Agritech Limited",
-      "price": 0.9703,
-      "changePct": 32.53654
+      "symbol": "YMAT",
+      "company": "J-Star Holding Co., Ltd. O",
+      "price": 1.83,
+      "changePct": 39.69466
     },
     {
-      "symbol": "GUTS",
-      "company": "Fractyl Health, Inc.",
-      "price": 1.55,
-      "changePct": -62.74038
+      "symbol": "EYPT",
+      "company": "EyePoint Pharmaceuticals, ",
+      "price": 0.44,
+      "changePct": -85.28428
     },
     {
-      "symbol": "PMI",
-      "company": "Picard Medical, Inc.",
-      "price": 12.75,
-      "changePct": 27.5
+      "symbol": "IRON",
+      "company": "Disc Medicine, Inc.",
+      "price": 78.93,
+      "changePct": 38.86348
     },
     {
-      "symbol": "SGRX",
-      "company": "Sangrix Inc.",
-      "price": 0.8686,
-      "changePct": 26.78441
+      "symbol": "EXYN",
+      "company": "Exyn Technologies, Inc.",
+      "price": 2.72,
+      "changePct": 38.77551
     },
     {
-      "symbol": "RBNE",
-      "company": "Robin Energy Ltd.",
-      "price": 0.78,
-      "changePct": -59.79381
+      "symbol": "RUBI",
+      "company": "Rubico Inc.",
+      "price": 0.2138,
+      "changePct": -45.31969
     },
     {
-      "symbol": "MMA",
-      "company": "Mixed Martial Arts Group L",
-      "price": 0.341,
-      "changePct": 23.90988
+      "symbol": "AAME",
+      "company": "Atlantic American Corporat",
+      "price": 1.45,
+      "changePct": 38.09524
     },
     {
-      "symbol": "XELB",
-      "company": "Xcel Brands, Inc.",
-      "price": 0.4301,
-      "changePct": 23.23782
+      "symbol": "FUFU",
+      "company": "BitFuFu Inc.",
+      "price": 1.19,
+      "changePct": 32.20753
     },
     {
-      "symbol": "RPGL",
-      "company": "Republic Power Group Limit",
-      "price": 6.89,
-      "changePct": -48.31208
+      "symbol": "CLRO",
+      "company": "ClearOne, Inc.",
+      "price": 1.72,
+      "changePct": -42.47492
     }
   ]
 }
