@@ -1,77 +1,77 @@
 {
-  "updated": "2026-10-20",
+  "updated": "2026-10-21",
   "entries": [
     {
-      "symbol": "SLN",
-      "company": "Silence Therapeutics plc",
-      "price": 19.58,
-      "changePct": 125.57604
+      "symbol": "SAIQ",
+      "company": "WISeSat.Space Holdings Cor",
+      "price": 6.84,
+      "changePct": 100.58651
+    },
+    {
+      "symbol": "PRSO",
+      "company": "Peraso Inc.",
+      "price": 0.5914,
+      "changePct": 54.13083
+    },
+    {
+      "symbol": "CJMB",
+      "company": "Callan JMB Inc. ",
+      "price": 0.6599,
+      "changePct": -65.63021
+    },
+    {
+      "symbol": "ATGL",
+      "company": "Alpha Technology Group Lim",
+      "price": 6.93,
+      "changePct": 52.64317
+    },
+    {
+      "symbol": "BRZE",
+      "company": "Braze, Inc.",
+      "price": 45.57,
+      "changePct": 51.69774
+    },
+    {
+      "symbol": "PMI",
+      "company": "Picard Medical, Inc.",
+      "price": 10.48,
+      "changePct": -32.16828
+    },
+    {
+      "symbol": "HOST",
+      "company": "Host Digital Inc.",
+      "price": 2.83,
+      "changePct": 47.39583
+    },
+    {
+      "symbol": "AIXI",
+      "company": "Xiao-I Corporation",
+      "price": 3.1,
+      "changePct": 40.90909
+    },
+    {
+      "symbol": "RAIL",
+      "company": "FreightCar America, Inc.",
+      "price": 4.015,
+      "changePct": -31.36752
     },
     {
       "symbol": "WORX",
       "company": "SCWorx Corp.",
-      "price": 2.68,
-      "changePct": 94.2029
+      "price": 3.66,
+      "changePct": 36.56716
     },
     {
-      "symbol": "INLF",
-      "company": "INLIF Limited",
-      "price": 0.318,
-      "changePct": -87.52941
+      "symbol": "FRTT",
+      "company": "Fort Technology Inc.",
+      "price": 0.7121,
+      "changePct": 32.63178
     },
     {
-      "symbol": "XHG",
-      "company": "XChange TEC.INC",
-      "price": 3.2,
-      "changePct": 60
-    },
-    {
-      "symbol": "YMAT",
-      "company": "J-Star Holding Co., Ltd. O",
-      "price": 1.83,
-      "changePct": 39.69466
-    },
-    {
-      "symbol": "EYPT",
-      "company": "EyePoint Pharmaceuticals, ",
-      "price": 0.44,
-      "changePct": -85.28428
-    },
-    {
-      "symbol": "IRON",
-      "company": "Disc Medicine, Inc.",
-      "price": 78.93,
-      "changePct": 38.86348
-    },
-    {
-      "symbol": "EXYN",
-      "company": "Exyn Technologies, Inc.",
-      "price": 2.72,
-      "changePct": 38.77551
-    },
-    {
-      "symbol": "RUBI",
-      "company": "Rubico Inc.",
-      "price": 0.2138,
-      "changePct": -45.31969
-    },
-    {
-      "symbol": "AAME",
-      "company": "Atlantic American Corporat",
-      "price": 1.45,
-      "changePct": 38.09524
-    },
-    {
-      "symbol": "FUFU",
-      "company": "BitFuFu Inc.",
-      "price": 1.19,
-      "changePct": 32.20753
-    },
-    {
-      "symbol": "CLRO",
-      "company": "ClearOne, Inc.",
-      "price": 1.72,
-      "changePct": -42.47492
+      "symbol": "GMEX",
+      "company": "GMEX Robotics Corporation",
+      "price": 0.94,
+      "changePct": -28.78788
     }
   ]
 }
