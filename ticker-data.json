@@ -1,77 +1,77 @@
 {
-  "updated": "2026-10-21",
+  "updated": "2026-10-22",
   "entries": [
     {
-      "symbol": "SAIQ",
-      "company": "WISeSat.Space Holdings Cor",
-      "price": 6.84,
-      "changePct": 100.58651
+      "symbol": "OCLTR",
+      "company": "OceanLight Acquisition Cor",
+      "price": 0.28,
+      "changePct": 99.28826
     },
     {
-      "symbol": "PRSO",
-      "company": "Peraso Inc.",
-      "price": 0.5914,
-      "changePct": 54.13083
+      "symbol": "XHLD",
+      "company": "TEN Holdings, Inc. Common ",
+      "price": 0.907,
+      "changePct": 52.4626
     },
     {
-      "symbol": "CJMB",
-      "company": "Callan JMB Inc. ",
-      "price": 0.6599,
-      "changePct": -65.63021
+      "symbol": "RBNE",
+      "company": "Robin Energy Ltd.",
+      "price": 0.2315,
+      "changePct": -41.80493
     },
     {
-      "symbol": "ATGL",
-      "company": "Alpha Technology Group Lim",
-      "price": 6.93,
-      "changePct": 52.64317
+      "symbol": "WHLR",
+      "company": "Wheeler Real Estate Invest",
+      "price": 0.53,
+      "changePct": 47.34501
     },
     {
-      "symbol": "BRZE",
-      "company": "Braze, Inc.",
-      "price": 45.57,
-      "changePct": 51.69774
-    },
-    {
-      "symbol": "PMI",
-      "company": "Picard Medical, Inc.",
-      "price": 10.48,
-      "changePct": -32.16828
-    },
-    {
-      "symbol": "HOST",
-      "company": "Host Digital Inc.",
-      "price": 2.83,
-      "changePct": 47.39583
-    },
-    {
-      "symbol": "AIXI",
-      "company": "Xiao-I Corporation",
-      "price": 3.1,
-      "changePct": 40.90909
-    },
-    {
-      "symbol": "RAIL",
-      "company": "FreightCar America, Inc.",
-      "price": 4.015,
-      "changePct": -31.36752
+      "symbol": "SPHL",
+      "company": "Springview Holdings Ltd Cl",
+      "price": 3.54,
+      "changePct": 45.67901
     },
     {
       "symbol": "WORX",
       "company": "SCWorx Corp.",
-      "price": 3.66,
-      "changePct": 36.56716
+      "price": 2.42,
+      "changePct": -33.87978
     },
     {
-      "symbol": "FRTT",
-      "company": "Fort Technology Inc.",
-      "price": 0.7121,
-      "changePct": 32.63178
+      "symbol": "SVRN",
+      "company": "SVRN, Inc.",
+      "price": 36.76,
+      "changePct": 41.49346
     },
     {
-      "symbol": "GMEX",
-      "company": "GMEX Robotics Corporation",
-      "price": 0.94,
-      "changePct": -28.78788
+      "symbol": "AHT",
+      "company": "Ashford Hospitality Trust,",
+      "price": 2.47,
+      "changePct": 37.98883
+    },
+    {
+      "symbol": "PRSO",
+      "company": "Peraso Inc.",
+      "price": 0.3943,
+      "changePct": -33.3277
+    },
+    {
+      "symbol": "ESLA",
+      "company": "Estrella Immunopharma, Inc",
+      "price": 0.55,
+      "changePct": 37.5
+    },
+    {
+      "symbol": "OLOX",
+      "company": "Olenox Industries Inc",
+      "price": 1.01,
+      "changePct": 37.04206
+    },
+    {
+      "symbol": "AVEX",
+      "company": "Aevex Corp.",
+      "price": 9.68,
+      "changePct": -32.49651
     }
   ]
 }
