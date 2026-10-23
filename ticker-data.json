@@ -1,77 +1,77 @@
 {
-  "updated": "2026-10-22",
+  "updated": "2026-10-23",
   "entries": [
     {
-      "symbol": "OCLTR",
-      "company": "OceanLight Acquisition Cor",
-      "price": 0.28,
-      "changePct": 99.28826
+      "symbol": "TANH",
+      "company": "Tantech Holdings Ltd",
+      "price": 24.83,
+      "changePct": 181.83882
     },
     {
-      "symbol": "XHLD",
-      "company": "TEN Holdings, Inc. Common ",
-      "price": 0.907,
-      "changePct": 52.4626
+      "symbol": "SHFS",
+      "company": "SHF Holdings, Inc.",
+      "price": 0.3429,
+      "changePct": 122.37354
     },
     {
-      "symbol": "RBNE",
-      "company": "Robin Energy Ltd.",
-      "price": 0.2315,
-      "changePct": -41.80493
+      "symbol": "AVTX",
+      "company": "Avalo Therapeutics, Inc.",
+      "price": 7.45,
+      "changePct": -39.23328
     },
     {
-      "symbol": "WHLR",
-      "company": "Wheeler Real Estate Invest",
-      "price": 0.53,
-      "changePct": 47.34501
+      "symbol": "XLAB",
+      "company": "Exascale Labs Holdings Inc",
+      "price": 4.71,
+      "changePct": 73.16176
     },
     {
-      "symbol": "SPHL",
-      "company": "Springview Holdings Ltd Cl",
-      "price": 3.54,
-      "changePct": 45.67901
+      "symbol": "STAK",
+      "company": "STAK Inc. Ordinary Shares",
+      "price": 1.67,
+      "changePct": 67
     },
     {
-      "symbol": "WORX",
-      "company": "SCWorx Corp.",
-      "price": 2.42,
-      "changePct": -33.87978
+      "symbol": "MRNX",
+      "company": "Daily Target 2X Long MRNA ",
+      "price": 138.87,
+      "changePct": -34.80282
     },
     {
-      "symbol": "SVRN",
-      "company": "SVRN, Inc.",
-      "price": 36.76,
-      "changePct": 41.49346
+      "symbol": "CRMT",
+      "company": "America's Car-Mart, Inc.",
+      "price": 0.9464,
+      "changePct": 43.45915
     },
     {
-      "symbol": "AHT",
-      "company": "Ashford Hospitality Trust,",
-      "price": 2.47,
-      "changePct": 37.98883
+      "symbol": "NCPL",
+      "company": "Netcapital Inc.",
+      "price": 2.23,
+      "changePct": 42.03822
     },
     {
-      "symbol": "PRSO",
-      "company": "Peraso Inc.",
-      "price": 0.3943,
-      "changePct": -33.3277
+      "symbol": "NVEC",
+      "company": "NVE Corporation",
+      "price": 68.36,
+      "changePct": -33.67614
     },
     {
-      "symbol": "ESLA",
-      "company": "Estrella Immunopharma, Inc",
-      "price": 0.55,
-      "changePct": 37.5
+      "symbol": "YHC",
+      "company": "LQR House Inc.",
+      "price": 2.5,
+      "changePct": 39.6648
     },
     {
-      "symbol": "OLOX",
-      "company": "Olenox Industries Inc",
-      "price": 1.01,
-      "changePct": 37.04206
+      "symbol": "TROO",
+      "company": "TROOPS, Inc.",
+      "price": 2.32,
+      "changePct": 38.92216
     },
     {
-      "symbol": "AVEX",
-      "company": "Aevex Corp.",
-      "price": 9.68,
-      "changePct": -32.49651
+      "symbol": "HUBC",
+      "company": "HUB Cyber Security Ltd.",
+      "price": 0.2017,
+      "changePct": -32.76667
     }
   ]
 }
