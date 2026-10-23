@@ -2,76 +2,76 @@
   "updated": "2026-10-23",
   "entries": [
     {
-      "symbol": "TANH",
-      "company": "Tantech Holdings Ltd",
-      "price": 24.83,
-      "changePct": 181.83882
+      "symbol": "AIOK",
+      "company": "AI OKTO Corp.",
+      "price": 12.02,
+      "changePct": 182.82352
     },
     {
-      "symbol": "SHFS",
-      "company": "SHF Holdings, Inc.",
-      "price": 0.3429,
-      "changePct": 122.37354
+      "symbol": "CLRO",
+      "company": "ClearOne, Inc.",
+      "price": 3.25,
+      "changePct": 69.27083
     },
     {
-      "symbol": "AVTX",
-      "company": "Avalo Therapeutics, Inc.",
-      "price": 7.45,
-      "changePct": -39.23328
+      "symbol": "AARD",
+      "company": "Aardvark Therapeutics, Inc",
+      "price": 1.39,
+      "changePct": -64.81013
     },
     {
-      "symbol": "XLAB",
-      "company": "Exascale Labs Holdings Inc",
-      "price": 4.71,
-      "changePct": 73.16176
+      "symbol": "LYCA",
+      "company": "Lycia Therapeutics Inc.",
+      "price": 30,
+      "changePct": 66.66667
     },
     {
-      "symbol": "STAK",
-      "company": "STAK Inc. Ordinary Shares",
-      "price": 1.67,
-      "changePct": 67
+      "symbol": "BOLT",
+      "company": "Bolt Biotherapeutics, Inc.",
+      "price": 6.27,
+      "changePct": 49.642
     },
     {
-      "symbol": "MRNX",
-      "company": "Daily Target 2X Long MRNA ",
-      "price": 138.87,
-      "changePct": -34.80282
+      "symbol": "KCAI",
+      "company": "KraneShares China Alpha In",
+      "price": 15,
+      "changePct": -53.20543
     },
     {
-      "symbol": "CRMT",
-      "company": "America's Car-Mart, Inc.",
-      "price": 0.9464,
-      "changePct": 43.45915
+      "symbol": "MYND",
+      "company": "Mynd.ai, Inc.",
+      "price": 0.24,
+      "changePct": 47.42014
     },
     {
-      "symbol": "NCPL",
-      "company": "Netcapital Inc.",
-      "price": 2.23,
-      "changePct": 42.03822
+      "symbol": "ESLA",
+      "company": "Estrella Immunopharma, Inc",
+      "price": 0.985,
+      "changePct": 35.52559
     },
     {
-      "symbol": "NVEC",
-      "company": "NVE Corporation",
-      "price": 68.36,
-      "changePct": -33.67614
+      "symbol": "DAVI",
+      "company": "Davion Healthcare Plc",
+      "price": 6,
+      "changePct": -48.49785
     },
     {
-      "symbol": "YHC",
-      "company": "LQR House Inc.",
-      "price": 2.5,
-      "changePct": 39.6648
+      "symbol": "JYD",
+      "company": "Jayud Global Logistics Lim",
+      "price": 1.83,
+      "changePct": 32.6087
     },
     {
-      "symbol": "TROO",
-      "company": "TROOPS, Inc.",
-      "price": 2.32,
-      "changePct": 38.92216
+      "symbol": "HTCO",
+      "company": "High-Trend International G",
+      "price": 1.53,
+      "changePct": 30.76923
     },
     {
-      "symbol": "HUBC",
-      "company": "HUB Cyber Security Ltd.",
-      "price": 0.2017,
-      "changePct": -32.76667
+      "symbol": "POM",
+      "company": "Pomdoctor Limited",
+      "price": 1.17,
+      "changePct": -42.36453
     }
   ]
 }
