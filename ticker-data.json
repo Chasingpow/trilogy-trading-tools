@@ -1,77 +1,77 @@
 {
-  "updated": "2026-10-23",
+  "updated": "2026-10-27",
   "entries": [
     {
-      "symbol": "AIOK",
-      "company": "AI OKTO Corp.",
-      "price": 12.02,
-      "changePct": 182.82352
+      "symbol": "AZTR",
+      "company": "Azitra, Inc.",
+      "price": 1.53,
+      "changePct": 113.98601
+    },
+    {
+      "symbol": "GCTK",
+      "company": "GlucoTrack, Inc.",
+      "price": 1.61,
+      "changePct": 95.67331
+    },
+    {
+      "symbol": "CPIX",
+      "company": "Cumberland Pharmaceuticals",
+      "price": 4.35,
+      "changePct": -48.76325
     },
     {
       "symbol": "CLRO",
       "company": "ClearOne, Inc.",
-      "price": 3.25,
-      "changePct": 69.27083
+      "price": 4.97,
+      "changePct": 52.92308
     },
     {
-      "symbol": "AARD",
-      "company": "Aardvark Therapeutics, Inc",
-      "price": 1.39,
-      "changePct": -64.81013
+      "symbol": "SGRY",
+      "company": "Surgery Partners, Inc.",
+      "price": 23.25,
+      "changePct": 47.61905
     },
     {
-      "symbol": "LYCA",
-      "company": "Lycia Therapeutics Inc.",
-      "price": 30,
-      "changePct": 66.66667
+      "symbol": "XP",
+      "company": "XP Inc.",
+      "price": 15.705,
+      "changePct": -48.3558
     },
     {
-      "symbol": "BOLT",
-      "company": "Bolt Biotherapeutics, Inc.",
-      "price": 6.27,
-      "changePct": 49.642
+      "symbol": "BZQ",
+      "company": "ProShares - UltraShort MSC",
+      "price": 19.26,
+      "changePct": 39.66642
     },
     {
-      "symbol": "KCAI",
-      "company": "KraneShares China Alpha In",
-      "price": 15,
-      "changePct": -53.20543
+      "symbol": "OSGIX",
+      "company": "JPMorgan Mid Cap Growth A",
+      "price": 50.5,
+      "changePct": 38.43202
     },
     {
-      "symbol": "MYND",
-      "company": "Mynd.ai, Inc.",
-      "price": 0.24,
-      "changePct": 47.42014
+      "symbol": "BRAI",
+      "company": "Braiin Ltd",
+      "price": 2.12,
+      "changePct": -40.28169
     },
     {
-      "symbol": "ESLA",
-      "company": "Estrella Immunopharma, Inc",
-      "price": 0.985,
-      "changePct": 35.52559
+      "symbol": "RFAI",
+      "company": "RF Acquisition Corp II Ord",
+      "price": 35.83,
+      "changePct": 37.01721
     },
     {
-      "symbol": "DAVI",
-      "company": "Davion Healthcare Plc",
-      "price": 6,
-      "changePct": -48.49785
+      "symbol": "PGSGX",
+      "company": "JPMorgan Small Cap Growth ",
+      "price": 24.55,
+      "changePct": 29.41487
     },
     {
-      "symbol": "JYD",
-      "company": "Jayud Global Logistics Lim",
-      "price": 1.83,
-      "changePct": 32.6087
-    },
-    {
-      "symbol": "HTCO",
-      "company": "High-Trend International G",
-      "price": 1.53,
-      "changePct": 30.76923
-    },
-    {
-      "symbol": "POM",
-      "company": "Pomdoctor Limited",
-      "price": 1.17,
-      "changePct": -42.36453
+      "symbol": "BRZU",
+      "company": "Direxion Daily MSCI Brazil",
+      "price": 78.2,
+      "changePct": -39.43618
     }
   ]
 }
