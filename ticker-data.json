@@ -1,77 +1,77 @@
 {
-  "updated": "2026-10-27",
+  "updated": "2026-10-28",
   "entries": [
     {
-      "symbol": "AZTR",
-      "company": "Azitra, Inc.",
-      "price": 1.53,
-      "changePct": 113.98601
-    },
-    {
-      "symbol": "GCTK",
-      "company": "GlucoTrack, Inc.",
-      "price": 1.61,
-      "changePct": 95.67331
-    },
-    {
-      "symbol": "CPIX",
-      "company": "Cumberland Pharmaceuticals",
-      "price": 4.35,
-      "changePct": -48.76325
-    },
-    {
-      "symbol": "CLRO",
-      "company": "ClearOne, Inc.",
-      "price": 4.97,
-      "changePct": 52.92308
-    },
-    {
-      "symbol": "SGRY",
-      "company": "Surgery Partners, Inc.",
-      "price": 23.25,
-      "changePct": 47.61905
-    },
-    {
-      "symbol": "XP",
-      "company": "XP Inc.",
-      "price": 15.705,
-      "changePct": -48.3558
-    },
-    {
-      "symbol": "BZQ",
-      "company": "ProShares - UltraShort MSC",
-      "price": 19.26,
-      "changePct": 39.66642
-    },
-    {
-      "symbol": "OSGIX",
-      "company": "JPMorgan Mid Cap Growth A",
-      "price": 50.5,
-      "changePct": 38.43202
+      "symbol": "NUWE",
+      "company": "Nuwellis, Inc.",
+      "price": 5.41,
+      "changePct": 74.69082
     },
     {
       "symbol": "BRAI",
       "company": "Braiin Ltd",
-      "price": 2.12,
-      "changePct": -40.28169
+      "price": 3.31,
+      "changePct": 56.13208
     },
     {
-      "symbol": "RFAI",
-      "company": "RF Acquisition Corp II Ord",
-      "price": 35.83,
-      "changePct": 37.01721
+      "symbol": "MEGL",
+      "company": "Magic Empire Global Limite",
+      "price": 0.3333,
+      "changePct": -53.44972
     },
     {
-      "symbol": "PGSGX",
-      "company": "JPMorgan Small Cap Growth ",
-      "price": 24.55,
-      "changePct": 29.41487
+      "symbol": "AIOK",
+      "company": "AI OKTO Corp.",
+      "price": 13.42,
+      "changePct": 46.50655
     },
     {
-      "symbol": "BRZU",
-      "company": "Direxion Daily MSCI Brazil",
-      "price": 78.2,
-      "changePct": -39.43618
+      "symbol": "MSGK",
+      "company": "MSG Knickerbockers Corp. C",
+      "price": 305.42,
+      "changePct": 40.18352
+    },
+    {
+      "symbol": "SPRC",
+      "company": "SciSparc Ltd.",
+      "price": 0.85,
+      "changePct": -34.10853
+    },
+    {
+      "symbol": "AEYE",
+      "company": "AudioEye, Inc.",
+      "price": 10.14,
+      "changePct": 36.65768
+    },
+    {
+      "symbol": "USGG",
+      "company": "Themes ETF Trust - Leverag",
+      "price": 2.04,
+      "changePct": 33.33333
+    },
+    {
+      "symbol": "BDMD",
+      "company": "Baird Medical Investment H",
+      "price": 0.2819,
+      "changePct": -34.08931
+    },
+    {
+      "symbol": "MBRX",
+      "company": "Moleculin Biotech, Inc.",
+      "price": 9.265,
+      "changePct": 30.76923
+    },
+    {
+      "symbol": "OWLS",
+      "company": "OBOOK Holdings Inc.",
+      "price": 2.66,
+      "changePct": 30.39216
+    },
+    {
+      "symbol": "ARTV",
+      "company": "Artiva Biotherapeutics, In",
+      "price": 4.27,
+      "changePct": -30.68182
     }
   ]
 }
