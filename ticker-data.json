@@ -1,77 +1,77 @@
 {
-  "updated": "2026-10-28",
+  "updated": "2026-10-29",
   "entries": [
     {
-      "symbol": "NUWE",
-      "company": "Nuwellis, Inc.",
-      "price": 5.41,
-      "changePct": 74.69082
-    },
-    {
-      "symbol": "BRAI",
-      "company": "Braiin Ltd",
-      "price": 3.31,
-      "changePct": 56.13208
-    },
-    {
-      "symbol": "MEGL",
-      "company": "Magic Empire Global Limite",
-      "price": 0.3333,
-      "changePct": -53.44972
+      "symbol": "ULBI",
+      "company": "Ultralife Corporation",
+      "price": 15.61,
+      "changePct": 145.44025
     },
     {
       "symbol": "AIOK",
       "company": "AI OKTO Corp.",
-      "price": 13.42,
-      "changePct": 46.50655
+      "price": 28.14,
+      "changePct": 109.68703
     },
     {
-      "symbol": "MSGK",
-      "company": "MSG Knickerbockers Corp. C",
-      "price": 305.42,
-      "changePct": 40.18352
+      "symbol": "JDZG",
+      "company": "JIADE Limited",
+      "price": 1.5,
+      "changePct": -75.40984
     },
     {
-      "symbol": "SPRC",
-      "company": "SciSparc Ltd.",
-      "price": 0.85,
-      "changePct": -34.10853
+      "symbol": "KPTI",
+      "company": "Karyopharm Therapeutics In",
+      "price": 0.8321,
+      "changePct": 73.35417
     },
     {
-      "symbol": "AEYE",
-      "company": "AudioEye, Inc.",
-      "price": 10.14,
-      "changePct": 36.65768
+      "symbol": "FTFT",
+      "company": "Future FinTech Group Inc.",
+      "price": 2.89,
+      "changePct": 55.37634
     },
     {
-      "symbol": "USGG",
-      "company": "Themes ETF Trust - Leverag",
-      "price": 2.04,
-      "changePct": 33.33333
+      "symbol": "PLCE",
+      "company": "The Children's Place, Inc.",
+      "price": 0.4703,
+      "changePct": -54.33981
     },
     {
-      "symbol": "BDMD",
-      "company": "Baird Medical Investment H",
-      "price": 0.2819,
-      "changePct": -34.08931
+      "symbol": "ROMA",
+      "company": "Roma Green Finance Limited",
+      "price": 7,
+      "changePct": 49.25373
     },
     {
-      "symbol": "MBRX",
-      "company": "Moleculin Biotech, Inc.",
-      "price": 9.265,
-      "changePct": 30.76923
+      "symbol": "BOOM",
+      "company": "DMC Global Inc.",
+      "price": 7.73,
+      "changePct": 44.48598
     },
     {
-      "symbol": "OWLS",
-      "company": "OBOOK Holdings Inc.",
-      "price": 2.66,
-      "changePct": 30.39216
+      "symbol": "BCAX",
+      "company": "Bicara Therapeutics Inc. C",
+      "price": 9.76,
+      "changePct": -44.16476
     },
     {
-      "symbol": "ARTV",
-      "company": "Artiva Biotherapeutics, In",
-      "price": 4.27,
-      "changePct": -30.68182
+      "symbol": "PDC",
+      "company": "Perpetuals.com Ltd",
+      "price": 2.92,
+      "changePct": 43.13725
+    },
+    {
+      "symbol": "GIFT",
+      "company": "Giftify, Inc.",
+      "price": 0.63,
+      "changePct": 42.66304
+    },
+    {
+      "symbol": "HUHU",
+      "company": "HUHUTECH International Gro",
+      "price": 0.5695,
+      "changePct": -43.05
     }
   ]
 }
