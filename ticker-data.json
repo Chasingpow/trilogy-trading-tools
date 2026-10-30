@@ -1,77 +1,77 @@
 {
-  "updated": "2026-10-29",
+  "updated": "2026-10-30",
   "entries": [
     {
-      "symbol": "ULBI",
-      "company": "Ultralife Corporation",
-      "price": 15.61,
-      "changePct": 145.44025
+      "symbol": "PCLA",
+      "company": "PicoCELA Inc.",
+      "price": 11.1,
+      "changePct": 86.0855
     },
     {
-      "symbol": "AIOK",
-      "company": "AI OKTO Corp.",
-      "price": 28.14,
-      "changePct": 109.68703
+      "symbol": "NCPL",
+      "company": "Netcapital Inc.",
+      "price": 1.78,
+      "changePct": 61.81818
     },
     {
-      "symbol": "JDZG",
-      "company": "JIADE Limited",
-      "price": 1.5,
-      "changePct": -75.40984
+      "symbol": "NOWL",
+      "company": "GraniteShares 2x Long NOW ",
+      "price": 3.98,
+      "changePct": -53.61305
     },
     {
-      "symbol": "KPTI",
-      "company": "Karyopharm Therapeutics In",
-      "price": 0.8321,
-      "changePct": 73.35417
+      "symbol": "INLF",
+      "company": "INLIF Limited",
+      "price": 0.265,
+      "changePct": 47.22222
     },
     {
-      "symbol": "FTFT",
-      "company": "Future FinTech Group Inc.",
-      "price": 2.89,
-      "changePct": 55.37634
+      "symbol": "PUR",
+      "company": "Defiance Daily Target 2X L",
+      "price": 29.06,
+      "changePct": 47.13924
     },
     {
-      "symbol": "PLCE",
-      "company": "The Children's Place, Inc.",
-      "price": 0.4703,
-      "changePct": -54.33981
+      "symbol": "LVWR",
+      "company": "LiveWire Group, Inc.",
+      "price": 0.9001,
+      "changePct": -43.74375
     },
     {
-      "symbol": "ROMA",
-      "company": "Roma Green Finance Limited",
-      "price": 7,
-      "changePct": 49.25373
+      "symbol": "XCH",
+      "company": "XCHG Limited American Depo",
+      "price": 3.46,
+      "changePct": 41.80328
     },
     {
-      "symbol": "BOOM",
-      "company": "DMC Global Inc.",
-      "price": 7.73,
-      "changePct": 44.48598
+      "symbol": "SGLY",
+      "company": "Singularity Future Technol",
+      "price": 0.5049,
+      "changePct": 40.17213
     },
     {
-      "symbol": "BCAX",
-      "company": "Bicara Therapeutics Inc. C",
-      "price": 9.76,
-      "changePct": -44.16476
+      "symbol": "XRX",
+      "company": "Xerox Holdings Corporation",
+      "price": 1.665,
+      "changePct": -40.32258
     },
     {
-      "symbol": "PDC",
-      "company": "Perpetuals.com Ltd",
-      "price": 2.92,
-      "changePct": 43.13725
+      "symbol": "JFIN",
+      "company": "Jiayin Group Inc.",
+      "price": 1.72,
+      "changePct": 37.6
     },
     {
-      "symbol": "GIFT",
-      "company": "Giftify, Inc.",
-      "price": 0.63,
-      "changePct": 42.66304
+      "symbol": "KPLT",
+      "company": "Katapult Holdings, Inc.",
+      "price": 12.52,
+      "changePct": 37.58242
     },
     {
-      "symbol": "HUHU",
-      "company": "HUHUTECH International Gro",
-      "price": 0.5695,
-      "changePct": -43.05
+      "symbol": "OPTT",
+      "company": "Ocean Power Technologies, ",
+      "price": 0.4189,
+      "changePct": -38.30633
     }
   ]
 }
