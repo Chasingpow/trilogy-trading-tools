@@ -1,77 +1,77 @@
 {
-  "updated": "2026-10-30",
+  "updated": "2026-10-31",
   "entries": [
     {
-      "symbol": "PCLA",
-      "company": "PicoCELA Inc.",
-      "price": 11.1,
-      "changePct": 86.0855
+      "symbol": "ONEG",
+      "company": "OneConstruction Group Limi",
+      "price": 1.63,
+      "changePct": 108.14711
     },
     {
-      "symbol": "NCPL",
-      "company": "Netcapital Inc.",
-      "price": 1.78,
-      "changePct": 61.81818
+      "symbol": "SGRX",
+      "company": "Sangrix Inc.",
+      "price": 0.7335,
+      "changePct": 83.51263
     },
     {
-      "symbol": "NOWL",
-      "company": "GraniteShares 2x Long NOW ",
-      "price": 3.98,
-      "changePct": -53.61305
+      "symbol": "ABOS",
+      "company": "Acumen Pharmaceuticals, In",
+      "price": 0.2101,
+      "changePct": -90.82533
     },
     {
-      "symbol": "INLF",
-      "company": "INLIF Limited",
-      "price": 0.265,
-      "changePct": 47.22222
+      "symbol": "SLGB",
+      "company": "Smart Logistics Global Lim",
+      "price": 0.3051,
+      "changePct": 48.97461
     },
     {
-      "symbol": "PUR",
-      "company": "Defiance Daily Target 2X L",
-      "price": 29.06,
-      "changePct": 47.13924
+      "symbol": "GDYN",
+      "company": "Grid Dynamics Holdings, In",
+      "price": 13.36,
+      "changePct": 40.77977
     },
     {
-      "symbol": "LVWR",
-      "company": "LiveWire Group, Inc.",
-      "price": 0.9001,
-      "changePct": -43.74375
+      "symbol": "PMN",
+      "company": "ProMIS Neurosciences, Inc.",
+      "price": 3.31,
+      "changePct": -70.12635
     },
     {
-      "symbol": "XCH",
-      "company": "XCHG Limited American Depo",
-      "price": 3.46,
-      "changePct": 41.80328
+      "symbol": "FMC",
+      "company": "FMC Corporation",
+      "price": 6.2,
+      "changePct": 30.52632
     },
     {
-      "symbol": "SGLY",
-      "company": "Singularity Future Technol",
-      "price": 0.5049,
-      "changePct": 40.17213
+      "symbol": "ASUR",
+      "company": "Asure Software, Inc.",
+      "price": 9.41,
+      "changePct": 30.15214
     },
     {
-      "symbol": "XRX",
-      "company": "Xerox Holdings Corporation",
-      "price": 1.665,
-      "changePct": -40.32258
+      "symbol": "ARI",
+      "company": "Apollo Commercial Real Est",
+      "price": 2.33,
+      "changePct": -63.87597
     },
     {
-      "symbol": "JFIN",
-      "company": "Jiayin Group Inc.",
-      "price": 1.72,
-      "changePct": 37.6
+      "symbol": "NFE",
+      "company": "New Fortress Energy Inc.",
+      "price": 4.92,
+      "changePct": 29.8153
     },
     {
-      "symbol": "KPLT",
-      "company": "Katapult Holdings, Inc.",
-      "price": 12.52,
-      "changePct": 37.58242
+      "symbol": "ULH",
+      "company": "Universal Logistics Holdin",
+      "price": 22.59,
+      "changePct": 29.67853
     },
     {
-      "symbol": "OPTT",
-      "company": "Ocean Power Technologies, ",
-      "price": 0.4189,
-      "changePct": -38.30633
+      "symbol": "RDTL",
+      "company": "GraniteShares 2x Long RDDT",
+      "price": 3.63,
+      "changePct": -59.02935
     }
   ]
 }
