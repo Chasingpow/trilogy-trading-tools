@@ -1,77 +1,77 @@
 {
-  "updated": "2026-10-31",
+  "updated": "2026-11-03",
   "entries": [
     {
-      "symbol": "ONEG",
-      "company": "OneConstruction Group Limi",
-      "price": 1.63,
-      "changePct": 108.14711
+      "symbol": "INO",
+      "company": "Inovio Pharmaceuticals, In",
+      "price": 1.89,
+      "changePct": 213.74502
     },
     {
-      "symbol": "SGRX",
-      "company": "Sangrix Inc.",
-      "price": 0.7335,
-      "changePct": 83.51263
+      "symbol": "VCIG",
+      "company": "VCI Global Limited",
+      "price": 8.16,
+      "changePct": 168.40339
     },
     {
-      "symbol": "ABOS",
-      "company": "Acumen Pharmaceuticals, In",
-      "price": 0.2101,
-      "changePct": -90.82533
+      "symbol": "WHLR",
+      "company": "Wheeler Real Estate Invest",
+      "price": 0.611,
+      "changePct": -60.32468
     },
     {
-      "symbol": "SLGB",
-      "company": "Smart Logistics Global Lim",
-      "price": 0.3051,
-      "changePct": 48.97461
+      "symbol": "CLRO",
+      "company": "ClearOne, Inc.",
+      "price": 5.65,
+      "changePct": 65.68915
     },
     {
-      "symbol": "GDYN",
-      "company": "Grid Dynamics Holdings, In",
-      "price": 13.36,
-      "changePct": 40.77977
+      "symbol": "INLF",
+      "company": "INLIF Limited",
+      "price": 0.2899,
+      "changePct": 56.7027
     },
     {
-      "symbol": "PMN",
-      "company": "ProMIS Neurosciences, Inc.",
-      "price": 3.31,
-      "changePct": -70.12635
+      "symbol": "DRUG",
+      "company": "Bright Minds Biosciences I",
+      "price": 26.2,
+      "changePct": -52.34631
     },
     {
-      "symbol": "FMC",
-      "company": "FMC Corporation",
-      "price": 6.2,
-      "changePct": 30.52632
+      "symbol": "EVGO",
+      "company": "EVgo, Inc.",
+      "price": 1.85,
+      "changePct": 46.8254
     },
     {
-      "symbol": "ASUR",
-      "company": "Asure Software, Inc.",
-      "price": 9.41,
-      "changePct": 30.15214
+      "symbol": "SEGG",
+      "company": "Sports Entertainment Gamin",
+      "price": 1.93,
+      "changePct": 45.11278
     },
     {
-      "symbol": "ARI",
-      "company": "Apollo Commercial Real Est",
-      "price": 2.33,
-      "changePct": -63.87597
+      "symbol": "AIOK",
+      "company": "AI OKTO Corp.",
+      "price": 12.63,
+      "changePct": -47.74514
     },
     {
-      "symbol": "NFE",
-      "company": "New Fortress Energy Inc.",
-      "price": 4.92,
-      "changePct": 29.8153
+      "symbol": "ASPSZ",
+      "company": "Altisource Portfolio Solut",
+      "price": 0.235,
+      "changePct": 42.33798
     },
     {
-      "symbol": "ULH",
-      "company": "Universal Logistics Holdin",
-      "price": 22.59,
-      "changePct": 29.67853
+      "symbol": "HXHX",
+      "company": "Haoxin Holdings Limited Cl",
+      "price": 0.236,
+      "changePct": 38.90524
     },
     {
-      "symbol": "RDTL",
-      "company": "GraniteShares 2x Long RDDT",
-      "price": 3.63,
-      "changePct": -59.02935
+      "symbol": "PARA",
+      "company": "Parabolic Technologies, In",
+      "price": 1.69,
+      "changePct": -46.6877
     }
   ]
 }
