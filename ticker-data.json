@@ -1,77 +1,77 @@
 {
-  "updated": "2026-11-03",
+  "updated": "2026-11-04",
   "entries": [
     {
-      "symbol": "INO",
-      "company": "Inovio Pharmaceuticals, In",
-      "price": 1.89,
-      "changePct": 213.74502
+      "symbol": "CHSN",
+      "company": "Chanson International Hold",
+      "price": 3.38,
+      "changePct": 241.2418
     },
     {
-      "symbol": "VCIG",
-      "company": "VCI Global Limited",
-      "price": 8.16,
-      "changePct": 168.40339
+      "symbol": "RDAC",
+      "company": "Rising Dragon Acquisition ",
+      "price": 11.3,
+      "changePct": 121.56863
     },
     {
-      "symbol": "WHLR",
-      "company": "Wheeler Real Estate Invest",
-      "price": 0.611,
-      "changePct": -60.32468
+      "symbol": "CENN",
+      "company": "Cenntro Electric Group Lim",
+      "price": 0.2977,
+      "changePct": -85.00252
     },
     {
-      "symbol": "CLRO",
-      "company": "ClearOne, Inc.",
-      "price": 5.65,
-      "changePct": 65.68915
-    },
-    {
-      "symbol": "INLF",
-      "company": "INLIF Limited",
-      "price": 0.2899,
-      "changePct": 56.7027
-    },
-    {
-      "symbol": "DRUG",
-      "company": "Bright Minds Biosciences I",
-      "price": 26.2,
-      "changePct": -52.34631
-    },
-    {
-      "symbol": "EVGO",
-      "company": "EVgo, Inc.",
-      "price": 1.85,
-      "changePct": 46.8254
-    },
-    {
-      "symbol": "SEGG",
-      "company": "Sports Entertainment Gamin",
-      "price": 1.93,
-      "changePct": 45.11278
-    },
-    {
-      "symbol": "AIOK",
-      "company": "AI OKTO Corp.",
-      "price": 12.63,
-      "changePct": -47.74514
-    },
-    {
-      "symbol": "ASPSZ",
-      "company": "Altisource Portfolio Solut",
-      "price": 0.235,
-      "changePct": 42.33798
-    },
-    {
-      "symbol": "HXHX",
-      "company": "Haoxin Holdings Limited Cl",
-      "price": 0.236,
-      "changePct": 38.90524
+      "symbol": "MERC",
+      "company": "Mercer International Inc.",
+      "price": 0.212,
+      "changePct": 68.25397
     },
     {
       "symbol": "PARA",
       "company": "Parabolic Technologies, In",
-      "price": 1.69,
-      "changePct": -46.6877
+      "price": 2.72,
+      "changePct": 60.94675
+    },
+    {
+      "symbol": "ABTS",
+      "company": "Abits Group Inc.",
+      "price": 0.4,
+      "changePct": -61.90476
+    },
+    {
+      "symbol": "KTTA",
+      "company": "Pasithea Therapeutics Corp",
+      "price": 0.53,
+      "changePct": 44.02174
+    },
+    {
+      "symbol": "IFBD",
+      "company": "Infobird Co., Ltd",
+      "price": 1.43,
+      "changePct": 38.83495
+    },
+    {
+      "symbol": "AIRE",
+      "company": "reAlpha Tech Corp.",
+      "price": 0.39,
+      "changePct": -41.62551
+    },
+    {
+      "symbol": "RIOX",
+      "company": "Daily Target 2X Long RIOT ",
+      "price": 9.75,
+      "changePct": 37.1308
+    },
+    {
+      "symbol": "REED",
+      "company": "Reed's, Inc.",
+      "price": 1.02,
+      "changePct": 34.38735
+    },
+    {
+      "symbol": "JAGX",
+      "company": "Jaguar Health, Inc.",
+      "price": 0.5575,
+      "changePct": -36.94152
     }
   ]
 }
