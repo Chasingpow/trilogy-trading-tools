@@ -1,77 +1,77 @@
 {
-  "updated": "2026-11-04",
+  "updated": "2026-11-05",
   "entries": [
     {
-      "symbol": "CHSN",
-      "company": "Chanson International Hold",
-      "price": 3.38,
-      "changePct": 241.2418
+      "symbol": "OMH",
+      "company": "Ohmyhome Limited",
+      "price": 15.55,
+      "changePct": 432.53425
     },
     {
-      "symbol": "RDAC",
-      "company": "Rising Dragon Acquisition ",
-      "price": 11.3,
-      "changePct": 121.56863
-    },
-    {
-      "symbol": "CENN",
-      "company": "Cenntro Electric Group Lim",
-      "price": 0.2977,
-      "changePct": -85.00252
-    },
-    {
-      "symbol": "MERC",
-      "company": "Mercer International Inc.",
-      "price": 0.212,
-      "changePct": 68.25397
+      "symbol": "CMTG",
+      "company": "Claros Mortgage Trust, Inc",
+      "price": 1.85,
+      "changePct": 66.66667
     },
     {
       "symbol": "PARA",
       "company": "Parabolic Technologies, In",
-      "price": 2.72,
-      "changePct": 60.94675
+      "price": 0.319,
+      "changePct": -88.27206
     },
     {
-      "symbol": "ABTS",
-      "company": "Abits Group Inc.",
-      "price": 0.4,
-      "changePct": -61.90476
+      "symbol": "CRIS",
+      "company": "Curis, Inc.",
+      "price": 1.11,
+      "changePct": 55.48396
     },
     {
-      "symbol": "KTTA",
-      "company": "Pasithea Therapeutics Corp",
-      "price": 0.53,
-      "changePct": 44.02174
+      "symbol": "DUOG",
+      "company": "Leverage Shares 2x Long DU",
+      "price": 61.3251,
+      "changePct": 54.23818
     },
     {
-      "symbol": "IFBD",
-      "company": "Infobird Co., Ltd",
-      "price": 1.43,
-      "changePct": 38.83495
+      "symbol": "HUTG",
+      "company": "Themes ETF Trust - Leverag",
+      "price": 3.19,
+      "changePct": -45.65588
     },
     {
-      "symbol": "AIRE",
-      "company": "reAlpha Tech Corp.",
-      "price": 0.39,
-      "changePct": -41.62551
+      "symbol": "PMAX",
+      "company": "Powell Max Limited Class A",
+      "price": 1.04,
+      "changePct": 54.07407
     },
     {
-      "symbol": "RIOX",
-      "company": "Daily Target 2X Long RIOT ",
-      "price": 9.75,
-      "changePct": 37.1308
+      "symbol": "RFAIR",
+      "company": "RF Acquisition Corp II Rig",
+      "price": 0.24,
+      "changePct": 50
     },
     {
-      "symbol": "REED",
-      "company": "Reed's, Inc.",
-      "price": 1.02,
-      "changePct": 34.38735
+      "symbol": "CIFG",
+      "company": "Leverage Shares 2X Long CI",
+      "price": 0.47,
+      "changePct": -41.25
     },
     {
-      "symbol": "JAGX",
-      "company": "Jaguar Health, Inc.",
-      "price": 0.5575,
-      "changePct": -36.94152
+      "symbol": "CRCT",
+      "company": "Cricut, Inc.",
+      "price": 8.88,
+      "changePct": 48.74372
+    },
+    {
+      "symbol": "LYEL",
+      "company": "Lyell Immunopharma, Inc.",
+      "price": 15.43,
+      "changePct": 43.26834
+    },
+    {
+      "symbol": "NRIX",
+      "company": "Nurix Therapeutics, Inc.",
+      "price": 15.95,
+      "changePct": -38.22618
     }
   ]
 }
