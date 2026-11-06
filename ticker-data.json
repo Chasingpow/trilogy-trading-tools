@@ -1,77 +1,77 @@
 {
-  "updated": "2026-11-05",
+  "updated": "2026-11-06",
   "entries": [
     {
-      "symbol": "OMH",
-      "company": "Ohmyhome Limited",
-      "price": 15.55,
-      "changePct": 432.53425
+      "symbol": "LABT",
+      "company": "Lakewood-Amedex Biotherape",
+      "price": 0.5406,
+      "changePct": 182.44514
     },
     {
-      "symbol": "CMTG",
-      "company": "Claros Mortgage Trust, Inc",
-      "price": 1.85,
-      "changePct": 66.66667
+      "symbol": "AEHL",
+      "company": "Antelope Enterprise Holdin",
+      "price": 17.44,
+      "changePct": 178.14992
     },
     {
-      "symbol": "PARA",
-      "company": "Parabolic Technologies, In",
-      "price": 0.319,
-      "changePct": -88.27206
+      "symbol": "CDLR",
+      "company": "Cadeler A/S",
+      "price": 7.4,
+      "changePct": -71.36223
     },
     {
-      "symbol": "CRIS",
-      "company": "Curis, Inc.",
-      "price": 1.11,
-      "changePct": 55.48396
+      "symbol": "ZNB",
+      "company": "Zeta Network Group",
+      "price": 1.07,
+      "changePct": 72.02572
     },
     {
-      "symbol": "DUOG",
-      "company": "Leverage Shares 2x Long DU",
-      "price": 61.3251,
-      "changePct": 54.23818
+      "symbol": "APPX",
+      "company": "Tradr 2X Long APP Daily ET",
+      "price": 14.52,
+      "changePct": 62.41611
     },
     {
-      "symbol": "HUTG",
-      "company": "Themes ETF Trust - Leverag",
-      "price": 3.19,
-      "changePct": -45.65588
+      "symbol": "SNWV",
+      "company": "SANUWAVE Health Inc.",
+      "price": 2.25,
+      "changePct": -60.73298
     },
     {
-      "symbol": "PMAX",
-      "company": "Powell Max Limited Class A",
-      "price": 1.04,
-      "changePct": 54.07407
+      "symbol": "PLCE",
+      "company": "The Children's Place, Inc.",
+      "price": 0.3361,
+      "changePct": 39.46058
     },
     {
-      "symbol": "RFAIR",
-      "company": "RF Acquisition Corp II Rig",
-      "price": 0.24,
-      "changePct": 50
+      "symbol": "SOXS",
+      "company": "Direxion Daily Semiconduct",
+      "price": 81.22,
+      "changePct": 39.21838
     },
     {
-      "symbol": "CIFG",
-      "company": "Leverage Shares 2X Long CI",
-      "price": 0.47,
-      "changePct": -41.25
+      "symbol": "MNTN",
+      "company": "MNTN, Inc Class A",
+      "price": 4.7,
+      "changePct": -54.67695
     },
     {
-      "symbol": "CRCT",
-      "company": "Cricut, Inc.",
-      "price": 8.88,
-      "changePct": 48.74372
+      "symbol": "AMTX",
+      "company": "Aemetis, Inc.",
+      "price": 1.73,
+      "changePct": 38.4
     },
     {
-      "symbol": "LYEL",
-      "company": "Lyell Immunopharma, Inc.",
-      "price": 15.43,
-      "changePct": 43.26834
+      "symbol": "DAMD",
+      "company": "Tidal Trust II - Defiance ",
+      "price": 16.61,
+      "changePct": 35.26059
     },
     {
-      "symbol": "NRIX",
-      "company": "Nurix Therapeutics, Inc.",
-      "price": 15.95,
-      "changePct": -38.22618
+      "symbol": "VCYT",
+      "company": "Veracyte, Inc.",
+      "price": 24,
+      "changePct": -54.30312
     }
   ]
 }
