@@ -1,77 +1,77 @@
 {
-  "updated": "2026-11-06",
+  "updated": "2026-11-07",
   "entries": [
     {
-      "symbol": "LABT",
-      "company": "Lakewood-Amedex Biotherape",
-      "price": 0.5406,
-      "changePct": 182.44514
+      "symbol": "SDA",
+      "company": "SunCar Technology Group In",
+      "price": 0.3765,
+      "changePct": 144.79844
     },
     {
-      "symbol": "AEHL",
-      "company": "Antelope Enterprise Holdin",
-      "price": 17.44,
-      "changePct": 178.14992
+      "symbol": "STAK",
+      "company": "STAK Inc. Ordinary Shares",
+      "price": 3.26,
+      "changePct": 82.12291
     },
     {
-      "symbol": "CDLR",
-      "company": "Cadeler A/S",
-      "price": 7.4,
-      "changePct": -71.36223
+      "symbol": "SITC",
+      "company": "SITE Centers Corp.",
+      "price": 0.668,
+      "changePct": -81.29742
     },
     {
-      "symbol": "ZNB",
-      "company": "Zeta Network Group",
-      "price": 1.07,
-      "changePct": 72.02572
+      "symbol": "GOGO",
+      "company": "Gogo Inc.",
+      "price": 3.885,
+      "changePct": 71.52318
     },
     {
-      "symbol": "APPX",
-      "company": "Tradr 2X Long APP Daily ET",
-      "price": 14.52,
-      "changePct": 62.41611
+      "symbol": "CDT",
+      "company": "CDT Equity Inc.",
+      "price": 1.31,
+      "changePct": 54.84634
     },
     {
-      "symbol": "SNWV",
-      "company": "SANUWAVE Health Inc.",
-      "price": 2.25,
-      "changePct": -60.73298
+      "symbol": "AIRS",
+      "company": "AirSculpt Technologies, In",
+      "price": 0.5339,
+      "changePct": -62.92361
     },
     {
-      "symbol": "PLCE",
-      "company": "The Children's Place, Inc.",
-      "price": 0.3361,
-      "changePct": 39.46058
+      "symbol": "CIIT",
+      "company": "Tianci International, Inc.",
+      "price": 2.4,
+      "changePct": 54.83871
     },
     {
-      "symbol": "SOXS",
-      "company": "Direxion Daily Semiconduct",
-      "price": 81.22,
-      "changePct": 39.21838
+      "symbol": "VSA",
+      "company": "VisionSys AI Inc.",
+      "price": 2.35,
+      "changePct": 52.5974
     },
     {
-      "symbol": "MNTN",
-      "company": "MNTN, Inc Class A",
-      "price": 4.7,
-      "changePct": -54.67695
+      "symbol": "BDSX",
+      "company": "Biodesix, Inc.",
+      "price": 8.53,
+      "changePct": -57.00605
     },
     {
-      "symbol": "AMTX",
-      "company": "Aemetis, Inc.",
-      "price": 1.73,
-      "changePct": 38.4
+      "symbol": "SKIN",
+      "company": "SkinHealth Systems Inc.",
+      "price": 15.71,
+      "changePct": 51.78744
     },
     {
-      "symbol": "DAMD",
-      "company": "Tidal Trust II - Defiance ",
-      "price": 16.61,
-      "changePct": 35.26059
+      "symbol": "SNT",
+      "company": "Senstar Technologies Ltd.",
+      "price": 1.9,
+      "changePct": 46.15385
     },
     {
-      "symbol": "VCYT",
-      "company": "Veracyte, Inc.",
-      "price": 24,
-      "changePct": -54.30312
+      "symbol": "JDZG",
+      "company": "JIADE Limited",
+      "price": 0.2102,
+      "changePct": -46.75785
     }
   ]
 }
