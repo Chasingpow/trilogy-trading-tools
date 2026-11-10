@@ -11,6 +11,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: site-commits
+  cancel-in-progress: false
+
 jobs:
   movers:
     runs-on: ubuntu-latest
@@ -30,4 +34,5 @@ jobs:
           git add ticker-data.json
           git diff --cached --quiet && echo "No change (market closed?)" && exit 0
           git commit -m "Daily movers: $(date -u +%F)"
+          git pull --rebase
           git push
