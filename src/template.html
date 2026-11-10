@@ -1,4 +1,3 @@
-<title>Trilogy Trading Tools</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600;700&display=swap">
 <style>
@@ -20,6 +19,8 @@
   }
 
   *{box-sizing:border-box}
+  [hidden]{display:none !important}
+  section[id],[id="waitlist"],[id="screening"]{scroll-margin-top:96px}
   html{scroll-behavior:smooth;background:var(--bg)}
   body{
     margin:0; background:transparent; color:var(--ink);
@@ -43,10 +44,13 @@
     display:grid;place-items:center;box-shadow:var(--sh-brand);flex:none}
   .mark svg{width:30px;height:30px}
   .wordmark{display:flex;flex-direction:column;line-height:1.14; text-decoration:none;color:var(--ink)}
-  .wordmark b{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:21px;letter-spacing:.01em}
+  .wordmark{flex:none}
+  .wordmark b{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:21px;letter-spacing:.01em;white-space:nowrap}
+  .wordmark span{white-space:nowrap}
   .wordmark b .serif-i{font-size:22px}
   .wordmark span{font-size:11.5px;letter-spacing:.24em;color:var(--ink-3);font-weight:600}
-  .nav-links{display:flex;gap:24px;margin-left:auto;align-items:center}
+  .nav-links{display:flex;gap:22px;margin-left:auto;align-items:center}
+  .nav-links a{white-space:nowrap}
   .nav-links a{font-size:16px;font-weight:600;color:var(--ink-2);text-decoration:none}
   .nav-links a:hover{color:var(--brand-ink)}
   .btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:12px 24px;
@@ -68,7 +72,7 @@
   .nav-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
   .nav-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
   .nav-burger:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
-  @media (max-width:860px){
+  @media (max-width:1100px){
     .nav-in{position:relative;height:72px;gap:16px}
     .mark{width:44px;height:44px;border-radius:12px}
     .mark svg{width:25px;height:25px}
@@ -147,7 +151,7 @@
     width:min(480px,80vw);height:190px;pointer-events:none;filter:blur(34px);
     background:radial-gradient(closest-side,color-mix(in srgb,var(--brand) 18%,transparent),transparent)}
   .sec-head>*{position:relative;z-index:1}
-  .sec-head h2{font-size:clamp(34px,5vw,56px);font-weight:800;letter-spacing:-.015em;
+  .sec-head h1,.sec-head h2{font-size:clamp(34px,5vw,56px);font-weight:800;letter-spacing:-.015em;
     will-change:transform;
     text-shadow:0 14px 60px color-mix(in srgb,var(--brand) 40%,transparent)}
   .sec-head p{color:var(--ink-2);margin:0;font-size:17px;max-width:58ch}
@@ -272,6 +276,45 @@
   .contact-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
   .contact-row .btn{font-size:16px;padding:14px 26px}
 
+  /* launch-list form */
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+  .wl-form{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:6px}
+  .wl-form input[type=email]{flex:1 1 260px;min-width:0;background:var(--surface-2);border:1px solid var(--line);
+    color:var(--ink);border-radius:999px;padding:13px 20px;font:inherit;font-size:15px}
+  .wl-form input[type=email]:focus{outline:2px solid var(--brand);outline-offset:2px;border-color:var(--brand)}
+  .wl-form input::placeholder{color:var(--ink-3)}
+  .wl-plan{flex-basis:100%;font-size:13px;color:var(--brand-ink);margin:0}
+  .wl-msg{flex-basis:100%;margin:0;font-size:13.5px;color:var(--gain-ink);min-height:1em}
+  .wl-msg.err{color:var(--loss-ink)}
+  .wl-count{margin:0;font-size:13.5px;color:var(--ink-2)}
+  .guarantee{margin:0;font-size:13px;line-height:1.5;color:var(--gain-ink);
+    border-left:2px solid var(--gain);padding-left:10px}
+  .value-line{margin:0;font-size:13.5px;line-height:1.55;color:var(--ink)}
+  .not-for{margin:22px auto 0;max-width:72ch;text-align:center;font-size:13.5px;color:var(--ink-3)}
+  .not-for b{color:var(--ink-2)}
+
+  /* founder, testimonials, screening method, FAQ */
+  .founders{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:28px}
+  .founder{display:grid;grid-template-columns:72px 1fr;gap:6px 16px;align-items:center;background:var(--surface);
+    border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--sh-card)}
+  .founder img{width:72px;height:72px;border-radius:50%;object-fit:cover;grid-row:1/4;background:var(--surface-2)}
+  .founder b{font-family:"Bricolage Grotesque",sans-serif;font-size:18px}
+  .founder span{color:var(--ink-2);font-size:14px;line-height:1.5}
+  .founder a{font-size:13.5px;font-weight:700}
+  .quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+  .quote{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;display:grid;gap:14px}
+  .quote blockquote{margin:0;color:var(--ink);font-size:15.5px;line-height:1.6}
+  .quote figcaption{display:flex;gap:12px;align-items:center;font-size:13.5px;color:var(--ink-2)}
+  .quote figcaption img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+  .method{margin-top:22px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;
+    display:grid;gap:10px;font-size:14.5px;color:var(--ink-2)}
+  .method h3{font-size:20px;color:var(--ink)}
+  .method ul{margin:0;padding-left:20px;display:grid;gap:6px}
+  .faq{max-width:800px;margin:0 auto;display:grid;gap:12px}
+  .faq details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 20px}
+  .faq summary{cursor:pointer;font-weight:700;color:var(--ink);font-size:16px}
+  .faq details p{margin:10px 0 0;color:var(--ink-2);font-size:15px}
+
   /* legal dialogs */
   dialog.legal{max-width:680px;width:calc(100vw - 40px);max-height:82vh;border:1px solid var(--line);
     border-radius:18px;background:var(--surface);color:var(--ink);padding:0;box-shadow:var(--sh-card)}
@@ -310,7 +353,7 @@
     72%{transform:translateZ(-28px) rotateX(-2deg);filter:blur(0)}
     100%{transform:translateZ(0) rotateX(0)}
   }
-  .sec-head.fly h2{animation:h3dFly 1.15s cubic-bezier(.16,.85,.3,1) both,
+  .sec-head.fly h1,.sec-head.fly h2{animation:h3dFly 1.15s cubic-bezier(.16,.85,.3,1) both,
     h3dIdle 4.5s ease-in-out 1.3s infinite alternate}
   @keyframes h3dFly{
     0%{transform:translateZ(420px);opacity:0;filter:blur(10px)}
@@ -385,10 +428,10 @@
       <a href="#scanner">3T Pro Scanner</a>
       <a href="#journal">Trilogy Journal</a>
       <a href="#wealth">Wealth Builder</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#about">About</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/about/">About</a>
       <a href="#contact">Contact</a>
-      <a class="btn btn-brand" href="#pricing">Get access</a>
+      <a class="btn btn-brand" href="#waitlist">Join the launch list</a>
     </div>
   </div>
 </nav>
@@ -397,7 +440,7 @@
 <header class="hero" id="top">
   <canvas id="ribbons" aria-hidden="true"></canvas>
   <div class="wrap hero-in">
-    <span class="eyebrow">Trilogy Trading Tools</span>
+    <span class="eyebrow">For small-cap momentum traders</span>
     <h1>Three tools.<br>One <span class="serif-i grad-text">complete</span> trader.</h1>
     <p class="lede">Find the move with the 3T Pro Scanner. Prove your edge in the Trilogy Journal. Grow what you keep with Wealth Builder. Built by traders who use them live, every session.</p>
     <div class="hero-ctas">
@@ -405,6 +448,8 @@
       <a class="btn btn-ghost" href="#pricing">View pricing</a>
     </div>
     <span class="hero-note">Rented month-to-month — no long contracts. Now with the Halal 3T Scanner, and a fully automated trading bot in final testing.</span>
+    <!-- CONFIRM BEFORE DEPLOY: refund guarantee is a business commitment; Terms updated to match. -->
+    <p class="guarantee">First 14 days on any monthly tool: full refund if the board does not earn its keep.</p>
   </div>
   <div class="ticker" aria-hidden="true">
     <div class="ticker-track" id="tickerTrack"></div>
@@ -416,7 +461,7 @@
   <div class="wrap">
     <p class="aud-title">Built for wherever you are in the game</p>
     <div class="aud-grid">
-      <a class="aud" href="#waitlist">
+      <a class="aud" href="#waitlist" data-plan="Trader Pack">
         <b>Active traders</b>
         <span>You trade every session — find the movers first, and let the journal grade every fill.</span>
         <i>Scanner + Journal · Trader Pack →</i>
@@ -431,12 +476,13 @@
         <span>You don't trade — you just want every dollar of income to have a job and your goals to fill on autopilot.</span>
         <i>Start with Wealth Builder →</i>
       </a>
-      <a class="aud" href="#waitlist">
+      <a class="aud" href="#waitlist" data-plan="The Full Trilogy">
         <b>Professionals</b>
         <span>You want the full edge — all three tools working as one stack, and first in line for the Auto-Trader.</span>
         <i>Get the Full Trilogy →</i>
       </a>
     </div>
+    <p class="not-for"><b>Not for:</b> anyone looking for alerts to copy or stock picks to buy and hold. These are tools — you still make every call.</p>
   </div>
 </section>
 
@@ -446,7 +492,7 @@
     <div class="sec-head">
       <canvas class="ghost-cv" data-word="SCANNER" aria-hidden="true"></canvas>
       <h2>3T Pro Scanner finds the <span class="serif-i grad-text">gappers</span> before the crowd</h2>
-      <p>A real-time small-cap gapper scanner streaming live market data — the same board we trade from every premarket.</p>
+      <p>A real-time small-cap gapper scanner streaming live market data — the same board we trade from every premarket. Be on the mover while the crowd is still looking for it.</p>
     </div>
     <div class="product">
       <div class="p-copy">
@@ -576,7 +622,7 @@
         <ul class="feat">
           <li><span class="f-t">Nine events, one workflow</span><span class="f-d">NFP · CPI · FOMC · PCE · PPI · retail · GDP · JOLTS · ISM, plus a release calendar with countdowns.</span></li>
         </ul>
-        <div class="card-cta"><a class="btn btn-brand" href="#contact">Get notified at launch</a></div>
+        <div class="card-cta"><a class="btn btn-brand" href="#waitlist" data-plan="The Reaction Lab">Get notified at launch</a></div>
       </div>
       <div class="soon-card">
         <span class="soon-tag">COMING SOON</span>
@@ -585,7 +631,7 @@
         <ul class="feat">
           <li><span class="f-t">Canada + US, cited answers</span><span class="f-d">A curated trader rulebook, five calculators, and every answer sourced from the tax authority itself.</span></li>
         </ul>
-        <div class="card-cta"><a class="btn btn-ghost" href="#contact">Get notified at launch</a></div>
+        <div class="card-cta"><a class="btn btn-ghost" href="#waitlist" data-plan="Trilogy Tax Edge">Get notified at launch</a></div>
       </div>
       <div class="soon-card">
         <span class="soon-tag">IN TESTING</span>
@@ -595,12 +641,39 @@
           <i><span>Live validation</span><span class="num">In progress</span></i>
           <div class="mtrack"><div class="mfill"></div></div>
         </div>
-        <div class="card-cta"><a class="btn btn-ghost" href="#contact">Get notified at launch</a></div>
+        <div class="card-cta"><a class="btn btn-ghost" href="#waitlist" data-plan="Trilogy Auto-Trader">Get notified at launch</a></div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ============ TESTIMONIALS (stub) ============ -->
+<!-- TODO(owner): hidden until real beta-trader quotes exist. For each: first name, photo, role
+     (e.g. "small-cap day trader, 3 yrs") and one specific outcome in their own words.
+     Remove the `hidden` attribute once at least three are filled in. Never ship placeholder quotes. -->
+<section class="section" id="traders" hidden>
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>What beta traders <span class="serif-i grad-text">say</span></h2>
+    </div>
+    <div class="quotes">
+      <figure class="quote">
+        <blockquote>QUOTE_1</blockquote>
+        <figcaption><img src="/img/beta-1.jpg" alt="" width="40" height="40"><span><b>FIRST_NAME</b> · ROLE</span></figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>QUOTE_2</blockquote>
+        <figcaption><img src="/img/beta-2.jpg" alt="" width="40" height="40"><span><b>FIRST_NAME</b> · ROLE</span></figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>QUOTE_3</blockquote>
+        <figcaption><img src="/img/beta-3.jpg" alt="" width="40" height="40"><span><b>FIRST_NAME</b> · ROLE</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE:pricing -->
 <!-- ============ PRICING ============ -->
 <section class="section" id="pricing">
   <div class="wrap">
@@ -621,7 +694,9 @@
           <li>Premarket through power hour</li>
           <li>Cancel anytime</li>
         </ul>
-        <a class="btn btn-brand" href="#waitlist">Join the launch list</a>
+        <p class="guarantee">First 14 days: full refund if the board does not earn its keep.</p>
+        <p class="value-line">What the $300 covers: a board tuned only for small-cap momentum, with real-time market data included — no separate data feed to add on.</p>
+        <a class="btn btn-brand" href="#waitlist" data-plan="3T Pro Scanner">Join the launch list</a>
       </div>
       <div class="plan">
         <span class="cycle">Monthly</span>
@@ -634,7 +709,10 @@
           <li>Compliance-screened symbols only</li>
           <li>Cancel anytime</li>
         </ul>
-        <a class="btn btn-ghost" href="#waitlist">Join the launch list</a>
+        <p class="guarantee">First 14 days: full refund if the board does not earn its keep.</p>
+        <!-- TODO(owner): once the #screening block below is filled in and un-hidden, add here:
+             <p class="value-line"><a href="#screening">How we screen the universe →</a></p> -->
+        <a class="btn btn-ghost" href="#waitlist" data-plan="Halal 3T Scanner">Join the launch list</a>
       </div>
       <div class="plan">
         <span class="cycle">Monthly</span>
@@ -647,25 +725,38 @@
           <li>Seven-section trading workflow</li>
           <li>Cancel anytime</li>
         </ul>
-        <a class="btn btn-ghost" href="#waitlist">Join the launch list</a>
+        <p class="guarantee">First 14 days: full refund if the journal does not earn its keep.</p>
+        <a class="btn btn-ghost" href="#waitlist" data-plan="Trilogy Journal">Join the launch list</a>
       </div>
       <div class="plan">
         <span class="cycle">Yearly</span>
         <h3>Wealth Builder</h3>
         <span class="amount">$200<small> CAD/yr</small></span>
-        <p>The Trilogy Split, bill calendar, and every savings goal in one place.</p>
+        <p>Give every paycheck a job the day it lands and watch your savings goals fill — no trading required.</p>
         <ul class="feat">
           <li>One payment, twelve months</li>
           <li>Adult, teen &amp; student modes</li>
           <li>All future updates included</li>
         </ul>
-        <a class="btn btn-ghost" href="#waitlist">Join the launch list</a>
+        <a class="btn btn-ghost" href="#waitlist" data-plan="Wealth Builder">Join the launch list</a>
       </div>
     </div>
 
     <div class="bundles-head" id="waitlist">
       <h3>Package <span class="serif-i grad-text">deals</span></h3>
       <p>Each tool is stronger next to the others — the discount is just the bonus. Pay the year upfront and take another <b>10% off any package or monthly tool</b>.</p>
+      <!-- Launch-list form. Set data-endpoint to a form backend (Formspree, a Supabase edge function, etc.)
+           that accepts a POST of email + plan. While it is empty, submit falls back to a prefilled email. -->
+      <form class="wl-form" id="waitlistForm" data-endpoint="" data-fallback="info@trilogytradingtools.com" novalidate>
+        <p class="wl-plan" id="wlPlanNote" hidden></p>
+        <label class="sr-only" for="wlEmail">Email address</label>
+        <input type="email" id="wlEmail" name="email" required autocomplete="email" placeholder="you@email.com">
+        <input type="hidden" name="plan" id="wlPlan" value="">
+        <button class="btn btn-brand" type="submit">Join the launch list</button>
+        <p class="wl-msg" id="wlMsg" role="status" aria-live="polite"></p>
+      </form>
+      <!-- TODO(owner): fill in with the real signup count (e.g. "1,000+ traders on the list") and remove `hidden`. -->
+      <p class="wl-count" hidden>WAITLIST_COUNT traders on the list</p>
     </div>
     <div class="bundles">
       <div class="bundle">
@@ -692,13 +783,48 @@
         <p class="b-parts">Either scanner + Journal + a full year of Wealth Builder</p>
         <div class="b-price num"><span class="amount">$375<small> CAD/mo</small></span><s>$417</s></div>
         <div class="yr-deal num">Year upfront: <b>$4,050</b><span class="pct">save 10%</span></div>
+        <p class="value-line">Replaces a scanner subscription, a journal and a budget app — one price, one loop. Bought separately the three run $417 CAD/mo; together it's $375.</p>
         <p class="b-why"><b>Why together:</b> the full loop — find it, prove it, keep it. The journal tells you what your trading really earns each month, and that number goes straight into Wealth Builder's Trilogy Split, so profits become an emergency fund and investments instead of evaporating back into the market.</p>
         <span class="b-save">Wealth Builder's year included — save $500+ a year</span>
       </div>
     </div>
+
+    <!-- TODO(owner): Halal screening methodology. Fill in the criteria the Halal 3T Scanner actually applies,
+         the excluded sectors, the re-screen cadence and the last review date, then remove `hidden`
+         (and add the "How we screen" link on the Halal plan card above). -->
+    <div class="method" id="screening" hidden>
+      <h3>How we screen the Halal 3T universe</h3>
+      <p>Every symbol on the Halal 3T Scanner passes AAOIFI-based screens before it can appear on the board.</p>
+      <ul>
+        <li><b>Business activity:</b> SCREEN_CRITERIA</li>
+        <li><b>Financial ratios:</b> RATIO_THRESHOLDS</li>
+        <li><b>Excluded sectors:</b> EXCLUDED_SECTORS</li>
+        <li><b>Re-screened:</b> CADENCE</li>
+      </ul>
+      <p class="updated">Last reviewed: REVIEW_DATE</p>
+      <p>Screening is a filter, not a fatwa — verify suitability with your own advisor.</p>
+    </div>
   </div>
 </section>
 
+<!-- ============ FAQ ============ -->
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:32px">
+      <h2>Before you <span class="serif-i grad-text">join</span></h2>
+    </div>
+    <div class="faq">
+      <details><summary>Can I cancel anytime?</summary><p>Yes. Monthly tools renew each month and you can cancel whenever you like — access runs to the end of the period you paid for. No long contracts.</p></details>
+      <details><summary>Is there a trial or refund?</summary><p>First 14 days on any monthly tool: full refund if it does not earn its keep. Just email us.</p></details>
+      <details><summary>What currency are the prices in?</summary><p>All prices are in Canadian dollars (CAD). Pay the year upfront and take 10% off any monthly tool or package.</p></details>
+      <details><summary>How is payment handled?</summary><p>Checkout and billing run entirely through Stripe. We never see or store your card number.</p></details>
+      <details><summary>Does the scanner tell me what to trade?</summary><p>No. These are tools for finding, reviewing and planning your own trades — nothing here is financial advice, and you make every call. Trading involves substantial risk of loss.</p></details>
+    </div>
+  </div>
+</section>
+<!-- /PAGE:pricing -->
+
+<!-- PAGE:about -->
 <!-- ============ ABOUT ============ -->
 <section class="section" id="about">
   <div class="wrap">
@@ -711,6 +837,17 @@
       <div class="pillar"><b>Find the move</b><span>The 3T scanners put the day's real gappers in front of you before the crowd is awake.</span></div>
       <div class="pillar"><b>Prove the edge</b><span>The Journal turns your fills into math — so you scale what works and cut what doesn't.</span></div>
       <div class="pillar"><b>Keep the gains</b><span>Wealth Builder gives every dollar of profit a job the moment it lands.</span></div>
+    </div>
+    <!-- TODO(owner): founder block. Add a real photo (img/founder-*.jpg), full name, one line of trading
+         background and a LinkedIn or X link for each person behind the tools, then remove `hidden`.
+         Add the same links to the footer stub below. -->
+    <div class="founders" id="founders" hidden>
+      <div class="founder">
+        <img src="/img/founder-1.jpg" alt="FOUNDER_NAME" width="72" height="72">
+        <b>FOUNDER_NAME</b>
+        <span>ONE_LINE_TRADING_BACKGROUND</span>
+        <a href="LINKEDIN_URL" rel="me">LinkedIn →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -728,6 +865,7 @@
     </div>
   </div>
 </section>
+<!-- /PAGE:about -->
 
 <footer>
   <div class="wrap foot">
@@ -741,8 +879,10 @@
       <span>SCANNER · JOURNAL · WEALTH</span>
     </div>
     <div class="foot-links">
-      <a href="#about">About</a>
+      <a href="/about/">About</a>
+      <a href="/pricing/">Pricing</a>
       <a href="#contact">Contact</a>
+      <!-- TODO(owner): founder LinkedIn / X links, e.g. <a href="LINKEDIN_URL" rel="me">LinkedIn</a> -->
       <button type="button" data-dlg="dlgPrivacy">Privacy</button>
       <button type="button" data-dlg="dlgTerms">Terms</button>
     </div>
@@ -754,11 +894,12 @@
   <div class="legal-in">
     <button class="btn btn-ghost close-x" type="button" data-close>✕ Close</button>
     <h3>Privacy Policy</h3>
-    <span class="updated">LAST UPDATED · SEPTEMBER 3, 2026</span>
+    <span class="updated">LAST UPDATED · NOVEMBER 10, 2026</span>
     <p>This policy explains what Trilogy Trading Tools ("we", "us") collects when you use our products — the 3T Pro Scanner, Halal 3T Scanner, Trilogy Journal, and Wealth Builder — why we collect it, and the control you have over it. We keep the data we hold to the minimum needed to run the products.</p>
     <h4>What we collect</h4>
     <ul>
       <li><b>Account information</b> — your email address, and a display name if you set one.</li>
+      <li><b>Launch-list signups</b> — your email and the tool you picked, used only to tell you when it opens. Ask us and we remove it.</li>
       <li><b>Data you enter</b> — trades, setups, notes, goals, budgets, and preferences inside the apps.</li>
       <li><b>Ticker lookups</b> — the stock symbols you search, used only to fetch market data.</li>
       <li><b>Technical data</b> — basic logs and cookies strictly needed to keep you signed in and secure.</li>
@@ -789,11 +930,11 @@
   <div class="legal-in">
     <button class="btn btn-ghost close-x" type="button" data-close>✕ Close</button>
     <h3>Terms of Use</h3>
-    <span class="updated">LAST UPDATED · SEPTEMBER 3, 2026</span>
+    <span class="updated">LAST UPDATED · NOVEMBER 10, 2026</span>
     <h4>The service</h4>
     <p>Trilogy Trading Tools rents access to software: the 3T Pro Scanner, Halal 3T Scanner, and Trilogy Journal on monthly subscriptions, and Wealth Builder on a yearly plan. Your subscription is a licence to use the tools while it is active — not a purchase of the software.</p>
     <h4>Billing &amp; cancellation</h4>
-    <p>Monthly plans renew each month and can be cancelled anytime — access continues to the end of the paid period. Annual-upfront plans cover twelve months at the discounted rate. Payments are processed by Stripe.</p>
+    <p>Monthly plans renew each month and can be cancelled anytime — access continues to the end of the paid period. If a monthly tool does not earn its keep, email us within the first 14 days of your first subscription to it for a full refund. Annual-upfront plans cover twelve months at the discounted rate. Payments are processed by Stripe.</p>
     <h4>Not financial advice</h4>
     <p>Every tool is for education and process. Nothing on this site or in the products is investment, financial, legal, or tax advice, and no outcome is promised. Trading involves substantial risk of loss — you alone are responsible for your trading and financial decisions.</p>
     <h4>Data &amp; market information</h4>

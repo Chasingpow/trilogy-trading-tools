@@ -4,14 +4,15 @@
  * 1. Bundles src/main.ts with esbuild (TypeScript -> one inline IIFE).
  * 2. Injects the bundle + video sources into src/template.html.
  * 3. Emits:
- *      index.html     — the deployable page (videos referenced as files, full <head>)
+ *      index.html, pricing/index.html, about/index.html — deployable pages (full <head>, JSON-LD)
+ *      sitemap.xml, robots.txt, llms.txt — crawler files
  *      artifact.html  — Claude artifact preview build (videos embedded as data URIs,
  *                       no doctype/head wrapper — the artifact runtime adds its own).
  *
  * Run with: npm run build   (typecheck runs first via prebuild)
  */
 import { buildSync } from 'esbuild';
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -51,25 +52,173 @@ const videoEmbedded =
     '__VIDEO_JR__', dataUri('journal-reel.mp4')),
     '__VIDEO_WB__', dataUri('wealth-builder.mp4'));
 
-// 3. emit both outputs
-const head = `<!doctype html>
+// 3. emit the pages
+const SITE = 'https://trilogytradingtools.com';
+const OG_IMAGE = `${SITE}/og-image.png`;
+
+const plans = [
+  { name: '3T Pro Scanner', price: 300, unit: 'MON', desc: 'Real-time small-cap gapper scanner: live gap %, volume and float, dual charts and audio alerts, premarket through power hour.' },
+  { name: 'Halal 3T Scanner', price: 250, unit: 'MON', desc: 'The 3T scanning engine on a Sharia-compliant, AAOIFI-screened universe.' },
+  { name: 'Trilogy Journal', price: 100, unit: 'MON', desc: 'Trading journal with fast trade logging, live win rate, profit factor and average R, and the 3D Edge Surface.' },
+  { name: 'Wealth Builder', price: 200, unit: 'ANN', desc: 'Budgeting app built around the Trilogy Split, with a bill calendar, card interest tracker and savings goals.' },
+];
+
+const jsonLd = (obj) => `<script type="application/ld+json">${JSON.stringify(obj)}</script>`;
+const org = {
+  '@context': 'https://schema.org', '@type': 'Organization',
+  name: 'Trilogy Trading Tools', url: `${SITE}/`, logo: `${SITE}/logo.png`,
+  email: 'info@trilogytradingtools.com',
+  // TODO(owner): add sameAs: [founder / company LinkedIn and X URLs] once they are public.
+};
+const products = plans.map(p => ({
+  '@context': 'https://schema.org', '@type': 'SoftwareApplication',
+  name: p.name, applicationCategory: 'FinanceApplication', operatingSystem: 'Web browser',
+  description: p.desc, url: `${SITE}/pricing/`,
+  publisher: { '@type': 'Organization', name: 'Trilogy Trading Tools' },
+  offers: {
+    '@type': 'Offer', price: String(p.price), priceCurrency: 'CAD', url: `${SITE}/pricing/`,
+    priceSpecification: { '@type': 'UnitPriceSpecification', price: String(p.price), priceCurrency: 'CAD', unitCode: p.unit },
+  },
+}));
+
+/** FAQ schema built from the FAQ markup itself, so the two never drift apart. */
+function faqLd(html) {
+  const items = [...html.matchAll(/<details><summary>(.*?)<\/summary><p>(.*?)<\/p><\/details>/g)];
+  if (!items.length) return '';
+  const strip = (t) => t.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&');
+  return jsonLd({
+    '@context': 'https://schema.org', '@type': 'FAQPage',
+    mainEntity: items.map(([, q, a]) => ({ '@type': 'Question', name: strip(q), acceptedAnswer: { '@type': 'Answer', text: strip(a) } })),
+  });
+}
+
+const esc = (t) => t.replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+function head({ title, description, path, ld }) {
+  const url = `${SITE}${path}`;
+  return `<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Trilogy Trading Tools - rent the 3T Pro Scanner, Halal 3T Scanner, Trilogy Journal, and Wealth Builder. Find the move, prove your edge, keep what the market gives you.">
-<link rel="canonical" href="https://trilogytradingtools.com/">
-<meta property="og:title" content="Trilogy Trading Tools">
-<meta property="og:description" content="Rent the 3T Pro Scanner, Halal 3T Scanner, Trilogy Journal, and Wealth Builder.">
-<meta property="og:url" content="https://trilogytradingtools.com/">
+<title>${esc(title)}</title>
+<meta name="description" content="${esc(description)}">
+<link rel="canonical" href="${url}">
+<meta property="og:site_name" content="Trilogy Trading Tools">
+<meta property="og:title" content="${esc(title)}">
+<meta property="og:description" content="${esc(description)}">
+<meta property="og:url" content="${url}">
 <meta property="og:type" content="website">
+<meta property="og:image" content="${OG_IMAGE}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Trilogy Trading Tools: small-cap scanner, trade journal and budgeting app">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${esc(title)}">
+<meta name="twitter:description" content="${esc(description)}">
+<meta name="twitter:image" content="${OG_IMAGE}">
+${ld}
 </head>
 <body style="margin:0">
 `;
+}
+const tail = '\n</body>\n</html>\n';
 
-writeFileSync(resolve(root, 'index.html'), head + videoAsFile + '\n</body>\n</html>\n');
+/** Everything between <!-- PAGE:name --> and <!-- /PAGE:name --> in the template. */
+function block(html, name) {
+  const open = `<!-- PAGE:${name} -->`, close = `<!-- /PAGE:${name} -->`;
+  const a = html.indexOf(open), b = html.indexOf(close);
+  if (a < 0 || b < 0) throw new Error(`missing PAGE:${name} markers`);
+  return html.slice(a + open.length, b);
+}
+
+/**
+ * A standalone sub-page: same chrome (styles, nav, footer, dialogs, script),
+ * with the main content swapped for one PAGE block. The block's first h2 becomes
+ * the page's h1, and any #anchor that no longer exists on the page points home.
+ */
+function subpage(html, name) {
+  const navEnd = html.indexOf('<div class="progress"');
+  const footStart = html.indexOf('<footer>');
+  let content = block(html, name).replace(/<h2>([\s\S]*?)<\/h2>/, '<h1>$1</h1>');
+  let page = html.slice(0, navEnd) + content + html.slice(footStart);
+  const ids = new Set([...page.matchAll(/\sid="([^"]+)"/g)].map(m => m[1]));
+  page = page.replace(/href="#([^"]+)"/g, (m, id) => (ids.has(id) ? m : `href="/#${id}"`));
+  return page;
+}
+
+const homeDesc = 'Trilogy Trading Tools - rent the 3T Pro Scanner, Halal 3T Scanner, Trilogy Journal, and Wealth Builder. Find the move, prove your edge, keep what the market gives you.';
+const pages = [
+  {
+    file: 'index.html', path: '/', body: videoAsFile,
+    title: 'Trilogy - Small-Cap Scanner, Journal & Budget',
+    description: homeDesc,
+    ld: [org, ...products].map(jsonLd).join('\n') + '\n' + faqLd(videoAsFile),
+  },
+  {
+    file: 'pricing/index.html', path: '/pricing/', body: subpage(videoAsFile, 'pricing'),
+    title: 'Trading Tool Pricing in CAD - Trilogy',
+    description: 'Month-to-month pricing in CAD: 3T Pro Scanner $300/mo, Halal 3T Scanner $250/mo, Trilogy Journal $100/mo, Wealth Builder $200/yr, plus bundles from $300/mo. Cancel anytime.',
+    ld: products.map(jsonLd).join('\n') + '\n' + faqLd(block(videoAsFile, 'pricing')),
+  },
+  {
+    file: 'about/index.html', path: '/about/', body: subpage(videoAsFile, 'about'),
+    title: 'About Trilogy - Built by Small-Cap Traders',
+    description: 'Trilogy Trading Tools started as the scanner, journal and budget we built for our own small-cap trading. We rent out the exact tools we run live.',
+    ld: jsonLd(org),
+  },
+];
+
+mkdirSync(resolve(root, 'pricing'), { recursive: true });
+mkdirSync(resolve(root, 'about'), { recursive: true });
+for (const p of pages) writeFileSync(resolve(root, p.file), head(p) + p.body + tail);
 writeFileSync(resolve(root, 'artifact.html'), videoEmbedded);
 
-for (const f of ['index.html', 'artifact.html']) {
-  console.log(f.padEnd(14), readFileSync(resolve(root, f)).length, 'bytes');
+// crawler files
+const today = new Date().toISOString().slice(0, 10);
+writeFileSync(resolve(root, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${pages.map(p => `  <url><loc>${SITE}${p.path}</loc><lastmod>${today}</lastmod></url>`).join('\n')}
+</urlset>
+`);
+writeFileSync(resolve(root, 'robots.txt'), `# Search engines and AI assistants are welcome.
+User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: ${SITE}/sitemap.xml
+`);
+writeFileSync(resolve(root, 'llms.txt'), `# Trilogy Trading Tools
+
+> Rentable trading software for small-cap momentum traders: a real-time gapper scanner, a trading journal, and a budgeting app, sold month to month in CAD. Pre-launch: plans are open on a launch list.
+
+## Tools
+${plans.map(p => `- ${p.name}: $${p.price} CAD/${p.unit === 'MON' ? 'mo' : 'yr'}. ${p.desc}`).join('\n')}
+
+## Bundles
+- Trader Pack (3T Pro Scanner + Trilogy Journal): $350 CAD/mo
+- Halal Trader Pack (Halal 3T Scanner + Trilogy Journal): $300 CAD/mo
+- The Full Trilogy (either scanner + Journal + a year of Wealth Builder): $375 CAD/mo
+- Pay the year upfront for 10% off any monthly tool or package. Cancel anytime.
+
+## Pages
+- [Home](${SITE}/)
+- [Pricing](${SITE}/pricing/)
+- [About](${SITE}/about/)
+
+Contact: info@trilogytradingtools.com. Nothing here is financial advice.
+`);
+
+for (const f of [...pages.map(p => p.file), 'artifact.html', 'sitemap.xml', 'robots.txt', 'llms.txt']) {
+  console.log(f.padEnd(20), readFileSync(resolve(root, f)).length, 'bytes');
 }

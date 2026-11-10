@@ -10,6 +10,7 @@ import { initCosmos } from './cosmos';
 import { initCandleWords } from './candles';
 import { initTicker } from './ticker';
 import { initStages } from './stages';
+import { initWaitlist } from './waitlist';
 
 initMobileNav();
 initProgressBar();
@@ -21,3 +22,4 @@ initCosmos();
 initCandleWords();
 initTicker();
 initStages();
+initWaitlist();
