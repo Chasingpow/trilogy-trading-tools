@@ -1,77 +1,77 @@
 {
-  "updated": "2026-11-07",
+  "updated": "2026-11-10",
   "entries": [
     {
-      "symbol": "SDA",
-      "company": "SunCar Technology Group In",
-      "price": 0.3765,
-      "changePct": 144.79844
+      "symbol": "OMH",
+      "company": "Ohmyhome Limited",
+      "price": 25.84,
+      "changePct": 251.08696
     },
     {
-      "symbol": "STAK",
-      "company": "STAK Inc. Ordinary Shares",
-      "price": 3.26,
-      "changePct": 82.12291
+      "symbol": "WCT",
+      "company": "Wellchange Holdings Compan",
+      "price": 4.47,
+      "changePct": 92.17541
     },
     {
-      "symbol": "SITC",
-      "company": "SITE Centers Corp.",
-      "price": 0.668,
-      "changePct": -81.29742
+      "symbol": "ZURA",
+      "company": "Zura Bio Limited",
+      "price": 1.24,
+      "changePct": -69.68215
     },
     {
-      "symbol": "GOGO",
-      "company": "Gogo Inc.",
-      "price": 3.885,
-      "changePct": 71.52318
+      "symbol": "SMX",
+      "company": "SMX (Security Matters) Pub",
+      "price": 9.35,
+      "changePct": 89.73214
     },
     {
-      "symbol": "CDT",
-      "company": "CDT Equity Inc.",
-      "price": 1.31,
-      "changePct": 54.84634
+      "symbol": "TANH",
+      "company": "Tantech Holdings Ltd",
+      "price": 19.34,
+      "changePct": 65.72408
     },
     {
-      "symbol": "AIRS",
-      "company": "AirSculpt Technologies, In",
-      "price": 0.5339,
-      "changePct": -62.92361
+      "symbol": "SOC",
+      "company": "Sable Offshore Corp.",
+      "price": 0.8801,
+      "changePct": -54.39896
     },
     {
-      "symbol": "CIIT",
-      "company": "Tianci International, Inc.",
-      "price": 2.4,
-      "changePct": 54.83871
+      "symbol": "CKX",
+      "company": "CKX Lands, Inc.",
+      "price": 16.4,
+      "changePct": 58.14851
     },
     {
-      "symbol": "VSA",
-      "company": "VisionSys AI Inc.",
-      "price": 2.35,
-      "changePct": 52.5974
+      "symbol": "FISN",
+      "company": "Deep Fission, Inc.",
+      "price": 2.83,
+      "changePct": 52.97297
     },
     {
-      "symbol": "BDSX",
-      "company": "Biodesix, Inc.",
-      "price": 8.53,
-      "changePct": -57.00605
+      "symbol": "ONCO",
+      "company": "Onconetix, Inc.",
+      "price": 3.58,
+      "changePct": -48.48921
     },
     {
-      "symbol": "SKIN",
-      "company": "SkinHealth Systems Inc.",
-      "price": 15.71,
-      "changePct": 51.78744
+      "symbol": "XHLD",
+      "company": "TEN Holdings, Inc. Common ",
+      "price": 0.87,
+      "changePct": 49.48454
     },
     {
-      "symbol": "SNT",
-      "company": "Senstar Technologies Ltd.",
-      "price": 1.9,
-      "changePct": 46.15385
+      "symbol": "TLS",
+      "company": "Telos Corporation",
+      "price": 7.17,
+      "changePct": 48.75519
     },
     {
-      "symbol": "JDZG",
-      "company": "JIADE Limited",
-      "price": 0.2102,
-      "changePct": -46.75785
+      "symbol": "AUUD",
+      "company": "Auddia Inc.",
+      "price": 0.2748,
+      "changePct": -42.75
     }
   ]
 }
