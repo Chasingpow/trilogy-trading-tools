@@ -8,7 +8,7 @@ Edit src/template.html (not the generated pages). Content between `<!-- PAGE:nam
 ## Owner TODOs (search the template for `TODO(owner)`)
 - Launch-list form: set `data-endpoint` on #waitlistForm to a form backend; until then it falls back to a prefilled email.
 - Signup counter, founder block, beta-trader testimonials, Halal screening methodology: built but `hidden` until real content exists.
-- 14-day refund line: confirm the policy before deploying (Terms updated to match).
+- 7-day refund policy (confirmed): shown on the hero, monthly plans, FAQ and Terms; change all together.
 - og-image.png and logo.png are rendered from scripts/assets/*.html.
 
 ## Blog (HeyCatch)
