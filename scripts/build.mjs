@@ -59,7 +59,7 @@ const OG_IMAGE = `${SITE}/og-image.png`;
 
 const plans = [
   { name: '3T Pro Scanner', price: 300, unit: 'MON', desc: 'Real-time small-cap gapper scanner: live gap %, volume and float, dual charts and audio alerts, premarket through power hour.' },
-  { name: 'Halal 3T Scanner', price: 250, unit: 'MON', desc: 'The 3T scanning engine on a Sharia-compliant, AAOIFI-screened universe.' },
+  { name: 'Halal 3T Scanner', price: 200, unit: 'MON', desc: 'The 3T scanning engine on a Sharia-compliant, AAOIFI-screened universe.' },
   { name: 'Trilogy Journal', price: 100, unit: 'MON', desc: 'Trading journal with fast trade logging, live win rate, profit factor and average R, and the 3D Edge Surface.' },
   { name: 'Wealth Builder', price: 200, unit: 'ANN', desc: 'Budgeting app built around the Trilogy Split, with a bill calendar, card interest tracker and savings goals.' },
 ];
@@ -253,7 +253,7 @@ const pages = [
   {
     file: 'pricing/index.html', path: '/pricing/', body: subpage(site, 'pricing'),
     title: 'Trading Tool Pricing in CAD - Trilogy',
-    description: 'Month-to-month pricing in CAD: 3T Pro Scanner $300/mo, Halal 3T Scanner $250/mo, Trilogy Journal $100/mo, Wealth Builder $200/yr, plus bundles from $300/mo. Cancel anytime.',
+    description: 'Month-to-month pricing in CAD: 3T Pro Scanner $300/mo, Halal 3T Scanner $200/mo, Trilogy Journal $100/mo, Wealth Builder $200/yr, plus bundles from $250/mo. Cancel anytime.',
     ld: products.map(jsonLd).join('\n') + '\n' + faqLd(block(videoAsFile, 'pricing')),
   },
   {
@@ -327,7 +327,7 @@ ${plans.map(p => `- ${p.name}: $${p.price} CAD/${p.unit === 'MON' ? 'mo' : 'yr'}
 
 ## Bundles
 - Trader Pack (3T Pro Scanner + Trilogy Journal): $350 CAD/mo
-- Halal Trader Pack (Halal 3T Scanner + Trilogy Journal): $300 CAD/mo
+- Halal Trader Pack (Halal 3T Scanner + Trilogy Journal): $250 CAD/mo
 - The Full Trilogy (either scanner + Journal + a year of Wealth Builder): $375 CAD/mo
 - Pay the year upfront for 10% off any monthly tool or package. Cancel anytime.
 
