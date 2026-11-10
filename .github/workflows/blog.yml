@@ -1,0 +1,49 @@
+name: Update blog from HeyCatch
+
+# Pulls published HeyCatch articles and rebuilds /blog as static pages, so search
+# engines read real HTML and the key never reaches the repo or the browser.
+# Needs the repository secret HEYCATCH_API_KEY (the hck_lv_… key from
+# HeyCatch → Settings → Integrations → AI builder).
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'   # new articles show up within ~15 minutes
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: site-commits
+  cancel-in-progress: false
+
+jobs:
+  blog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Fetch articles
+        env:
+          HEYCATCH_API_KEY: ${{ secrets.HEYCATCH_API_KEY }}
+        run: |
+          if [ -z "$HEYCATCH_API_KEY" ]; then
+            echo "::warning::HEYCATCH_API_KEY secret is not set - blog left as it is."
+            exit 0
+          fi
+          node scripts/fetch-blog.mjs
+      - name: Rebuild pages
+        run: npm run build
+      - name: Commit if changed
+        run: |
+          git config user.name "blog-bot"
+          git config user.email "actions@github.com"
+          git add -A blog blog-data.json index.html pricing about sitemap.xml llms.txt
+          git diff --cached --quiet && echo "No new articles" && exit 0
+          git commit -m "Blog: sync articles from HeyCatch"
+          git pull --rebase
+          git push

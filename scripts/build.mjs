@@ -12,7 +12,8 @@
  * Run with: npm run build   (typecheck runs first via prebuild)
  */
 import { buildSync } from 'esbuild';
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, rmSync } from 'node:fs';
+import sanitizeHtml from 'sanitize-html';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -92,11 +93,12 @@ function faqLd(html) {
   });
 }
 
+const RTL = new Set(['ar', 'he', 'fa', 'ur']);
 const esc = (t) => t.replace(/&/g, '&amp;').replace(/"/g, '&quot;');
-function head({ title, description, path, ld }) {
+function head({ title, description, path, ld, image = OG_IMAGE, type = 'website', lang = 'en' }) {
   const url = `${SITE}${path}`;
   return `<!doctype html>
-<html lang="en">
+<html lang="${esc(lang)}"${RTL.has(lang.slice(0, 2)) ? ' dir="rtl"' : ''}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -107,15 +109,13 @@ function head({ title, description, path, ld }) {
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${url}">
-<meta property="og:type" content="website">
-<meta property="og:image" content="${OG_IMAGE}">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Trilogy Trading Tools: small-cap scanner, trade journal and budgeting app">
+<meta property="og:type" content="${type}">
+<meta property="og:image" content="${image}">
+${image === OG_IMAGE ? '<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n' : ''}<meta property="og:image:alt" content="Trilogy Trading Tools: small-cap scanner, trade journal and budgeting app">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${esc(title)}">
 <meta name="twitter:description" content="${esc(description)}">
-<meta name="twitter:image" content="${OG_IMAGE}">
+<meta name="twitter:image" content="${image}">
 ${ld}
 </head>
 <body style="margin:0">
@@ -146,27 +146,147 @@ function subpage(html, name) {
   return page;
 }
 
+
+/** Same chrome as the sub-pages (styles, nav, footer, dialogs, script) around arbitrary content. */
+function withContent(html, content) {
+  const navEnd = html.indexOf('<div class="progress"');
+  const footStart = html.indexOf('<footer>');
+  let page = html.slice(0, navEnd) + content + html.slice(footStart);
+  const ids = new Set([...page.matchAll(/\sid="([^"]+)"/g)].map(m => m[1]));
+  return page.replace(/href="#([^"]+)"/g, (m, id) => (ids.has(id) ? m : `href="/#${id}"`));
+}
+
+// ---------- blog (articles from HeyCatch, fetched into blog-data.json by scripts/fetch-blog.mjs) ----------
+const blogFile = resolve(root, 'blog-data.json');
+const articles = existsSync(blogFile)
+  ? (JSON.parse(readFileSync(blogFile, 'utf8')).articles || []).filter(a => a && a.slug && a.title)
+  : [];
+
+const SAFE_SLUG = /^[a-z0-9][a-z0-9-]*$/i;
+const escText = (t) => String(t ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const fmtDate = (d) => {
+  const t = Date.parse(d);
+  return Number.isNaN(t) ? '' : new Date(t).toLocaleDateString('en-CA', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+};
+const metaLine = (a) => [fmtDate(a.published_at || a.published), a.read_time ? `${a.read_time} min read` : ''].filter(Boolean).join(' · ');
+const safeUrl = (u) => (/^https:\/\//i.test(u || '') ? u : '');
+
+/** Sanitise article HTML: allow-list tags, keep heading ids, no <h1> (the title is the page's only h1). */
+function cleanArticle(html) {
+  return sanitizeHtml(html, {
+    allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img', 'h2', 'h3', 'h4', 'figure', 'figcaption']),
+    allowedAttributes: {
+      a: ['href', 'title', 'rel', 'target'], img: ['src', 'alt', 'width', 'height', 'loading'],
+      h2: ['id'], h3: ['id'], h4: ['id'], th: ['colspan', 'rowspan', 'scope'], td: ['colspan', 'rowspan'],
+    },
+    allowedSchemes: ['https', 'mailto'],
+    exclusiveFilter: (frame) => frame.tag === 'img' && !frame.attribs.src,
+    transformTags: {
+      h1: 'h2',
+      a: (tag, attribs) => {
+        const external = /^https?:\/\//i.test(attribs.href || '') && !attribs.href.includes('trilogytradingtools.com');
+        return { tagName: 'a', attribs: external ? { ...attribs, rel: 'noopener', target: '_blank' } : attribs };
+      },
+      img: (tag, attribs) => ({ tagName: 'img', attribs: { ...attribs, loading: 'lazy' } }),
+    },
+  });
+}
+
+/** Table of contents: one link per <h2 id>, skipping id="faq"; after the Key takeaways list, else on top. */
+function withToc(html) {
+  const heads = [...html.matchAll(/<h2 id="([^"]+)">([\s\S]*?)<\/h2>/g)]
+    .filter(([, id]) => id.toLowerCase() !== 'faq')
+    .filter(([, , text]) => !/key takeaways/i.test(text.replace(/<[^>]+>/g, '')));
+  if (!heads.length) return html;
+  const toc = `<nav class="toc" aria-label="Table of contents"><h2>Table of contents</h2><ol>${
+    heads.map(([, id, text]) => `<li><a href="#${id}">${text.replace(/<[^>]+>/g, '')}</a></li>`).join('')}</ol></nav>`;
+  const kt = html.match(/<h[2-4][^>]*>\s*Key takeaways\s*<\/h[2-4]>\s*<(ul|ol)>[\s\S]*?<\/\1>/i);
+  if (kt) { const end = kt.index + kt[0].length; return html.slice(0, end) + toc + html.slice(end); }
+  return toc + html;
+}
+
+/** The article's own JSON-LD, made safe to sit inside a <script> tag. */
+function articleLd(a) {
+  if (!a.jsonLd) return '';
+  let obj = a.jsonLd;
+  if (typeof obj === 'string') { try { obj = JSON.parse(obj); } catch { return ''; } }
+  const list = Array.isArray(obj) ? obj : [obj];
+  return list.map(o => `<script type="application/ld+json">${JSON.stringify(o).replace(/</g, '\\u003c')}</script>`).join('\n');
+}
+
+function blogIndex(site) {
+  const items = articles.map(a =>
+    `<li><a href="/blog/${a.slug}"><b>${escText(a.title)}</b><span>${escText(metaLine(a))}</span></a></li>`).join('\n');
+  return withContent(site, `<main class="blog-wrap">
+  <span class="post-meta">Trilogy Trading Tools</span>
+  <h1>The Trilogy <span class="serif-i grad-text">blog</span></h1>
+  ${articles.length ? `<ul class="post-list">\n${items}\n</ul>` : '<p class="post-empty">No articles yet. Check back soon.</p>'}
+</main>
+`);
+}
+
+function blogPost(site, a) {
+  const lang = a.language || 'en';
+  const img = safeUrl(a.image);
+  const body = withToc(cleanArticle(a.content_html));
+  return withContent(site, `<main class="blog-wrap">
+  <span class="post-meta">${escText(metaLine(a))}</span>
+  <article lang="${esc(lang)}"${RTL.has(lang.slice(0, 2)) ? ' dir="rtl"' : ''}>
+    <h1>${escText(a.title)}</h1>
+    ${img ? `<img class="post-hero" src="${esc(img)}" alt="">` : ''}
+    <div class="prose">${body}</div>
+  </article>
+  <p><a href="/blog/">← All articles</a></p>
+</main>
+`);
+}
+
 const homeDesc = 'Trilogy Trading Tools - rent the 3T Pro Scanner, Halal 3T Scanner, Trilogy Journal, and Wealth Builder. Find the move, prove your edge, keep what the market gives you.';
+const site = articles.length ? videoAsFile.replace(/ data-blog-link hidden>/g, ' data-blog-link>') : videoAsFile;
 const pages = [
   {
-    file: 'index.html', path: '/', body: videoAsFile,
+    file: 'index.html', path: '/', body: site,
     title: 'Trilogy - Small-Cap Scanner, Journal & Budget',
     description: homeDesc,
     ld: [org, ...products].map(jsonLd).join('\n') + '\n' + faqLd(videoAsFile),
   },
   {
-    file: 'pricing/index.html', path: '/pricing/', body: subpage(videoAsFile, 'pricing'),
+    file: 'pricing/index.html', path: '/pricing/', body: subpage(site, 'pricing'),
     title: 'Trading Tool Pricing in CAD - Trilogy',
     description: 'Month-to-month pricing in CAD: 3T Pro Scanner $300/mo, Halal 3T Scanner $250/mo, Trilogy Journal $100/mo, Wealth Builder $200/yr, plus bundles from $300/mo. Cancel anytime.',
     ld: products.map(jsonLd).join('\n') + '\n' + faqLd(block(videoAsFile, 'pricing')),
   },
   {
-    file: 'about/index.html', path: '/about/', body: subpage(videoAsFile, 'about'),
+    file: 'about/index.html', path: '/about/', body: subpage(site, 'about'),
     title: 'About Trilogy - Built by Small-Cap Traders',
     description: 'Trilogy Trading Tools started as the scanner, journal and budget we built for our own small-cap trading. We rent out the exact tools we run live.',
     ld: jsonLd(org),
   },
 ];
+
+
+// blog pages: /blog/ (index) and /blog/<slug> (served by GitHub Pages from blog/<slug>.html)
+const goodArticles = articles.filter(a => SAFE_SLUG.test(a.slug));
+pages.push({
+  file: 'blog/index.html', path: '/blog/', body: blogIndex(site), inSitemap: goodArticles.length > 0,
+  title: 'Blog - Trilogy Trading Tools',
+  description: 'Articles for small-cap momentum traders from the team behind the 3T Pro Scanner, Trilogy Journal and Wealth Builder.',
+  ld: '',
+});
+for (const a of goodArticles) {
+  pages.push({
+    file: `blog/${a.slug}.html`, path: `/blog/${a.slug}`, body: blogPost(site, a),
+    title: `${a.title} - Trilogy`, description: a.meta_description || a.title,
+    image: safeUrl(a.image) || OG_IMAGE, type: 'article', lang: a.language || 'en', ld: articleLd(a),
+    lastmod: (a.updated_at || a.published_at || a.published || '').slice(0, 10),
+  });
+}
+// remove pages for articles that are no longer published
+mkdirSync(resolve(root, 'blog'), { recursive: true });
+const keep = new Set(pages.map(p => p.file));
+for (const f of readdirSync(resolve(root, 'blog'))) {
+  if (f.endsWith('.html') && !keep.has(`blog/${f}`)) rmSync(resolve(root, 'blog', f));
+}
 
 mkdirSync(resolve(root, 'pricing'), { recursive: true });
 mkdirSync(resolve(root, 'about'), { recursive: true });
@@ -177,7 +297,7 @@ writeFileSync(resolve(root, 'artifact.html'), videoEmbedded);
 const today = new Date().toISOString().slice(0, 10);
 writeFileSync(resolve(root, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${pages.map(p => `  <url><loc>${SITE}${p.path}</loc><lastmod>${today}</lastmod></url>`).join('\n')}
+${pages.filter(p => p.inSitemap !== false).map(p => `  <url><loc>${SITE}${p.path}</loc><lastmod>${p.lastmod || today}</lastmod></url>`).join('\n')}
 </urlset>
 `);
 writeFileSync(resolve(root, 'robots.txt'), `# Search engines and AI assistants are welcome.
@@ -215,10 +335,11 @@ ${plans.map(p => `- ${p.name}: $${p.price} CAD/${p.unit === 'MON' ? 'mo' : 'yr'}
 - [Home](${SITE}/)
 - [Pricing](${SITE}/pricing/)
 - [About](${SITE}/about/)
-
+${goodArticles.length ? `- [Blog](${SITE}/blog/)\n` : ''}
 Contact: info@trilogytradingtools.com. Nothing here is financial advice.
 `);
 
-for (const f of [...pages.map(p => p.file), 'artifact.html', 'sitemap.xml', 'robots.txt', 'llms.txt']) {
+console.log(`blog: ${goodArticles.length} article(s)`);
+for (const f of [...pages.filter(p => !p.file.startsWith('blog/') || p.file === 'blog/index.html').map(p => p.file), 'artifact.html', 'sitemap.xml', 'robots.txt', 'llms.txt']) {
   console.log(f.padEnd(20), readFileSync(resolve(root, f)).length, 'bytes');
 }
