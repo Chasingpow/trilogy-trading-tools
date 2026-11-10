@@ -3,15 +3,15 @@
 > Rentable trading software for small-cap momentum traders: a real-time gapper scanner, a trading journal, and a budgeting app, sold month to month in CAD. Pre-launch: plans are open on a launch list.
 
 ## Tools
-- 3T Pro Scanner: $300 CAD/mo. Real-time small-cap gapper scanner: live gap %, volume and float, dual charts and audio alerts, premarket through power hour.
-- Halal 3T Scanner: $250 CAD/mo. The 3T scanning engine on a Sharia-compliant, AAOIFI-screened universe.
+- 3T Pro Scanner: $175 CAD/mo. Real-time small-cap gapper scanner: live gap %, volume and float, dual charts and audio alerts, premarket through power hour.
+- Halal 3T Scanner: $200 CAD/mo. The 3T scanning engine on a Sharia-compliant, AAOIFI-screened universe.
 - Trilogy Journal: $100 CAD/mo. Trading journal with fast trade logging, live win rate, profit factor and average R, and the 3D Edge Surface.
 - Wealth Builder: $200 CAD/yr. Budgeting app built around the Trilogy Split, with a bill calendar, card interest tracker and savings goals.
 
 ## Bundles
-- Trader Pack (3T Pro Scanner + Trilogy Journal): $350 CAD/mo
-- Halal Trader Pack (Halal 3T Scanner + Trilogy Journal): $300 CAD/mo
-- The Full Trilogy (either scanner + Journal + a year of Wealth Builder): $375 CAD/mo
+- Trader Pack (3T Pro Scanner + Trilogy Journal): $225 CAD/mo
+- Halal Trader Pack (Halal 3T Scanner + Trilogy Journal): $250 CAD/mo
+- The Full Trilogy (either scanner + Journal + a year of Wealth Builder): $265 CAD/mo
 - Pay the year upfront for 10% off any monthly tool or package. Cancel anytime.
 
 ## Pages
