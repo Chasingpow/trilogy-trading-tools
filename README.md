@@ -13,7 +13,7 @@ Edit src/template.html (not the generated pages). Content between `<!-- PAGE:nam
 
 ## Blog (HeyCatch)
 Articles are written in HeyCatch and published here as static pages, following heycatch.ai/blog-agents.md.
-- `.github/workflows/blog.yml` runs every 15 minutes: `scripts/fetch-blog.mjs` pulls published articles into `blog-data.json`, then `npm run build` writes `/blog/` (index) and `/blog/<slug>` pages, adds them to the sitemap, and shows the Blog nav/footer links once there is at least one article.
+- `.github/workflows/blog.yml` runs every 15 minutes: `scripts/fetch-blog.mjs` pulls published articles into `blog-data.json`, then `npm run build` writes `/blog/` (index) and `/blog/<slug>` pages, adds them to the sitemap, and shows the Blog nav/footer links once there are at least three articles.
 - Needs the repository secret `HEYCATCH_API_KEY` (the `hck_lv_…` key from HeyCatch → Settings → Integrations → AI builder). It is never written to a file.
 - Article HTML is sanitised (allow-list), the title is the page's only h1, a table of contents follows the Key takeaways list, and each article's own JSON-LD is included.
 - Errors never break the site: a bad key (401/403) or API failure leaves the last good articles in place; 429 is retried once after Retry-After.
