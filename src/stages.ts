@@ -37,14 +37,24 @@ export function initStages(): void {
     if (t !== undefined) { clearInterval(t); timers.delete(key); }
   }
 
-  if (reduced) {
-    // static resting frame: pause the footage, light every step
-    $$<HTMLVideoElement>('.stage-video video').forEach(v => {
-      v.removeAttribute('autoplay');
-      v.setAttribute('controls', '');
-    });
-    rails.forEach(rail => [...rail.children].forEach(s => s.classList.add('on')));
-    return;
+  const videos = $$<HTMLVideoElement>('.stage-video video');
+  // Data Saver / "reduce data": show the poster frame and let the visitor press play.
+  const saveData = Boolean((navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData)
+    || matchMedia('(prefers-reduced-data: reduce)').matches;
+
+  if (reduced || saveData) {
+    // static resting frame: poster only, controls to play on demand
+    videos.forEach(v => v.setAttribute('controls', ''));
+    if (reduced) rails.forEach(rail => [...rail.children].forEach(s => s.classList.add('on')));
+    if (reduced) return;
+  } else {
+    // footage only downloads and plays while it is on screen (saves mobile data)
+    const vio = new IntersectionObserver(entries => entries.forEach(entry => {
+      const v = entry.target as HTMLVideoElement;
+      if (entry.isIntersecting) { v.preload = 'auto'; v.play().catch(() => v.setAttribute('controls', '')); }
+      else if (!v.paused) v.pause();
+    }), { threshold: 0.2 });
+    videos.forEach(v => vio.observe(v));
   }
 
   const running = new Set<DemoKey>();

@@ -1,0 +1,1165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trilogy vs Trade Ideas - Small-Cap Scanner Comparison</title>
+<meta name="description" content="Trilogy vs Trade Ideas: prices, real-time data, small-cap scanning, journal and budgeting compared side by side. Prices checked November 2026.">
+<link rel="canonical" href="https://trilogytradingtools.com/vs/trade-ideas">
+<meta property="og:site_name" content="Trilogy Trading Tools">
+<meta property="og:title" content="Trilogy vs Trade Ideas - Small-Cap Scanner Comparison">
+<meta property="og:description" content="Trilogy vs Trade Ideas: prices, real-time data, small-cap scanning, journal and budgeting compared side by side. Prices checked November 2026.">
+<meta property="og:url" content="https://trilogytradingtools.com/vs/trade-ideas">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://trilogytradingtools.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Trilogy Trading Tools: small-cap scanner, trade journal and budgeting app">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Trilogy vs Trade Ideas - Small-Cap Scanner Comparison">
+<meta name="twitter:description" content="Trilogy vs Trade Ideas: prices, real-time data, small-cap scanning, journal and budgeting compared side by side. Prices checked November 2026.">
+<meta name="twitter:image" content="https://trilogytradingtools.com/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Trilogy Trading Tools","url":"https://trilogytradingtools.com/","logo":"https://trilogytradingtools.com/logo.png","email":"info@trilogytradingtools.com"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Trilogy cheaper than Trade Ideas?","acceptedAnswer":{"@type":"Answer","text":"Month to month it is about the same: the 3T Pro Scanner is $175 CAD/mo and Trade Ideas Standard is $127 USD/mo, roughly $175 CAD at recent exchange rates. On annual billing Trade Ideas is cheaper ($1,068 USD/yr against $1,890 CAD/yr). Trilogy adds a board tuned for small-cap momentum and, in the bundles, a journal and a budget app that Trade Ideas does not include."}},{"@type":"Question","name":"Does Trilogy include real-time data?","acceptedAnswer":{"@type":"Answer","text":"Yes. Real-time market data is included in the scanner price, with no separate data feed to add on."}},{"@type":"Question","name":"Can I try Trilogy before committing?","acceptedAnswer":{"@type":"Answer","text":"Every monthly tool comes with a 7-day full refund if it does not earn its keep, and you can cancel anytime after that."}}]}</script>
+</head>
+<body style="margin:0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600;700&display=swap">
+<style>
+  /* Midnight Terminal — committed dark design */
+  :root{
+    --brand:#7c7cff; --brand-2:#b18cff; --brand-3:#2fd4f5;
+    --brand-grad:linear-gradient(135deg,#7c7cff 0%,#b18cff 48%,#2fd4f5 100%);
+    --brand-ink:#b3b7ff; --brand-soft:#191d45;
+    --ink:#eef1ff; --ink-2:#a3adcf; --ink-3:#66719b;
+    --bg:#05070f; --surface:#0b0f1e; --surface-2:#111730;
+    --line:#1e2745; --line-soft:#141b33;
+    --gain:#2ee6a8; --gain-ink:#5cf0bd; --gain-soft:#0b2c22;
+    --loss:#ff5d78; --loss-ink:#ff8ba0; --loss-soft:#331420;
+    --warn:#f5b301;
+    --sh-card:0 1px 2px rgba(0,0,0,.35),0 8px 24px rgba(0,0,0,.28);
+    --sh-brand:0 10px 34px rgba(124,124,255,.4);
+    --stage-bg:#04060d; --stage-line:#1a2140; --stage-text:#e8ecff; --stage-dim:#7e88b8;
+    color-scheme:dark;
+  }
+
+  *{box-sizing:border-box}
+  [hidden]{display:none !important}
+  section[id],[id="waitlist"],[id="screening"]{scroll-margin-top:96px}
+  html{scroll-behavior:smooth;background:var(--bg)}
+  body{
+    margin:0; background:transparent; color:var(--ink);
+    font-family:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+    font-size:16px; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:"Bricolage Grotesque","Public Sans",system-ui,sans-serif; line-height:1.08; margin:0; text-wrap:balance}
+  /* accent words: same display family — the gradient alone carries the emphasis */
+  .serif-i{font-style:normal}
+  .grad-text{background:var(--brand-grad); -webkit-background-clip:text; background-clip:text; color:transparent}
+  a{color:var(--brand-ink)}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 24px}
+  .num{font-variant-numeric:tabular-nums}
+
+  /* ---------- nav ---------- */
+  .nav{position:sticky; top:0; z-index:50; backdrop-filter:blur(14px);
+    background:color-mix(in srgb,var(--bg) 82%,transparent); border-bottom:1px solid var(--line-soft)}
+  .nav-in{display:flex; align-items:center; gap:22px; height:88px}
+  .mark{width:52px;height:52px;border-radius:14px;background:var(--brand-grad);
+    display:grid;place-items:center;box-shadow:var(--sh-brand);flex:none}
+  .mark svg{width:30px;height:30px}
+  .wordmark{display:flex;flex-direction:column;line-height:1.14; text-decoration:none;color:var(--ink)}
+  .wordmark{flex:none;padding:4px 0}
+  .wordmark b{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:21px;letter-spacing:.01em;white-space:nowrap}
+  .wordmark span{white-space:nowrap}
+  .wordmark b .serif-i{font-size:22px}
+  .wordmark span{font-size:11.5px;letter-spacing:.24em;color:var(--ink-3);font-weight:600}
+  .nav-links{display:flex;gap:18px;margin-left:auto;align-items:center}
+  .nav-links a{white-space:nowrap}
+  .nav-links a{font-size:16px;font-weight:600;color:var(--ink-2);text-decoration:none}
+  .nav-links a:hover{color:var(--brand-ink)}
+  .btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:12px 24px;
+    font-weight:700;font-size:14.5px;text-decoration:none;border:1px solid transparent;cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease}
+  .btn:focus-visible,a:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+  .btn-brand{background:linear-gradient(135deg,#5b5bfa 0%,#8a4df5 48%,#00b8e6 100%);
+    color:#fff;font-weight:800;text-shadow:0 1px 3px rgba(0,0,0,.45);
+    border:1px solid rgba(255,255,255,.28);box-shadow:var(--sh-brand)}
+  .btn-brand:hover{transform:translateY(-1px);box-shadow:0 12px 40px rgba(124,124,255,.55)}
+  .btn-ghost{border-color:var(--line);color:var(--ink);background:var(--surface)}
+  .btn-ghost:hover{border-color:var(--brand)}
+  .nav .btn{padding:12px 22px;font-size:15.5px}
+  .nav-burger{display:none;margin-left:auto;background:var(--surface);border:1px solid var(--line);
+    border-radius:10px;width:46px;height:46px;cursor:pointer;
+    flex-direction:column;justify-content:center;align-items:center;gap:5px;flex:none}
+  .nav-burger span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:transform .2s ease,opacity .2s ease}
+  .nav-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .nav-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .nav-burger:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+  @media (max-width:1300px){
+    .nav-in{position:relative;height:72px;gap:16px}
+    .mark{width:44px;height:44px;border-radius:12px}
+    .mark svg{width:25px;height:25px}
+    .wordmark b{font-size:17px}.wordmark b .serif-i{font-size:18px}
+    .wordmark span{font-size:10px}
+    .nav-burger{display:flex}
+    .nav-links{display:none;position:absolute;top:100%;left:-24px;right:-24px;z-index:49;
+      flex-direction:column;align-items:stretch;gap:0;margin-left:0;
+      background:var(--surface);border-bottom:1px solid var(--line);
+      padding:6px 24px 18px;box-shadow:var(--sh-card)}
+    .nav-links.open{display:flex}
+    .nav-links a:not(.btn){padding:13px 4px;font-size:16px;border-bottom:1px solid var(--line-soft)}
+    .nav-links a:not(.btn)::after{content:none}
+    .nav-links .btn{margin-top:12px;justify-content:center}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{padding:84px 0 40px; position:relative; overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:-40% -20% auto -20%;height:120%;pointer-events:none;
+    background:
+      radial-gradient(46% 55% at 22% 30%, color-mix(in srgb,var(--brand) 13%,transparent), transparent 70%),
+      radial-gradient(40% 50% at 78% 22%, color-mix(in srgb,var(--brand-3) 12%,transparent), transparent 70%),
+      radial-gradient(30% 45% at 55% 70%, color-mix(in srgb,var(--brand-2) 9%,transparent), transparent 70%);}
+  .hero-in{position:relative;display:grid;gap:26px;max-width:840px}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11.5px;font-weight:700;
+    letter-spacing:.24em;color:var(--brand-ink);text-transform:uppercase}
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--brand-grad);border-radius:2px}
+  .hero h1{font-size:clamp(30px,8.5vw,76px);font-weight:800;letter-spacing:-.015em}
+  .hero h1 .serif-i{font-size:1.04em;letter-spacing:0}
+  .hero p.lede{font-size:clamp(17px,2vw,20px);color:var(--ink-2);max-width:56ch;margin:0}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-note{font-size:13px;color:var(--ink-3)}
+
+  /* ticker — trading-floor tape */
+  .ticker{border-block:1px solid #1b2138;background:#080b16;margin-top:44px;overflow:hidden;position:relative}
+  .ticker::before,.ticker::after{content:"";position:absolute;top:0;bottom:0;width:90px;z-index:2;pointer-events:none}
+  .ticker::before{left:0;background:linear-gradient(90deg,#080b16,transparent)}
+  .ticker::after{right:0;background:linear-gradient(-90deg,#080b16,transparent)}
+  .ticker-track{display:flex;gap:0;width:max-content;animation:tick 38s linear infinite;
+    font-variant-numeric:tabular-nums;letter-spacing:.04em}
+  @keyframes tick{to{transform:translateX(-50%)}}
+  .tk{display:flex;align-items:baseline;gap:10px;padding:13px 28px;border-right:1px solid #161c30;white-space:nowrap}
+  .tk b{font-weight:600;font-size:13.5px;color:#f2f5ff;letter-spacing:.06em}
+  .tk .px{color:#8f9ac0;font-size:12.5px}
+  .tk .chg{font-size:12.5px;font-weight:600;letter-spacing:.02em}
+  .tk .chg.up{color:#31e59f;text-shadow:0 0 14px rgba(49,229,159,.55)}
+  .tk .chg.dn{color:#ff5f7a;text-shadow:0 0 14px rgba(255,95,122,.5)}
+  .up{color:var(--gain-ink)} .dn{color:var(--loss-ink)}
+  .tk .fl{font-size:10px;color:#4d587f;letter-spacing:.14em}
+  .tk .tape-label{color:var(--brand-ink);letter-spacing:.18em;font-size:11px}
+
+  /* ---------- audience strip ---------- */
+  .aud-strip{padding:56px 0 8px}
+  .aud-title{margin:0 0 20px;text-align:center;font-size:13px;font-weight:700;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
+  .aud-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  @media (max-width:1000px){.aud-grid{grid-template-columns:1fr 1fr}}
+  @media (max-width:560px){.aud-grid{grid-template-columns:1fr}}
+  .aud{display:grid;gap:6px;background:var(--surface);border:1px solid var(--line);
+    border-radius:16px;padding:22px 24px;text-decoration:none;color:var(--ink);
+    transition:border-color .2s ease,transform .2s ease}
+  .aud:hover{border-color:var(--brand);transform:translateY(-3px)}
+  .aud b{font-family:"Bricolage Grotesque",sans-serif;font-size:17px;font-weight:700}
+  .aud span{color:var(--ink-2);font-size:13.5px;line-height:1.5}
+  .aud i{font-style:normal;font-size:13px;font-weight:700;color:var(--brand-ink);margin-top:4px}
+
+  /* ---------- sections ---------- */
+  .section{padding:96px 0;overflow:hidden}
+  .sec-head{position:relative;display:grid;grid-template-columns:100%;gap:18px;max-width:800px;
+    margin:0 auto 56px;text-align:center;justify-items:center;transform-style:preserve-3d}
+  .ghost-cv{position:relative;z-index:0;width:min(1080px,96vw);height:200px;
+    margin:0 0 -18px;justify-self:center;pointer-events:none;
+    -webkit-mask-image:linear-gradient(180deg,#000 88%,transparent);
+    mask-image:linear-gradient(180deg,#000 88%,transparent)}
+  .sec-head::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:0;
+    width:min(480px,80vw);height:190px;pointer-events:none;filter:blur(34px);
+    background:radial-gradient(closest-side,color-mix(in srgb,var(--brand) 18%,transparent),transparent)}
+  .sec-head>*{position:relative;z-index:1}
+  .sec-head h1,.sec-head h2{font-size:clamp(34px,5vw,56px);font-weight:800;letter-spacing:-.015em;
+    will-change:transform;
+    text-shadow:0 14px 60px color-mix(in srgb,var(--brand) 40%,transparent)}
+  .sec-head p{color:var(--ink-2);margin:0;font-size:17px;max-width:58ch}
+  .chip{display:inline-flex;align-items:center;gap:8px;align-self:start;
+    background:var(--brand-soft);color:var(--brand-ink);border-radius:999px;
+    padding:6px 14px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+  .chip.gain{background:var(--gain-soft);color:var(--gain-ink)}
+  .price-tag{font-size:13px;font-weight:700;color:var(--ink-3)}
+  .price-tag b{color:var(--ink)}
+
+  .product{display:grid;grid-template-columns:4fr 8fr;gap:44px;align-items:center}
+  .product.flip{grid-template-columns:8fr 4fr}
+  .product.flip .p-copy{order:2}
+  @media (max-width:900px){.product,.product.flip{grid-template-columns:1fr}.product.flip .p-copy{order:0}}
+  .p-copy{display:grid;gap:18px;align-content:start}
+  .p-copy h3{font-size:clamp(26px,3.4vw,36px);font-weight:800}
+  .p-copy>p{color:var(--ink-2);margin:0}
+  .feat{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:14px}
+  .feat li{display:grid;grid-template-columns:auto 1fr;gap:3px 14px;align-items:start;font-size:14.5px;color:var(--ink-2)}
+  .feat li::before{content:"";width:8px;height:8px;border-radius:2.5px;background:var(--brand-grad);
+    transform:rotate(45deg);margin-top:6px;grid-row:1/3}
+  .f-t{grid-column:2;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:var(--ink);font-size:15.5px;line-height:1.35}
+  .f-d{grid-column:2;color:var(--ink-2);font-size:14px;line-height:1.55}
+
+  /* steps rail (the "how it works" captions) */
+  .steps{display:grid;gap:0;border-left:2px solid var(--line);margin-top:6px}
+  .step{padding:10px 0 10px 18px;position:relative;color:var(--ink-3);transition:color .4s}
+  .step::before{content:"";position:absolute;left:-2px;top:0;bottom:0;width:2px;background:var(--brand-grad);
+    transform:scaleY(0);transform-origin:top;transition:transform .5s ease}
+  .step b{display:block;font-weight:700;font-size:15px;color:inherit}
+  .step span{font-size:13.5px}
+  .step.on{color:var(--ink)}
+  .step.on span{color:var(--ink-2)}
+  .step.on::before{transform:scaleY(1)}
+
+  /* ---------- demo stage (app-window frame) ---------- */
+  .stage{background:var(--stage-bg);border-radius:18px;border:1px solid var(--stage-line);
+    box-shadow:var(--sh-card);overflow:hidden;color:var(--stage-text)}
+  .stage-bar{display:flex;align-items:center;gap:8px;padding:11px 16px;border-bottom:1px solid var(--stage-line)}
+  .dot3{display:flex;gap:6px}
+  .dot3 i{width:10px;height:10px;border-radius:50%;background:#3a4270}
+  .stage-url{margin-left:10px;font-size:12px;color:var(--stage-dim);background:rgba(255,255,255,.05);
+    border-radius:7px;padding:4px 12px;letter-spacing:.02em}
+  .stage-live{margin-left:auto;display:flex;align-items:center;gap:7px;font-size:11px;font-weight:700;
+    letter-spacing:.12em;color:var(--gain)}
+  .stage-live i{width:7px;height:7px;border-radius:50%;background:var(--gain);animation:pulse 1.6s infinite}
+  @keyframes pulse{50%{opacity:.35}}
+  .stage-body{padding:18px;min-height:360px;font-size:13px}
+
+  /* scanner stage: real session footage */
+  .stage-video{padding:0;min-height:0;display:grid}
+  .stage-video video{display:block;width:100%;height:auto}
+  .video-note{display:flex;gap:10px;align-items:center;justify-content:center;padding:10px 16px;
+    border-top:1px dashed var(--stage-line);color:var(--stage-dim);font-size:12px}
+
+
+  /* ---------- coming soon ---------- */
+  .soon{background:color-mix(in srgb,var(--surface) 82%,transparent);border-block:1px solid var(--line-soft)}
+  .soon-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+  @media (max-width:980px){.soon-grid{grid-template-columns:1fr}}
+  .soon-card{border:1px solid var(--line);border-radius:18px;padding:30px;display:flex;
+    flex-direction:column;gap:14px;background:var(--surface);box-shadow:var(--sh-card)}
+  .soon-card.live{border-color:var(--brand)}
+  .soon-card h3{font-size:22px}
+  .soon-card p{margin:0;color:var(--ink-2);font-size:15px;line-height:1.6}
+  .soon-card .card-cta{margin-top:auto;padding-top:10px}
+  .soon-tag{align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:.16em;color:var(--warn);
+    border:1px solid color-mix(in srgb,var(--warn) 45%,transparent);border-radius:999px;padding:4px 12px}
+  .soon-tag.live{color:var(--gain-ink);border-color:color-mix(in srgb,var(--gain) 50%,transparent);background:var(--gain-soft)}
+  .soon-meter{display:grid;gap:7px}
+  .soon-meter i{font-style:normal;display:flex;justify-content:space-between;font-size:12px;color:var(--ink-3)}
+  .soon-meter .mtrack{height:9px;border-radius:5px;background:var(--surface-2);overflow:hidden}
+  .soon-meter .mfill{height:100%;width:78%;border-radius:5px;background:var(--brand-grad)}
+
+  /* ---------- pricing ---------- */
+  .plans{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  @media (max-width:1020px){.plans{grid-template-columns:1fr 1fr}}
+  @media (max-width:620px){.plans{grid-template-columns:1fr}}
+  .plan{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;
+    display:grid;gap:14px;align-content:start;box-shadow:var(--sh-card);position:relative}
+  .plan.hl{border-color:var(--brand)}
+  .plan h3{font-size:21px}
+  .plan .cycle{font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--brand-ink);text-transform:uppercase}
+  .plan .amount,.bundle .amount{font-family:"Bricolage Grotesque",sans-serif;font-size:38px;font-weight:800;line-height:1}
+  .plan .amount small,.bundle .amount small{font-size:15px;color:var(--ink-3);font-weight:600}
+  .plan p{margin:0;color:var(--ink-2);font-size:14.5px}
+  .plan .feat li{font-size:14px}
+  .plan .btn{justify-self:start;margin-top:6px}
+  .plans-note{margin-top:26px;color:var(--ink-3);font-size:14px;text-align:center}
+
+  /* package deals */
+  .bundles-head{margin:56px 0 24px;display:grid;gap:8px;max-width:640px}
+  .bundles-head h3{font-size:clamp(24px,3vw,32px);font-weight:800}
+  .bundles-head p{margin:0;color:var(--ink-2);font-size:15.5px}
+  .bundles{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media (max-width:880px){.bundles{grid-template-columns:1fr}}
+  .bundle{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;
+    display:grid;gap:10px;align-content:start;box-shadow:var(--sh-card)}
+  .bundle.hl{border-color:var(--brand)}
+  .bundle h3{font-size:20px}
+  .bundle .b-parts{margin:0;color:var(--ink-2);font-size:14px}
+  .bundle .b-price{display:flex;align-items:baseline;gap:12px}
+  .bundle .b-price s{color:var(--ink-3);font-size:15px}
+  .bundle .b-why{margin:0;font-size:13.5px;line-height:1.6;color:var(--ink-2);
+    border-top:1px solid var(--line-soft);padding-top:12px}
+  .bundle .b-why b{color:var(--brand-ink)}
+  .bundle .b-save{justify-self:start;font-size:12px;font-weight:700;color:var(--gain-ink);
+    background:var(--gain-soft);border-radius:999px;padding:4px 12px;margin-top:auto}
+  .yr-deal{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-2);
+    background:var(--brand-soft);border-radius:10px;padding:8px 12px}
+  .yr-deal b{color:var(--brand-ink);font-weight:800}
+  .yr-deal .pct{margin-left:auto;font-size:10.5px;font-weight:800;letter-spacing:.06em;
+    color:var(--gain-ink);background:var(--gain-soft);border-radius:999px;padding:3px 9px;text-transform:uppercase}
+
+  /* about + contact */
+  .pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media (max-width:820px){.pillar-grid{grid-template-columns:1fr}}
+  .pillar{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;
+    display:grid;gap:8px;box-shadow:var(--sh-card)}
+  .pillar b{font-family:"Bricolage Grotesque",sans-serif;font-size:18px}
+  .pillar span{color:var(--ink-2);font-size:14.5px;line-height:1.6}
+  .contact-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .contact-row .btn{font-size:16px;padding:14px 26px}
+
+  /* launch-list form */
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+  .wl-form{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:6px}
+  .wl-form input[type=email]{flex:1 1 260px;min-width:0;background:var(--surface-2);border:1px solid var(--line);
+    color:var(--ink);border-radius:999px;padding:13px 20px;font:inherit;font-size:16px;min-height:48px}
+  .wl-form input[type=email]:focus{outline:2px solid var(--brand);outline-offset:2px;border-color:var(--brand)}
+  .wl-form input::placeholder{color:var(--ink-3)}
+  .wl-plan{flex-basis:100%;font-size:13px;color:var(--brand-ink);margin:0}
+  .wl-msg{flex-basis:100%;margin:0;font-size:13.5px;color:var(--gain-ink);min-height:1em}
+  .wl-msg.err{color:var(--loss-ink)}
+  .wl-count{margin:0;font-size:13.5px;color:var(--ink-2)}
+  .guarantee{margin:0;font-size:13px;line-height:1.5;color:var(--gain-ink);
+    border-left:2px solid var(--gain);padding-left:10px}
+  .value-line{margin:0;font-size:13.5px;line-height:1.55;color:var(--ink)}
+  .not-for{margin:22px auto 0;max-width:72ch;text-align:center;font-size:13.5px;color:var(--ink-3)}
+  .not-for b{color:var(--ink-2)}
+
+  /* founder, testimonials, screening method, FAQ */
+  .founders{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:28px}
+  .founder{display:grid;grid-template-columns:72px 1fr;gap:6px 16px;align-items:center;background:var(--surface);
+    border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--sh-card)}
+  .founder img{width:72px;height:72px;border-radius:50%;object-fit:cover;grid-row:1/4;background:var(--surface-2)}
+  .founder b{font-family:"Bricolage Grotesque",sans-serif;font-size:18px}
+  .founder span{color:var(--ink-2);font-size:14px;line-height:1.5}
+  .founder a{font-size:13.5px;font-weight:700}
+  .quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+  .quote{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;display:grid;gap:14px}
+  .quote blockquote{margin:0;color:var(--ink);font-size:15.5px;line-height:1.6}
+  .quote figcaption{display:flex;gap:12px;align-items:center;font-size:13.5px;color:var(--ink-2)}
+  .quote figcaption img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+  .method{margin-top:22px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;
+    display:grid;gap:10px;font-size:14.5px;color:var(--ink-2)}
+  .method h3{font-size:20px;color:var(--ink)}
+  .method ul{margin:0;padding-left:20px;display:grid;gap:6px}
+  .method p{margin:0}
+  .faq{max-width:800px;margin:0 auto;display:grid;gap:12px}
+  .faq details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 20px}
+  .faq details[open] summary{margin-bottom:0}
+  .faq summary{cursor:pointer;font-weight:700;color:var(--ink);font-size:16px;padding:10px 0;margin:-10px 0}
+  .faq details p{margin:10px 0 0;color:var(--ink-2);font-size:15px}
+
+  /* legal dialogs */
+  dialog.legal{max-width:680px;width:calc(100vw - 40px);max-height:82vh;border:1px solid var(--line);
+    border-radius:18px;background:var(--surface);color:var(--ink);padding:0;box-shadow:var(--sh-card)}
+  dialog.legal::backdrop{background:rgba(3,5,12,.7);backdrop-filter:blur(4px)}
+  .legal-in{padding:30px 32px;overflow-y:auto;max-height:82vh;display:grid;gap:14px;font-size:14.5px;line-height:1.65;color:var(--ink-2)}
+  .legal-in h3{font-size:24px;color:var(--ink)}
+  .legal-in h4{margin:8px 0 0;font-size:15px;color:var(--ink);font-family:"Bricolage Grotesque",sans-serif}
+  .legal-in ul{margin:0;padding-left:20px;display:grid;gap:6px}
+  .legal-in .updated{font-size:12px;color:var(--ink-3);letter-spacing:.08em}
+  .legal-in .close-x{position:sticky;top:0;justify-self:end;margin:-6px -6px 0 0}
+  .foot-links{display:flex;gap:18px;flex-wrap:wrap;font-size:13.5px}
+  .foot-links a,.foot-links button{color:var(--ink-2);text-decoration:none;font-weight:600;background:none;
+    border:none;padding:0;font:inherit;font-weight:600;cursor:pointer}
+  .foot-links a:hover,.foot-links button:hover{color:var(--brand-ink)}
+
+  /* blog */
+  .blog-wrap{max-width:780px;margin:0 auto;padding:72px 24px 96px}
+  .blog-wrap h1{font-size:clamp(32px,5vw,52px);font-weight:800;letter-spacing:-.015em;margin:10px 0 28px}
+  .post-meta{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand-ink);font-weight:700}
+  .post-list{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+  .post-list a{display:grid;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:16px;
+    padding:20px 24px;text-decoration:none;color:var(--ink);transition:border-color .2s ease}
+  .post-list a:hover{border-color:var(--brand)}
+  .post-list b{font-family:"Bricolage Grotesque",sans-serif;font-size:20px;line-height:1.25}
+  .post-list span{font-size:13px;color:var(--ink-3)}
+  .post-empty{color:var(--ink-2)}
+  .post-hero{width:100%;height:auto;border-radius:16px;margin:0 0 28px;border:1px solid var(--line)}
+  .prose{color:var(--ink-2);font-size:17px;line-height:1.75}
+  .prose h2{font-size:clamp(24px,3vw,30px);color:var(--ink);margin:44px 0 12px;scroll-margin-top:96px}
+  .prose h3{font-size:20px;color:var(--ink);margin:30px 0 8px;scroll-margin-top:96px}
+  .prose p,.prose ul,.prose ol,.prose table,.prose blockquote{margin:0 0 18px}
+  .prose li{margin:6px 0}
+  .prose strong{color:var(--ink)}
+  .prose img{max-width:100%;height:auto;border-radius:12px}
+  .prose blockquote{border-left:3px solid var(--brand);padding:4px 0 4px 18px;color:var(--ink)}
+  .prose table{width:100%;border-collapse:collapse;font-size:15px;display:block;overflow-x:auto}
+  .prose th,.prose td{border:1px solid var(--line);padding:8px 12px;text-align:left}
+  .prose th{color:var(--ink);background:var(--surface)}
+  .prose code{background:var(--surface-2);border-radius:6px;padding:1px 6px;font-size:.92em}
+  .toc{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin:0 0 28px}
+  .toc h2{margin:0 0 8px;font-size:18px}
+  .toc ol{margin:0;padding-left:20px}
+  .vs .prose table{display:table;table-layout:fixed;width:100%}
+  .vs .prose thead th:first-child{width:28%}
+  .vs .prose th,.vs .prose td{overflow-wrap:break-word;hyphens:auto;vertical-align:top}
+  @media (max-width:640px){.vs .prose table{font-size:13.5px}.vs .prose th,.vs .prose td{padding:8px 7px}}
+  .vs .faq{margin:0 0 24px}
+  .sources{font-size:14px;color:var(--ink-3)}
+
+  /* ---------- footer ---------- */
+  footer{border-top:1px solid var(--line-soft);padding:44px 0 60px;background:var(--surface)}
+  .foot{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+  .foot .wordmark b{font-size:15px}
+  .foot-right{margin-left:auto;color:var(--ink-3);font-size:13px;max-width:52ch}
+
+  /* ---------- stand-out layer ---------- */
+  #cosmos{position:fixed;inset:0;width:100vw;height:100vh;z-index:-1;pointer-events:none}
+  .progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--brand-grad);z-index:60;
+    border-radius:0 3px 3px 0;transition:width .1s linear}
+  .sec-head{perspective:640px}
+  .sec-head.fly .ghost-cv{animation:ghostFly 1.1s cubic-bezier(.16,.85,.3,1) both,
+    heartbeat 1.6s ease-in-out 1.15s infinite}
+  @keyframes heartbeat{   /* lub-dub, like a pulse trace */
+    0%{transform:scale(1)} 12%{transform:scale(1.07)} 24%{transform:scale(1)}
+    36%{transform:scale(1.045)} 52%{transform:scale(1)} 100%{transform:scale(1)}
+  }
+  @keyframes ghostFly{
+    0%{transform:translateZ(360px) rotateX(16deg);opacity:0;filter:blur(12px)}
+    45%{opacity:1}
+    72%{transform:translateZ(-28px) rotateX(-2deg);filter:blur(0)}
+    100%{transform:translateZ(0) rotateX(0)}
+  }
+  .sec-head.fly h1,.sec-head.fly h2{animation:h3dFly 1.15s cubic-bezier(.16,.85,.3,1) both,
+    h3dIdle 4.5s ease-in-out 1.3s infinite alternate}
+  @keyframes h3dFly{
+    0%{transform:translateZ(420px);opacity:0;filter:blur(10px)}
+    50%{opacity:1}
+    78%{transform:translateZ(-26px);filter:blur(0)}
+    100%{transform:translateZ(0)}
+  }
+  @keyframes h3dIdle{
+    from{transform:translateZ(0)}
+    to{transform:translateZ(12px)}
+  }
+  #ribbons{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+  .hero .wrap{position:relative}
+  .stage{border:1px solid color-mix(in srgb,var(--brand) 40%,var(--stage-line));
+    box-shadow:0 16px 50px -12px rgba(0,0,0,.6),
+      0 0 34px -10px color-mix(in srgb,var(--brand) 30%,transparent)}
+  .plan,.bundle,.soon-card{position:relative;overflow:hidden}
+  .plan::after,.bundle::after,.soon-card::after{content:"";position:absolute;inset:0;pointer-events:none;
+    opacity:0;transition:opacity .3s;
+    background:radial-gradient(320px circle at var(--mx,50%) var(--my,50%),
+      color-mix(in srgb,var(--brand) 9%,transparent),transparent 70%)}
+  .plan:hover::after,.bundle:hover::after,.soon-card:hover::after{opacity:1}
+  .plan,.bundle{transition:transform .25s ease,box-shadow .25s ease}
+  .plan:hover,.bundle:hover{transform:translateY(-4px);box-shadow:var(--sh-card),var(--sh-brand)}
+  .nav-links a:not(.btn){position:relative}
+  .nav-links a:not(.btn)::after{content:"";position:absolute;left:0;right:100%;bottom:-6px;height:2px;
+    background:var(--brand-grad);border-radius:2px;transition:right .25s ease}
+  .nav-links a:not(.btn):hover::after{right:0}
+  .rv-in{animation:rise .7s cubic-bezier(.22,.8,.28,1) backwards}
+  @keyframes rise{from{opacity:0;transform:translateY(26px)}}
+
+  /* ---------- small screens ---------- */
+  @media (max-width:640px){
+    .wrap{padding:0 18px}
+    .hero{padding:56px 0 28px}
+    .hero-in{gap:20px}
+    .section{padding:60px 0}
+    .sec-head{margin-bottom:40px;gap:14px}
+    .ghost-cv{height:clamp(96px,26vw,200px);margin-bottom:-10px}
+    .sec-head::before{height:120px}
+    .product,.product.flip{gap:26px}
+    .stage-bar{padding:9px 12px}
+    .soon-card,.plan,.bundle{padding:22px}
+    .bundles-head{margin:40px 0 18px}
+    .contact-row .btn{width:100%;justify-content:center}
+    .aud-strip{padding:40px 0 0}
+    .ticker{margin-top:32px}
+    .foot-right{margin-left:0}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:.001s !important;transition-duration:.001s !important}
+    .ticker-track{animation:none}
+  }
+</style>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <div class="mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round">
+        <path d="M12 3 L21 19 L3 19 Z"/><path d="M12 10 L16.5 19 L7.5 19 Z" opacity=".55"/>
+      </svg>
+    </div>
+    <a class="wordmark" href="/#top">
+      <b>Trilogy <span class="serif-i">Trading</span> Tools</b>
+      <span>SCANNER · JOURNAL · WEALTH</span>
+    </a>
+    <button class="nav-burger" id="navBurger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="/#scanner">3T Pro Scanner</a>
+      <a href="/#journal">Trilogy Journal</a>
+      <a href="/#wealth">Wealth Builder</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/about/">About</a>
+      <a href="/blog/" data-blog-link hidden>Blog</a>
+      <a href="/#contact">Contact</a>
+      <a class="btn btn-brand" href="/#waitlist">Join the launch list</a>
+    </div>
+  </div>
+</nav>
+
+<main class="blog-wrap vs">
+  <span class="post-meta">Comparison · prices checked November 2026</span>
+  <h1>Trilogy vs Trade Ideas</h1>
+  <div class="prose">
+    <p>Trade Ideas is the long-running all-market scanner with AI signals. Trilogy is a small-cap gapper board that hands every trade to a journal and every profit to a budget. If you trade low-float momentum, here is what each one actually gets you.</p>
+    <table>
+      <thead><tr><th></th><th>Trilogy</th><th>Trade Ideas</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Scanner price</th><td>3T Pro Scanner $175 CAD/mo, or $1,890 CAD/yr</td><td>TI Standard $127 USD/mo, or $1,068 USD/yr</td></tr>
+        <tr><th scope="row">Top plan</th><td>The Full Trilogy (scanner + journal + Wealth Builder) $265 CAD/mo</td><td>TI Premium $254 USD/mo, or $2,136 USD/yr</td></tr>
+        <tr><th scope="row">Free option</th><td>No. 7-day full refund on any monthly tool</td><td>Free plan on 15-minute delayed data</td></tr>
+        <tr><th scope="row">Real-time data</th><td>Included</td><td>Included on paid plans</td></tr>
+        <tr><th scope="row">What it scans</th><td>Small-cap momentum: gap %, float, relative volume, premarket through power hour</td><td>Every US stock, with hundreds of customizable alerts and filters</td></tr>
+        <tr><th scope="row">Charts</th><td>Dual charts with independent timeframes and drawing tools</td><td>Up to 10 charts on screen</td></tr>
+        <tr><th scope="row">AI signals &amp; backtesting</th><td>No</td><td>Holly AI signals and OddsMaker backtesting on Premium</td></tr>
+        <tr><th scope="row">Trade journal</th><td>Trilogy Journal: win rate, profit factor, average R, 3D Edge Surface</td><td>Not part of the plans</td></tr>
+        <tr><th scope="row">Budgeting</th><td>Wealth Builder: the Trilogy Split, bill calendar, savings goals</td><td>No</td></tr>
+        <tr><th scope="row">Halal option</th><td>Halal 3T Scanner on an AAOIFI-screened universe, $200 CAD/mo</td><td>No dedicated screened plan</td></tr>
+      </tbody>
+    </table>
+    <h2 id="pick-trade-ideas">Pick Trade Ideas if</h2>
+    <ul>
+      <li>You want AI-generated trade ideas or no-code backtesting.</li>
+      <li>You scan across every cap size, not just small-cap gappers.</li>
+      <li>You want a free delayed-data plan to try first.</li>
+    </ul>
+    <h2 id="pick-trilogy">Pick Trilogy if</h2>
+    <ul>
+      <li>You trade low-float, high-relative-volume gappers and want a board built only for that.</li>
+      <li>You want the scanner, the journal that grades your fills, and the budget that keeps the profits in one loop.</li>
+      <li>You want a Sharia-screened universe, prices in CAD, and a 7-day refund.</li>
+    </ul>
+    <h2 id="faq">FAQ</h2>
+    <div class="faq">
+      <details><summary>Is Trilogy cheaper than Trade Ideas?</summary><p>Month to month it is about the same: the 3T Pro Scanner is $175 CAD/mo and Trade Ideas Standard is $127 USD/mo, roughly $175 CAD at recent exchange rates. On annual billing Trade Ideas is cheaper ($1,068 USD/yr against $1,890 CAD/yr). Trilogy adds a board tuned for small-cap momentum and, in the bundles, a journal and a budget app that Trade Ideas does not include.</p></details>
+      <details><summary>Does Trilogy include real-time data?</summary><p>Yes. Real-time market data is included in the scanner price, with no separate data feed to add on.</p></details>
+      <details><summary>Can I try Trilogy before committing?</summary><p>Every monthly tool comes with a 7-day full refund if it does not earn its keep, and you can cancel anytime after that.</p></details>
+    </div>
+    <p class="sources">Trade Ideas prices from <a href="https://www.trade-ideas.com/pricing/">trade-ideas.com/pricing</a> and its own <a href="https://www.trade-ideas.com/trade-ideas-review/">2026 review page</a>. Check their site for current offers. Trilogy is opening soon — <a href="/pricing/#waitlist">join the launch list</a>.</p>
+  </div>
+</main>
+<footer>
+  <div class="wrap foot">
+    <div class="mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round">
+        <path d="M12 3 L21 19 L3 19 Z"/><path d="M12 10 L16.5 19 L7.5 19 Z" opacity=".55"/>
+      </svg>
+    </div>
+    <div class="wordmark">
+      <b>Trilogy <span class="serif-i">Trading</span> Tools</b>
+      <span>SCANNER · JOURNAL · WEALTH</span>
+    </div>
+    <div class="foot-links">
+      <a href="/about/">About</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/blog/" data-blog-link hidden>Blog</a>
+      <a href="/vs/trade-ideas">vs Trade Ideas</a>
+      <a href="/vs/tradezella">vs TradeZella</a>
+      <a href="/#contact">Contact</a>
+      <!-- TODO(owner): founder LinkedIn / X links, e.g. <a href="LINKEDIN_URL" rel="me">LinkedIn</a> -->
+      <button type="button" data-dlg="dlgPrivacy">Privacy</button>
+      <button type="button" data-dlg="dlgTerms">Terms</button>
+    </div>
+    <p class="foot-right">© 2026 Trilogy Trading Tools. Tools for education and process — nothing here is financial advice. Trading involves substantial risk of loss.</p>
+  </div>
+</footer>
+
+<dialog class="legal" id="dlgPrivacy">
+  <div class="legal-in">
+    <button class="btn btn-ghost close-x" type="button" data-close>✕ Close</button>
+    <h3>Privacy Policy</h3>
+    <span class="updated">LAST UPDATED · NOVEMBER 10, 2026</span>
+    <p>This policy explains what Trilogy Trading Tools ("we", "us") collects when you use our products — the 3T Pro Scanner, Halal 3T Scanner, Trilogy Journal, and Wealth Builder — why we collect it, and the control you have over it. We keep the data we hold to the minimum needed to run the products.</p>
+    <h4>What we collect</h4>
+    <ul>
+      <li><b>Account information</b> — your email address, and a display name if you set one.</li>
+      <li><b>Launch-list signups</b> — your email and the tool you picked, used only to tell you when it opens. Ask us and we remove it.</li>
+      <li><b>Data you enter</b> — trades, setups, notes, goals, budgets, and preferences inside the apps.</li>
+      <li><b>Ticker lookups</b> — the stock symbols you search, used only to fetch market data.</li>
+      <li><b>Technical data</b> — basic logs and cookies strictly needed to keep you signed in and secure.</li>
+    </ul>
+    <h4>What we deliberately do NOT collect or store</h4>
+    <ul>
+      <li><b>Payment card details</b> — checkout and billing are handled entirely by Stripe. We never see or store your card number.</li>
+      <li><b>Brokerage passwords</b> — any brokerage link is handled by a dedicated secure provider. We never receive your broker login.</li>
+      <li><b>Government IDs, SSN/SIN, or bank account numbers.</b></li>
+    </ul>
+    <h4>Service providers</h4>
+    <p>We use a small set of trusted vendors, each bound to protect your data: Supabase (database &amp; authentication), Stripe (payments, PCI-DSS certified), Railway (hosting), and our market-data providers for the tickers you look up.</p>
+    <h4>How your data is protected</h4>
+    <ul>
+      <li>Encrypted in transit (HTTPS/TLS) and at rest.</li>
+      <li>Row-level security in the database — your records are technically walled off so no other user can read them.</li>
+      <li>Access to production systems is limited and authenticated.</li>
+    </ul>
+    <h4>Your rights</h4>
+    <p>You can access and export everything we hold about you, correct it, or permanently delete your account and all associated data at any time. Depending on where you live you may have additional rights under PIPEDA (Canada), CCPA/CPRA (California), or GDPR (EU/UK) — we honour these requests for all users. To exercise any right, use the contact section above.</p>
+    <h4>Retention, cookies &amp; children</h4>
+    <p>We keep your data while your account is active; deleting your account removes your personal data (limited billing records may be retained by Stripe for tax purposes). We use only essential sign-in cookies — no advertising or third-party tracking cookies. Our products are not intended for anyone under 18.</p>
+    <p style="font-size:12.5px;color:var(--ink-3)">This is general information, not legal advice, and does not itself create a contract.</p>
+  </div>
+</dialog>
+
+<dialog class="legal" id="dlgTerms">
+  <div class="legal-in">
+    <button class="btn btn-ghost close-x" type="button" data-close>✕ Close</button>
+    <h3>Terms of Use</h3>
+    <span class="updated">LAST UPDATED · NOVEMBER 10, 2026</span>
+    <h4>The service</h4>
+    <p>Trilogy Trading Tools rents access to software: the 3T Pro Scanner, Halal 3T Scanner, and Trilogy Journal on monthly subscriptions, and Wealth Builder on a yearly plan. Your subscription is a licence to use the tools while it is active — not a purchase of the software.</p>
+    <h4>Billing &amp; cancellation</h4>
+    <p>Monthly plans renew each month and can be cancelled anytime — access continues to the end of the paid period. If a monthly tool does not earn its keep, email us within the first 7 days of your first subscription to it for a full refund. Annual-upfront plans cover twelve months at the discounted rate. Payments are processed by Stripe.</p>
+    <h4>Not financial advice</h4>
+    <p>Every tool is for education and process. Nothing on this site or in the products is investment, financial, legal, or tax advice, and no outcome is promised. Trading involves substantial risk of loss — you alone are responsible for your trading and financial decisions.</p>
+    <h4>Data &amp; market information</h4>
+    <p>Market data is provided by third-party sources and may be delayed or contain errors; the Halal 3T Scanner's compliance screening follows AAOIFI-based criteria but you should verify suitability with your own advisor.</p>
+    <h4>Fair use</h4>
+    <p>One subscription is for one trader. Sharing accounts, reselling access, scraping data, or reverse-engineering the tools ends the licence without refund.</p>
+    <h4>Liability</h4>
+    <p>The tools are provided "as is". To the fullest extent permitted by law, our liability is limited to the amount you paid for the current subscription period.</p>
+    <p style="font-size:12.5px;color:var(--ink-3)">This is a plain-language summary of our terms and not legal advice.</p>
+  </div>
+</dialog>
+
+<script>
+"use strict";
+(() => {
+  // src/util.ts
+  var reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function $(selector) {
+    return document.querySelector(selector);
+  }
+  function $$(selector) {
+    return [...document.querySelectorAll(selector)];
+  }
+  function cssVar(name, fallback) {
+    const value = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+    return value || fallback;
+  }
+
+  // src/chrome.ts
+  function initProgressBar() {
+    const bar = $("#progress");
+    if (!bar) return;
+    addEventListener("scroll", () => {
+      const doc = document.documentElement;
+      bar.style.width = scrollY / (doc.scrollHeight - innerHeight) * 100 + "%";
+    }, { passive: true });
+  }
+  function initCardSpotlight() {
+    document.addEventListener("pointermove", (e) => {
+      const target = e.target;
+      const card = target?.closest?.(".plan,.bundle,.soon-card");
+      if (!card) return;
+      const r = card.getBoundingClientRect();
+      card.style.setProperty("--mx", e.clientX - r.left + "px");
+      card.style.setProperty("--my", e.clientY - r.top + "px");
+    }, { passive: true });
+  }
+  function initRevealOnScroll() {
+    if (reduced || !("IntersectionObserver" in window)) return;
+    const rio = new IntersectionObserver((entries) => entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("rv-in");
+        rio.unobserve(entry.target);
+      }
+    }), { threshold: 0.15 });
+    $$(".sec-head,.p-copy,.stage,.plan,.bundle,.soon-card").forEach((el, i) => {
+      el.style.animationDelay = i % 4 * 0.08 + "s";
+      if (el.getBoundingClientRect().top > innerHeight) rio.observe(el);
+    });
+  }
+  function initMobileNav() {
+    const burger = $("#navBurger");
+    const links = $("#navLinks");
+    if (!burger || !links) return;
+    const setOpen = (open) => {
+      links.classList.toggle("open", open);
+      burger.setAttribute("aria-expanded", String(open));
+      burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    };
+    burger.addEventListener("click", () => setOpen(!links.classList.contains("open")));
+    links.addEventListener("click", (e) => {
+      if (e.target.closest("a")) setOpen(false);
+    });
+    addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && links.classList.contains("open")) {
+        setOpen(false);
+        burger.focus();
+      }
+    });
+  }
+  function initLegalDialogs() {
+    $$("[data-dlg]").forEach((btn) => btn.addEventListener("click", () => {
+      const dlg = document.getElementById(btn.dataset.dlg ?? "");
+      dlg?.showModal();
+    }));
+    $$("dialog.legal [data-close]").forEach((btn) => btn.addEventListener("click", () => {
+      btn.closest("dialog")?.close();
+    }));
+    $$("dialog.legal").forEach((dlg) => dlg.addEventListener("click", (e) => {
+      if (e.target === dlg) dlg.close();
+    }));
+  }
+
+  // src/ribbons.ts
+  var FALLBACK_COLORS = ["#5b5bf0", "#8b5cf6", "#12b5d6"];
+  function initHeroRibbons() {
+    const cv = $("#ribbons");
+    if (!cv) return;
+    const ctx = cv.getContext("2d");
+    if (!ctx) return;
+    const colors = ["--brand", "--brand-2", "--brand-3"].map((v, i) => cssVar(v, FALLBACK_COLORS[i]));
+    let w = 0, h = 0;
+    const t0 = performance.now();
+    function size() {
+      const r = cv.parentElement.getBoundingClientRect();
+      w = cv.width = r.width * devicePixelRatio;
+      h = cv.height = r.height * devicePixelRatio;
+    }
+    size();
+    addEventListener("resize", size);
+    function draw(now) {
+      const t = (now - t0) / 1e3;
+      ctx.clearRect(0, 0, w, h);
+      ctx.globalCompositeOperation = "lighter";
+      colors.forEach((color, k) => {
+        const yBase = h * (0.28 + k * 0.22);
+        const amp = h * 0.09;
+        const speed = 0.35 + k * 0.12;
+        ctx.beginPath();
+        for (let x = 0; x <= w; x += w / 70) {
+          const y = yBase + Math.sin(x / w * 4.2 + t * speed + k * 2.1) * amp + Math.sin(x / w * 9.5 - t * speed * 0.7 + k) * amp * 0.35;
+          x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+        }
+        ctx.strokeStyle = color;
+        ctx.globalAlpha = 0.17;
+        ctx.lineWidth = 34 * devicePixelRatio;
+        ctx.lineCap = "round";
+        ctx.filter = `blur(${18 * devicePixelRatio}px)`;
+        ctx.stroke();
+        ctx.filter = "none";
+        ctx.globalAlpha = 0.5;
+        ctx.lineWidth = 2 * devicePixelRatio;
+        ctx.stroke();
+      });
+      ctx.globalAlpha = 1;
+      ctx.globalCompositeOperation = "source-over";
+      if (!reduced) requestAnimationFrame(draw);
+    }
+    requestAnimationFrame(draw);
+  }
+
+  // src/cosmos.ts
+  function initCosmos() {
+    const cv = document.createElement("canvas");
+    cv.id = "cosmos";
+    document.body.prepend(cv);
+    const ctx = cv.getContext("2d");
+    if (!ctx) return;
+    const DPR = devicePixelRatio;
+    let W = 0, H = 0;
+    let stars = [];
+    let meteors = [];
+    let bolt = null;
+    let boltT = 0;
+    let nextMeteor = performance.now() + 2200;
+    let nextBolt = performance.now() + 5e3;
+    function size() {
+      W = cv.width = innerWidth * DPR;
+      H = cv.height = innerHeight * DPR;
+      stars = [];
+      const count = Math.min(320, Math.round(W * H / (11e3 * DPR * DPR)));
+      for (let i = 0; i < count; i++) {
+        stars.push({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          r: (Math.random() * 1.1 + 0.3) * DPR,
+          ph: Math.random() * 6.28,
+          sp: 0.4 + Math.random()
+        });
+      }
+    }
+    size();
+    addEventListener("resize", size);
+    function spawnMeteor() {
+      meteors.push({
+        x: Math.random() * W * 0.85,
+        y: Math.random() * H * 0.35,
+        vx: (6 + Math.random() * 7) * DPR,
+        vy: (2.5 + Math.random() * 3) * DPR,
+        life: 1
+      });
+    }
+    function spawnBolt() {
+      const pts = [];
+      let x = W * (0.12 + Math.random() * 0.76);
+      let y = -10 * DPR;
+      pts.push([x, y]);
+      while (y < H * (0.5 + Math.random() * 0.3)) {
+        x += (Math.random() - 0.5) * 90 * DPR;
+        y += (26 + Math.random() * 48) * DPR;
+        pts.push([x, y]);
+      }
+      const forkAt = 1 + Math.floor(Math.random() * (pts.length - 2));
+      const br = [[...pts[forkAt]]];
+      let bx = pts[forkAt][0], by = pts[forkAt][1];
+      for (let i = 0; i < 3; i++) {
+        bx += (Math.random() - 0.2) * 70 * DPR;
+        by += (20 + Math.random() * 30) * DPR;
+        br.push([bx, by]);
+      }
+      bolt = { pts, br };
+      boltT = 1;
+    }
+    function poly(points) {
+      ctx.beginPath();
+      points.forEach((p, i) => i ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1]));
+      ctx.stroke();
+    }
+    function draw(now) {
+      ctx.clearRect(0, 0, W, H);
+      for (const s of stars) {
+        const twinkle = 0.35 + 0.65 * Math.abs(Math.sin(now / 1100 * s.sp + s.ph));
+        ctx.globalAlpha = twinkle * 0.85;
+        ctx.fillStyle = "#cdd6ff";
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, 6.283);
+        ctx.fill();
+      }
+      if (now > nextMeteor) {
+        spawnMeteor();
+        nextMeteor = now + 2600 + Math.random() * 5e3;
+      }
+      meteors = meteors.filter((m) => m.life > 0);
+      for (const m of meteors) {
+        m.x += m.vx;
+        m.y += m.vy;
+        m.life -= 0.014;
+        const g = ctx.createLinearGradient(m.x, m.y, m.x - m.vx * 13, m.y - m.vy * 13);
+        g.addColorStop(0, `rgba(214,225,255,${0.95 * m.life})`);
+        g.addColorStop(1, "rgba(214,225,255,0)");
+        ctx.globalAlpha = 1;
+        ctx.strokeStyle = g;
+        ctx.lineWidth = 1.8 * DPR;
+        ctx.lineCap = "round";
+        ctx.beginPath();
+        ctx.moveTo(m.x, m.y);
+        ctx.lineTo(m.x - m.vx * 13, m.y - m.vy * 13);
+        ctx.stroke();
+      }
+      if (now > nextBolt) {
+        spawnBolt();
+        nextBolt = now + 7e3 + Math.random() * 9e3;
+      }
+      if (bolt) {
+        boltT -= 0.05;
+        if (boltT <= 0) bolt = null;
+        else {
+          ctx.globalAlpha = boltT * (boltT > 0.72 ? 1 : 0.55);
+          ctx.strokeStyle = "#aebcff";
+          ctx.lineCap = "round";
+          ctx.shadowColor = "#7c7cff";
+          ctx.shadowBlur = 24 * DPR;
+          ctx.lineWidth = 2.4 * DPR;
+          poly(bolt.pts);
+          ctx.lineWidth = 1.3 * DPR;
+          poly(bolt.br);
+          ctx.shadowBlur = 0;
+          if (boltT > 0.85) {
+            ctx.globalAlpha = 0.06;
+            ctx.fillStyle = "#7c7cff";
+            ctx.fillRect(0, 0, W, H);
+          }
+        }
+      }
+      ctx.globalAlpha = 1;
+      if (!reduced) requestAnimationFrame(draw);
+    }
+    requestAnimationFrame(draw);
+  }
+
+  // src/candles.ts
+  function initCandleWords() {
+    const canvases = $$(".ghost-cv");
+    if (!canvases.length) return;
+    const GAIN = cssVar("--gain", "#0eae74");
+    const LOSS = cssVar("--loss", "#e0455e");
+    function setup(cv) {
+      const ctx = cv.getContext("2d");
+      if (!ctx) return;
+      const DPR = devicePixelRatio;
+      let W = 0, H = 0, step = 8;
+      let cells = [];
+      let born = performance.now();
+      let raf = 0;
+      let running = false;
+      function build() {
+        const r = cv.getBoundingClientRect();
+        W = cv.width = Math.max(2, Math.round(r.width * DPR));
+        H = cv.height = Math.max(2, Math.round(r.height * DPR));
+        const off = document.createElement("canvas");
+        off.width = W;
+        off.height = H;
+        const o = off.getContext("2d");
+        o.fillStyle = "#000";
+        o.font = `800 ${Math.round(H * 0.72)}px "Bricolage Grotesque",sans-serif`;
+        o.textAlign = "center";
+        o.textBaseline = "middle";
+        o.fillText(cv.dataset.word ?? "", W / 2, H * 0.46);
+        const px = o.getImageData(0, 0, W, H).data;
+        cells = [];
+        step = Math.max(7 * DPR, W / 120);
+        for (let x = step / 2; x < W; x += step) {
+          for (let y = step / 2; y < H; y += step) {
+            if (px[((y | 0) * W + (x | 0)) * 4 + 3] > 110) {
+              cells.push({
+                x,
+                y,
+                up: Math.random() > 0.42,
+                ph: Math.random() * 6.28,
+                hb: step * (0.55 + Math.random() * 0.75),
+                delay: x / W * 900 + Math.random() * 250
+              });
+            }
+          }
+        }
+        born = performance.now();
+      }
+      function draw(now) {
+        const t = now - born;
+        ctx.clearRect(0, 0, W, H);
+        const bodyWidth = step * 0.52;
+        for (const c of cells) {
+          const appear = Math.min(1, (t - c.delay) / 350);
+          if (appear <= 0) continue;
+          const flicker = Math.sin(now / 640 + c.ph);
+          const h = c.hb * (0.85 + 0.3 * flicker);
+          if (Math.random() < 15e-4) c.up = !c.up;
+          ctx.globalAlpha = appear * (0.4 + 0.28 * flicker * flicker);
+          ctx.fillStyle = c.up ? GAIN : LOSS;
+          ctx.fillRect(c.x - DPR * 0.7, c.y - h * 0.85, DPR * 1.4, h * 1.7);
+          ctx.fillRect(c.x - bodyWidth / 2, c.y - h / 2, bodyWidth, h);
+        }
+        ctx.globalAlpha = 1;
+        if (running && !reduced) raf = requestAnimationFrame(draw);
+      }
+      const head = cv.closest(".sec-head");
+      function start() {
+        if (running) return;
+        running = true;
+        born = performance.now();
+        if (head) {
+          head.classList.remove("fly");
+          void head.offsetWidth;
+          head.classList.add("fly");
+        }
+        raf = requestAnimationFrame(draw);
+      }
+      function stop() {
+        running = false;
+        cancelAnimationFrame(raf);
+        head?.classList.remove("fly");
+      }
+      build();
+      if (reduced) {
+        born = -1e6;
+        draw(performance.now());
+      } else {
+        const io = new IntersectionObserver(
+          (entries) => entries.forEach((e) => e.isIntersecting ? start() : stop()),
+          { threshold: 0.05 }
+        );
+        io.observe(cv);
+      }
+      addEventListener("resize", () => {
+        stop();
+        build();
+        if (reduced) {
+          born = -1e6;
+          draw(performance.now());
+        } else start();
+      });
+    }
+    const go = () => canvases.forEach(setup);
+    (document.fonts?.ready ?? Promise.resolve()).then(go).catch(go);
+  }
+
+  // src/ticker.ts
+  var ENTRIES = [
+    { symbol: "NRXS", company: "NRx Sustain", price: 4.18, changePct: 42.7 },
+    { symbol: "LGVN", company: "Longeveron", price: 3.62, changePct: 28.4 },
+    { symbol: "CYCC", company: "Cyclacel", price: 2.09, changePct: 21.6 },
+    { symbol: "GFAI", company: "Guardforce AI", price: 1.44, changePct: 18.2 },
+    { symbol: "MULN", company: "Mullen Auto", price: 0.87, changePct: -6.3 },
+    { symbol: "TOPS", company: "Top Ships", price: 6.55, changePct: 15.9 },
+    { symbol: "BDRX", company: "Biodexa", price: 1.92, changePct: 33.1 },
+    { symbol: "SINT", company: "SiNtx Tech", price: 0.61, changePct: 12.4 },
+    { symbol: "COSM", company: "Cosmos Health", price: 1.13, changePct: -4.1 },
+    { symbol: "VERB", company: "Verb Tech", price: 5.24, changePct: 24.8 }
+  ];
+  function render(track, entries, label) {
+    const cells = entries.map(({ symbol, company, price, changePct }) => {
+      const up = changePct >= 0;
+      return `<span class="tk"><b>${symbol}</b><span class="px num">${price.toFixed(2)}</span><span class="chg num ${up ? "up" : "dn"}">${up ? "▲" : "▼"} ${up ? "+" : ""}${changePct.toFixed(2)}%</span><span class="fl">${company.toUpperCase()}</span></span>`;
+    });
+    if (label) cells.unshift(`<span class="tk"><b class="tape-label">${label}</b></span>`);
+    const half = cells.join("");
+    track.innerHTML = half + half;
+  }
+  function initTicker() {
+    const track = $("#tickerTrack");
+    if (!track) return;
+    render(track, ENTRIES);
+    fetch("ticker-data.json", { cache: "no-store" }).then((r) => r.ok ? r.json() : Promise.reject(new Error(String(r.status)))).then((data) => {
+      if (!Array.isArray(data.entries) || data.entries.length < 4) return;
+      const [y, m, d] = data.updated.split("-").map(Number);
+      const label = new Date(y, m - 1, d).toLocaleDateString("en-US", { month: "short", day: "numeric" });
+      render(track, data.entries, `TOP MOVERS · ${label}`);
+    }).catch(() => {
+    });
+  }
+
+  // src/stages.ts
+  var STEP_INTERVAL_MS = 4500;
+  function initStages() {
+    const rails = /* @__PURE__ */ new Map();
+    $$(".steps").forEach((rail) => {
+      const key = rail.dataset.demo;
+      if (key) rails.set(key, rail);
+    });
+    function setStep(demo, index) {
+      const rail = rails.get(demo);
+      if (!rail) return;
+      [...rail.children].forEach((step, j) => step.classList.toggle("on", j === index));
+    }
+    const timers = /* @__PURE__ */ new Map();
+    function startLoop(key) {
+      let i = 0;
+      setStep(key, 0);
+      timers.set(key, window.setInterval(() => {
+        i = (i + 1) % 3;
+        setStep(key, i);
+      }, STEP_INTERVAL_MS));
+    }
+    function stopLoop(key) {
+      const t = timers.get(key);
+      if (t !== void 0) {
+        clearInterval(t);
+        timers.delete(key);
+      }
+    }
+    const videos = $$(".stage-video video");
+    const saveData = Boolean(navigator.connection?.saveData) || matchMedia("(prefers-reduced-data: reduce)").matches;
+    if (reduced || saveData) {
+      videos.forEach((v) => v.setAttribute("controls", ""));
+      if (reduced) rails.forEach((rail) => [...rail.children].forEach((s) => s.classList.add("on")));
+      if (reduced) return;
+    } else {
+      const vio = new IntersectionObserver((entries) => entries.forEach((entry) => {
+        const v = entry.target;
+        if (entry.isIntersecting) {
+          v.preload = "auto";
+          v.play().catch(() => v.setAttribute("controls", ""));
+        } else if (!v.paused) v.pause();
+      }), { threshold: 0.2 });
+      videos.forEach((v) => vio.observe(v));
+    }
+    const running = /* @__PURE__ */ new Set();
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const section = entry.target.closest("section");
+        if (!section) return;
+        const key = ["scanner", "journal", "wealth"].find((k) => k === section.id);
+        if (!key) return;
+        if (entry.isIntersecting && !running.has(key)) {
+          running.add(key);
+          startLoop(key);
+        } else if (!entry.isIntersecting && running.has(key)) {
+          running.delete(key);
+          stopLoop(key);
+        }
+      });
+    }, { threshold: 0.25 });
+    $$(".stage").forEach((stage) => io.observe(stage));
+  }
+
+  // src/waitlist.ts
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  function initWaitlist() {
+    const form = $("#waitlistForm");
+    const email = $("#wlEmail");
+    const plan = $("#wlPlan");
+    const planNote = $("#wlPlanNote");
+    const msg = $("#wlMsg");
+    if (!form || !email || !plan || !msg) return;
+    const say = (text, isError = false) => {
+      msg.textContent = text;
+      msg.classList.toggle("err", isError);
+    };
+    $$("a[data-plan]").forEach((btn) => btn.addEventListener("click", () => {
+      plan.value = btn.dataset.plan ?? "";
+      if (planNote) {
+        planNote.textContent = plan.value ? `You picked: ${plan.value}` : "";
+        planNote.hidden = !plan.value;
+      }
+      setTimeout(() => email.focus({ preventScroll: true }), 450);
+    }));
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const address = email.value.trim();
+      if (!EMAIL_RE.test(address)) {
+        say("Enter a valid email address.", true);
+        email.focus();
+        return;
+      }
+      const endpoint = form.dataset.endpoint?.trim();
+      if (!endpoint) {
+        const to = form.dataset.fallback ?? "";
+        const subject = encodeURIComponent("Launch list");
+        const body = encodeURIComponent(`Add me to the launch list.
+Email: ${address}
+Tool: ${plan.value || "Not sure yet"}`);
+        location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+        say("Opening your email app — hit send and you are on the list.");
+        return;
+      }
+      const button = form.querySelector("button[type=submit]");
+      if (button) button.disabled = true;
+      say("Adding you…");
+      try {
+        const res = await fetch(endpoint, {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body: new FormData(form)
+        });
+        if (!res.ok) throw new Error(String(res.status));
+        form.reset();
+        if (planNote) planNote.hidden = true;
+        say("You're on the list. We'll email you the day it opens.");
+      } catch {
+        say("That did not go through. Try again, or email info@trilogytradingtools.com.", true);
+      } finally {
+        if (button) button.disabled = false;
+      }
+    });
+  }
+
+  // src/main.ts
+  initMobileNav();
+  initProgressBar();
+  initCardSpotlight();
+  initRevealOnScroll();
+  initLegalDialogs();
+  initHeroRibbons();
+  initCosmos();
+  initCandleWords();
+  initTicker();
+  initStages();
+  initWaitlist();
+})();
+</script>
+
+</body>
+</html>
