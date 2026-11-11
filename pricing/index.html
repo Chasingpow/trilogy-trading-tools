@@ -530,8 +530,7 @@
           <li>Cancel anytime</li>
         </ul>
         <p class="guarantee">First 7 days: full refund if the board does not earn its keep.</p>
-        <!-- TODO(owner): once the #screening block below is filled in and un-hidden, add here:
-             <p class="value-line"><a href="#screening">How we screen the universe →</a></p> -->
+        <p class="value-line"><a href="#screening">How we screen the universe →</a></p>
         <a class="btn btn-ghost" href="#waitlist" data-plan="Halal 3T Scanner">Join the launch list</a>
       </div>
       <div class="plan">
@@ -609,19 +608,19 @@
       </div>
     </div>
 
-    <!-- TODO(owner): Halal screening methodology. Fill in the criteria the Halal 3T Scanner actually applies,
-         the excluded sectors, the re-screen cadence and the last review date, then remove `hidden`
-         (and add the "How we screen" link on the Halal plan card above). -->
-    <div class="method" id="screening" hidden>
+    <div class="method" id="screening">
       <h3>How we screen the Halal 3T universe</h3>
-      <p>Every symbol on the Halal 3T Scanner passes AAOIFI-based screens before it can appear on the board.</p>
+      <p>Before a stock can appear on the Halal 3T Scanner, it passes the two screens in AAOIFI Shari'ah Standard No. 21: what the company does, and how it is financed.</p>
       <ul>
-        <li><b>Business activity:</b> SCREEN_CRITERIA</li>
-        <li><b>Financial ratios:</b> RATIO_THRESHOLDS</li>
-        <li><b>Excluded sectors:</b> EXCLUDED_SECTORS</li>
-        <li><b>Re-screened:</b> CADENCE</li>
+        <li><b>Business activity:</b> the company's core business, judged from its sector and industry classification, must be permissible. A prohibited core business fails the stock outright, however clean its balance sheet.</li>
+        <li><b>Financial ratios:</b> each is measured against market capitalisation and must come in under its limit. Interest-bearing debt under 30%, and cash plus interest-bearing securities under 30%. Where a company reports non-permissible income separately, it must be under 5% of revenue.</li>
+        <li><b>Excluded sectors:</b> alcohol, tobacco, gambling and casinos, interest-based finance (banks, lenders, mortgages, credit services, insurance, asset management and capital markets), pork, adult entertainment, cannabis, and weapons and defense.</li>
+        <li><b>Re-screened:</b> nightly, against each company's latest filed financial statements, so a verdict changes within a day of new results.</li>
       </ul>
-      <p class="updated">Last reviewed: REVIEW_DATE</p>
+      <p><b>What you see on the board:</b> stocks that pass every screen are marked ✓&nbsp;HALAL. If a figure needed for one of the ratios is missing from a company's filings, the stock stays on the board marked ? QUESTIONABLE instead of being counted as a pass. Stocks that fail any screen never appear.</p>
+      <p><b>Purification:</b> most companies don't report interest income as its own line, so it usually can't be screened directly. Those stocks are flagged so you can purify any dividends or gains yourself.</p>
+      <p><b>How this compares with index screens:</b> some index providers, such as Dow Jones and S&amp;P, use a 33% limit, add a receivables test, and average market cap over 24–36 months. We follow the AAOIFI limits and use current market cap, so a stock close to a limit can get a different verdict on those lists.</p>
+      <p class="updated">Last reviewed: November 10, 2026</p>
       <p>Screening is a filter, not a fatwa — verify suitability with your own advisor.</p>
     </div>
   </div>
