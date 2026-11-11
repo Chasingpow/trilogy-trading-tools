@@ -360,6 +360,30 @@
     border:none;padding:0;font:inherit;font-weight:600;cursor:pointer}
   .foot-links a:hover,.foot-links button:hover{color:var(--brand-ink)}
 
+  /* scanner risk panel (dilution / squeeze / exit ladder) */
+  .risk{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,600px);gap:40px;align-items:center;margin-top:72px}
+  .risk h3{font-size:clamp(24px,3vw,32px);margin-bottom:12px}
+  .risk-copy>p{color:var(--ink-2);margin:0 0 18px}
+  .risk-list{margin:0;padding:0;list-style:none;counter-reset:risk;display:grid;gap:14px}
+  .risk-list li{counter-increment:risk;display:grid;grid-template-columns:30px 1fr;gap:2px 12px;align-items:start}
+  .risk-list li::before{content:counter(risk);grid-row:1/3;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;
+    background:var(--brand-grad);color:#fff;font-weight:800;font-size:14px}
+  .risk-list b{color:var(--ink);font-size:16px}
+  .risk-list span{color:var(--ink-2);font-size:14.5px;line-height:1.55}
+  .risk-note{margin:16px 0 0 42px;font-size:13px;color:var(--ink-3)}
+  .risk-shot{margin:0 0 0 18px}
+  .risk-frame{position:relative;border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh-card);background:#0b0b0b}
+  .risk-frame img{display:block;width:100%;height:auto;border-radius:13px}
+  .risk-box{position:absolute;border:2px solid var(--brand);border-radius:6px;pointer-events:none;box-shadow:0 0 0 9999px rgba(0,0,0,0)}
+  .risk-box i{position:absolute;top:50%;left:-16px;transform:translateY(-50%);width:22px;height:22px;border-radius:50%;display:grid;place-items:center;
+    background:var(--brand-grad);color:#fff;font:800 12px/1 system-ui,sans-serif;font-style:normal}
+  .risk-box.b1{left:0.5%;top:45.4%;width:83%;height:5.8%}
+  .risk-box.b2{left:0.5%;top:51.9%;width:99%;height:5.6%}
+  .risk-box.b3{left:1%;top:63.5%;width:98%;height:35%}
+  .risk-shot figcaption{margin-top:10px;font-size:13px;color:var(--ink-3);text-align:center}
+  @media (max-width:900px){.risk{grid-template-columns:1fr;gap:24px;margin-top:48px}}
+  @media (max-width:600px){.risk-box i{width:16px;height:16px;left:-13px;font-size:10px}.risk-box.b1 i{margin-top:-4px}.risk-box.b2 i{margin-top:4px}}
+
   /* blog */
   .blog-wrap{max-width:780px;margin:0 auto;padding:72px 24px 96px}
   .blog-wrap h1{font-size:clamp(32px,5vw,52px);font-weight:800;letter-spacing:-.015em;margin:10px 0 28px}

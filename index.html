@@ -361,6 +361,30 @@
     border:none;padding:0;font:inherit;font-weight:600;cursor:pointer}
   .foot-links a:hover,.foot-links button:hover{color:var(--brand-ink)}
 
+  /* scanner risk panel (dilution / squeeze / exit ladder) */
+  .risk{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,600px);gap:40px;align-items:center;margin-top:72px}
+  .risk h3{font-size:clamp(24px,3vw,32px);margin-bottom:12px}
+  .risk-copy>p{color:var(--ink-2);margin:0 0 18px}
+  .risk-list{margin:0;padding:0;list-style:none;counter-reset:risk;display:grid;gap:14px}
+  .risk-list li{counter-increment:risk;display:grid;grid-template-columns:30px 1fr;gap:2px 12px;align-items:start}
+  .risk-list li::before{content:counter(risk);grid-row:1/3;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;
+    background:var(--brand-grad);color:#fff;font-weight:800;font-size:14px}
+  .risk-list b{color:var(--ink);font-size:16px}
+  .risk-list span{color:var(--ink-2);font-size:14.5px;line-height:1.55}
+  .risk-note{margin:16px 0 0 42px;font-size:13px;color:var(--ink-3)}
+  .risk-shot{margin:0 0 0 18px}
+  .risk-frame{position:relative;border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh-card);background:#0b0b0b}
+  .risk-frame img{display:block;width:100%;height:auto;border-radius:13px}
+  .risk-box{position:absolute;border:2px solid var(--brand);border-radius:6px;pointer-events:none;box-shadow:0 0 0 9999px rgba(0,0,0,0)}
+  .risk-box i{position:absolute;top:50%;left:-16px;transform:translateY(-50%);width:22px;height:22px;border-radius:50%;display:grid;place-items:center;
+    background:var(--brand-grad);color:#fff;font:800 12px/1 system-ui,sans-serif;font-style:normal}
+  .risk-box.b1{left:0.5%;top:45.4%;width:83%;height:5.8%}
+  .risk-box.b2{left:0.5%;top:51.9%;width:99%;height:5.6%}
+  .risk-box.b3{left:1%;top:63.5%;width:98%;height:35%}
+  .risk-shot figcaption{margin-top:10px;font-size:13px;color:var(--ink-3);text-align:center}
+  @media (max-width:900px){.risk{grid-template-columns:1fr;gap:24px;margin-top:48px}}
+  @media (max-width:600px){.risk-box i{width:16px;height:16px;left:-13px;font-size:10px}.risk-box.b1 i{margin-top:-4px}.risk-box.b2 i{margin-top:4px}}
+
   /* blog */
   .blog-wrap{max-width:780px;margin:0 auto;padding:72px 24px 96px}
   .blog-wrap h1{font-size:clamp(32px,5vw,52px);font-weight:800;letter-spacing:-.015em;margin:10px 0 28px}
@@ -590,6 +614,28 @@
           <div class="video-note">▶ Real footage — the 3T Pro Scanner live during a session</div>
         </div>
       </div>
+    </div>
+
+    <div class="risk">
+      <div class="risk-copy">
+        <h3>Know the exit before you enter</h3>
+        <p>Open any mover and the panel under its chart answers the questions small caps punish you for skipping.</p>
+        <ol class="risk-list">
+          <li><b>Dilution check</b><span>Recent offerings and reverse splits from SEC filings (424B5, S-1, R/S) and how long ago they hit. See the dilution before you buy the spike.</span></li>
+          <li><b>Squeeze read</b><span>Float, borrow fee and shares available, and recent short volume on one line, with a squeeze score and whether a squeeze is actually in progress.</span></li>
+          <li><b>Exit ladder</b><span>Levels at VWAP and 1.5×, 2× and 2.5× VWAP next to the high of day. Type your entry and your % targets are drawn on the chart as resting limits.</span></li>
+        </ol>
+        <p class="risk-note">Signals and levels only — not advice.</p>
+      </div>
+      <figure class="risk-shot">
+        <div class="risk-frame">
+          <img src="/img/scanner-risk-panel.webp" width="592" height="332" loading="lazy" alt="3T Pro Scanner chart panel for CHSN at 2.66: momentum, VWAP 2.84, relative volume 1.36×, float 2.32M, rotation 0.7×, high 2.83, low 2.35, volume 1.54M. Dilution line: offering priced, 424B5, 10 months ago; reverse split 1-for-100, 6 months ago. Squeeze line: score 50, float 2.3M, borrow 813% fee, 150K available, short volume 56%, 49%, 49%; no squeeze in progress. Exit ladder: VWAP 2.84, 1.5× 4.26, 2× 5.69, 2.5× 7.11, high of day 3.38 at 5:04.">
+          <span class="risk-box b1" aria-hidden="true"><i>1</i></span>
+          <span class="risk-box b2" aria-hidden="true"><i>2</i></span>
+          <span class="risk-box b3" aria-hidden="true"><i>3</i></span>
+        </div>
+        <figcaption>Real screenshot — the panel under each chart in the 3T Pro Scanner</figcaption>
+      </figure>
     </div>
   </div>
 </section>
