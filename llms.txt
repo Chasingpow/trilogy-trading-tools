@@ -20,5 +20,7 @@
 - [About](https://trilogytradingtools.com/about/)
 - [Trilogy vs Trade Ideas](https://trilogytradingtools.com/vs/trade-ideas)
 - [Trilogy vs TradeZella](https://trilogytradingtools.com/vs/tradezella)
+- [Trilogy vs TradeTracker](https://trilogytradingtools.com/vs/tradetracker)
+- [Changelog](https://trilogytradingtools.com/changelog/)
 
 Contact: info@trilogytradingtools.com. Nothing here is financial advice.

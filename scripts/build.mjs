@@ -242,9 +242,45 @@ function blogPost(site, a) {
 `);
 }
 
+
+// ---------- changelog (src/changelog.json -> /changelog/ + latest 3 on the homepage) ----------
+const changelog = (JSON.parse(read('src/changelog.json').toString('utf8')).entries || [])
+  .filter(e => e && e.date && e.title)
+  .sort((a, b) => String(b.date).localeCompare(String(a.date)));
+const clDate = (d) => { const t = Date.parse(d + 'T12:00:00Z'); return Number.isNaN(t) ? d : new Date(t).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' }); };
+function changelogLatest() {
+  if (!changelog.length) return '';
+  const items = changelog.slice(0, 3).map(e =>
+    `<li><time datetime="${esc(e.date)}">${escText(clDate(e.date))}</time><span><b>${escText(e.product)}:</b> ${escText(e.title)}</span></li>`).join('\n        ');
+  return `<div class="shipped">
+      <h3>Recently shipped</h3>
+      <ol>
+        ${items}
+      </ol>
+      <a class="more" href="/changelog/">Full changelog →</a>
+    </div>`;
+}
+function changelogPage(site) {
+  const items = changelog.map(e => `<li><time datetime="${esc(e.date)}">${escText(clDate(e.date))}</time><div>
+      <span class="prod">${escText(e.product)}</span>
+      <h2>${escText(e.title)}</h2>
+      ${e.detail ? `<p>${escText(e.detail)}</p>` : ''}
+      ${e.note ? `<p class="note">${escText(e.note)}</p>` : ''}
+    </div></li>`).join('\n    ');
+  return withContent(site, `<main class="blog-wrap">
+  <span class="post-meta">What we shipped, newest first</span>
+  <h1>Changelog</h1>
+  <ol class="log">
+    ${items}
+  </ol>
+</main>
+`);
+}
+
 const homeDesc = 'Trilogy Trading Tools - rent the 3T Pro Scanner, Halal 3T Scanner, Trilogy Journal, and Wealth Builder. Find the move, prove your edge, keep what the market gives you.';
 const stripAboutOnly = (html) => html.replace(/<!-- ABOUT-ONLY[\s\S]*?<!-- \/ABOUT-ONLY -->\n?/g, '');
-const site = articles.length >= 3 ? videoAsFile.replace(/ data-blog-link hidden>/g, ' data-blog-link>') : videoAsFile;
+const siteBase = videoAsFile.replace('<!-- CHANGELOG-LATEST (filled by the build from src/changelog.json) -->', changelogLatest());
+const site = articles.length >= 3 ? siteBase.replace(/ data-blog-link hidden>/g, ' data-blog-link>') : siteBase;
 const pages = [
   {
     file: 'index.html', path: '/', body: stripAboutOnly(site),
@@ -284,10 +320,18 @@ for (const a of goodArticles) {
   });
 }
 
+// changelog page
+mkdirSync(resolve(root, 'changelog'), { recursive: true });
+pages.push({ file: 'changelog/index.html', path: '/changelog/', body: changelogPage(site), inSitemap: changelog.length > 0,
+  lastmod: changelog[0]?.date, title: 'Changelog - Trilogy Trading Tools',
+  description: 'Dated list of what has shipped across the 3T Pro Scanner, Halal 3T Scanner, Trilogy Journal and Wealth Builder.', ld: '' });
+
 // comparison pages (/vs/...), written by hand in src/pages
 const vsPages = [
   { slug: 'trade-ideas', title: 'Trilogy vs Trade Ideas - Small-Cap Scanner Comparison',
     description: 'Trilogy vs Trade Ideas: prices, real-time data, small-cap scanning, journal and budgeting compared side by side. Prices checked November 2026.' },
+  { slug: 'tradetracker', title: 'Trilogy vs TradeTracker - Small-Cap Scanner & Journal Comparison',
+    description: 'Trilogy vs TradeTracker for small-cap day traders: prices, live board, edge stats, dilution and exit tools compared side by side. Prices checked November 2026.' },
   { slug: 'tradezella', title: 'Trilogy vs TradeZella - Trading Journal Comparison',
     description: 'Trilogy Journal vs TradeZella: prices, stats, replay and the scanner-to-journal loop compared side by side. Prices checked November 2026.' },
 ];
@@ -354,6 +398,8 @@ ${plans.map(p => `- ${p.name}: $${p.price} CAD/${p.unit === 'MON' ? 'mo' : 'yr'}
 - [About](${SITE}/about/)
 - [Trilogy vs Trade Ideas](${SITE}/vs/trade-ideas)
 - [Trilogy vs TradeZella](${SITE}/vs/tradezella)
+- [Trilogy vs TradeTracker](${SITE}/vs/tradetracker)
+- [Changelog](${SITE}/changelog/)
 ${goodArticles.length ? `- [Blog](${SITE}/blog/)\n` : ''}
 Contact: info@trilogytradingtools.com. Nothing here is financial advice.
 `);
