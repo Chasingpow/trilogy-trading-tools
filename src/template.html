@@ -294,10 +294,19 @@
   .not-for b{color:var(--ink-2)}
 
   /* founder, testimonials, screening method, FAQ */
-  .founders{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:28px}
+  .founders{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,420px));gap:20px;margin-top:28px;justify-content:center}
+  .bio{display:grid;grid-template-columns:240px minmax(0,1fr);gap:36px;align-items:start;max-width:960px;margin:56px auto 0;
+    scroll-margin-top:96px;text-align:left}
+  .bio img{width:100%;height:auto;border-radius:16px;border:1px solid var(--line)}
+  .bio h3{font-size:clamp(24px,3vw,30px);margin:0}
+  .bio .bio-role{margin:4px 0 16px;color:var(--brand-ink);font-weight:700;font-size:14px}
+  .bio p{color:var(--ink-2);font-size:16px;line-height:1.7;margin:0 0 14px}
+  @media (max-width:720px){.bio{grid-template-columns:1fr;gap:20px}.bio img{max-width:240px}}
   .founder{display:grid;grid-template-columns:72px 1fr;gap:6px 16px;align-items:center;background:var(--surface);
     border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--sh-card)}
-  .founder img{width:72px;height:72px;border-radius:50%;object-fit:cover;grid-row:1/4;background:var(--surface-2)}
+  .founder img{width:72px;height:72px;border-radius:50%;object-fit:cover;grid-row:1/6;align-self:start;background:var(--surface-2)}
+  .founder em{font-style:normal;font-size:13px;color:var(--brand-ink);font-weight:700}
+  .founder-links{display:flex;flex-wrap:wrap;gap:6px 16px}
   .founder b{font-family:"Bricolage Grotesque",sans-serif;font-size:18px}
   .founder span{color:var(--ink-2);font-size:14px;line-height:1.5}
   .founder a{font-size:13.5px;font-weight:700}
@@ -923,17 +932,30 @@
       <div class="pillar"><b>Prove the edge</b><span>The Journal turns your fills into math — so you scale what works and cut what doesn't.</span></div>
       <div class="pillar"><b>Keep the gains</b><span>Wealth Builder gives every dollar of profit a job the moment it lands.</span></div>
     </div>
-    <!-- TODO(owner): founder block. Add a real photo (img/founder-*.jpg), full name, one line of trading
-         background and a LinkedIn or X link for each person behind the tools, then remove `hidden`.
-         Add the same links to the footer stub below. -->
-    <div class="founders" id="founders" hidden>
+    <!-- Founders. Keith is live; add Leo and Yvonne as more .founder cards (and .bio blocks below) when their bios are ready.
+         Each founder's LinkedIn goes on their card, in the footer, and in the Person sameAs in scripts/build.mjs. -->
+    <div class="founders" id="founders">
       <div class="founder">
-        <img src="/img/founder-1.jpg" alt="FOUNDER_NAME" width="72" height="72">
-        <b>FOUNDER_NAME</b>
-        <span>ONE_LINE_TRADING_BACKGROUND</span>
-        <a href="LINKEDIN_URL" rel="me">LinkedIn →</a>
+        <img src="/img/founder-keith.webp" alt="Keith Harasymiw" width="72" height="72" loading="lazy">
+        <b>Keith Harasymiw</b>
+        <em>Co-Founder · Product &amp; Operations</em>
+        <span>More than 20 years in the markets, as a trader and as a developer building the tools he wished he'd had.</span>
+        <span class="founder-links"><a href="/about/#keith">Read Keith's story →</a><a href="https://www.linkedin.com/in/keith-harasymiw-2a2323237/" rel="me noopener" target="_blank">LinkedIn ↗</a></span>
       </div>
     </div>
+    <!-- ABOUT-ONLY: full bios, shown on /about/ only (stripped from the homepage by the build) -->
+    <article class="bio" id="keith">
+      <img src="/img/founder-keith-portrait.webp" alt="Portrait of Keith Harasymiw" width="600" height="800" loading="lazy">
+      <div>
+        <h3>Keith Harasymiw</h3>
+        <p class="bio-role">Co-Founder · Product &amp; Operations · <a href="https://www.linkedin.com/in/keith-harasymiw-2a2323237/" rel="me noopener" target="_blank">LinkedIn ↗</a></p>
+        <p>I've spent more than 20 years in the markets, as a trader and as a developer building the tools I wished I'd had. I also hold a Bachelor of Business Administration in Business Management. Along the way I learned that good trading isn't about luck or hype. It's about clear information, steady habits and tools you can trust.</p>
+        <p>That's why we started Trilogy. Financial freedom has shaped my life, and I want to help other traders and investors get there too. Every app we build starts with a simple question: "Would this make my own trading clearer, calmer or more disciplined?" If the answer is yes, we build it and put it in your hands.</p>
+        <p>I co-lead the build on our tools. I take an idea from a rough sketch on a whiteboard to something you'll open every morning before the bell. I also help run the business day to day, so I hear what you need and turn that feedback into the next feature.</p>
+        <p>Trilogy is three founders building for a community, not just a customer list. Whether you're logging your first trade or fine-tuning a strategy you've run for years, you're welcome here. Let's build something better, together.</p>
+      </div>
+    </article>
+    <!-- /ABOUT-ONLY -->
   </div>
 </section>
 
@@ -970,7 +992,7 @@
       <a href="/vs/trade-ideas">vs Trade Ideas</a>
       <a href="/vs/tradezella">vs TradeZella</a>
       <a href="#contact">Contact</a>
-      <!-- TODO(owner): founder LinkedIn / X links, e.g. <a href="LINKEDIN_URL" rel="me">LinkedIn</a> -->
+      <a href="https://www.linkedin.com/in/keith-harasymiw-2a2323237/" rel="noopener" target="_blank">Keith on LinkedIn</a>
       <button type="button" data-dlg="dlgPrivacy">Privacy</button>
       <button type="button" data-dlg="dlgTerms">Terms</button>
     </div>
