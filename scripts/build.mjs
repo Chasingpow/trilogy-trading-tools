@@ -69,7 +69,7 @@ const org = {
   '@context': 'https://schema.org', '@type': 'Organization',
   name: 'Trilogy Trading Tools', url: `${SITE}/`, logo: `${SITE}/logo.png`,
   email: 'info@trilogytradingtools.com',
-  founder: [{ '@type': 'Person', name: 'Keith Harasymiw', jobTitle: 'Co-Founder, Product & Operations', image: `${SITE}/img/founder-keith.webp`, url: `${SITE}/about/#keith` }],
+  founder: [{ '@type': 'Person', name: 'Keith Harasymiw', jobTitle: 'Co-Founder, Product & Operations', image: `${SITE}/img/founder-keith.webp`, url: `${SITE}/about/#keith`, sameAs: ['https://www.linkedin.com/in/keith-harasymiw-2a2323237/'] }],
   // TODO(owner): add sameAs: [founder / company LinkedIn and X URLs] once they are public.
 };
 const products = plans.map(p => ({

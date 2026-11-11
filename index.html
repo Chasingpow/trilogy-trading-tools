@@ -19,7 +19,7 @@
 <meta name="twitter:title" content="Trilogy - Small-Cap Scanner, Journal &amp; Budget">
 <meta name="twitter:description" content="Trilogy Trading Tools - rent the 3T Pro Scanner, Halal 3T Scanner, Trilogy Journal, and Wealth Builder. Find the move, prove your edge, keep what the market gives you.">
 <meta name="twitter:image" content="https://trilogytradingtools.com/og-image.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Trilogy Trading Tools","url":"https://trilogytradingtools.com/","logo":"https://trilogytradingtools.com/logo.png","email":"info@trilogytradingtools.com","founder":[{"@type":"Person","name":"Keith Harasymiw","jobTitle":"Co-Founder, Product & Operations","image":"https://trilogytradingtools.com/img/founder-keith.webp","url":"https://trilogytradingtools.com/about/#keith"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Trilogy Trading Tools","url":"https://trilogytradingtools.com/","logo":"https://trilogytradingtools.com/logo.png","email":"info@trilogytradingtools.com","founder":[{"@type":"Person","name":"Keith Harasymiw","jobTitle":"Co-Founder, Product & Operations","image":"https://trilogytradingtools.com/img/founder-keith.webp","url":"https://trilogytradingtools.com/about/#keith","sameAs":["https://www.linkedin.com/in/keith-harasymiw-2a2323237/"]}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"3T Pro Scanner","applicationCategory":"FinanceApplication","operatingSystem":"Web browser","description":"Real-time small-cap gapper scanner: live gap %, volume and float, dual charts and audio alerts, premarket through power hour.","url":"https://trilogytradingtools.com/pricing/","publisher":{"@type":"Organization","name":"Trilogy Trading Tools"},"offers":{"@type":"Offer","price":"175","priceCurrency":"CAD","url":"https://trilogytradingtools.com/pricing/","priceSpecification":{"@type":"UnitPriceSpecification","price":"175","priceCurrency":"CAD","unitCode":"MON"}}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Halal 3T Scanner","applicationCategory":"FinanceApplication","operatingSystem":"Web browser","description":"The 3T scanning engine on a Sharia-compliant, AAOIFI-screened universe.","url":"https://trilogytradingtools.com/pricing/","publisher":{"@type":"Organization","name":"Trilogy Trading Tools"},"offers":{"@type":"Offer","price":"200","priceCurrency":"CAD","url":"https://trilogytradingtools.com/pricing/","priceSpecification":{"@type":"UnitPriceSpecification","price":"200","priceCurrency":"CAD","unitCode":"MON"}}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Trilogy Journal","applicationCategory":"FinanceApplication","operatingSystem":"Web browser","description":"Trading journal with fast trade logging, live win rate, profit factor and average R, and the 3D Edge Surface.","url":"https://trilogytradingtools.com/pricing/","publisher":{"@type":"Organization","name":"Trilogy Trading Tools"},"offers":{"@type":"Offer","price":"100","priceCurrency":"CAD","url":"https://trilogytradingtools.com/pricing/","priceSpecification":{"@type":"UnitPriceSpecification","price":"100","priceCurrency":"CAD","unitCode":"MON"}}}</script>
@@ -335,6 +335,7 @@
     border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--sh-card)}
   .founder img{width:72px;height:72px;border-radius:50%;object-fit:cover;grid-row:1/6;align-self:start;background:var(--surface-2)}
   .founder em{font-style:normal;font-size:13px;color:var(--brand-ink);font-weight:700}
+  .founder-links{display:flex;flex-wrap:wrap;gap:6px 16px}
   .founder b{font-family:"Bricolage Grotesque",sans-serif;font-size:18px}
   .founder span{color:var(--ink-2);font-size:14px;line-height:1.5}
   .founder a{font-size:13.5px;font-weight:700}
@@ -961,15 +962,14 @@
       <div class="pillar"><b>Keep the gains</b><span>Wealth Builder gives every dollar of profit a job the moment it lands.</span></div>
     </div>
     <!-- Founders. Keith is live; add Leo and Yvonne as more .founder cards (and .bio blocks below) when their bios are ready.
-         TODO(owner): Keith's LinkedIn URL -> replace the hidden link below and add it to Organization sameAs in scripts/build.mjs. -->
+         Each founder's LinkedIn goes on their card, in the footer, and in the Person sameAs in scripts/build.mjs. -->
     <div class="founders" id="founders">
       <div class="founder">
         <img src="/img/founder-keith.webp" alt="Keith Harasymiw" width="72" height="72" loading="lazy">
         <b>Keith Harasymiw</b>
         <em>Co-Founder · Product &amp; Operations</em>
         <span>More than 20 years in the markets, as a trader and as a developer building the tools he wished he'd had.</span>
-        <a href="/about/#keith">Read Keith's story →</a>
-        <a href="LINKEDIN_URL" rel="me" hidden>LinkedIn →</a>
+        <span class="founder-links"><a href="/about/#keith">Read Keith's story →</a><a href="https://www.linkedin.com/in/keith-harasymiw-2a2323237/" rel="me noopener" target="_blank">LinkedIn ↗</a></span>
       </div>
     </div>
       </div>
@@ -1008,7 +1008,7 @@
       <a href="/vs/trade-ideas">vs Trade Ideas</a>
       <a href="/vs/tradezella">vs TradeZella</a>
       <a href="#contact">Contact</a>
-      <!-- TODO(owner): founder LinkedIn / X links, e.g. <a href="LINKEDIN_URL" rel="me">LinkedIn</a> -->
+      <a href="https://www.linkedin.com/in/keith-harasymiw-2a2323237/" rel="noopener" target="_blank">Keith on LinkedIn</a>
       <button type="button" data-dlg="dlgPrivacy">Privacy</button>
       <button type="button" data-dlg="dlgTerms">Terms</button>
     </div>

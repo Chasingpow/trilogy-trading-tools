@@ -19,7 +19,7 @@
 <meta name="twitter:title" content="About Trilogy - Built by Small-Cap Traders">
 <meta name="twitter:description" content="Trilogy Trading Tools started as the scanner, journal and budget we built for our own small-cap trading. We rent out the exact tools we run live.">
 <meta name="twitter:image" content="https://trilogytradingtools.com/og-image.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Trilogy Trading Tools","url":"https://trilogytradingtools.com/","logo":"https://trilogytradingtools.com/logo.png","email":"info@trilogytradingtools.com","founder":[{"@type":"Person","name":"Keith Harasymiw","jobTitle":"Co-Founder, Product & Operations","image":"https://trilogytradingtools.com/img/founder-keith.webp","url":"https://trilogytradingtools.com/about/#keith"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Trilogy Trading Tools","url":"https://trilogytradingtools.com/","logo":"https://trilogytradingtools.com/logo.png","email":"info@trilogytradingtools.com","founder":[{"@type":"Person","name":"Keith Harasymiw","jobTitle":"Co-Founder, Product & Operations","image":"https://trilogytradingtools.com/img/founder-keith.webp","url":"https://trilogytradingtools.com/about/#keith","sameAs":["https://www.linkedin.com/in/keith-harasymiw-2a2323237/"]}]}</script>
 </head>
 <body style="margin:0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -330,6 +330,7 @@
     border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--sh-card)}
   .founder img{width:72px;height:72px;border-radius:50%;object-fit:cover;grid-row:1/6;align-self:start;background:var(--surface-2)}
   .founder em{font-style:normal;font-size:13px;color:var(--brand-ink);font-weight:700}
+  .founder-links{display:flex;flex-wrap:wrap;gap:6px 16px}
   .founder b{font-family:"Bricolage Grotesque",sans-serif;font-size:18px}
   .founder span{color:var(--ink-2);font-size:14px;line-height:1.5}
   .founder a{font-size:13.5px;font-weight:700}
@@ -544,15 +545,14 @@
       <div class="pillar"><b>Keep the gains</b><span>Wealth Builder gives every dollar of profit a job the moment it lands.</span></div>
     </div>
     <!-- Founders. Keith is live; add Leo and Yvonne as more .founder cards (and .bio blocks below) when their bios are ready.
-         TODO(owner): Keith's LinkedIn URL -> replace the hidden link below and add it to Organization sameAs in scripts/build.mjs. -->
+         Each founder's LinkedIn goes on their card, in the footer, and in the Person sameAs in scripts/build.mjs. -->
     <div class="founders" id="founders">
       <div class="founder">
         <img src="/img/founder-keith.webp" alt="Keith Harasymiw" width="72" height="72" loading="lazy">
         <b>Keith Harasymiw</b>
         <em>Co-Founder · Product &amp; Operations</em>
         <span>More than 20 years in the markets, as a trader and as a developer building the tools he wished he'd had.</span>
-        <a href="/about/#keith">Read Keith's story →</a>
-        <a href="LINKEDIN_URL" rel="me" hidden>LinkedIn →</a>
+        <span class="founder-links"><a href="/about/#keith">Read Keith's story →</a><a href="https://www.linkedin.com/in/keith-harasymiw-2a2323237/" rel="me noopener" target="_blank">LinkedIn ↗</a></span>
       </div>
     </div>
     <!-- ABOUT-ONLY: full bios, shown on /about/ only (stripped from the homepage by the build) -->
@@ -560,7 +560,7 @@
       <img src="/img/founder-keith-portrait.webp" alt="Portrait of Keith Harasymiw" width="600" height="800" loading="lazy">
       <div>
         <h3>Keith Harasymiw</h3>
-        <p class="bio-role">Co-Founder · Product &amp; Operations</p>
+        <p class="bio-role">Co-Founder · Product &amp; Operations · <a href="https://www.linkedin.com/in/keith-harasymiw-2a2323237/" rel="me noopener" target="_blank">LinkedIn ↗</a></p>
         <p>I've spent more than 20 years in the markets, as a trader and as a developer building the tools I wished I'd had. I also hold a Bachelor of Business Administration in Business Management. Along the way I learned that good trading isn't about luck or hype. It's about clear information, steady habits and tools you can trust.</p>
         <p>That's why we started Trilogy. Financial freedom has shaped my life, and I want to help other traders and investors get there too. Every app we build starts with a simple question: "Would this make my own trading clearer, calmer or more disciplined?" If the answer is yes, we build it and put it in your hands.</p>
         <p>I co-lead the build on our tools. I take an idea from a rough sketch on a whiteboard to something you'll open every morning before the bell. I also help run the business day to day, so I hear what you need and turn that feedback into the next feature.</p>
@@ -602,7 +602,7 @@
       <a href="/vs/trade-ideas">vs Trade Ideas</a>
       <a href="/vs/tradezella">vs TradeZella</a>
       <a href="#contact">Contact</a>
-      <!-- TODO(owner): founder LinkedIn / X links, e.g. <a href="LINKEDIN_URL" rel="me">LinkedIn</a> -->
+      <a href="https://www.linkedin.com/in/keith-harasymiw-2a2323237/" rel="noopener" target="_blank">Keith on LinkedIn</a>
       <button type="button" data-dlg="dlgPrivacy">Privacy</button>
       <button type="button" data-dlg="dlgTerms">Terms</button>
     </div>
