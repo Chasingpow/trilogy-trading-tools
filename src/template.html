@@ -44,7 +44,7 @@
     display:grid;place-items:center;box-shadow:var(--sh-brand);flex:none}
   .mark svg{width:30px;height:30px}
   .wordmark{display:flex;flex-direction:column;line-height:1.14; text-decoration:none;color:var(--ink)}
-  .wordmark{flex:none}
+  .wordmark{flex:none;padding:4px 0}
   .wordmark b{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:21px;letter-spacing:.01em;white-space:nowrap}
   .wordmark span{white-space:nowrap}
   .wordmark b .serif-i{font-size:22px}
@@ -280,7 +280,7 @@
   .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
   .wl-form{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:6px}
   .wl-form input[type=email]{flex:1 1 260px;min-width:0;background:var(--surface-2);border:1px solid var(--line);
-    color:var(--ink);border-radius:999px;padding:13px 20px;font:inherit;font-size:15px}
+    color:var(--ink);border-radius:999px;padding:13px 20px;font:inherit;font-size:16px;min-height:48px}
   .wl-form input[type=email]:focus{outline:2px solid var(--brand);outline-offset:2px;border-color:var(--brand)}
   .wl-form input::placeholder{color:var(--ink-3)}
   .wl-plan{flex-basis:100%;font-size:13px;color:var(--brand-ink);margin:0}
@@ -310,9 +310,11 @@
     display:grid;gap:10px;font-size:14.5px;color:var(--ink-2)}
   .method h3{font-size:20px;color:var(--ink)}
   .method ul{margin:0;padding-left:20px;display:grid;gap:6px}
+  .method p{margin:0}
   .faq{max-width:800px;margin:0 auto;display:grid;gap:12px}
   .faq details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 20px}
-  .faq summary{cursor:pointer;font-weight:700;color:var(--ink);font-size:16px}
+  .faq details[open] summary{margin-bottom:0}
+  .faq summary{cursor:pointer;font-weight:700;color:var(--ink);font-size:16px;padding:10px 0;margin:-10px 0}
   .faq details p{margin:10px 0 0;color:var(--ink-2);font-size:15px}
 
   /* legal dialogs */
@@ -329,6 +331,30 @@
   .foot-links a,.foot-links button{color:var(--ink-2);text-decoration:none;font-weight:600;background:none;
     border:none;padding:0;font:inherit;font-weight:600;cursor:pointer}
   .foot-links a:hover,.foot-links button:hover{color:var(--brand-ink)}
+
+  /* scanner risk panel (dilution / squeeze / exit ladder) */
+  .risk{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,600px);gap:40px;align-items:center;margin-top:72px}
+  .risk h3{font-size:clamp(24px,3vw,32px);margin-bottom:12px}
+  .risk-copy>p{color:var(--ink-2);margin:0 0 18px}
+  .risk-list{margin:0;padding:0;list-style:none;counter-reset:risk;display:grid;gap:14px}
+  .risk-list li{counter-increment:risk;display:grid;grid-template-columns:30px 1fr;gap:2px 12px;align-items:start}
+  .risk-list li::before{content:counter(risk);grid-row:1/3;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;
+    background:var(--brand-grad);color:#fff;font-weight:800;font-size:14px}
+  .risk-list b{color:var(--ink);font-size:16px}
+  .risk-list span{color:var(--ink-2);font-size:14.5px;line-height:1.55}
+  .risk-note{margin:16px 0 0 42px;font-size:13px;color:var(--ink-3)}
+  .risk-shot{margin:0 0 0 18px}
+  .risk-frame{position:relative;border:1px solid var(--line);border-radius:14px;box-shadow:var(--sh-card);background:#0b0b0b}
+  .risk-frame img{display:block;width:100%;height:auto;border-radius:13px}
+  .risk-box{position:absolute;border:2px solid var(--brand);border-radius:6px;pointer-events:none;box-shadow:0 0 0 9999px rgba(0,0,0,0)}
+  .risk-box i{position:absolute;top:50%;left:-16px;transform:translateY(-50%);width:22px;height:22px;border-radius:50%;display:grid;place-items:center;
+    background:var(--brand-grad);color:#fff;font:800 12px/1 system-ui,sans-serif;font-style:normal}
+  .risk-box.b1{left:0.5%;top:45.4%;width:83%;height:5.8%}
+  .risk-box.b2{left:0.5%;top:51.9%;width:99%;height:5.6%}
+  .risk-box.b3{left:1%;top:63.5%;width:98%;height:35%}
+  .risk-shot figcaption{margin-top:10px;font-size:13px;color:var(--ink-3);text-align:center}
+  @media (max-width:900px){.risk{grid-template-columns:1fr;gap:24px;margin-top:48px}}
+  @media (max-width:600px){.risk-box i{width:16px;height:16px;left:-13px;font-size:10px}.risk-box.b1 i{margin-top:-4px}.risk-box.b2 i{margin-top:4px}}
 
   /* blog */
   .blog-wrap{max-width:780px;margin:0 auto;padding:72px 24px 96px}
@@ -357,6 +383,12 @@
   .toc{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin:0 0 28px}
   .toc h2{margin:0 0 8px;font-size:18px}
   .toc ol{margin:0;padding-left:20px}
+  .vs .prose table{display:table;table-layout:fixed;width:100%}
+  .vs .prose thead th:first-child{width:28%}
+  .vs .prose th,.vs .prose td{overflow-wrap:break-word;hyphens:auto;vertical-align:top}
+  @media (max-width:640px){.vs .prose table{font-size:13.5px}.vs .prose th,.vs .prose td{padding:8px 7px}}
+  .vs .faq{margin:0 0 24px}
+  .sources{font-size:14px;color:var(--ink-3)}
 
   /* ---------- footer ---------- */
   footer{border-top:1px solid var(--line-soft);padding:44px 0 60px;background:var(--surface)}
@@ -545,13 +577,36 @@
             <span class="stage-live"><i></i>LIVE</span>
           </div>
           <div class="stage-body stage-video">
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Live recording of the 3T Pro Scanner during a trading session">
+            <video data-autoplay muted loop playsinline preload="none" poster="/img/scanner-poster.webp" width="1280" height="638" aria-label="Live recording of the 3T Pro Scanner during a trading session">
               <source src="__VIDEO_SRC__" type="video/mp4">
+              <img src="/img/scanner-poster.webp" width="1280" alt="The 3T Pro Scanner gapper board: small caps ranked by change from close with VWAP and float columns, two live charts side by side with EMA and VWAP lines, a live tape of fresh pops, and a market news feed.">
             </video>
           </div>
           <div class="video-note">▶ Real footage — the 3T Pro Scanner live during a session</div>
         </div>
       </div>
+    </div>
+
+    <div class="risk">
+      <div class="risk-copy">
+        <h3>Know the exit before you enter</h3>
+        <p>Open any mover and the panel under its chart answers the questions small caps punish you for skipping.</p>
+        <ol class="risk-list">
+          <li><b>Dilution check</b><span>Recent offerings and reverse splits from SEC filings (424B5, S-1, R/S) and how long ago they hit. See the dilution before you buy the spike.</span></li>
+          <li><b>Squeeze read</b><span>Float, borrow fee and shares available, and recent short volume on one line, with a squeeze score and whether a squeeze is actually in progress.</span></li>
+          <li><b>Exit ladder</b><span>Levels at VWAP and 1.5×, 2× and 2.5× VWAP next to the high of day. Type your entry and your % targets are drawn on the chart as resting limits.</span></li>
+        </ol>
+        <p class="risk-note">Signals and levels only — not advice.</p>
+      </div>
+      <figure class="risk-shot">
+        <div class="risk-frame">
+          <img src="/img/scanner-risk-panel.webp" width="592" height="332" loading="lazy" alt="3T Pro Scanner chart panel for CHSN at 2.66: momentum, VWAP 2.84, relative volume 1.36×, float 2.32M, rotation 0.7×, high 2.83, low 2.35, volume 1.54M. Dilution line: offering priced, 424B5, 10 months ago; reverse split 1-for-100, 6 months ago. Squeeze line: score 50, float 2.3M, borrow 813% fee, 150K available, short volume 56%, 49%, 49%; no squeeze in progress. Exit ladder: VWAP 2.84, 1.5× 4.26, 2× 5.69, 2.5× 7.11, high of day 3.38 at 5:04.">
+          <span class="risk-box b1" aria-hidden="true"><i>1</i></span>
+          <span class="risk-box b2" aria-hidden="true"><i>2</i></span>
+          <span class="risk-box b3" aria-hidden="true"><i>3</i></span>
+        </div>
+        <figcaption>Real screenshot — the panel under each chart in the 3T Pro Scanner</figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -585,8 +640,9 @@
             <span class="stage-url">Trilogy Journal — This week</span>
           </div>
           <div class="stage-body stage-video">
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Reel of the Trilogy Journal: trade logging, the 3D Edge Surface, analytics, and the profit calendar">
+            <video data-autoplay muted loop playsinline preload="none" poster="/img/journal-poster.webp" width="1280" height="712" aria-label="Reel of the Trilogy Journal: trade logging, the 3D Edge Surface, analytics, and the profit calendar">
               <source src="__VIDEO_JR__" type="video/mp4">
+              <img src="/img/journal-poster.webp" width="1280" alt="The Trilogy Journal's 3D Edge Surface: cumulative P&amp;L ribbons for each setup (Opening Range Break, VWAP Reclaim, Gap &amp; Go, Breakout, Pullback, Reversal) plotted over time, with each setup's running total listed below.">
             </video>
           </div>
           <div class="video-note">▶ Real footage — inside the Trilogy Journal</div>
@@ -625,8 +681,9 @@
             <span class="stage-url">Trilogy Wealth Builder — September</span>
           </div>
           <div class="stage-body stage-video">
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Screen recording of the Wealth Builder: the Trilogy Plan, money flow, bill calendar and savings goals">
+            <video data-autoplay muted loop playsinline preload="none" poster="/img/wealth-poster.webp" width="1280" height="696" aria-label="Screen recording of the Wealth Builder: the Trilogy Plan, money flow, bill calendar and savings goals">
               <source src="__VIDEO_WB__" type="video/mp4">
+              <img src="/img/wealth-poster.webp" width="1280" alt="The Wealth Builder dashboard on sample data: monthly income flowing into essentials, fun, debt payoff, save and invest buckets, with progress bars showing how much of each budget is spent or moved this month.">
             </video>
           </div>
           <div class="video-note">▶ Real footage — inside the Wealth Builder</div>
@@ -724,7 +781,7 @@
           <li>Cancel anytime</li>
         </ul>
         <p class="guarantee">First 7 days: full refund if the board does not earn its keep.</p>
-        <p class="value-line">What the $175 covers: a board tuned only for small-cap momentum, with real-time market data included — no separate data feed to add on.</p>
+        <p class="value-line">What the $175 covers: a board built only for small-cap momentum, real-time data included, and a 7-day refund. That is about what Trade Ideas Standard costs in Canadian dollars ($127 USD/mo), but this board is tuned for low-float gappers instead of every US stock. <a href="/vs/trade-ideas">Compare →</a></p>
         <a class="btn btn-brand" href="#waitlist" data-plan="3T Pro Scanner">Join the launch list</a>
       </div>
       <div class="plan">
@@ -811,7 +868,7 @@
         <p class="b-parts">Both scanners (3T Pro + Halal 3T) + Journal + a full year of Wealth Builder</p>
         <div class="b-price num"><span class="amount">$325<small> CAD/mo</small></span><s>$492</s></div>
         <div class="yr-deal num">Year upfront: <b>$3,510</b><span class="pct">save 10%</span></div>
-        <p class="value-line">Replaces two scanner subscriptions, a journal and a budget app — one price, one loop. Bought separately the four run $492 CAD/mo; together it's $325.</p>
+        <p class="value-line">Replaces two scanner subscriptions (Trade Ideas alone starts at $127 USD/mo), a journal (TradeZella starts at $35 USD/mo) and a budget app — one price, one loop. Bought separately the four run $492 CAD/mo; together it's $325. <a href="/vs/trade-ideas">Trilogy vs Trade Ideas</a> · <a href="/vs/tradezella">vs TradeZella</a></p>
         <p class="b-why"><b>Why together:</b> the full loop — find it, prove it, keep it. The journal tells you what your trading really earns each month, and that number goes straight into Wealth Builder's Trilogy Split, so profits become an emergency fund and investments instead of evaporating back into the market.</p>
         <span class="b-save">Both scanners and Wealth Builder's year included — save $2,000 a year</span>
       </div>
@@ -826,7 +883,7 @@
         <li><b>Excluded sectors:</b> alcohol, tobacco, gambling and casinos, interest-based finance (banks, lenders, mortgages, credit services, insurance, asset management and capital markets), pork, adult entertainment, cannabis, and weapons and defense.</li>
         <li><b>Re-screened:</b> nightly, against each company's latest filed financial statements, so a verdict changes within a day of new results.</li>
       </ul>
-      <p><b>What you see on the board:</b> stocks that pass every screen are marked ✓&nbsp;HALAL. If a figure needed for one of the ratios is missing from a company's filings, the stock stays on the board marked ? QUESTIONABLE instead of being counted as a pass. Stocks that fail any screen never appear.</p>
+      <p><b>What you see on the board:</b> stocks that pass every screen are marked ✓&nbsp;HALAL. If a figure needed for one of the ratios is missing from a company's filings, the stock stays on the board marked ? QUESTIONABLE instead of being counted as a pass. If none of the figures are available, the stock is left off. Stocks that fail any screen never appear.</p>
       <p><b>Purification:</b> most companies don't report interest income as its own line, so it usually can't be screened directly. Those stocks are flagged so you can purify any dividends or gains yourself.</p>
       <p><b>How this compares with index screens:</b> some index providers, such as Dow Jones and S&amp;P, use a 33% limit, add a receivables test, and average market cap over 24–36 months. We follow the AAOIFI limits and use current market cap, so a stock close to a limit can get a different verdict on those lists.</p>
       <p class="updated">Last reviewed: November 10, 2026</p>
@@ -910,6 +967,8 @@
       <a href="/about/">About</a>
       <a href="/pricing/">Pricing</a>
       <a href="/blog/" data-blog-link hidden>Blog</a>
+      <a href="/vs/trade-ideas">vs Trade Ideas</a>
+      <a href="/vs/tradezella">vs TradeZella</a>
       <a href="#contact">Contact</a>
       <!-- TODO(owner): founder LinkedIn / X links, e.g. <a href="LINKEDIN_URL" rel="me">LinkedIn</a> -->
       <button type="button" data-dlg="dlgPrivacy">Privacy</button>

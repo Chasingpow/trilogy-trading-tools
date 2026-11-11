@@ -242,7 +242,7 @@ function blogPost(site, a) {
 }
 
 const homeDesc = 'Trilogy Trading Tools - rent the 3T Pro Scanner, Halal 3T Scanner, Trilogy Journal, and Wealth Builder. Find the move, prove your edge, keep what the market gives you.';
-const site = articles.length ? videoAsFile.replace(/ data-blog-link hidden>/g, ' data-blog-link>') : videoAsFile;
+const site = articles.length >= 3 ? videoAsFile.replace(/ data-blog-link hidden>/g, ' data-blog-link>') : videoAsFile;
 const pages = [
   {
     file: 'index.html', path: '/', body: site,
@@ -281,6 +281,21 @@ for (const a of goodArticles) {
     lastmod: (a.updated_at || a.published_at || a.published || '').slice(0, 10),
   });
 }
+
+// comparison pages (/vs/...), written by hand in src/pages
+const vsPages = [
+  { slug: 'trade-ideas', title: 'Trilogy vs Trade Ideas - Small-Cap Scanner Comparison',
+    description: 'Trilogy vs Trade Ideas: prices, real-time data, small-cap scanning, journal and budgeting compared side by side. Prices checked November 2026.' },
+  { slug: 'tradezella', title: 'Trilogy vs TradeZella - Trading Journal Comparison',
+    description: 'Trilogy Journal vs TradeZella: prices, stats, replay and the scanner-to-journal loop compared side by side. Prices checked November 2026.' },
+];
+mkdirSync(resolve(root, 'vs'), { recursive: true });
+for (const v of vsPages) {
+  const content = read(`src/pages/vs-${v.slug}.html`).toString('utf8');
+  pages.push({ file: `vs/${v.slug}.html`, path: `/vs/${v.slug}`, body: withContent(site, content),
+    title: v.title, description: v.description, ld: jsonLd(org) + '\n' + faqLd(content) });
+}
+
 // remove pages for articles that are no longer published
 mkdirSync(resolve(root, 'blog'), { recursive: true });
 const keep = new Set(pages.map(p => p.file));
@@ -335,6 +350,8 @@ ${plans.map(p => `- ${p.name}: $${p.price} CAD/${p.unit === 'MON' ? 'mo' : 'yr'}
 - [Home](${SITE}/)
 - [Pricing](${SITE}/pricing/)
 - [About](${SITE}/about/)
+- [Trilogy vs Trade Ideas](${SITE}/vs/trade-ideas)
+- [Trilogy vs TradeZella](${SITE}/vs/tradezella)
 ${goodArticles.length ? `- [Blog](${SITE}/blog/)\n` : ''}
 Contact: info@trilogytradingtools.com. Nothing here is financial advice.
 `);
