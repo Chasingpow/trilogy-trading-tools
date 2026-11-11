@@ -322,10 +322,18 @@
   .not-for b{color:var(--ink-2)}
 
   /* founder, testimonials, screening method, FAQ */
-  .founders{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:28px}
+  .founders{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,420px));gap:20px;margin-top:28px;justify-content:center}
+  .bio{display:grid;grid-template-columns:240px minmax(0,1fr);gap:36px;align-items:start;max-width:960px;margin:56px auto 0;
+    scroll-margin-top:96px;text-align:left}
+  .bio img{width:100%;height:auto;border-radius:16px;border:1px solid var(--line)}
+  .bio h3{font-size:clamp(24px,3vw,30px);margin:0}
+  .bio .bio-role{margin:4px 0 16px;color:var(--brand-ink);font-weight:700;font-size:14px}
+  .bio p{color:var(--ink-2);font-size:16px;line-height:1.7;margin:0 0 14px}
+  @media (max-width:720px){.bio{grid-template-columns:1fr;gap:20px}.bio img{max-width:240px}}
   .founder{display:grid;grid-template-columns:72px 1fr;gap:6px 16px;align-items:center;background:var(--surface);
     border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--sh-card)}
-  .founder img{width:72px;height:72px;border-radius:50%;object-fit:cover;grid-row:1/4;background:var(--surface-2)}
+  .founder img{width:72px;height:72px;border-radius:50%;object-fit:cover;grid-row:1/6;align-self:start;background:var(--surface-2)}
+  .founder em{font-style:normal;font-size:13px;color:var(--brand-ink);font-weight:700}
   .founder b{font-family:"Bricolage Grotesque",sans-serif;font-size:18px}
   .founder span{color:var(--ink-2);font-size:14px;line-height:1.5}
   .founder a{font-size:13.5px;font-weight:700}

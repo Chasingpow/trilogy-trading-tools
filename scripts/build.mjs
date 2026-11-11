@@ -69,6 +69,7 @@ const org = {
   '@context': 'https://schema.org', '@type': 'Organization',
   name: 'Trilogy Trading Tools', url: `${SITE}/`, logo: `${SITE}/logo.png`,
   email: 'info@trilogytradingtools.com',
+  founder: [{ '@type': 'Person', name: 'Keith Harasymiw', jobTitle: 'Co-Founder, Product & Operations', image: `${SITE}/img/founder-keith.webp`, url: `${SITE}/about/#keith` }],
   // TODO(owner): add sameAs: [founder / company LinkedIn and X URLs] once they are public.
 };
 const products = plans.map(p => ({
@@ -242,10 +243,11 @@ function blogPost(site, a) {
 }
 
 const homeDesc = 'Trilogy Trading Tools - rent the 3T Pro Scanner, Halal 3T Scanner, Trilogy Journal, and Wealth Builder. Find the move, prove your edge, keep what the market gives you.';
+const stripAboutOnly = (html) => html.replace(/<!-- ABOUT-ONLY[\s\S]*?<!-- \/ABOUT-ONLY -->\n?/g, '');
 const site = articles.length >= 3 ? videoAsFile.replace(/ data-blog-link hidden>/g, ' data-blog-link>') : videoAsFile;
 const pages = [
   {
-    file: 'index.html', path: '/', body: site,
+    file: 'index.html', path: '/', body: stripAboutOnly(site),
     title: 'Trilogy - Small-Cap Scanner, Journal & Budget',
     description: homeDesc,
     ld: [org, ...products].map(jsonLd).join('\n') + '\n' + faqLd(videoAsFile),

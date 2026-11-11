@@ -19,7 +19,7 @@
 <meta name="twitter:title" content="Trilogy - Small-Cap Scanner, Journal &amp; Budget">
 <meta name="twitter:description" content="Trilogy Trading Tools - rent the 3T Pro Scanner, Halal 3T Scanner, Trilogy Journal, and Wealth Builder. Find the move, prove your edge, keep what the market gives you.">
 <meta name="twitter:image" content="https://trilogytradingtools.com/og-image.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Trilogy Trading Tools","url":"https://trilogytradingtools.com/","logo":"https://trilogytradingtools.com/logo.png","email":"info@trilogytradingtools.com"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Trilogy Trading Tools","url":"https://trilogytradingtools.com/","logo":"https://trilogytradingtools.com/logo.png","email":"info@trilogytradingtools.com","founder":[{"@type":"Person","name":"Keith Harasymiw","jobTitle":"Co-Founder, Product & Operations","image":"https://trilogytradingtools.com/img/founder-keith.webp","url":"https://trilogytradingtools.com/about/#keith"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"3T Pro Scanner","applicationCategory":"FinanceApplication","operatingSystem":"Web browser","description":"Real-time small-cap gapper scanner: live gap %, volume and float, dual charts and audio alerts, premarket through power hour.","url":"https://trilogytradingtools.com/pricing/","publisher":{"@type":"Organization","name":"Trilogy Trading Tools"},"offers":{"@type":"Offer","price":"175","priceCurrency":"CAD","url":"https://trilogytradingtools.com/pricing/","priceSpecification":{"@type":"UnitPriceSpecification","price":"175","priceCurrency":"CAD","unitCode":"MON"}}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Halal 3T Scanner","applicationCategory":"FinanceApplication","operatingSystem":"Web browser","description":"The 3T scanning engine on a Sharia-compliant, AAOIFI-screened universe.","url":"https://trilogytradingtools.com/pricing/","publisher":{"@type":"Organization","name":"Trilogy Trading Tools"},"offers":{"@type":"Offer","price":"200","priceCurrency":"CAD","url":"https://trilogytradingtools.com/pricing/","priceSpecification":{"@type":"UnitPriceSpecification","price":"200","priceCurrency":"CAD","unitCode":"MON"}}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Trilogy Journal","applicationCategory":"FinanceApplication","operatingSystem":"Web browser","description":"Trading journal with fast trade logging, live win rate, profit factor and average R, and the 3D Edge Surface.","url":"https://trilogytradingtools.com/pricing/","publisher":{"@type":"Organization","name":"Trilogy Trading Tools"},"offers":{"@type":"Offer","price":"100","priceCurrency":"CAD","url":"https://trilogytradingtools.com/pricing/","priceSpecification":{"@type":"UnitPriceSpecification","price":"100","priceCurrency":"CAD","unitCode":"MON"}}}</script>
@@ -323,10 +323,18 @@
   .not-for b{color:var(--ink-2)}
 
   /* founder, testimonials, screening method, FAQ */
-  .founders{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:28px}
+  .founders{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,420px));gap:20px;margin-top:28px;justify-content:center}
+  .bio{display:grid;grid-template-columns:240px minmax(0,1fr);gap:36px;align-items:start;max-width:960px;margin:56px auto 0;
+    scroll-margin-top:96px;text-align:left}
+  .bio img{width:100%;height:auto;border-radius:16px;border:1px solid var(--line)}
+  .bio h3{font-size:clamp(24px,3vw,30px);margin:0}
+  .bio .bio-role{margin:4px 0 16px;color:var(--brand-ink);font-weight:700;font-size:14px}
+  .bio p{color:var(--ink-2);font-size:16px;line-height:1.7;margin:0 0 14px}
+  @media (max-width:720px){.bio{grid-template-columns:1fr;gap:20px}.bio img{max-width:240px}}
   .founder{display:grid;grid-template-columns:72px 1fr;gap:6px 16px;align-items:center;background:var(--surface);
     border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--sh-card)}
-  .founder img{width:72px;height:72px;border-radius:50%;object-fit:cover;grid-row:1/4;background:var(--surface-2)}
+  .founder img{width:72px;height:72px;border-radius:50%;object-fit:cover;grid-row:1/6;align-self:start;background:var(--surface-2)}
+  .founder em{font-style:normal;font-size:13px;color:var(--brand-ink);font-weight:700}
   .founder b{font-family:"Bricolage Grotesque",sans-serif;font-size:18px}
   .founder span{color:var(--ink-2);font-size:14px;line-height:1.5}
   .founder a{font-size:13.5px;font-weight:700}
@@ -952,18 +960,19 @@
       <div class="pillar"><b>Prove the edge</b><span>The Journal turns your fills into math — so you scale what works and cut what doesn't.</span></div>
       <div class="pillar"><b>Keep the gains</b><span>Wealth Builder gives every dollar of profit a job the moment it lands.</span></div>
     </div>
-    <!-- TODO(owner): founder block. Add a real photo (img/founder-*.jpg), full name, one line of trading
-         background and a LinkedIn or X link for each person behind the tools, then remove `hidden`.
-         Add the same links to the footer stub below. -->
-    <div class="founders" id="founders" hidden>
+    <!-- Founders. Keith is live; add Leo and Yvonne as more .founder cards (and .bio blocks below) when their bios are ready.
+         TODO(owner): Keith's LinkedIn URL -> replace the hidden link below and add it to Organization sameAs in scripts/build.mjs. -->
+    <div class="founders" id="founders">
       <div class="founder">
-        <img src="/img/founder-1.jpg" alt="FOUNDER_NAME" width="72" height="72">
-        <b>FOUNDER_NAME</b>
-        <span>ONE_LINE_TRADING_BACKGROUND</span>
-        <a href="LINKEDIN_URL" rel="me">LinkedIn →</a>
+        <img src="/img/founder-keith.webp" alt="Keith Harasymiw" width="72" height="72" loading="lazy">
+        <b>Keith Harasymiw</b>
+        <em>Co-Founder · Product &amp; Operations</em>
+        <span>More than 20 years in the markets, as a trader and as a developer building the tools he wished he'd had.</span>
+        <a href="/about/#keith">Read Keith's story →</a>
+        <a href="LINKEDIN_URL" rel="me" hidden>LinkedIn →</a>
       </div>
     </div>
-  </div>
+      </div>
 </section>
 
 <!-- ============ CONTACT ============ -->
