@@ -342,8 +342,8 @@ ${plans.map(p => `- ${p.name}: $${p.price} CAD/${p.unit === 'MON' ? 'mo' : 'yr'}
 
 ## Bundles
 - Trader Pack (3T Pro Scanner + Trilogy Journal): $225 CAD/mo
-- Halal Trader Pack (Halal 3T Scanner + Trilogy Journal): $250 CAD/mo
-- The Full Trilogy (either scanner + Journal + a year of Wealth Builder): $265 CAD/mo
+- Halal Trader Pack (Halal 3T Scanner + Trilogy Journal): $275 CAD/mo
+- The Full Trilogy (both scanners + Journal + a year of Wealth Builder): $325 CAD/mo
 - Pay the year upfront for 10% off any monthly tool or package. Cancel anytime.
 
 ## Pages
