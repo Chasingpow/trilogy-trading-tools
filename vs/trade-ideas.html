@@ -20,7 +20,7 @@
 <meta name="twitter:description" content="Trilogy vs Trade Ideas: prices, real-time data, small-cap scanning, journal and budgeting compared side by side. Prices checked November 2026.">
 <meta name="twitter:image" content="https://trilogytradingtools.com/og-image.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Trilogy Trading Tools","url":"https://trilogytradingtools.com/","logo":"https://trilogytradingtools.com/logo.png","email":"info@trilogytradingtools.com","founder":[{"@type":"Person","name":"Keith Harasymiw","jobTitle":"Co-Founder, Product & Operations","image":"https://trilogytradingtools.com/img/founder-keith.webp","url":"https://trilogytradingtools.com/about/#keith","sameAs":["https://www.linkedin.com/in/keith-harasymiw-2a2323237/"]}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Trilogy cheaper than Trade Ideas?","acceptedAnswer":{"@type":"Answer","text":"Month to month it is about the same: the 3T Pro Scanner is $175 CAD/mo and Trade Ideas Standard is $127 USD/mo, roughly $175 CAD at recent exchange rates. On annual billing Trade Ideas is cheaper ($1,068 USD/yr against $1,890 CAD/yr). Trilogy adds a board tuned for small-cap momentum and, in the bundles, a journal and a budget app that Trade Ideas does not include."}},{"@type":"Question","name":"Does Trilogy include real-time data?","acceptedAnswer":{"@type":"Answer","text":"Yes. Real-time market data is included in the scanner price, with no separate data feed to add on."}},{"@type":"Question","name":"Can I try Trilogy before committing?","acceptedAnswer":{"@type":"Answer","text":"Every monthly tool comes with a 7-day full refund if it does not earn its keep, and you can cancel anytime after that."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Trilogy cheaper than Trade Ideas?","acceptedAnswer":{"@type":"Answer","text":"Month to month it is about the same: the 3T Pro Scanner is $175 CAD/mo and Trade Ideas Standard is $127 USD/mo, roughly $175 CAD at recent exchange rates. On annual billing Trade Ideas is cheaper ($1,068 USD/yr against $1,890 CAD/yr). Trilogy adds a board tuned for small-cap momentum and, in the bundles, a journal and a budget app that Trade Ideas does not include."}},{"@type":"Question","name":"Does Trilogy include real-time data?","acceptedAnswer":{"@type":"Answer","text":"Yes. Real-time US stock data from Massive (formerly Polygon.io) is included in the scanner price, with no separate data feed to add on. The board refreshes about every 8 seconds."}},{"@type":"Question","name":"Can I try Trilogy before committing?","acceptedAnswer":{"@type":"Answer","text":"Every monthly tool comes with a 7-day full refund if it does not earn its keep, and you can cancel anytime after that."}}]}</script>
 </head>
 <body style="margin:0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -390,6 +390,21 @@
   @media (max-width:900px){.risk{grid-template-columns:1fr;gap:24px;margin-top:48px}}
   @media (max-width:600px){.risk-box i{width:16px;height:16px;left:-13px;font-size:10px}.risk-box.b1 i{margin-top:-4px}.risk-box.b2 i{margin-top:4px}}
 
+  /* changelog */
+  .shipped{margin:48px auto 0;max-width:900px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px 26px}
+  .shipped h3{font-size:18px;margin:0 0 12px}
+  .shipped ol,.log{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+  .shipped li{display:grid;grid-template-columns:104px 1fr;gap:4px 16px;font-size:14.5px;color:var(--ink-2)}
+  .shipped time,.log time{color:var(--ink-3);font-size:13px;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .shipped b{color:var(--ink)}
+  .shipped .more{display:inline-block;margin-top:14px;font-size:14px;font-weight:700}
+  .log li{display:grid;grid-template-columns:120px 1fr;gap:6px 20px;padding:18px 0;border-top:1px solid var(--line)}
+  .log h2{font-size:19px;margin:0 0 4px;color:var(--ink)}
+  .log .prod{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand-ink);font-weight:700}
+  .log p{margin:6px 0 0;color:var(--ink-2);font-size:15.5px;line-height:1.65}
+  .log .note{color:var(--ink);font-style:italic}
+  @media (max-width:640px){.shipped li,.log li{grid-template-columns:1fr}}
+
   /* blog */
   .blog-wrap{max-width:780px;margin:0 auto;padding:72px 24px 96px}
   .blog-wrap h1{font-size:clamp(32px,5vw,52px);font-weight:800;letter-spacing:-.015em;margin:10px 0 28px}
@@ -566,7 +581,7 @@
     <h2 id="faq">FAQ</h2>
     <div class="faq">
       <details><summary>Is Trilogy cheaper than Trade Ideas?</summary><p>Month to month it is about the same: the 3T Pro Scanner is $175 CAD/mo and Trade Ideas Standard is $127 USD/mo, roughly $175 CAD at recent exchange rates. On annual billing Trade Ideas is cheaper ($1,068 USD/yr against $1,890 CAD/yr). Trilogy adds a board tuned for small-cap momentum and, in the bundles, a journal and a budget app that Trade Ideas does not include.</p></details>
-      <details><summary>Does Trilogy include real-time data?</summary><p>Yes. Real-time market data is included in the scanner price, with no separate data feed to add on.</p></details>
+      <details><summary>Does Trilogy include real-time data?</summary><p>Yes. Real-time US stock data from Massive (formerly Polygon.io) is included in the scanner price, with no separate data feed to add on. The board refreshes about every 8 seconds.</p></details>
       <details><summary>Can I try Trilogy before committing?</summary><p>Every monthly tool comes with a 7-day full refund if it does not earn its keep, and you can cancel anytime after that.</p></details>
     </div>
     <p class="sources">Trade Ideas prices from <a href="https://www.trade-ideas.com/pricing/">trade-ideas.com/pricing</a> and its own <a href="https://www.trade-ideas.com/trade-ideas-review/">2026 review page</a>. Check their site for current offers. Trilogy is opening soon — <a href="/pricing/#waitlist">join the launch list</a>.</p>
@@ -589,6 +604,8 @@
       <a href="/blog/" data-blog-link hidden>Blog</a>
       <a href="/vs/trade-ideas">vs Trade Ideas</a>
       <a href="/vs/tradezella">vs TradeZella</a>
+      <a href="/vs/tradetracker">vs TradeTracker</a>
+      <a href="/changelog/">Changelog</a>
       <a href="/#contact">Contact</a>
       <a href="https://www.linkedin.com/in/keith-harasymiw-2a2323237/" rel="noopener" target="_blank">Keith on LinkedIn</a>
       <button type="button" data-dlg="dlgPrivacy">Privacy</button>
@@ -1084,6 +1101,10 @@
       }
     }
     const videos = $$(".stage-video video");
+    videos.forEach((v) => {
+      const lg = v.dataset.posterLg;
+      if (lg && v.getBoundingClientRect().width * devicePixelRatio > 700) v.poster = lg;
+    });
     const saveData = Boolean(navigator.connection?.saveData) || matchMedia("(prefers-reduced-data: reduce)").matches;
     if (reduced || saveData) {
       videos.forEach((v) => v.setAttribute("controls", ""));

@@ -42,7 +42,7 @@ jobs:
         run: |
           git config user.name "blog-bot"
           git config user.email "actions@github.com"
-          git add -A blog blog-data.json index.html pricing about sitemap.xml llms.txt
+          git add -A
           git diff --cached --quiet && echo "No new articles" && exit 0
           git commit -m "Blog: sync articles from HeyCatch"
           git pull --rebase

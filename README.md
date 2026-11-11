@@ -17,3 +17,6 @@ Articles are written in HeyCatch and published here as static pages, following h
 - Needs the repository secret `HEYCATCH_API_KEY` (the `hck_lv_…` key from HeyCatch → Settings → Integrations → AI builder). It is never written to a file.
 - Article HTML is sanitised (allow-list), the title is the page's only h1, a table of contents follows the Key takeaways list, and each article's own JSON-LD is included.
 - Errors never break the site: a bad key (401/403) or API failure leaves the last good articles in place; 429 is retried once after Retry-After.
+
+## Changelog
+Edit `src/changelog.json` (newest first: date, product, title, detail, optional founder `note`). `npm run build` writes `/changelog/`, shows the three newest on the homepage under "Recently shipped", and adds the page to the sitemap and llms.txt.

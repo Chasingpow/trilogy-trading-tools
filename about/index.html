@@ -389,6 +389,21 @@
   @media (max-width:900px){.risk{grid-template-columns:1fr;gap:24px;margin-top:48px}}
   @media (max-width:600px){.risk-box i{width:16px;height:16px;left:-13px;font-size:10px}.risk-box.b1 i{margin-top:-4px}.risk-box.b2 i{margin-top:4px}}
 
+  /* changelog */
+  .shipped{margin:48px auto 0;max-width:900px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px 26px}
+  .shipped h3{font-size:18px;margin:0 0 12px}
+  .shipped ol,.log{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+  .shipped li{display:grid;grid-template-columns:104px 1fr;gap:4px 16px;font-size:14.5px;color:var(--ink-2)}
+  .shipped time,.log time{color:var(--ink-3);font-size:13px;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .shipped b{color:var(--ink)}
+  .shipped .more{display:inline-block;margin-top:14px;font-size:14px;font-weight:700}
+  .log li{display:grid;grid-template-columns:120px 1fr;gap:6px 20px;padding:18px 0;border-top:1px solid var(--line)}
+  .log h2{font-size:19px;margin:0 0 4px;color:var(--ink)}
+  .log .prod{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand-ink);font-weight:700}
+  .log p{margin:6px 0 0;color:var(--ink-2);font-size:15.5px;line-height:1.65}
+  .log .note{color:var(--ink);font-style:italic}
+  @media (max-width:640px){.shipped li,.log li{grid-template-columns:1fr}}
+
   /* blog */
   .blog-wrap{max-width:780px;margin:0 auto;padding:72px 24px 96px}
   .blog-wrap h1{font-size:clamp(32px,5vw,52px);font-weight:800;letter-spacing:-.015em;margin:10px 0 28px}
@@ -548,7 +563,7 @@
          Each founder's LinkedIn goes on their card, in the footer, and in the Person sameAs in scripts/build.mjs. -->
     <div class="founders" id="founders">
       <div class="founder">
-        <img src="/img/founder-keith.webp" alt="Keith Harasymiw" width="72" height="72" loading="lazy">
+        <img src="/img/founder-keith-144.webp" srcset="/img/founder-keith-144.webp 144w, /img/founder-keith.webp 400w" sizes="72px" alt="Keith Harasymiw" width="72" height="72" loading="lazy">
         <b>Keith Harasymiw</b>
         <em>Co-Founder · Product &amp; Operations</em>
         <span>More than 20 years in the markets, as a trader and as a developer building the tools he wished he'd had.</span>
@@ -557,7 +572,7 @@
     </div>
     <!-- ABOUT-ONLY: full bios, shown on /about/ only (stripped from the homepage by the build) -->
     <article class="bio" id="keith">
-      <img src="/img/founder-keith-portrait.webp" alt="Portrait of Keith Harasymiw" width="600" height="800" loading="lazy">
+      <img src="/img/founder-keith-portrait-300.webp" srcset="/img/founder-keith-portrait-300.webp 300w, /img/founder-keith-portrait.webp 600w" sizes="240px" alt="Portrait of Keith Harasymiw" width="600" height="800" loading="lazy">
       <div>
         <h3>Keith Harasymiw</h3>
         <p class="bio-role">Co-Founder · Product &amp; Operations · <a href="https://www.linkedin.com/in/keith-harasymiw-2a2323237/" rel="me noopener" target="_blank">LinkedIn ↗</a></p>
@@ -601,6 +616,8 @@
       <a href="/blog/" data-blog-link hidden>Blog</a>
       <a href="/vs/trade-ideas">vs Trade Ideas</a>
       <a href="/vs/tradezella">vs TradeZella</a>
+      <a href="/vs/tradetracker">vs TradeTracker</a>
+      <a href="/changelog/">Changelog</a>
       <a href="#contact">Contact</a>
       <a href="https://www.linkedin.com/in/keith-harasymiw-2a2323237/" rel="noopener" target="_blank">Keith on LinkedIn</a>
       <button type="button" data-dlg="dlgPrivacy">Privacy</button>
@@ -1096,6 +1113,10 @@
       }
     }
     const videos = $$(".stage-video video");
+    videos.forEach((v) => {
+      const lg = v.dataset.posterLg;
+      if (lg && v.getBoundingClientRect().width * devicePixelRatio > 700) v.poster = lg;
+    });
     const saveData = Boolean(navigator.connection?.saveData) || matchMedia("(prefers-reduced-data: reduce)").matches;
     if (reduced || saveData) {
       videos.forEach((v) => v.setAttribute("controls", ""));

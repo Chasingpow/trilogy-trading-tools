@@ -38,6 +38,11 @@ export function initStages(): void {
   }
 
   const videos = $$<HTMLVideoElement>('.stage-video video');
+  // posters ship at 640px for phones; wide or high-density screens get the 1280px frame
+  videos.forEach(v => {
+    const lg = v.dataset.posterLg;
+    if (lg && v.getBoundingClientRect().width * devicePixelRatio > 700) v.poster = lg;
+  });
   // Data Saver / "reduce data": show the poster frame and let the visitor press play.
   const saveData = Boolean((navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData)
     || matchMedia('(prefers-reduced-data: reduce)').matches;

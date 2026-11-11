@@ -23,7 +23,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Halal 3T Scanner","applicationCategory":"FinanceApplication","operatingSystem":"Web browser","description":"The 3T scanning engine on a Sharia-compliant, AAOIFI-screened universe.","url":"https://trilogytradingtools.com/pricing/","publisher":{"@type":"Organization","name":"Trilogy Trading Tools"},"offers":{"@type":"Offer","price":"200","priceCurrency":"CAD","url":"https://trilogytradingtools.com/pricing/","priceSpecification":{"@type":"UnitPriceSpecification","price":"200","priceCurrency":"CAD","unitCode":"MON"}}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Trilogy Journal","applicationCategory":"FinanceApplication","operatingSystem":"Web browser","description":"Trading journal with fast trade logging, live win rate, profit factor and average R, and the 3D Edge Surface.","url":"https://trilogytradingtools.com/pricing/","publisher":{"@type":"Organization","name":"Trilogy Trading Tools"},"offers":{"@type":"Offer","price":"100","priceCurrency":"CAD","url":"https://trilogytradingtools.com/pricing/","priceSpecification":{"@type":"UnitPriceSpecification","price":"100","priceCurrency":"CAD","unitCode":"MON"}}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Wealth Builder","applicationCategory":"FinanceApplication","operatingSystem":"Web browser","description":"Budgeting app built around the Trilogy Split, with a bill calendar, card interest tracker and savings goals.","url":"https://trilogytradingtools.com/pricing/","publisher":{"@type":"Organization","name":"Trilogy Trading Tools"},"offers":{"@type":"Offer","price":"200","priceCurrency":"CAD","url":"https://trilogytradingtools.com/pricing/","priceSpecification":{"@type":"UnitPriceSpecification","price":"200","priceCurrency":"CAD","unitCode":"ANN"}}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I cancel anytime?","acceptedAnswer":{"@type":"Answer","text":"Yes. Monthly tools renew each month and you can cancel whenever you like — access runs to the end of the period you paid for. No long contracts."}},{"@type":"Question","name":"Is there a trial or refund?","acceptedAnswer":{"@type":"Answer","text":"First 7 days on any monthly tool: full refund if it does not earn its keep. Just email us."}},{"@type":"Question","name":"What currency are the prices in?","acceptedAnswer":{"@type":"Answer","text":"All prices are in Canadian dollars (CAD). Pay the year upfront and take 10% off any monthly tool or package."}},{"@type":"Question","name":"How is payment handled?","acceptedAnswer":{"@type":"Answer","text":"Checkout and billing run entirely through Stripe. We never see or store your card number."}},{"@type":"Question","name":"Does the scanner tell me what to trade?","acceptedAnswer":{"@type":"Answer","text":"No. These are tools for finding, reviewing and planning your own trades — nothing here is financial advice, and you make every call. Trading involves substantial risk of loss."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I cancel anytime?","acceptedAnswer":{"@type":"Answer","text":"Yes. Monthly tools renew each month and you can cancel whenever you like — access runs to the end of the period you paid for. No long contracts."}},{"@type":"Question","name":"Is there a trial or refund?","acceptedAnswer":{"@type":"Answer","text":"First 7 days on any monthly tool: full refund if it does not earn its keep. Just email us."}},{"@type":"Question","name":"What currency are the prices in?","acceptedAnswer":{"@type":"Answer","text":"All prices are in Canadian dollars (CAD). Pay the year upfront and take 10% off any monthly tool or package."}},{"@type":"Question","name":"How is payment handled?","acceptedAnswer":{"@type":"Answer","text":"Checkout and billing run entirely through Stripe. We never see or store your card number."}},{"@type":"Question","name":"Is the market data real-time?","acceptedAnswer":{"@type":"Answer","text":"Yes. The scanner runs on real-time US stock data from Massive (formerly Polygon.io), and the board refreshes about every 8 seconds from premarket through after-hours. Like any market data feed, it can occasionally lag or carry an error, so confirm the price in your broker before you place an order."}},{"@type":"Question","name":"Does the scanner tell me what to trade?","acceptedAnswer":{"@type":"Answer","text":"No. These are tools for finding, reviewing and planning your own trades — nothing here is financial advice, and you make every call. Trading involves substantial risk of loss."}}]}</script>
 </head>
 <body style="margin:0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -393,6 +393,21 @@
   @media (max-width:900px){.risk{grid-template-columns:1fr;gap:24px;margin-top:48px}}
   @media (max-width:600px){.risk-box i{width:16px;height:16px;left:-13px;font-size:10px}.risk-box.b1 i{margin-top:-4px}.risk-box.b2 i{margin-top:4px}}
 
+  /* changelog */
+  .shipped{margin:48px auto 0;max-width:900px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px 26px}
+  .shipped h3{font-size:18px;margin:0 0 12px}
+  .shipped ol,.log{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+  .shipped li{display:grid;grid-template-columns:104px 1fr;gap:4px 16px;font-size:14.5px;color:var(--ink-2)}
+  .shipped time,.log time{color:var(--ink-3);font-size:13px;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .shipped b{color:var(--ink)}
+  .shipped .more{display:inline-block;margin-top:14px;font-size:14px;font-weight:700}
+  .log li{display:grid;grid-template-columns:120px 1fr;gap:6px 20px;padding:18px 0;border-top:1px solid var(--line)}
+  .log h2{font-size:19px;margin:0 0 4px;color:var(--ink)}
+  .log .prod{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand-ink);font-weight:700}
+  .log p{margin:6px 0 0;color:var(--ink-2);font-size:15.5px;line-height:1.65}
+  .log .note{color:var(--ink);font-style:italic}
+  @media (max-width:640px){.shipped li,.log li{grid-template-columns:1fr}}
+
   /* blog */
   .blog-wrap{max-width:780px;margin:0 auto;padding:72px 24px 96px}
   .blog-wrap h1{font-size:clamp(32px,5vw,52px);font-weight:800;letter-spacing:-.015em;margin:10px 0 28px}
@@ -678,6 +693,7 @@
       <details><summary>Is there a trial or refund?</summary><p>First 7 days on any monthly tool: full refund if it does not earn its keep. Just email us.</p></details>
       <details><summary>What currency are the prices in?</summary><p>All prices are in Canadian dollars (CAD). Pay the year upfront and take 10% off any monthly tool or package.</p></details>
       <details><summary>How is payment handled?</summary><p>Checkout and billing run entirely through Stripe. We never see or store your card number.</p></details>
+      <details><summary>Is the market data real-time?</summary><p>Yes. The scanner runs on real-time US stock data from Massive (formerly Polygon.io), and the board refreshes about every 8 seconds from premarket through after-hours. Like any market data feed, it can occasionally lag or carry an error, so confirm the price in your broker before you place an order.</p></details>
       <details><summary>Does the scanner tell me what to trade?</summary><p>No. These are tools for finding, reviewing and planning your own trades — nothing here is financial advice, and you make every call. Trading involves substantial risk of loss.</p></details>
     </div>
   </div>
@@ -699,6 +715,8 @@
       <a href="/blog/" data-blog-link hidden>Blog</a>
       <a href="/vs/trade-ideas">vs Trade Ideas</a>
       <a href="/vs/tradezella">vs TradeZella</a>
+      <a href="/vs/tradetracker">vs TradeTracker</a>
+      <a href="/changelog/">Changelog</a>
       <a href="/#contact">Contact</a>
       <a href="https://www.linkedin.com/in/keith-harasymiw-2a2323237/" rel="noopener" target="_blank">Keith on LinkedIn</a>
       <button type="button" data-dlg="dlgPrivacy">Privacy</button>
@@ -1194,6 +1212,10 @@
       }
     }
     const videos = $$(".stage-video video");
+    videos.forEach((v) => {
+      const lg = v.dataset.posterLg;
+      if (lg && v.getBoundingClientRect().width * devicePixelRatio > 700) v.poster = lg;
+    });
     const saveData = Boolean(navigator.connection?.saveData) || matchMedia("(prefers-reduced-data: reduce)").matches;
     if (reduced || saveData) {
       videos.forEach((v) => v.setAttribute("controls", ""));

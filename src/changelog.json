@@ -1,0 +1,40 @@
+{
+  "_readme": "Shipped updates, newest first. Add an entry when something ships: date (YYYY-MM-DD), product, what changed in one plain sentence, and an optional one-line founder note. The build turns this into /changelog/ and shows the three newest on the homepage.",
+  "entries": [
+    {
+      "date": "2026-11-10",
+      "product": "Halal 3T Scanner",
+      "title": "Screens to strict AAOIFI Standard 21 limits",
+      "detail": "Interest-bearing debt and cash plus interest-bearing securities now cap at 30% of market cap, and the receivables test is gone. The full screening method is published on the pricing page.",
+      "note": ""
+    },
+    {
+      "date": "2026-11-10",
+      "product": "Halal 3T Scanner",
+      "title": "Minimum-volume filter, and open any symbol in your own charts",
+      "detail": "The live scan takes an optional minimum volume, and any symbol on the board opens in the charting platform you already use.",
+      "note": ""
+    },
+    {
+      "date": "2026-09-30",
+      "product": "Halal 3T Scanner",
+      "title": "Nightly compliance re-screen",
+      "detail": "Every stock is re-screened each night against its latest filed financial statements, so a verdict changes within a day of new results.",
+      "note": ""
+    },
+    {
+      "date": "2026-09-03",
+      "product": "Halal 3T Scanner",
+      "title": "The 3T Pro Scanner board on the Halal universe",
+      "detail": "The same terminal as the 3T Pro Scanner, running only on stocks that pass the Halal screen.",
+      "note": ""
+    },
+    {
+      "date": "2026-07-14",
+      "product": "Halal 3T Scanner",
+      "title": "TradingView charts, one click from any table",
+      "detail": "Click any symbol in any table to load its chart.",
+      "note": ""
+    }
+  ]
+}
