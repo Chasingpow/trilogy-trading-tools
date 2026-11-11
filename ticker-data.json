@@ -1,77 +1,77 @@
 {
-  "updated": "2026-11-10",
+  "updated": "2026-11-11",
   "entries": [
-    {
-      "symbol": "OMH",
-      "company": "Ohmyhome Limited",
-      "price": 25.84,
-      "changePct": 251.08696
-    },
-    {
-      "symbol": "WCT",
-      "company": "Wellchange Holdings Compan",
-      "price": 4.47,
-      "changePct": 92.17541
-    },
-    {
-      "symbol": "ZURA",
-      "company": "Zura Bio Limited",
-      "price": 1.24,
-      "changePct": -69.68215
-    },
     {
       "symbol": "SMX",
       "company": "SMX (Security Matters) Pub",
-      "price": 9.35,
-      "changePct": 89.73214
+      "price": 19.25,
+      "changePct": 105.88235
+    },
+    {
+      "symbol": "PEPG",
+      "company": "PepGen Inc.",
+      "price": 4.61,
+      "changePct": 92.88703
+    },
+    {
+      "symbol": "IHRT",
+      "company": "iHeartMedia, Inc.",
+      "price": 0.619,
+      "changePct": -65.02825
+    },
+    {
+      "symbol": "INLF",
+      "company": "INLIF Limited",
+      "price": 0.545,
+      "changePct": 80.46358
+    },
+    {
+      "symbol": "TTEC",
+      "company": "TTEC Holdings, Inc.",
+      "price": 2.4,
+      "changePct": 72.04301
+    },
+    {
+      "symbol": "MVST",
+      "company": "Microvast Holdings, Inc.",
+      "price": 0.2202,
+      "changePct": -64.34008
+    },
+    {
+      "symbol": "MI",
+      "company": "NFT Limited",
+      "price": 0.4065,
+      "changePct": 65.04262
+    },
+    {
+      "symbol": "NNOX",
+      "company": "Nano-X Imaging Ltd.",
+      "price": 0.3733,
+      "changePct": 59.80308
+    },
+    {
+      "symbol": "BMGL",
+      "company": "Basel Medical Group Ltd Or",
+      "price": 1.93,
+      "changePct": -64.25926
     },
     {
       "symbol": "TANH",
       "company": "Tantech Holdings Ltd",
-      "price": 19.34,
-      "changePct": 65.72408
+      "price": 30.56,
+      "changePct": 58.01448
     },
     {
-      "symbol": "SOC",
-      "company": "Sable Offshore Corp.",
-      "price": 0.8801,
-      "changePct": -54.39896
+      "symbol": "ZIP",
+      "company": "ZipRecruiter, Inc.",
+      "price": 6.59,
+      "changePct": 53.43423
     },
     {
-      "symbol": "CKX",
-      "company": "CKX Lands, Inc.",
-      "price": 16.4,
-      "changePct": 58.14851
-    },
-    {
-      "symbol": "FISN",
-      "company": "Deep Fission, Inc.",
-      "price": 2.83,
-      "changePct": 52.97297
-    },
-    {
-      "symbol": "ONCO",
-      "company": "Onconetix, Inc.",
-      "price": 3.58,
-      "changePct": -48.48921
-    },
-    {
-      "symbol": "XHLD",
-      "company": "TEN Holdings, Inc. Common ",
-      "price": 0.87,
-      "changePct": 49.48454
-    },
-    {
-      "symbol": "TLS",
-      "company": "Telos Corporation",
-      "price": 7.17,
-      "changePct": 48.75519
-    },
-    {
-      "symbol": "AUUD",
-      "company": "Auddia Inc.",
-      "price": 0.2748,
-      "changePct": -42.75
+      "symbol": "MNTK",
+      "company": "Montauk Renewables, Inc.",
+      "price": 1.19,
+      "changePct": -57.19424
     }
   ]
 }
