@@ -892,13 +892,15 @@
     <div class="bundles-head" id="waitlist">
       <h3>Package <span class="serif-i grad-text">deals</span></h3>
       <p>Each tool is stronger next to the others — the discount is just the bonus. Pay the year upfront and take another <b>10% off any package or monthly tool</b>.</p>
-      <!-- Launch-list form. Set data-endpoint to a form backend (Formspree, a Supabase edge function, etc.)
-           that accepts a POST of email + plan. While it is empty, submit falls back to a prefilled email. -->
-      <form class="wl-form" id="waitlistForm" data-endpoint="" data-fallback="info@trilogytradingtools.com" novalidate>
+      <!-- Launch-list form -> Formspree (form "Trilogy launch list"). Submissions arrive by email and in the Formspree dashboard.
+           Free plan: 50 submissions/month. If data-endpoint is ever emptied, submit falls back to a prefilled email. -->
+      <form class="wl-form" id="waitlistForm" data-endpoint="https://formspree.io/f/xkjrnvnq" data-fallback="info@trilogytradingtools.com" novalidate>
         <p class="wl-plan" id="wlPlanNote" hidden></p>
         <label class="sr-only" for="wlEmail">Email address</label>
         <input type="email" id="wlEmail" name="email" required autocomplete="email" placeholder="you@email.com">
         <input type="hidden" name="plan" id="wlPlan" value="">
+        <input type="hidden" name="_subject" value="New Trilogy launch-list signup">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
         <button class="btn btn-brand" type="submit">Join the launch list</button>
         <p class="wl-msg" id="wlMsg" role="status" aria-live="polite"></p>
       </form>
@@ -1052,7 +1054,7 @@
     <h4>What we collect</h4>
     <ul>
       <li><b>Account information</b> — your email address, and a display name if you set one.</li>
-      <li><b>Launch-list signups</b> — your email and the tool you picked, used only to tell you when it opens. Ask us and we remove it.</li>
+      <li><b>Launch-list signups</b> — your email and the tool you picked, used only to tell you when it opens. The form is processed and stored by Formspree on our behalf. Ask us and we remove it.</li>
       <li><b>Data you enter</b> — trades, setups, notes, goals, budgets, and preferences inside the apps.</li>
       <li><b>Ticker lookups</b> — the stock symbols you search, used only to fetch market data.</li>
       <li><b>Technical data</b> — basic logs and cookies strictly needed to keep you signed in and secure.</li>

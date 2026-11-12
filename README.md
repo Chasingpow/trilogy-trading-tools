@@ -6,7 +6,7 @@ Marketing site - deployed via GitHub Pages. index.html is the live site; source-
 Edit src/template.html (not the generated pages). Content between `<!-- PAGE:name -->` markers becomes the standalone /name/ page.
 
 ## Owner TODOs (search the template for `TODO(owner)`)
-- Launch-list form: set `data-endpoint` on #waitlistForm to a form backend; until then it falls back to a prefilled email.
+- Launch-list form: posts to Formspree (https://formspree.io/f/xkjrnvnq, free plan 50/month); emptying data-endpoint falls back to a prefilled email.
 - Signup counter, founder block, beta-trader testimonials, Halal screening methodology: built but `hidden` until real content exists.
 - 7-day refund policy (confirmed): shown on the hero, monthly plans, FAQ and Terms; change all together.
 - og-image.png and logo.png are rendered from scripts/assets/*.html.
