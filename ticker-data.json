@@ -1,77 +1,77 @@
 {
-  "updated": "2026-11-11",
+  "updated": "2026-11-12",
   "entries": [
     {
-      "symbol": "SMX",
-      "company": "SMX (Security Matters) Pub",
-      "price": 19.25,
-      "changePct": 105.88235
+      "symbol": "WHLR",
+      "company": "Wheeler Real Estate Invest",
+      "price": 0.7491,
+      "changePct": 133.36449
     },
     {
-      "symbol": "PEPG",
-      "company": "PepGen Inc.",
-      "price": 4.61,
-      "changePct": 92.88703
+      "symbol": "SCKT",
+      "company": "Socket Mobile, Inc.",
+      "price": 0.4643,
+      "changePct": 84.90641
     },
     {
-      "symbol": "IHRT",
-      "company": "iHeartMedia, Inc.",
-      "price": 0.619,
-      "changePct": -65.02825
+      "symbol": "ENGS",
+      "company": "Energys Group Limited",
+      "price": 0.6869,
+      "changePct": -86.15121
     },
     {
-      "symbol": "INLF",
-      "company": "INLIF Limited",
-      "price": 0.545,
-      "changePct": 80.46358
+      "symbol": "NCT",
+      "company": "Intercont (Cayman) Limited",
+      "price": 0.72,
+      "changePct": 76.08217
     },
     {
-      "symbol": "TTEC",
-      "company": "TTEC Holdings, Inc.",
-      "price": 2.4,
-      "changePct": 72.04301
+      "symbol": "RETO",
+      "company": "ReTo Eco-Solutions, Inc.",
+      "price": 6.19,
+      "changePct": 65.95174
     },
     {
-      "symbol": "MVST",
-      "company": "Microvast Holdings, Inc.",
-      "price": 0.2202,
-      "changePct": -64.34008
+      "symbol": "CHSN",
+      "company": "Chanson International Hold",
+      "price": 0.683,
+      "changePct": -70.93617
     },
     {
-      "symbol": "MI",
-      "company": "NFT Limited",
-      "price": 0.4065,
-      "changePct": 65.04262
+      "symbol": "ELOG",
+      "company": "Eastern International Ltd.",
+      "price": 0.8871,
+      "changePct": 49.79737
     },
     {
-      "symbol": "NNOX",
-      "company": "Nano-X Imaging Ltd.",
-      "price": 0.3733,
-      "changePct": 59.80308
+      "symbol": "NWTG",
+      "company": "Newton Golf Company",
+      "price": 1.03,
+      "changePct": 49.27536
     },
     {
       "symbol": "BMGL",
       "company": "Basel Medical Group Ltd Or",
-      "price": 1.93,
-      "changePct": -64.25926
+      "price": 0.684,
+      "changePct": -64.55959
     },
     {
-      "symbol": "TANH",
-      "company": "Tantech Holdings Ltd",
-      "price": 30.56,
-      "changePct": 58.01448
+      "symbol": "CRWG",
+      "company": "Leverage Shares 2x Long CR",
+      "price": 7.13,
+      "changePct": 48.85177
     },
     {
-      "symbol": "ZIP",
-      "company": "ZipRecruiter, Inc.",
-      "price": 6.59,
-      "changePct": 53.43423
+      "symbol": "RKDA",
+      "company": "Arcadia Biosciences, Inc.",
+      "price": 0.2378,
+      "changePct": 44.12121
     },
     {
-      "symbol": "MNTK",
-      "company": "Montauk Renewables, Inc.",
-      "price": 1.19,
-      "changePct": -57.19424
+      "symbol": "STAK",
+      "company": "STAK Inc. Ordinary Shares",
+      "price": 1.88,
+      "changePct": -61.74975
     }
   ]
 }
