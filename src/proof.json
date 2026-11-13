@@ -1,0 +1,5 @@
+{
+  "_readme": "Trust numbers and third-party proof. Leave a value null/empty and nothing renders. waitlistCount: the real launch-list size (from Formspree) - shows under the form and under the testimonials. proof: third-party signals, newest first. Each: {\"kind\": \"rating\" | \"badge\" | \"press\", \"label\": \"4.8 on Trustpilot\", \"source\": \"Trustpilot\", \"url\": \"https://...\", \"date\": \"YYYY-MM\", \"image\": \"/img/... (optional badge image)\"}",
+  "waitlistCount": null,
+  "proof": []
+}
