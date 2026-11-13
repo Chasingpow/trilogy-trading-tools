@@ -342,6 +342,8 @@
   .quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
   .quote{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;display:grid;gap:14px}
   .quote blockquote{margin:0;color:var(--ink);font-size:15.5px;line-height:1.6}
+  .quote blockquote p{margin:0}
+  .quote blockquote p+p{margin-top:10px}
   .quote figcaption{display:flex;gap:12px;align-items:center;font-size:13.5px;color:var(--ink-2)}
   .quote figcaption img{width:40px;height:40px;border-radius:50%;object-fit:cover}
   .quotes{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
@@ -811,7 +813,7 @@
     </div>
     <div class="quotes">
       <figure class="quote">
-        <blockquote>&ldquo;The scanner flagged OMH breaking out of its morning range before I'd even pulled up the chart. Having setups come to me instead of digging through watchlists has made my mornings a lot more focused.&rdquo;</blockquote>
+        <blockquote><p>&ldquo;The scanner flagged OMH breaking out of its morning range before I'd even pulled up the chart. Having setups come to me instead of digging through watchlists has made my mornings a lot more focused.&rdquo;</p><p>&ldquo;The scanner worked great, I was notified so fast about OMH on Nov 9th, 10th, and 11th. It was so good to finally have something work so quickly.&rdquo;</p></blockquote>
         <figcaption><span class="avatar" aria-hidden="true">RL</span><span><b>Raymond L.</b>Day trader · 3T Pro Scanner</span></figcaption>
       </figure>
       <figure class="quote">
