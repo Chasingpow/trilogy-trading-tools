@@ -277,10 +277,30 @@ function changelogPage(site) {
 `);
 }
 
+
+// ---------- trust data (src/proof.json): launch-list count + third-party proof; nothing renders when empty ----------
+const proofData = JSON.parse(read('src/proof.json').toString('utf8'));
+const waitlistN = Number(proofData.waitlistCount) > 0 ? Number(proofData.waitlistCount).toLocaleString('en-US') : '';
+const proofItems = (proofData.proof || []).filter(p => p && p.label && p.source && /^https:\/\//.test(p.url || ''));
+function fillTrust(html) {
+  const ym = (d) => { const t = Date.parse(d + '-15T12:00:00Z'); return Number.isNaN(t) ? '' : new Date(t).toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' }); };
+  const proofHtml = proofItems.length ? `<section class="section section-tight" id="proof" aria-label="What others say about Trilogy">
+  <div class="wrap">
+    <div class="proof">
+      ${proofItems.map(p => `<a href="${esc(p.url)}" rel="noopener" target="_blank">${p.image ? `<img src="${esc(p.image)}" alt="" loading="lazy">` : ''}<span><b>${escText(p.label)}</b><br><span>${escText(p.source)}${p.date ? ' · ' + escText(ym(p.date)) : ''}</span></span></a>`).join('\n      ')}
+    </div>
+  </div>
+</section>` : '';
+  return html
+    .replace('      <!-- WAITLIST-COUNT (filled by the build from src/proof.json when waitlistCount is set) -->', waitlistN ? `      <p class="wl-count">${waitlistN} traders on the launch list</p>` : '')
+    .replace('    <!-- TESTERS-COUNT -->\n', waitlistN ? `    <p class="count-line">${waitlistN} traders are on the launch list.</p>\n` : '')
+    .replace('<!-- PROOF-BLOCK (filled by the build from src/proof.json when proof entries exist) -->\n', proofHtml ? proofHtml + '\n' : '');
+}
+
 const homeDesc = 'Trilogy Trading Tools - rent the 3T Pro Scanner, Halal 3T Scanner, Trilogy Journal, and Wealth Builder. Find the move, prove your edge, keep what the market gives you.';
 const stripAboutOnly = (html) => html.replace(/<!-- ABOUT-ONLY[\s\S]*?<!-- \/ABOUT-ONLY -->\n?/g, '');
 const stripPricingOnly = (html) => html.replace(/ *<!-- PRICING-ONLY[\s\S]*?<!-- \/PRICING-ONLY -->\n?/g, '');
-const siteBase = videoAsFile.replace('<!-- CHANGELOG-LATEST (filled by the build from src/changelog.json) -->', changelogLatest());
+const siteBase = fillTrust(videoAsFile.replace('<!-- CHANGELOG-LATEST (filled by the build from src/changelog.json) -->', changelogLatest()));
 const site = articles.length >= 3 ? siteBase.replace(/ data-blog-link hidden>/g, ' data-blog-link>') : siteBase;
 const pages = [
   {
@@ -292,7 +312,7 @@ const pages = [
   {
     file: 'pricing/index.html', path: '/pricing/', body: subpage(site, 'pricing'),
     title: 'Trading Tool Pricing in CAD - Trilogy',
-    description: 'Month-to-month pricing in CAD: 3T Pro Scanner $175/mo, Halal 3T Scanner $200/mo, Trilogy Journal $100/mo, Wealth Builder $200/yr, plus bundles from $225/mo. Cancel anytime.',
+    description: 'CAD pricing: 3T Pro Scanner $175/mo, Halal 3T Scanner $200/mo, Journal $100/mo, Wealth Builder $200/yr, bundles from $225/mo. Cancel anytime.',
     ld: products.map(jsonLd).join('\n') + '\n' + faqLd(block(videoAsFile, 'pricing')),
   },
   {

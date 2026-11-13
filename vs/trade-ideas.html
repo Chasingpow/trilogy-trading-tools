@@ -312,6 +312,9 @@
   .wl-msg{flex-basis:100%;margin:0;font-size:13.5px;color:var(--gain-ink);min-height:1em}
   .wl-msg.err{color:var(--loss-ink)}
   .wl-count{margin:0;font-size:13.5px;color:var(--ink-2)}
+  .try-line{margin:2px 0 4px;align-self:start;justify-self:start;display:inline-block;font-size:13px;font-weight:800;color:var(--gain-ink);
+    background:color-mix(in srgb, var(--gain) 14%, transparent);border:1px solid color-mix(in srgb, var(--gain) 40%, transparent);
+    border-radius:10px;padding:6px 12px;line-height:1.4}
   .guarantee{margin:0;font-size:13px;line-height:1.5;color:var(--gain-ink);
     border-left:2px solid var(--gain);padding-left:10px}
   .value-line{margin:0;font-size:13.5px;line-height:1.55;color:var(--ink)}
@@ -413,6 +416,17 @@
   .log p{margin:6px 0 0;color:var(--ink-2);font-size:15.5px;line-height:1.65}
   .log .note{color:var(--ink);font-style:italic}
   @media (max-width:640px){.shipped li,.log li{grid-template-columns:1fr}}
+
+  /* third-party proof + counts (rendered only when src/proof.json has data) */
+  #proof.section{padding:8px 0 64px}
+  .proof b{color:var(--ink)}
+  .proof{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin:0 auto;max-width:960px}
+  .proof a{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:14px;
+    padding:12px 18px;text-decoration:none;color:var(--ink)}
+  .proof img{height:28px;width:auto}
+  .proof b{font-size:15px}
+  .proof span{font-size:12.5px;color:var(--ink-3)}
+  .count-line{margin:18px 0 0;text-align:center;font-weight:700;color:var(--ink)}
 
   /* blog */
   .blog-wrap{max-width:780px;margin:0 auto;padding:72px 24px 96px}
