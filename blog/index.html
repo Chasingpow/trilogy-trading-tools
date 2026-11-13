@@ -337,8 +337,17 @@
   .quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
   .quote{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;display:grid;gap:14px}
   .quote blockquote{margin:0;color:var(--ink);font-size:15.5px;line-height:1.6}
+  .quote blockquote p{margin:0}
+  .quote blockquote p+p{margin-top:10px}
   .quote figcaption{display:flex;gap:12px;align-items:center;font-size:13.5px;color:var(--ink-2)}
   .quote figcaption img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+  .quotes{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .quote{align-content:space-between}
+  .quote .avatar{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;
+    background:var(--brand-grad);color:#fff;font-weight:800;font-size:14px;letter-spacing:.02em}
+  .quote figcaption b{display:block;color:var(--ink);font-size:14.5px}
+  .quotes-note{margin:18px 0 0;text-align:center;font-size:13px;color:var(--ink-3)}
+  .pricing-quote{max-width:720px;margin:40px auto 0}
   .method{margin-top:22px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;
     display:grid;gap:10px;font-size:14.5px;color:var(--ink-2)}
   .method h3{font-size:20px;color:var(--ink)}

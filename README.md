@@ -7,7 +7,7 @@ Edit src/template.html (not the generated pages). Content between `<!-- PAGE:nam
 
 ## Owner TODOs (search the template for `TODO(owner)`)
 - Launch-list form: posts to Formspree (https://formspree.io/f/xkjrnvnq, free plan 50/month); emptying data-endpoint falls back to a prefilled email.
-- Signup counter, founder block, beta-trader testimonials, Halal screening methodology: built but `hidden` until real content exists.
+- Signup counter: built but `hidden` until a real list size is ready. Testimonials are live (`#traders`); add more as `.quote` cards with an initials avatar.
 - 7-day refund policy (confirmed): shown on the hero, monthly plans, FAQ and Terms; change all together.
 - og-image.png and logo.png are rendered from scripts/assets/*.html.
 

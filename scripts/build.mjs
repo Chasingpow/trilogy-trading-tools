@@ -279,11 +279,12 @@ function changelogPage(site) {
 
 const homeDesc = 'Trilogy Trading Tools - rent the 3T Pro Scanner, Halal 3T Scanner, Trilogy Journal, and Wealth Builder. Find the move, prove your edge, keep what the market gives you.';
 const stripAboutOnly = (html) => html.replace(/<!-- ABOUT-ONLY[\s\S]*?<!-- \/ABOUT-ONLY -->\n?/g, '');
+const stripPricingOnly = (html) => html.replace(/ *<!-- PRICING-ONLY[\s\S]*?<!-- \/PRICING-ONLY -->\n?/g, '');
 const siteBase = videoAsFile.replace('<!-- CHANGELOG-LATEST (filled by the build from src/changelog.json) -->', changelogLatest());
 const site = articles.length >= 3 ? siteBase.replace(/ data-blog-link hidden>/g, ' data-blog-link>') : siteBase;
 const pages = [
   {
-    file: 'index.html', path: '/', body: stripAboutOnly(site),
+    file: 'index.html', path: '/', body: stripPricingOnly(stripAboutOnly(site)),
     title: 'Trilogy - Small-Cap Scanner, Journal & Budget',
     description: homeDesc,
     ld: [org, ...products].map(jsonLd).join('\n') + '\n' + faqLd(videoAsFile),

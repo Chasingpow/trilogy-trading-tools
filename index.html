@@ -342,8 +342,17 @@
   .quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
   .quote{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;display:grid;gap:14px}
   .quote blockquote{margin:0;color:var(--ink);font-size:15.5px;line-height:1.6}
+  .quote blockquote p{margin:0}
+  .quote blockquote p+p{margin-top:10px}
   .quote figcaption{display:flex;gap:12px;align-items:center;font-size:13.5px;color:var(--ink-2)}
   .quote figcaption img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+  .quotes{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .quote{align-content:space-between}
+  .quote .avatar{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;
+    background:var(--brand-grad);color:#fff;font-weight:800;font-size:14px;letter-spacing:.02em}
+  .quote figcaption b{display:block;color:var(--ink);font-size:14.5px}
+  .quotes-note{margin:18px 0 0;text-align:center;font-size:13px;color:var(--ink-3)}
+  .pricing-quote{max-width:720px;margin:40px auto 0}
   .method{margin-top:22px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;
     display:grid;gap:10px;font-size:14.5px;color:var(--ink-2)}
   .method h3{font-size:20px;color:var(--ink)}
@@ -795,29 +804,32 @@
   </div>
 </section>
 
-<!-- ============ TESTIMONIALS (stub) ============ -->
-<!-- TODO(owner): hidden until real beta-trader quotes exist. For each: first name, photo, role
-     (e.g. "small-cap day trader, 3 yrs") and one specific outcome in their own words.
-     Remove the `hidden` attribute once at least three are filled in. Never ship placeholder quotes. -->
-<section class="section" id="traders" hidden>
+<!-- ============ TESTIMONIALS ============ -->
+<!-- Beta testers' own words, shared with permission; no photos by request (initials instead). -->
+<section class="section" id="traders">
   <div class="wrap">
     <div class="sec-head">
-      <h2>What beta traders <span class="serif-i grad-text">say</span></h2>
+      <h2>What beta testers <span class="serif-i grad-text">say</span></h2>
     </div>
     <div class="quotes">
       <figure class="quote">
-        <blockquote>QUOTE_1</blockquote>
-        <figcaption><img src="/img/beta-1.jpg" alt="" width="40" height="40"><span><b>FIRST_NAME</b> · ROLE</span></figcaption>
+        <blockquote><p>&ldquo;The scanner flagged OMH breaking out of its morning range before I'd even pulled up the chart. Having setups come to me instead of digging through watchlists has made my mornings a lot more focused.&rdquo;</p><p>&ldquo;The scanner worked great, I was notified so fast about OMH on Nov 9th, 10th, and 11th. It was so good to finally have something work so quickly.&rdquo;</p></blockquote>
+        <figcaption><span class="avatar" aria-hidden="true">RL</span><span><b>Raymond L.</b>Day trader · 3T Pro Scanner</span></figcaption>
       </figure>
       <figure class="quote">
-        <blockquote>QUOTE_2</blockquote>
-        <figcaption><img src="/img/beta-2.jpg" alt="" width="40" height="40"><span><b>FIRST_NAME</b> · ROLE</span></figcaption>
+        <blockquote>&ldquo;Tax Edge showed me I was holding the wrong assets in the wrong accounts. Moving them around was a simple fix I'd been putting off for years, and now every new dollar goes where it makes the most sense.&rdquo;</blockquote>
+        <figcaption><span class="avatar" aria-hidden="true">JS</span><span><b>Jaspreet S.</b>Portfolio builder · Tax Edge beta</span></figcaption>
       </figure>
       <figure class="quote">
-        <blockquote>QUOTE_3</blockquote>
-        <figcaption><img src="/img/beta-3.jpg" alt="" width="40" height="40"><span><b>FIRST_NAME</b> · ROLE</span></figcaption>
+        <blockquote>&ldquo;For the first time, I know where my extra money goes each month. Seeing it land against my goals and investments, instead of disappearing into my chequing account, keeps me consistent.&rdquo;</blockquote>
+        <figcaption><span class="avatar" aria-hidden="true">JA</span><span><b>Janet A.</b>New mom on maternity leave · Wealth Builder</span></figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>&ldquo;I'd held back from investing because I couldn't easily tell which companies fit my faith. The Halal board screens that for me, so I can build my portfolio with peace of mind.&rdquo;</blockquote>
+        <figcaption><span class="avatar" aria-hidden="true">SM</span><span><b>Safwat M.</b>Halal investor · Halal 3T Scanner</span></figcaption>
       </figure>
     </div>
+    <p class="quotes-note">Shared by beta testers in their own words. Individual experiences; not a promise of results.</p>
   </div>
 </section>
 
@@ -888,6 +900,7 @@
         <a class="btn btn-ghost" href="#waitlist" data-plan="Wealth Builder">Join the launch list</a>
       </div>
     </div>
+
 
     <div class="bundles-head" id="waitlist">
       <h3>Package <span class="serif-i grad-text">deals</span></h3>
