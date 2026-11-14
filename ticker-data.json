@@ -1,77 +1,77 @@
 {
-  "updated": "2026-11-13",
+  "updated": "2026-11-14",
   "entries": [
     {
-      "symbol": "POAS",
-      "company": "Phaos Technology Holdings ",
-      "price": 3.01,
-      "changePct": 234.18452
+      "symbol": "FCUV",
+      "company": "Focus Universal Inc.",
+      "price": 7.08,
+      "changePct": 136
     },
     {
-      "symbol": "GP",
-      "company": "GreenPower Motor Company I",
-      "price": 1.23,
-      "changePct": 174.43106
+      "symbol": "ONFO",
+      "company": "Onfolio Holdings, Inc.",
+      "price": 0.7745,
+      "changePct": 128.87116
     },
     {
-      "symbol": "CDNL",
-      "company": "Cardinal Infrastructure Gr",
-      "price": 5.64,
-      "changePct": -62.37492
+      "symbol": "OPTT",
+      "company": "Ocean Power Technologies, ",
+      "price": 0.322,
+      "changePct": -52.95836
     },
     {
-      "symbol": "PLCE",
-      "company": "The Children's Place, Inc.",
-      "price": 0.444,
-      "changePct": 123.67758
+      "symbol": "AKAN",
+      "company": "Akanda Corp.",
+      "price": 1.36,
+      "changePct": 102.47134
     },
     {
-      "symbol": "AIMD",
-      "company": "Ainos, Inc.",
-      "price": 1.06,
-      "changePct": 118.64686
+      "symbol": "WWB",
+      "company": "Windward Bio Group AG",
+      "price": 28.5,
+      "changePct": 67.64706
     },
     {
-      "symbol": "SMX",
-      "company": "SMX (Security Matters) Pub",
-      "price": 4.84,
-      "changePct": -56.7471
+      "symbol": "OGEN",
+      "company": "Oragenics, Inc.",
+      "price": 0.201,
+      "changePct": -42.58783
     },
     {
-      "symbol": "XLAB",
-      "company": "Exascale Labs Holdings Inc",
-      "price": 2.27,
-      "changePct": 118.26923
+      "symbol": "SLSN",
+      "company": "Solesence, Inc. Common Sto",
+      "price": 1.52,
+      "changePct": 67.21672
     },
     {
-      "symbol": "ADXN",
-      "company": "Addex Therapeutics Ltd",
-      "price": 5.29,
-      "changePct": 83.04498
+      "symbol": "VTSI",
+      "company": "VirTra, Inc.",
+      "price": 4.24,
+      "changePct": 61.83206
     },
     {
-      "symbol": "ADIG",
-      "company": "ADI Global Distribution In",
-      "price": 9.82,
-      "changePct": -49.84678
+      "symbol": "SST",
+      "company": "System1, Inc.",
+      "price": 0.9801,
+      "changePct": -41.31138
     },
     {
-      "symbol": "ICMB",
-      "company": "Investcorp Credit Manageme",
-      "price": 1.06,
-      "changePct": 71.49329
+      "symbol": "RAIN",
+      "company": "Rain Enhancement Technolog",
+      "price": 0.7499,
+      "changePct": 58.30695
     },
     {
-      "symbol": "BGIN",
-      "company": "Bgin Blockchain Limited",
-      "price": 2.76,
-      "changePct": 49.18919
+      "symbol": "SLND",
+      "company": "Southland Holdings, Inc.",
+      "price": 0.9401,
+      "changePct": 49.22222
     },
     {
-      "symbol": "VWAV",
-      "company": "VisionWave Holdings, Inc.",
-      "price": 0.5561,
-      "changePct": -46.52885
+      "symbol": "XXII",
+      "company": "22nd Century Group, Inc.",
+      "price": 0.7701,
+      "changePct": -40.76154
     }
   ]
 }
