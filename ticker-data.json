@@ -1,77 +1,77 @@
 {
-  "updated": "2026-11-14",
+  "updated": "2026-11-17",
   "entries": [
     {
-      "symbol": "FCUV",
-      "company": "Focus Universal Inc.",
-      "price": 7.08,
-      "changePct": 136
+      "symbol": "GMM",
+      "company": "Global Mofy Metaverse Limi",
+      "price": 2.01,
+      "changePct": 97.05882
     },
     {
-      "symbol": "ONFO",
-      "company": "Onfolio Holdings, Inc.",
-      "price": 0.7745,
-      "changePct": 128.87116
+      "symbol": "GDHG",
+      "company": "Golden Heaven Group Holdin",
+      "price": 1.58,
+      "changePct": 91.44553
     },
     {
-      "symbol": "OPTT",
-      "company": "Ocean Power Technologies, ",
-      "price": 0.322,
-      "changePct": -52.95836
+      "symbol": "MTEX",
+      "company": "Mannatech, Incorporated",
+      "price": 3.76,
+      "changePct": -40.31746
+    },
+    {
+      "symbol": "VIVK",
+      "company": "Vivakor, Inc.",
+      "price": 0.3784,
+      "changePct": 80.19048
     },
     {
       "symbol": "AKAN",
       "company": "Akanda Corp.",
-      "price": 1.36,
-      "changePct": 102.47134
+      "price": 2.21,
+      "changePct": 62.5
     },
     {
-      "symbol": "WWB",
-      "company": "Windward Bio Group AG",
-      "price": 28.5,
-      "changePct": 67.64706
+      "symbol": "BTDL",
+      "company": "GraniteShares 2x Long BTDR",
+      "price": 1.7261,
+      "changePct": -39.85714
     },
     {
-      "symbol": "OGEN",
-      "company": "Oragenics, Inc.",
-      "price": 0.201,
-      "changePct": -42.58783
+      "symbol": "HIHO",
+      "company": "Highway Holdings Limited",
+      "price": 1.2,
+      "changePct": 52.86624
     },
     {
-      "symbol": "SLSN",
-      "company": "Solesence, Inc. Common Sto",
-      "price": 1.52,
-      "changePct": 67.21672
-    },
-    {
-      "symbol": "VTSI",
-      "company": "VirTra, Inc.",
-      "price": 4.24,
-      "changePct": 61.83206
-    },
-    {
-      "symbol": "SST",
-      "company": "System1, Inc.",
-      "price": 0.9801,
-      "changePct": -41.31138
-    },
-    {
-      "symbol": "RAIN",
-      "company": "Rain Enhancement Technolog",
-      "price": 0.7499,
-      "changePct": 58.30695
-    },
-    {
-      "symbol": "SLND",
-      "company": "Southland Holdings, Inc.",
-      "price": 0.9401,
-      "changePct": 49.22222
+      "symbol": "NCT",
+      "company": "Intercont (Cayman) Limited",
+      "price": 8.96,
+      "changePct": 43.94037
     },
     {
       "symbol": "XXII",
       "company": "22nd Century Group, Inc.",
-      "price": 0.7701,
-      "changePct": -40.76154
+      "price": 0.4932,
+      "changePct": -35.95637
+    },
+    {
+      "symbol": "CLRO",
+      "company": "ClearOne, Inc.",
+      "price": 4.78,
+      "changePct": 41.83976
+    },
+    {
+      "symbol": "TDTH",
+      "company": "Trident Digital Tech Holdi",
+      "price": 0.978,
+      "changePct": 35.10153
+    },
+    {
+      "symbol": "BMGL",
+      "company": "Basel Medical Group Ltd Or",
+      "price": 0.3023,
+      "changePct": -35.68085
     }
   ]
 }
