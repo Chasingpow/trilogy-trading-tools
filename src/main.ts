@@ -11,6 +11,7 @@ import { initCandleWords } from './candles';
 import { initTicker } from './ticker';
 import { initStages } from './stages';
 import { initWaitlist } from './waitlist';
+import { initAiChat } from './aichat';
 
 initMobileNav();
 initProgressBar();
@@ -23,3 +24,4 @@ initCandleWords();
 initTicker();
 initStages();
 initWaitlist();
+initAiChat();

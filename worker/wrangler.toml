@@ -1,0 +1,25 @@
+name = "trilogy-ai-chat"
+main = "src/index.ts"
+compatibility_date = "2025-09-01"
+
+# Settings you can change without touching code. Redeploy after editing.
+[vars]
+MODEL = "claude-haiku-5-5"
+PER_USER_DAILY = "10"        # questions per visitor per day
+GLOBAL_DAILY_CAP = "1000"    # questions for the whole site per day (spend ceiling)
+ALLOWED_ORIGINS = "https://trilogytradingtools.com,https://www.trilogytradingtools.com"
+
+# Secrets (set once, never committed):
+#   npx wrangler secret put ANTHROPIC_API_KEY
+#   npx wrangler secret put IP_SALT        # any random string
+
+[[durable_objects.bindings]]
+name = "LIMITER"
+class_name = "Limiter"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["Limiter"]
+
+[observability]
+enabled = true

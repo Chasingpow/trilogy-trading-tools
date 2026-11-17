@@ -1,0 +1,34 @@
+<main class="aic" id="aiChat" data-endpoint="__AI_CHAT_ENDPOINT__">
+  <div class="aic-bar">
+    <span class="aic-chip" id="aicQuota"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.2 6.6L21 11l-6.8 2.4L12 20l-2.2-6.6L3 11l6.8-2.4z"/></svg><span id="aicLeft">10 of 10</span> left today</span>
+    <span class="aic-reset">Free · resets at midnight New York time</span>
+  </div>
+
+  <div class="aic-scroll" id="aicScroll">
+    <section class="aic-hello" id="aicHello">
+      <div class="aic-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"><path d="M12 3 L21 19 L3 19 Z"/><path d="M12 10 L16.5 19 L7.5 19 Z" opacity=".55"/></svg>
+      </div>
+      <h1>Trilogy <span class="grad-text">Ai Chat</span></h1>
+      <p>Ask about setups, trading terms, position sizing or budgeting. It speaks small-cap: gappers, float, halts, the tape, R. It can't see live prices, and it won't tell you what to buy.</p>
+      <div class="aic-sugg" id="aicSugg">
+        <button type="button">What makes a gapper worth watching premarket?</button>
+        <button type="button">Why does float matter for small-cap momentum?</button>
+        <button type="button">I risk $50 a trade. How many shares do I buy?</button>
+        <button type="button">What happens when a stock gets halted?</button>
+        <button type="button">How do I read the tape on a fast mover?</button>
+        <button type="button">How does the Trilogy Split work?</button>
+      </div>
+    </section>
+    <div class="aic-log" id="aicLog" aria-live="polite"></div>
+  </div>
+
+  <form class="aic-form" id="aicForm" autocomplete="off">
+    <label class="sr-only" for="aicInput">Your question</label>
+    <textarea id="aicInput" rows="1" maxlength="1500" placeholder="Ask about a setup, a term, or how to size a trade…"></textarea>
+    <button class="aic-send" type="submit" id="aicSend" aria-label="Send">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg>
+    </button>
+  </form>
+  <p class="aic-note">Education only, not investment advice. Trilogy Ai Chat can be wrong, so double-check anything that matters. Questions about your account? <a href="mailto:info@trilogytradingtools.com">info@trilogytradingtools.com</a></p>
+</main>
