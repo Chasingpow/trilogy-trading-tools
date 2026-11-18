@@ -17,7 +17,7 @@ npm install
 npx wrangler dev --port 8787
 ```
 
-With no API key, the backend runs in mock mode and returns a canned reply. Open the built site through any local server, for example `python -m http.server 5510` in the repo root. Then visit `http://localhost:5510/ai-chat/?api=http://127.0.0.1:8787`. The `?api=` override only works on localhost.
+With `PROVIDER = "workers-ai"`, local dev calls Cloudflare's real models, which uses some of the free daily allowance. For canned mock replies instead, put `PROVIDER="anthropic"` in a `worker/.dev.vars` file and leave the key unset. Open the built site through any local server, for example `python -m http.server 5510` in the repo root. Then visit `http://localhost:5510/ai-chat/?api=http://127.0.0.1:8787`. The `?api=` override only works on localhost.
 
 ## Deploy (one time; already done 2026-11-18 except the optional Anthropic key)
 
