@@ -1,77 +1,77 @@
 {
-  "updated": "2026-11-17",
+  "updated": "2026-11-18",
   "entries": [
     {
-      "symbol": "GMM",
-      "company": "Global Mofy Metaverse Limi",
-      "price": 2.01,
-      "changePct": 97.05882
+      "symbol": "SLS",
+      "company": "SELLAS Life Sciences Group",
+      "price": 19.15,
+      "changePct": 156.35877
+    },
+    {
+      "symbol": "GP",
+      "company": "GreenPower Motor Company I",
+      "price": 2.62,
+      "changePct": 85.8156
     },
     {
       "symbol": "GDHG",
       "company": "Golden Heaven Group Holdin",
-      "price": 1.58,
-      "changePct": 91.44553
+      "price": 0.2912,
+      "changePct": -81.56962
     },
     {
-      "symbol": "MTEX",
-      "company": "Mannatech, Incorporated",
-      "price": 3.76,
-      "changePct": -40.31746
+      "symbol": "FRTT",
+      "company": "Fort Technology Inc.",
+      "price": 0.6754,
+      "changePct": 77.73684
     },
     {
-      "symbol": "VIVK",
-      "company": "Vivakor, Inc.",
-      "price": 0.3784,
-      "changePct": 80.19048
+      "symbol": "SMTK",
+      "company": "SmartKem, Inc.",
+      "price": 0.2721,
+      "changePct": 66.01586
     },
     {
-      "symbol": "AKAN",
-      "company": "Akanda Corp.",
-      "price": 2.21,
-      "changePct": 62.5
+      "symbol": "CUE",
+      "company": "Cue Biopharma, Inc.",
+      "price": 2.83,
+      "changePct": -79.92908
     },
     {
-      "symbol": "BTDL",
-      "company": "GraniteShares 2x Long BTDR",
-      "price": 1.7261,
-      "changePct": -39.85714
+      "symbol": "MPU",
+      "company": "Mega Matrix Corp.",
+      "price": 1.9,
+      "changePct": 48.4375
     },
     {
-      "symbol": "HIHO",
-      "company": "Highway Holdings Limited",
-      "price": 1.2,
-      "changePct": 52.86624
+      "symbol": "AYTU",
+      "company": "Aytu BioPharma, Inc.",
+      "price": 2.66,
+      "changePct": 46.15385
     },
     {
-      "symbol": "NCT",
-      "company": "Intercont (Cayman) Limited",
-      "price": 8.96,
-      "changePct": 43.94037
+      "symbol": "RCAX",
+      "company": "Daily Target 2X Long RCAT ",
+      "price": 0.7696,
+      "changePct": -62.54988
     },
     {
-      "symbol": "XXII",
-      "company": "22nd Century Group, Inc.",
-      "price": 0.4932,
-      "changePct": -35.95637
+      "symbol": "VAI",
+      "company": "Valor Energy Inc.",
+      "price": 3.09,
+      "changePct": 40.45455
     },
     {
-      "symbol": "CLRO",
-      "company": "ClearOne, Inc.",
-      "price": 4.78,
-      "changePct": 41.83976
+      "symbol": "AZI",
+      "company": "Autozi Internet Technology",
+      "price": 0.7301,
+      "changePct": 39.54511
     },
     {
-      "symbol": "TDTH",
-      "company": "Trident Digital Tech Holdi",
-      "price": 0.978,
-      "changePct": 35.10153
-    },
-    {
-      "symbol": "BMGL",
-      "company": "Basel Medical Group Ltd Or",
-      "price": 0.3023,
-      "changePct": -35.68085
+      "symbol": "MDRN",
+      "company": "Modern Mining Technology C",
+      "price": 1.93,
+      "changePct": -49.54248
     }
   ]
 }
