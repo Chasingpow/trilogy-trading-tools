@@ -285,9 +285,17 @@ export default {
         }
         await send({ done: true, left: verdict.left });
       } catch (err) {
-        console.error('chat failed', err instanceof Error ? err.message : err);
+        const message = err instanceof Error ? err.message : String(err);
+        console.error('chat failed', message);
         if (!wroteText) await limiter.refund(day, user);
-        await send({ error: 'Something went wrong on our side. That question was not counted. Please try again.', left: wroteText ? verdict.left : verdict.left + 1 });
+        // Workers AI refuses once the free daily neuron allowance is used up (it resets 00:00 UTC)
+        const outOfFreeAi = env.PROVIDER === 'workers-ai' && /neuron|allocation|quota|limit|4006|429/i.test(message);
+        await send({
+          error: outOfFreeAi
+            ? "Trilogy Ai Chat has used today's free AI capacity. It refills at 7 pm New York time. That question was not counted."
+            : 'Something went wrong on our side. That question was not counted. Please try again.',
+          left: wroteText ? verdict.left : verdict.left + 1,
+        });
       } finally {
         await writer.close();
       }

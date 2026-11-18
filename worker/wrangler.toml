@@ -14,8 +14,8 @@ PROVIDER = "workers-ai"
 WORKERS_AI_MODEL = "@cf/mistralai/mistral-small-3.1-24b-instruct"
 MODEL = "claude-haiku-5-5"   # used when PROVIDER = "anthropic"
 PER_USER_DAILY = "20"        # questions per visitor per day
-GLOBAL_DAILY_CAP = "100"     # questions for the whole site per day. ~100 keeps Mistral inside the free
-                             # allowance (~400 with the Llama fallback); raise to 1000 on anthropic.
+GLOBAL_DAILY_CAP = "1000"    # questions for the whole site per day. Note: the free Workers AI allowance covers ~100 Mistral
+                             # answers (~400 on Llama 8B); past that the chat says "free capacity used up" until 00:00 UTC.
 ALLOWED_ORIGINS = "https://trilogytradingtools.com,https://www.trilogytradingtools.com"
 
 # Secrets (set once, never committed):
