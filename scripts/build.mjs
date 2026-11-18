@@ -70,7 +70,7 @@ const org = {
   name: 'Trilogy Trading Tools', url: `${SITE}/`, logo: `${SITE}/logo.png`,
   email: 'info@trilogytradingtools.com',
   founder: [{ '@type': 'Person', name: 'Keith Harasymiw', jobTitle: 'Co-Founder, Product & Operations', image: `${SITE}/img/founder-keith.webp`, url: `${SITE}/about/#keith`, sameAs: ['https://www.linkedin.com/in/keith-harasymiw-2a2323237/'] },
-    { '@type': 'Person', name: 'Leo Suen', jobTitle: 'Co-Founder, Research & Operations', image: `${SITE}/img/founder-leo.webp`, url: `${SITE}/about/#leo` }],
+    { '@type': 'Person', name: 'Leo Suen', jobTitle: 'Co-Founder, Research & Operations', image: `${SITE}/img/founder-leo.webp`, url: `${SITE}/about/#leo`, sameAs: ['https://www.linkedin.com/in/leo-suen-4073b5214/'] }],
   // TODO(owner): add sameAs: [founder / company LinkedIn and X URLs] once they are public.
 };
 const products = plans.map(p => ({
