@@ -18,6 +18,7 @@ const esc = (t: string): string =>
 export function renderMarkdown(src: string): string {
   const inline = (t: string): string =>
     esc(t)
+      .replace(/\[([^\]]+)\]\((?:https?:\/\/|www\.)[^)\s]*\)/g, '$1') // [text](url) -> text: no model-chosen links
       .replace(/`([^`]+)`/g, '<code>$1</code>')
       .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
       .replace(/(^|[^*])\*([^*\s][^*]*)\*/g, '$1<em>$2</em>');
