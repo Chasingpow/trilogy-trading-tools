@@ -346,7 +346,7 @@ for (const v of vsPages) {
 // Trilogy Ai Chat (/ai-chat/): page in src/pages/ai-chat.html, backend in worker/.
 // Paste the deployed worker URL here (https://trilogy-ai-chat.<you>.workers.dev) and rebuild.
 // Left empty, the page shows a "launching soon" state.
-const AI_CHAT_ENDPOINT = '';
+const AI_CHAT_ENDPOINT = 'https://trilogy-ai-chat.keithharasymiw.workers.dev';
 mkdirSync(resolve(root, 'ai-chat'), { recursive: true });
 pages.push({
   file: 'ai-chat/index.html', path: '/ai-chat/',
