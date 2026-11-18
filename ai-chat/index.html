@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Trilogy Ai Chat - Free Trading Q&amp;A for Small-Cap Traders</title>
-<meta name="description" content="Ask Trilogy Ai Chat about gappers, float, halts, reading the tape, position sizing and budgeting. Free, 10 questions a day. Education only, not investment advice.">
+<meta name="description" content="Ask Trilogy Ai Chat about gappers, float, halts, reading the tape, position sizing and budgeting. Free, 20 questions a day. Education only, not investment advice.">
 <link rel="canonical" href="https://trilogytradingtools.com/ai-chat/">
 <meta property="og:site_name" content="Trilogy Trading Tools">
 <meta property="og:title" content="Trilogy Ai Chat - Free Trading Q&amp;A for Small-Cap Traders">
-<meta property="og:description" content="Ask Trilogy Ai Chat about gappers, float, halts, reading the tape, position sizing and budgeting. Free, 10 questions a day. Education only, not investment advice.">
+<meta property="og:description" content="Ask Trilogy Ai Chat about gappers, float, halts, reading the tape, position sizing and budgeting. Free, 20 questions a day. Education only, not investment advice.">
 <meta property="og:url" content="https://trilogytradingtools.com/ai-chat/">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://trilogytradingtools.com/og-image.png">
@@ -17,7 +17,7 @@
 <meta property="og:image:alt" content="Trilogy Trading Tools: small-cap scanner, trade journal and budgeting app">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Trilogy Ai Chat - Free Trading Q&amp;A for Small-Cap Traders">
-<meta name="twitter:description" content="Ask Trilogy Ai Chat about gappers, float, halts, reading the tape, position sizing and budgeting. Free, 10 questions a day. Education only, not investment advice.">
+<meta name="twitter:description" content="Ask Trilogy Ai Chat about gappers, float, halts, reading the tape, position sizing and budgeting. Free, 20 questions a day. Education only, not investment advice.">
 <meta name="twitter:image" content="https://trilogytradingtools.com/og-image.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Trilogy Trading Tools","url":"https://trilogytradingtools.com/","logo":"https://trilogytradingtools.com/logo.png","email":"info@trilogytradingtools.com","founder":[{"@type":"Person","name":"Keith Harasymiw","jobTitle":"Co-Founder, Product & Operations","image":"https://trilogytradingtools.com/img/founder-keith.webp","url":"https://trilogytradingtools.com/about/#keith","sameAs":["https://www.linkedin.com/in/keith-harasymiw-2a2323237/"]}]}</script>
 </head>
@@ -614,7 +614,7 @@
 
 <main class="aic" id="aiChat" data-endpoint="https://trilogy-ai-chat.keithharasymiw.workers.dev">
   <div class="aic-bar">
-    <span class="aic-chip" id="aicQuota"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.2 6.6L21 11l-6.8 2.4L12 20l-2.2-6.6L3 11l6.8-2.4z"/></svg><span id="aicLeft">10 of 10</span> left today</span>
+    <span class="aic-chip" id="aicQuota"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.2 6.6L21 11l-6.8 2.4L12 20l-2.2-6.6L3 11l6.8-2.4z"/></svg><span id="aicLeft">20 of 20</span> left today</span>
     <span class="aic-reset">Free · resets at midnight New York time</span>
   </div>
 
@@ -1319,7 +1319,7 @@ Tool: ${plan.value || "Not sure yet"}`);
     const configured = root.dataset.endpoint ?? "";
     const endpoint = (isLocal && override ? override : configured.startsWith("https://") ? configured : "").replace(/\/$/, "");
     const history = [];
-    let limit = 10;
+    let limit = 20;
     let busy = false;
     const setLeft = (left) => {
       leftEl.textContent = `${left} of ${limit}`;

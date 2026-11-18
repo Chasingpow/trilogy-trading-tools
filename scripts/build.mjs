@@ -352,7 +352,7 @@ pages.push({
   file: 'ai-chat/index.html', path: '/ai-chat/',
   body: withContent(site, fill(read('src/pages/ai-chat.html').toString('utf8'), '__AI_CHAT_ENDPOINT__', AI_CHAT_ENDPOINT)),
   title: 'Trilogy Ai Chat - Free Trading Q&A for Small-Cap Traders',
-  description: 'Ask Trilogy Ai Chat about gappers, float, halts, reading the tape, position sizing and budgeting. Free, 10 questions a day. Education only, not investment advice.',
+  description: 'Ask Trilogy Ai Chat about gappers, float, halts, reading the tape, position sizing and budgeting. Free, 20 questions a day. Education only, not investment advice.',
   ld: jsonLd(org),
 });
 
@@ -410,7 +410,7 @@ ${plans.map(p => `- ${p.name}: $${p.price} CAD/${p.unit === 'MON' ? 'mo' : 'yr'}
 - [Home](${SITE}/)
 - [Pricing](${SITE}/pricing/)
 - [About](${SITE}/about/)
-- [Trilogy Ai Chat](${SITE}/ai-chat/): free trading-education Q&A, 10 questions a day
+- [Trilogy Ai Chat](${SITE}/ai-chat/): free trading-education Q&A, 20 questions a day
 - [Trilogy vs Trade Ideas](${SITE}/vs/trade-ideas)
 - [Trilogy vs TradeZella](${SITE}/vs/tradezella)
 - [Trilogy vs TradeTracker](${SITE}/vs/tradetracker)

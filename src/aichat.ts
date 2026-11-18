@@ -65,7 +65,7 @@ export function initAiChat(): void {
   const endpoint = (isLocal && override ? override : configured.startsWith('https://') ? configured : '').replace(/\/$/, '');
 
   const history: Turn[] = [];
-  let limit = 10;
+  let limit = 20;
   let busy = false;
 
   const setLeft = (left: number) => {

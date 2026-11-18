@@ -218,7 +218,7 @@ export default {
     const url = new URL(req.url);
     if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers: cors });
 
-    const perUser = Number(env.PER_USER_DAILY) || 10;
+    const perUser = Number(env.PER_USER_DAILY) || 20;
     const globalCap = Number(env.GLOBAL_DAILY_CAP) || 1000;
     const limiter = env.LIMITER.get(env.LIMITER.idFromName('site'));
     const day = nyDay();
