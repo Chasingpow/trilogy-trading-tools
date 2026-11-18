@@ -1327,7 +1327,7 @@ Tool: ${plan.value || "Not sure yet"}`);
     const configured = root.dataset.endpoint ?? "";
     const endpoint = (isLocal && override ? override : configured.startsWith("https://") ? configured : "").replace(/\/$/, "");
     const history = [];
-    let limit = 10;
+    let limit = 20;
     let busy = false;
     const setLeft = (left) => {
       leftEl.textContent = `${left} of ${limit}`;
