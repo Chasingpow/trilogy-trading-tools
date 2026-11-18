@@ -122,7 +122,9 @@ ${ld}
 <body style="margin:0">
 `;
 }
-const tail = '\n</body>\n</html>\n';
+// Cloudflare Web Analytics (cookieless, no personal data) - added to every generated page.
+const CF_ANALYTICS = `<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "42acee57eb1547b784f457211f5d2528"}'></script><!-- End Cloudflare Web Analytics -->`;
+const tail = `\n${CF_ANALYTICS}\n</body>\n</html>\n`;
 
 /** Everything between <!-- PAGE:name --> and <!-- /PAGE:name --> in the template. */
 function block(html, name) {

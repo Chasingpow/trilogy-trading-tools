@@ -1,77 +1,77 @@
 {
-  "updated": "2026-11-14",
+  "updated": "2026-11-18",
   "entries": [
     {
-      "symbol": "FCUV",
-      "company": "Focus Universal Inc.",
-      "price": 7.08,
-      "changePct": 136
+      "symbol": "SLS",
+      "company": "SELLAS Life Sciences Group",
+      "price": 19.15,
+      "changePct": 156.35877
     },
     {
-      "symbol": "ONFO",
-      "company": "Onfolio Holdings, Inc.",
-      "price": 0.7745,
-      "changePct": 128.87116
+      "symbol": "GP",
+      "company": "GreenPower Motor Company I",
+      "price": 2.62,
+      "changePct": 85.8156
     },
     {
-      "symbol": "OPTT",
-      "company": "Ocean Power Technologies, ",
-      "price": 0.322,
-      "changePct": -52.95836
+      "symbol": "GDHG",
+      "company": "Golden Heaven Group Holdin",
+      "price": 0.2912,
+      "changePct": -81.56962
     },
     {
-      "symbol": "AKAN",
-      "company": "Akanda Corp.",
-      "price": 1.36,
-      "changePct": 102.47134
+      "symbol": "FRTT",
+      "company": "Fort Technology Inc.",
+      "price": 0.6754,
+      "changePct": 77.73684
     },
     {
-      "symbol": "WWB",
-      "company": "Windward Bio Group AG",
-      "price": 28.5,
-      "changePct": 67.64706
+      "symbol": "SMTK",
+      "company": "SmartKem, Inc.",
+      "price": 0.2721,
+      "changePct": 66.01586
     },
     {
-      "symbol": "OGEN",
-      "company": "Oragenics, Inc.",
-      "price": 0.201,
-      "changePct": -42.58783
+      "symbol": "CUE",
+      "company": "Cue Biopharma, Inc.",
+      "price": 2.83,
+      "changePct": -79.92908
     },
     {
-      "symbol": "SLSN",
-      "company": "Solesence, Inc. Common Sto",
-      "price": 1.52,
-      "changePct": 67.21672
+      "symbol": "MPU",
+      "company": "Mega Matrix Corp.",
+      "price": 1.9,
+      "changePct": 48.4375
     },
     {
-      "symbol": "VTSI",
-      "company": "VirTra, Inc.",
-      "price": 4.24,
-      "changePct": 61.83206
+      "symbol": "AYTU",
+      "company": "Aytu BioPharma, Inc.",
+      "price": 2.66,
+      "changePct": 46.15385
     },
     {
-      "symbol": "SST",
-      "company": "System1, Inc.",
-      "price": 0.9801,
-      "changePct": -41.31138
+      "symbol": "RCAX",
+      "company": "Daily Target 2X Long RCAT ",
+      "price": 0.7696,
+      "changePct": -62.54988
     },
     {
-      "symbol": "RAIN",
-      "company": "Rain Enhancement Technolog",
-      "price": 0.7499,
-      "changePct": 58.30695
+      "symbol": "VAI",
+      "company": "Valor Energy Inc.",
+      "price": 3.09,
+      "changePct": 40.45455
     },
     {
-      "symbol": "SLND",
-      "company": "Southland Holdings, Inc.",
-      "price": 0.9401,
-      "changePct": 49.22222
+      "symbol": "AZI",
+      "company": "Autozi Internet Technology",
+      "price": 0.7301,
+      "changePct": 39.54511
     },
     {
-      "symbol": "XXII",
-      "company": "22nd Century Group, Inc.",
-      "price": 0.7701,
-      "changePct": -40.76154
+      "symbol": "MDRN",
+      "company": "Modern Mining Technology C",
+      "price": 1.93,
+      "changePct": -49.54248
     }
   ]
 }
