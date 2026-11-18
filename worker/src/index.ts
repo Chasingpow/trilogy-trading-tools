@@ -21,6 +21,10 @@ import { SYSTEM_PROMPT } from './prompt';
 
 export interface Env {
   LIMITER: DurableObjectNamespace<Limiter>;
+  AI: Ai;
+  /** "workers-ai" (free Cloudflare models) or "anthropic" (Claude, needs ANTHROPIC_API_KEY) */
+  PROVIDER: string;
+  WORKERS_AI_MODEL: string;
   ANTHROPIC_API_KEY?: string;
   IP_SALT?: string;
   MODEL: string;
@@ -153,6 +157,59 @@ Once the key is added, real answers appear here. For example, position size work
 
 Education only, not investment advice.`;
 
+// ---------- Cloudflare Workers AI (free daily allowance) ----------
+
+/**
+ * Stream a reply from Workers AI. The binding returns server-sent events; each
+ * `data:` line is JSON. Older models put the text in `response`, OpenAI-style
+ * ones in `choices[0].delta.content`, so both are read. Throws if the model
+ * errors before streaming (e.g. the free daily allowance is used up).
+ */
+async function streamWorkersAi(env: Env, history: Turn[], write: (t: string) => Promise<void>): Promise<void> {
+  const result = await env.AI.run(env.WORKERS_AI_MODEL as Parameters<Ai['run']>[0], {
+    messages: [{ role: 'system', content: SYSTEM_PROMPT }, ...history],
+    max_tokens: 1200,
+    stream: true,
+  } as never) as unknown;
+  if (!(result instanceof ReadableStream)) {
+    const r = result as { response?: string; choices?: { message?: { content?: string } }[] };
+    await write(r.response ?? r.choices?.[0]?.message?.content ?? '');
+    return;
+  }
+  const reader = (result as ReadableStream<Uint8Array>).pipeThrough(new TextDecoderStream()).getReader();
+  let buf = '';
+  let wrote = false;
+  const sample: string[] = []; // first raw lines, logged if nothing usable came back
+  let thinking = false; // hide <think>...</think> if a reasoning model emits it
+  for (;;) {
+    const { value, done } = await reader.read();
+    if (done) break;
+    buf += value;
+    let nl: number;
+    while ((nl = buf.indexOf('\n')) >= 0) {
+      const line = buf.slice(0, nl).trim(); buf = buf.slice(nl + 1);
+      if (line && sample.length < 5) sample.push(line.slice(0, 300));
+      if (!line.startsWith('data:')) continue;
+      const data = line.slice(5).trim();
+      if (!data || data === '[DONE]') continue;
+      let chunk: { response?: unknown; choices?: { delta?: { content?: unknown } }[] };
+      try { chunk = JSON.parse(data); } catch { continue; }
+      let text = typeof chunk.response === 'string' ? chunk.response
+        : typeof chunk.choices?.[0]?.delta?.content === 'string' ? chunk.choices[0].delta.content as string : '';
+      if (text.includes('<think>')) { thinking = true; text = text.split('<think>')[0]; }
+      if (thinking) {
+        if (!text.includes('</think>')) continue;
+        thinking = false; text = text.split('</think>').pop() ?? '';
+      }
+      if (text) { await write(text); wrote = true; }
+    }
+  }
+  if (!wrote) {
+    console.error('workers-ai returned no text', JSON.stringify(sample), buf.slice(0, 300));
+    throw new Error('empty reply'); // caller refunds the question and tells the visitor to retry
+  }
+}
+
 // ---------- request handling ----------
 
 export default {
@@ -197,10 +254,12 @@ export default {
     ctx.waitUntil((async () => {
       let wroteText = false;
       try {
-        if (!env.ANTHROPIC_API_KEY) {
+        const write = async (t: string) => { if (t) { await send({ t }); wroteText = true; } };
+        if (env.PROVIDER === 'workers-ai') {
+          await streamWorkersAi(env, history, write);
+        } else if (!env.ANTHROPIC_API_KEY) {
           for (const word of MOCK_REPLY.split(/(?<=\s)/)) {
-            await send({ t: word });
-            wroteText = true;
+            await write(word);
             await new Promise(r => setTimeout(r, 15));
           }
         } else {

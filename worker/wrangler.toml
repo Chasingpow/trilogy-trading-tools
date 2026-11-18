@@ -4,14 +4,26 @@ compatibility_date = "2025-09-01"
 
 # Settings you can change without touching code. Redeploy after editing.
 [vars]
-MODEL = "claude-haiku-5-5"
+# Which AI answers:
+#   "workers-ai" = Cloudflare's free models (10,000 neurons/day free; Mistral Small ~85 per question)
+#   "anthropic"  = Claude Haiku (about $0.0006/question; needs the ANTHROPIC_API_KEY secret)
+PROVIDER = "workers-ai"
+# Tested 2026-11-18: Mistral Small = best answers, first word in <1s.
+# Cheaper fallback: "@cf/meta/llama-3.1-8b-instruct-fp8-fast" (~22 neurons/question, plainer answers).
+# Avoid: gemma-4-26b (slow, failed a request), qwen3-30b (got the PDT rule wrong).
+WORKERS_AI_MODEL = "@cf/mistralai/mistral-small-3.1-24b-instruct"
+MODEL = "claude-haiku-5-5"   # used when PROVIDER = "anthropic"
 PER_USER_DAILY = "10"        # questions per visitor per day
-GLOBAL_DAILY_CAP = "1000"    # questions for the whole site per day (spend ceiling)
+GLOBAL_DAILY_CAP = "100"     # questions for the whole site per day. ~100 keeps Mistral inside the free
+                             # allowance (~400 with the Llama fallback); raise to 1000 on anthropic.
 ALLOWED_ORIGINS = "https://trilogytradingtools.com,https://www.trilogytradingtools.com"
 
 # Secrets (set once, never committed):
 #   npx wrangler secret put ANTHROPIC_API_KEY
 #   npx wrangler secret put IP_SALT        # any random string
+
+[ai]
+binding = "AI"
 
 [[durable_objects.bindings]]
 name = "LIMITER"

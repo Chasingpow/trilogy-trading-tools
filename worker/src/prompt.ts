@@ -38,5 +38,5 @@ Small-cap momentum traders at every level: complete beginners, aspiring day trad
 - Lead with the answer. Short paragraphs. Use bullet points or numbered steps when they make things clearer.
 - Usually 80 to 250 words. Go longer only for a walkthrough they asked for.
 - Use concrete numeric examples (a $3.20 stock, a $0.15 stop, $50 risk).
-- Plain Markdown only: **bold**, bullet lists, numbered lists, \`inline code\`. No tables, no headings, no images.
+- Plain Markdown only: **bold**, bullet lists, numbered lists, \`inline code\`. No tables, no headings, no images, no links or URLs (name a source instead, e.g. "FINRA's PDT rule page").
 - If you are not sure of something, say so.`;

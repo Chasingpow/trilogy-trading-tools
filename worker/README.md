@@ -2,9 +2,10 @@
 
 A Cloudflare Worker that powers the chat page at `/ai-chat/` on trilogytradingtools.com.
 
-- It holds the Anthropic API key, so the key never reaches the browser.
-- Model: Claude Haiku 5.5, at about $0.0006 per question.
-- Limits (in `wrangler.toml`): 10 questions per visitor per day and 1,000 for the whole site per day. Both reset at midnight New York time.
+- **Live:** https://trilogy-ai-chat.keithharasymiw.workers.dev
+- **Free by default:** `PROVIDER = "workers-ai"` runs Mistral Small 3.1 on Cloudflare Workers AI, inside the free 10,000 neurons/day. On the Workers Free plan, going over returns an error, never a charge. The visitor sees "try again" and the question isn't counted.
+- **Paid upgrade:** set `PROVIDER = "anthropic"`, add the `ANTHROPIC_API_KEY` secret, and raise `GLOBAL_DAILY_CAP` to about 1000. That runs Claude Haiku 5.5 at about $0.0006 per question, with better answers.
+- **Limits** (in `wrangler.toml`): 10 questions per visitor per day and 100 for the whole site per day. Both reset at midnight New York time. Cloudflare's free allowance resets at 00:00 UTC.
 - Visitors are counted by a salted hash of their IP address. Raw IPs are never stored, and the counts for earlier days are deleted.
 - Hosting fits in Cloudflare's free Workers plan. The daily counter uses a Durable Object, which is also free on that plan.
 
@@ -18,7 +19,7 @@ npx wrangler dev --port 8787
 
 With no API key, the backend runs in mock mode and returns a canned reply. Open the built site through any local server, for example `python -m http.server 5510` in the repo root. Then visit `http://localhost:5510/ai-chat/?api=http://127.0.0.1:8787`. The `?api=` override only works on localhost.
 
-## Deploy (one time)
+## Deploy (one time; already done 2026-11-18 except the optional Anthropic key)
 
 1. Create an Anthropic API key at console.anthropic.com. Under **Limits**, set a monthly spend limit, for example $25. That is your hard ceiling.
 2. Log in to Cloudflare. A free account is enough.
