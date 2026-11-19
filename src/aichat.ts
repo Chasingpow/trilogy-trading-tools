@@ -18,10 +18,12 @@ const esc = (t: string): string =>
 export function renderMarkdown(src: string): string {
   const inline = (t: string): string =>
     esc(t)
+      .replace(/\\([*_`#\\])/g, (_, c: string) => `\u0001${c.charCodeAt(0)}\u0002`) // keep "\*" literal
       .replace(/\[([^\]]+)\]\((?:https?:\/\/|www\.)[^)\s]*\)/g, '$1') // [text](url) -> text: no model-chosen links
       .replace(/`([^`]+)`/g, '<code>$1</code>')
       .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
-      .replace(/(^|[^*])\*([^*\s][^*]*)\*/g, '$1<em>$2</em>');
+      .replace(/(^|[^*])\*([^*\s][^*]*)\*/g, '$1<em>$2</em>')
+      .replace(/\u0001(\d+)\u0002/g, (_, n: string) => String.fromCharCode(Number(n)));
   const out: string[] = [];
   let list: 'ul' | 'ol' | null = null;
   let para: string[] = [];

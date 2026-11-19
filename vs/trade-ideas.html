@@ -1270,7 +1270,7 @@ Tool: ${plan.value || "Not sure yet"}`);
   // src/aichat.ts
   var esc = (t) => t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   function renderMarkdown(src) {
-    const inline = (t) => esc(t).replace(/\[([^\]]+)\]\((?:https?:\/\/|www\.)[^)\s]*\)/g, "$1").replace(/`([^`]+)`/g, "<code>$1</code>").replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>").replace(/(^|[^*])\*([^*\s][^*]*)\*/g, "$1<em>$2</em>");
+    const inline = (t) => esc(t).replace(/\\([*_`#\\])/g, (_, c) => `${c.charCodeAt(0)}`).replace(/\[([^\]]+)\]\((?:https?:\/\/|www\.)[^)\s]*\)/g, "$1").replace(/`([^`]+)`/g, "<code>$1</code>").replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>").replace(/(^|[^*])\*([^*\s][^*]*)\*/g, "$1<em>$2</em>").replace(/\u0001(\d+)\u0002/g, (_, n) => String.fromCharCode(Number(n)));
     const out = [];
     let list = null;
     let para = [];
