@@ -19,7 +19,7 @@
 <meta name="twitter:title" content="Trilogy vs Trade Ideas - Small-Cap Scanner Comparison">
 <meta name="twitter:description" content="Trilogy vs Trade Ideas: prices, real-time data, small-cap scanning, journal and budgeting compared side by side. Prices checked November 2026.">
 <meta name="twitter:image" content="https://trilogytradingtools.com/og-image.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Trilogy Trading Tools","url":"https://trilogytradingtools.com/","logo":"https://trilogytradingtools.com/logo.png","email":"info@trilogytradingtools.com","founder":[{"@type":"Person","name":"Keith Harasymiw","jobTitle":"Co-Founder, Product & Operations","image":"https://trilogytradingtools.com/img/founder-keith.webp","url":"https://trilogytradingtools.com/about/#keith","sameAs":["https://www.linkedin.com/in/keith-harasymiw-2a2323237/"]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Trilogy Trading Tools","url":"https://trilogytradingtools.com/","logo":"https://trilogytradingtools.com/logo.png","email":"info@trilogytradingtools.com","founder":[{"@type":"Person","name":"Keith Harasymiw","jobTitle":"Co-Founder, Product & Operations","image":"https://trilogytradingtools.com/img/founder-keith.webp","url":"https://trilogytradingtools.com/about/#keith","sameAs":["https://www.linkedin.com/in/keith-harasymiw-2a2323237/"]},{"@type":"Person","name":"Leo Suen","jobTitle":"Co-Founder, Research & Operations","image":"https://trilogytradingtools.com/img/founder-leo.webp","url":"https://trilogytradingtools.com/about/#leo","sameAs":["https://www.linkedin.com/in/leo-suen-4073b5214/"]}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Trilogy cheaper than Trade Ideas?","acceptedAnswer":{"@type":"Answer","text":"Month to month it is about the same: the 3T Pro Scanner is $175 CAD/mo and Trade Ideas Standard is $127 USD/mo, roughly $175 CAD at recent exchange rates. On annual billing Trade Ideas is cheaper ($1,068 USD/yr against $1,890 CAD/yr). Trilogy adds a board tuned for small-cap momentum and, in the bundles, a journal and a budget app that Trade Ideas does not include."}},{"@type":"Question","name":"Does Trilogy include real-time data?","acceptedAnswer":{"@type":"Answer","text":"Yes. Real-time US stock data from Massive (formerly Polygon.io) is included in the scanner price, with no separate data feed to add on. The board refreshes about every 8 seconds."}},{"@type":"Question","name":"Can I try Trilogy before committing?","acceptedAnswer":{"@type":"Answer","text":"Every monthly tool comes with a 7-day full refund if it does not earn its keep, and you can cancel anytime after that."}}]}</script>
 </head>
 <body style="margin:0">
@@ -312,6 +312,9 @@
   .wl-msg{flex-basis:100%;margin:0;font-size:13.5px;color:var(--gain-ink);min-height:1em}
   .wl-msg.err{color:var(--loss-ink)}
   .wl-count{margin:0;font-size:13.5px;color:var(--ink-2)}
+  .try-line{margin:2px 0 4px;align-self:start;justify-self:start;display:inline-block;font-size:13px;font-weight:800;color:var(--gain-ink);
+    background:color-mix(in srgb, var(--gain) 14%, transparent);border:1px solid color-mix(in srgb, var(--gain) 40%, transparent);
+    border-radius:10px;padding:6px 12px;line-height:1.4}
   .guarantee{margin:0;font-size:13px;line-height:1.5;color:var(--gain-ink);
     border-left:2px solid var(--gain);padding-left:10px}
   .value-line{margin:0;font-size:13.5px;line-height:1.55;color:var(--ink)}
@@ -413,6 +416,17 @@
   .log p{margin:6px 0 0;color:var(--ink-2);font-size:15.5px;line-height:1.65}
   .log .note{color:var(--ink);font-style:italic}
   @media (max-width:640px){.shipped li,.log li{grid-template-columns:1fr}}
+
+  /* third-party proof + counts (rendered only when src/proof.json has data) */
+  #proof.section{padding:8px 0 64px}
+  .proof b{color:var(--ink)}
+  .proof{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin:0 auto;max-width:960px}
+  .proof a{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:14px;
+    padding:12px 18px;text-decoration:none;color:var(--ink)}
+  .proof img{height:28px;width:auto}
+  .proof b{font-size:15px}
+  .proof span{font-size:12.5px;color:var(--ink-3)}
+  .count-line{margin:18px 0 0;text-align:center;font-weight:700;color:var(--ink)}
 
   /* blog */
   .blog-wrap{max-width:780px;margin:0 auto;padding:72px 24px 96px}
@@ -675,6 +689,7 @@
       <a href="/changelog/">Changelog</a>
       <a href="/#contact">Contact</a>
       <a href="https://www.linkedin.com/in/keith-harasymiw-2a2323237/" rel="noopener" target="_blank">Keith on LinkedIn</a>
+      <a href="https://www.linkedin.com/in/leo-suen-4073b5214/" rel="noopener" target="_blank">Leo on LinkedIn</a>
       <button type="button" data-dlg="dlgPrivacy">Privacy</button>
       <button type="button" data-dlg="dlgTerms">Terms</button>
     </div>
