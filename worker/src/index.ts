@@ -31,7 +31,16 @@ export interface Env {
   PER_USER_DAILY: string;
   GLOBAL_DAILY_CAP: string;
   ALLOWED_ORIGINS: string;
+  /** Shared secret the Trilogy Journal's server sends to unlock member mode. */
+  MEMBER_KEY?: string;
+  MEMBER_DAILY: string;
+  MEMBER_GLOBAL_CAP: string;
+  /** Provider for members; defaults to PROVIDER. Set "anthropic" to give members Claude. */
+  MEMBER_PROVIDER?: string;
 }
+
+/** Who is asking: a public visitor (keyed by IP) or a Journal member (keyed by email). */
+type Caller = { key: string; perUser: number; globalKey: string; globalCap: number; provider: string; member: boolean };
 
 const MAX_TURNS = 12;          // messages of history sent to the model
 const MAX_USER_CHARS = 1500;   // per question
@@ -62,28 +71,28 @@ export class Limiter extends DurableObject<Env> {
     );
   }
 
-  peek(day: string, user: string, perUser: number, globalCap: number): { left: number; open: boolean } {
+  peek(day: string, user: string, perUser: number, globalCap: number, globalKey = '*'): { left: number; open: boolean } {
     return {
       left: Math.max(0, perUser - this.count(day, user)),
-      open: this.count(day, '*') < globalCap,
+      open: this.count(day, globalKey) < globalCap,
     };
   }
 
   /** Atomic: a Durable Object handles one call at a time. */
-  consume(day: string, user: string, perUser: number, globalCap: number): Verdict {
+  consume(day: string, user: string, perUser: number, globalCap: number, globalKey = '*'): Verdict {
     this.sql.exec('DELETE FROM counts WHERE day < ?', day); // forget earlier days
     const used = this.count(day, user);
     if (used >= perUser) return { ok: false, reason: 'user', left: 0 };
-    if (this.count(day, '*') >= globalCap) return { ok: false, reason: 'global', left: perUser - used };
+    if (this.count(day, globalKey) >= globalCap) return { ok: false, reason: 'global', left: perUser - used };
     this.bump(day, user, 1);
-    this.bump(day, '*', 1);
+    this.bump(day, globalKey, 1);
     return { ok: true, left: perUser - used - 1 };
   }
 
   /** Give a question back when the model call failed before answering. */
-  refund(day: string, user: string): void {
+  refund(day: string, user: string, globalKey = '*'): void {
     this.bump(day, user, -1);
-    this.bump(day, '*', -1);
+    this.bump(day, globalKey, -1);
   }
 }
 
@@ -93,11 +102,51 @@ export class Limiter extends DurableObject<Env> {
 const nyDay = (): string =>
   new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
 
-async function visitorKey(req: Request, env: Env): Promise<string> {
-  const ip = req.headers.get('cf-connecting-ip') ?? 'local';
-  const data = new TextEncoder().encode(`${env.IP_SALT ?? 'trilogy-ai-chat'}|${ip}`);
+async function saltedHash(env: Env, value: string): Promise<string> {
+  const data = new TextEncoder().encode(`${env.IP_SALT ?? 'trilogy-ai-chat'}|${value}`);
   const hash = new Uint8Array(await crypto.subtle.digest('SHA-256', data));
   return [...hash.slice(0, 12)].map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+async function visitorKey(req: Request, env: Env): Promise<string> {
+  return saltedHash(env, req.headers.get('cf-connecting-ip') ?? 'local');
+}
+
+/** Constant-time string compare, so the member key can't be guessed by timing. */
+function sameSecret(a: string, b: string): boolean {
+  const x = new TextEncoder().encode(a), y = new TextEncoder().encode(b);
+  let diff = x.length ^ y.length;
+  for (let i = 0; i < Math.max(x.length, y.length); i++) diff |= (x[i] ?? 0) ^ (y[i] ?? 0);
+  return diff === 0;
+}
+
+/**
+ * Work out who is asking. The Journal's server sends x-trilogy-member-key (a
+ * shared secret) plus x-trilogy-member (the member's email) after it has
+ * checked their licence itself. Returns null when a member key is sent but wrong.
+ */
+async function resolveCaller(req: Request, env: Env): Promise<Caller | null> {
+  const sentKey = req.headers.get('x-trilogy-member-key');
+  if (sentKey !== null) {
+    const email = (req.headers.get('x-trilogy-member') ?? '').trim().toLowerCase();
+    if (!env.MEMBER_KEY || !sameSecret(sentKey, env.MEMBER_KEY) || !email.includes('@')) return null;
+    return {
+      key: `m:${await saltedHash(env, email)}`,
+      perUser: Number(env.MEMBER_DAILY) || 50,
+      globalKey: '*members',
+      globalCap: Number(env.MEMBER_GLOBAL_CAP) || 5000,
+      provider: env.MEMBER_PROVIDER || env.PROVIDER,
+      member: true,
+    };
+  }
+  return {
+    key: await visitorKey(req, env),
+    perUser: Number(env.PER_USER_DAILY) || 20,
+    globalKey: '*',
+    globalCap: Number(env.GLOBAL_DAILY_CAP) || 1000,
+    provider: env.PROVIDER,
+    member: false,
+  };
 }
 
 function corsHeaders(req: Request, env: Env): Record<string, string> {
@@ -218,27 +267,27 @@ export default {
     const url = new URL(req.url);
     if (req.method === 'OPTIONS') return new Response(null, { status: 204, headers: cors });
 
-    const perUser = Number(env.PER_USER_DAILY) || 20;
-    const globalCap = Number(env.GLOBAL_DAILY_CAP) || 1000;
+    const caller = await resolveCaller(req, env);
+    if (!caller) return json({ error: 'Member key not accepted' }, 401, cors);
+    const { key: user, perUser, globalCap, globalKey } = caller;
     const limiter = env.LIMITER.get(env.LIMITER.idFromName('site'));
     const day = nyDay();
 
     if (url.pathname === '/quota' && req.method === 'GET') {
-      const user = await visitorKey(req, env);
-      const { left, open } = await limiter.peek(day, user, perUser, globalCap);
+      const { left, open } = await limiter.peek(day, user, perUser, globalCap, globalKey);
       return json({ left, limit: perUser, open }, 200, { ...cors, 'cache-control': 'no-store' });
     }
 
     if (url.pathname !== '/chat' || req.method !== 'POST') return json({ error: 'Not found' }, 404, cors);
-    if (!originAllowed(req, env)) return json({ error: 'Origin not allowed' }, 403, cors);
+    // Browsers must come from our site; members arrive server-to-server from the Journal.
+    if (!caller.member && !originAllowed(req, env)) return json({ error: 'Origin not allowed' }, 403, cors);
 
     let body: unknown;
     try { body = await req.json(); } catch { return json({ error: 'Bad request' }, 400, cors); }
     const history = cleanHistory((body as { messages?: unknown })?.messages);
     if (!history) return json({ error: "That question couldn't be sent. Keep it under 1,500 characters and try again." }, 400, cors);
 
-    const user = await visitorKey(req, env);
-    const verdict = await limiter.consume(day, user, perUser, globalCap);
+    const verdict = await limiter.consume(day, user, perUser, globalCap, globalKey);
     if (!verdict.ok) {
       const error = verdict.reason === 'user'
         ? `You've used all ${perUser} questions for today. They reset at midnight New York time.`
@@ -255,7 +304,7 @@ export default {
       let wroteText = false;
       try {
         const write = async (t: string) => { if (t) { await send({ t }); wroteText = true; } };
-        if (env.PROVIDER === 'workers-ai') {
+        if (caller.provider === 'workers-ai') {
           await streamWorkersAi(env, history, write);
         } else if (!env.ANTHROPIC_API_KEY) {
           for (const word of MOCK_REPLY.split(/(?<=\s)/)) {
@@ -287,9 +336,9 @@ export default {
       } catch (err) {
         const message = err instanceof Error ? err.message : String(err);
         console.error('chat failed', message);
-        if (!wroteText) await limiter.refund(day, user);
+        if (!wroteText) await limiter.refund(day, user, globalKey);
         // Workers AI refuses once the free daily neuron allowance is used up (it resets 00:00 UTC)
-        const outOfFreeAi = env.PROVIDER === 'workers-ai' && /neuron|allocation|quota|limit|4006|429/i.test(message);
+        const outOfFreeAi = caller.provider === 'workers-ai' && /neuron|allocation|quota|limit|4006|429/i.test(message);
         await send({
           error: outOfFreeAi
             ? "Trilogy Ai Chat has used today's free AI capacity. It refills at 7 pm New York time. That question was not counted."

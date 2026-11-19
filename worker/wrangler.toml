@@ -16,11 +16,16 @@ MODEL = "claude-haiku-5-5"   # used when PROVIDER = "anthropic"
 PER_USER_DAILY = "20"        # questions per visitor per day
 GLOBAL_DAILY_CAP = "1000"    # questions for the whole site per day. Note: the free Workers AI allowance covers ~100 Mistral
                              # answers (~400 on Llama 8B); past that the chat says "free capacity used up" until 00:00 UTC.
+# Trilogy Journal members (requests come from the Journal's server with the MEMBER_KEY secret)
+MEMBER_DAILY = "50"          # questions per member per day
+MEMBER_GLOBAL_CAP = "5000"   # all members together per day (separate from the public cap)
+# MEMBER_PROVIDER = "anthropic"   # uncomment to give members Claude Haiku while the public stays free
 ALLOWED_ORIGINS = "https://trilogytradingtools.com,https://www.trilogytradingtools.com"
 
 # Secrets (set once, never committed):
 #   npx wrangler secret put ANTHROPIC_API_KEY
 #   npx wrangler secret put IP_SALT        # any random string
+#   npx wrangler secret put MEMBER_KEY     # same value as AI_CHAT_MEMBER_KEY in the Journal
 
 [ai]
 binding = "AI"
