@@ -1,77 +1,77 @@
 {
-  "updated": "2026-11-18",
+  "updated": "2026-11-19",
   "entries": [
     {
-      "symbol": "SLS",
-      "company": "SELLAS Life Sciences Group",
-      "price": 19.15,
-      "changePct": 156.35877
+      "symbol": "SVRE",
+      "company": "SaverOne 2014 Ltd",
+      "price": 0.8647,
+      "changePct": 111.00537
     },
     {
-      "symbol": "GP",
-      "company": "GreenPower Motor Company I",
-      "price": 2.62,
-      "changePct": 85.8156
+      "symbol": "AKAN",
+      "company": "Akanda Corp.",
+      "price": 4.03,
+      "changePct": 96.58537
     },
     {
-      "symbol": "GDHG",
-      "company": "Golden Heaven Group Holdin",
-      "price": 0.2912,
-      "changePct": -81.56962
+      "symbol": "HY",
+      "company": "Hyster-Yale Materials Hand",
+      "price": 15.44,
+      "changePct": -41.0687
     },
     {
-      "symbol": "FRTT",
-      "company": "Fort Technology Inc.",
-      "price": 0.6754,
-      "changePct": 77.73684
-    },
-    {
-      "symbol": "SMTK",
-      "company": "SmartKem, Inc.",
-      "price": 0.2721,
-      "changePct": 66.01586
+      "symbol": "SKYA",
+      "company": "SkyAI, Inc.",
+      "price": 4.13,
+      "changePct": 90.32258
     },
     {
       "symbol": "CUE",
       "company": "Cue Biopharma, Inc.",
-      "price": 2.83,
-      "changePct": -79.92908
+      "price": 4.76,
+      "changePct": 68.19788
     },
     {
-      "symbol": "MPU",
-      "company": "Mega Matrix Corp.",
-      "price": 1.9,
-      "changePct": 48.4375
+      "symbol": "JMIA",
+      "company": "Jumia Technologies AG",
+      "price": 2.74,
+      "changePct": -40.82073
     },
     {
-      "symbol": "AYTU",
-      "company": "Aytu BioPharma, Inc.",
-      "price": 2.66,
-      "changePct": 46.15385
+      "symbol": "VWAV",
+      "company": "VisionWave Holdings, Inc.",
+      "price": 0.7808,
+      "changePct": 57.07101
     },
     {
-      "symbol": "RCAX",
-      "company": "Daily Target 2X Long RCAT ",
-      "price": 0.7696,
-      "changePct": -62.54988
+      "symbol": "CLRO",
+      "company": "ClearOne, Inc.",
+      "price": 6.9,
+      "changePct": 46.18644
     },
     {
-      "symbol": "VAI",
-      "company": "Valor Energy Inc.",
-      "price": 3.09,
-      "changePct": 40.45455
+      "symbol": "STEM",
+      "company": "Stem, Inc.",
+      "price": 0.7424,
+      "changePct": -38.13333
     },
     {
       "symbol": "AZI",
       "company": "Autozi Internet Technology",
-      "price": 0.7301,
-      "changePct": 39.54511
+      "price": 1.04,
+      "changePct": 42.44624
     },
     {
-      "symbol": "MDRN",
-      "company": "Modern Mining Technology C",
-      "price": 1.93,
-      "changePct": -49.54248
+      "symbol": "BTOC",
+      "company": "Armlogi Holding Corp. comm",
+      "price": 2.33,
+      "changePct": 39.52096
+    },
+    {
+      "symbol": "TDTH",
+      "company": "Trident Digital Tech Holdi",
+      "price": 0.73,
+      "changePct": -37.06897
     }
   ]
 }
