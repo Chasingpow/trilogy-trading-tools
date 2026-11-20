@@ -1,77 +1,77 @@
 {
-  "updated": "2026-11-19",
+  "updated": "2026-11-20",
   "entries": [
     {
-      "symbol": "SVRE",
-      "company": "SaverOne 2014 Ltd",
-      "price": 0.8647,
-      "changePct": 111.00537
+      "symbol": "VIVS",
+      "company": "VivoSim Labs, Inc.",
+      "price": 0.2915,
+      "changePct": 142.91667
     },
     {
-      "symbol": "AKAN",
-      "company": "Akanda Corp.",
-      "price": 4.03,
-      "changePct": 96.58537
+      "symbol": "LVWR",
+      "company": "LiveWire Group, Inc.",
+      "price": 0.6529,
+      "changePct": 76.55489
     },
     {
-      "symbol": "HY",
-      "company": "Hyster-Yale Materials Hand",
-      "price": 15.44,
-      "changePct": -41.0687
+      "symbol": "BOXL",
+      "company": "Boxlight Corporation",
+      "price": 0.8398,
+      "changePct": -56.02911
     },
     {
-      "symbol": "SKYA",
-      "company": "SkyAI, Inc.",
-      "price": 4.13,
-      "changePct": 90.32258
-    },
-    {
-      "symbol": "CUE",
-      "company": "Cue Biopharma, Inc.",
+      "symbol": "MPU",
+      "company": "Mega Matrix Corp.",
       "price": 4.76,
-      "changePct": 68.19788
+      "changePct": 67.60563
     },
     {
-      "symbol": "JMIA",
-      "company": "Jumia Technologies AG",
-      "price": 2.74,
-      "changePct": -40.82073
-    },
-    {
-      "symbol": "VWAV",
-      "company": "VisionWave Holdings, Inc.",
-      "price": 0.7808,
-      "changePct": 57.07101
-    },
-    {
-      "symbol": "CLRO",
-      "company": "ClearOne, Inc.",
-      "price": 6.9,
-      "changePct": 46.18644
-    },
-    {
-      "symbol": "STEM",
-      "company": "Stem, Inc.",
-      "price": 0.7424,
-      "changePct": -38.13333
+      "symbol": "SEAT",
+      "company": "Vivid Seats Inc.",
+      "price": 2.09,
+      "changePct": 63.28125
     },
     {
       "symbol": "AZI",
       "company": "Autozi Internet Technology",
-      "price": 1.04,
-      "changePct": 42.44624
+      "price": 0.55,
+      "changePct": -47.11538
     },
     {
-      "symbol": "BTOC",
-      "company": "Armlogi Holding Corp. comm",
-      "price": 2.33,
-      "changePct": 39.52096
+      "symbol": "MRKR",
+      "company": "Marker Therapeutics, Inc.",
+      "price": 1.32,
+      "changePct": 54.71167
+    },
+    {
+      "symbol": "ELOG",
+      "company": "Eastern International Ltd.",
+      "price": 1.45,
+      "changePct": 46.46465
     },
     {
       "symbol": "TDTH",
       "company": "Trident Digital Tech Holdi",
-      "price": 0.73,
-      "changePct": -37.06897
+      "price": 0.404,
+      "changePct": -44.65753
+    },
+    {
+      "symbol": "BAER",
+      "company": "Bridger Aerospace Group Ho",
+      "price": 0.3124,
+      "changePct": 45.64103
+    },
+    {
+      "symbol": "MDRN",
+      "company": "Modern Mining Technology C",
+      "price": 2.35,
+      "changePct": 44.17178
+    },
+    {
+      "symbol": "MIRA",
+      "company": "MIRA Pharmaceuticals, Inc.",
+      "price": 0.3683,
+      "changePct": -37.6819
     }
   ]
 }
