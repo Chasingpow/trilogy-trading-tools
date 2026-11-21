@@ -1,77 +1,77 @@
 {
-  "updated": "2026-11-20",
+  "updated": "2026-11-21",
   "entries": [
     {
-      "symbol": "VIVS",
-      "company": "VivoSim Labs, Inc.",
-      "price": 0.2915,
-      "changePct": 142.91667
+      "symbol": "NXAT",
+      "company": "Nexus Advanced Technologie",
+      "price": 0.548,
+      "changePct": 144.97094
+    },
+    {
+      "symbol": "MEDS",
+      "company": "DataMEDS AI, Inc.",
+      "price": 1.34,
+      "changePct": 84.14182
+    },
+    {
+      "symbol": "BKHA",
+      "company": "Black Hawk Acquisition Cor",
+      "price": 1.85,
+      "changePct": -71.45062
+    },
+    {
+      "symbol": "MSS",
+      "company": "Maison Solutions Inc. Clas",
+      "price": 1.1,
+      "changePct": 63.20475
+    },
+    {
+      "symbol": "MACI",
+      "company": "Melar Acquisition Corp. I",
+      "price": 13.3,
+      "changePct": 62.19512
+    },
+    {
+      "symbol": "APRE",
+      "company": "Aprea Therapeutics, Inc.",
+      "price": 0.229,
+      "changePct": -53.55912
+    },
+    {
+      "symbol": "CIGL",
+      "company": "Concorde International Gro",
+      "price": 0.2642,
+      "changePct": 51.66475
     },
     {
       "symbol": "LVWR",
       "company": "LiveWire Group, Inc.",
-      "price": 0.6529,
-      "changePct": 76.55489
+      "price": 0.99,
+      "changePct": 51.63118
     },
     {
-      "symbol": "BOXL",
-      "company": "Boxlight Corporation",
-      "price": 0.8398,
-      "changePct": -56.02911
+      "symbol": "GNS",
+      "company": "Genius Group Limited",
+      "price": 0.4993,
+      "changePct": -50.75937
     },
     {
-      "symbol": "MPU",
-      "company": "Mega Matrix Corp.",
-      "price": 4.76,
-      "changePct": 67.60563
+      "symbol": "RAYA",
+      "company": "Erayak Power Solution Grou",
+      "price": 0.6762,
+      "changePct": 37.71894
     },
     {
-      "symbol": "SEAT",
-      "company": "Vivid Seats Inc.",
-      "price": 2.09,
-      "changePct": 63.28125
+      "symbol": "AMCI",
+      "company": "AMC Robotics Corporation",
+      "price": 1.09,
+      "changePct": 36.25
     },
     {
-      "symbol": "AZI",
-      "company": "Autozi Internet Technology",
-      "price": 0.55,
-      "changePct": -47.11538
-    },
-    {
-      "symbol": "MRKR",
-      "company": "Marker Therapeutics, Inc.",
-      "price": 1.32,
-      "changePct": 54.71167
-    },
-    {
-      "symbol": "ELOG",
-      "company": "Eastern International Ltd.",
-      "price": 1.45,
-      "changePct": 46.46465
-    },
-    {
-      "symbol": "TDTH",
-      "company": "Trident Digital Tech Holdi",
-      "price": 0.404,
-      "changePct": -44.65753
-    },
-    {
-      "symbol": "BAER",
-      "company": "Bridger Aerospace Group Ho",
-      "price": 0.3124,
-      "changePct": 45.64103
-    },
-    {
-      "symbol": "MDRN",
-      "company": "Modern Mining Technology C",
-      "price": 2.35,
-      "changePct": 44.17178
-    },
-    {
-      "symbol": "MIRA",
-      "company": "MIRA Pharmaceuticals, Inc.",
-      "price": 0.3683,
-      "changePct": -37.6819
+      "symbol": "SKYA",
+      "company": "SkyAI, Inc.",
+      "price": 2.18,
+      "changePct": -45.5
     }
   ]
 }
