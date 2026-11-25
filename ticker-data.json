@@ -1,77 +1,77 @@
 {
-  "updated": "2026-11-24",
+  "updated": "2026-11-25",
   "entries": [
     {
-      "symbol": "WETO",
-      "company": "Wetour Robotics Limited",
-      "price": 0.5385,
-      "changePct": 239.96212
+      "symbol": "JAGX",
+      "company": "Jaguar Health, Inc.",
+      "price": 12.8,
+      "changePct": 109.2358
     },
     {
-      "symbol": "BNAI",
-      "company": "Brand Engagement Network, ",
-      "price": 7.32,
-      "changePct": 117.85714
+      "symbol": "AKAN",
+      "company": "Akanda Corp.",
+      "price": 5.2,
+      "changePct": 101.55039
     },
     {
       "symbol": "EVRL",
       "company": "Melar Acquisition Corp. I",
-      "price": 2.99,
-      "changePct": -77.5188
+      "price": 1.25,
+      "changePct": -58.19398
     },
     {
-      "symbol": "OTLY",
-      "company": "Oatly Group AB",
-      "price": 14.5,
-      "changePct": 109.08435
+      "symbol": "BENF",
+      "company": "Beneficient",
+      "price": 0.915,
+      "changePct": 101.01054
     },
     {
-      "symbol": "PAAI",
-      "company": "Paradium.AI, Inc.",
-      "price": 0.7129,
-      "changePct": 96.39118
+      "symbol": "LVWR",
+      "company": "LiveWire Group, Inc.",
+      "price": 1.87,
+      "changePct": 90.79686
     },
     {
-      "symbol": "CAPR",
-      "company": "Capricor Therapeutics, Inc",
-      "price": 1.92,
-      "changePct": -74.70356
+      "symbol": "SRTM",
+      "company": "Stratum Holdings Corp.",
+      "price": 0.4692,
+      "changePct": -54.4466
     },
     {
-      "symbol": "SCAG",
-      "company": "Scage Future",
-      "price": 1.1,
-      "changePct": 67.17325
+      "symbol": "APUS",
+      "company": "Apimeds Pharmaceuticals US",
+      "price": 2.31,
+      "changePct": 54
     },
     {
-      "symbol": "DCGO",
-      "company": "DocGo Inc.",
-      "price": 0.2898,
-      "changePct": 65.6
+      "symbol": "RMSG",
+      "company": "Real Messenger Corporation",
+      "price": 0.2101,
+      "changePct": 49.96431
     },
     {
-      "symbol": "NVD",
-      "company": "GraniteShares 2x Short NVD",
-      "price": 3.86,
-      "changePct": -63.0622
+      "symbol": "CRMT",
+      "company": "America's Car-Mart, Inc.",
+      "price": 0.325,
+      "changePct": -53.95296
     },
     {
-      "symbol": "AEON",
-      "company": "AEON Biopharma, Inc.",
-      "price": 0.2026,
-      "changePct": 64.71545
+      "symbol": "GLXG",
+      "company": "Galaxy Payroll Group Limit",
+      "price": 1.04,
+      "changePct": 48.57143
     },
     {
-      "symbol": "NVDB",
-      "company": "ProShares - Ultra NVDA",
-      "price": 15.49,
-      "changePct": 62.02929
+      "symbol": "FGL",
+      "company": "Founder Group Limited",
+      "price": 0.63,
+      "changePct": 43.14928
     },
     {
-      "symbol": "NVDS",
-      "company": "Tradr 1.5X Short NVDA Dail",
-      "price": 20.95,
-      "changePct": -47.38825
+      "symbol": "EUDA",
+      "company": "EUDA Health Holdings Limit",
+      "price": 9,
+      "changePct": -43.99502
     }
   ]
 }
