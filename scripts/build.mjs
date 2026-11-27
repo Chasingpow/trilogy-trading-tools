@@ -294,6 +294,12 @@ function fillTrust(html) {
     </div>
   </div>
 </section>` : '';
+  const stats = (proofData.stats || []).filter(x => x && x.value && x.label).slice(0, 3);
+  const statsHtml = stats.length ? `<div class="stats-strip" aria-label="Trilogy by the numbers">
+  ${stats.map(x => `<div><b>${escText(x.value)}</b><span>${escText(x.label)}${x.asOf ? ' · ' + escText(ym(x.asOf)) : ''}</span></div>`).join('\n  ')}
+</div>
+` : '';
+  html = html.replace('<!-- STATS-STRIP (filled by the build from src/proof.json "stats" when set) -->\n', statsHtml);
   return html
     .replace('      <!-- WAITLIST-COUNT (filled by the build from src/proof.json when waitlistCount is set) -->', waitlistN ? `      <p class="wl-count">${waitlistN} traders on the launch list</p>` : '')
     .replace('    <!-- TESTERS-COUNT -->\n', waitlistN ? `    <p class="count-line">${waitlistN} traders are on the launch list.</p>\n` : '')
