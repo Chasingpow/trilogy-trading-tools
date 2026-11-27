@@ -428,6 +428,29 @@
   .proof span{font-size:12.5px;color:var(--ink-3)}
   .count-line{margin:18px 0 0;text-align:center;font-weight:700;color:var(--ink)}
 
+  /* plan comparison matrix (/pricing/ only) */
+  .matrix{margin:48px auto 0;max-width:1100px}
+  .matrix h3{font-size:22px;margin:0 0 14px;text-align:center}
+  .matrix-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
+  .matrix-scroll:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+  .matrix table{width:100%;border-collapse:collapse;font-size:14px;min-width:760px}
+  .matrix th,.matrix td{padding:11px 12px;border-bottom:1px solid var(--line);text-align:center;vertical-align:middle}
+  .matrix thead th{font-size:13px;color:var(--ink);font-weight:800;line-height:1.3}
+  .matrix thead th span{display:block;margin-top:3px;color:var(--brand-ink);font-weight:700}
+  .matrix tbody th{text-align:left;color:var(--ink-2);font-weight:600;min-width:190px}
+  .matrix th:first-child{position:sticky;left:0;background:var(--surface);z-index:1}
+  .matrix td.y{color:var(--gain-ink);font-weight:800}
+  .matrix td.n{color:var(--ink-3)}
+  .matrix tbody tr:last-child th,.matrix tbody tr:last-child td{border-bottom:0}
+  .matrix-hint{display:none;margin:0 0 8px;text-align:right;font-size:12.5px;color:var(--ink-3)}
+  @media (max-width:640px){.matrix-hint{display:block}.matrix table{font-size:13px;min-width:640px}.matrix tbody th{min-width:118px;max-width:118px}.matrix th,.matrix td{padding:10px 8px}}
+  .matrix-note{margin:10px 0 0;text-align:center;font-size:13px;color:var(--ink-3)}
+  /* usage numbers strip (homepage, renders only when src/proof.json "stats" is filled) */
+  .stats-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:16px 48px;padding:8px 24px 56px}
+  .stats-strip div{text-align:center}
+  .stats-strip b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:clamp(28px,4vw,40px);color:var(--ink)}
+  .stats-strip span{font-size:13.5px;color:var(--ink-2)}
+
   /* blog */
   .blog-wrap{max-width:780px;margin:0 auto;padding:72px 24px 96px}
   .blog-wrap h1{font-size:clamp(32px,5vw,52px);font-weight:800;letter-spacing:-.015em;margin:10px 0 28px}
@@ -631,7 +654,7 @@
   <span class="post-meta">Comparison · prices checked November 2026</span>
   <h1>Trilogy vs Trade Ideas</h1>
   <div class="prose">
-    <p>Trade Ideas is the long-running all-market scanner with AI signals. Trilogy is a small-cap gapper board that hands every trade to a journal and every profit to a budget. If you trade low-float momentum, here is what each one actually gets you.</p>
+    <p>Trade Ideas is the long-running all-market scanner with AI signals. Trilogy is a small-cap gapper board that hands every trade to a journal and every profit to a budget. If you trade low-float momentum, here is what each one actually gets you. Most traders end up stacking a scanner, a spreadsheet and a budget app that never talk to each other — and cancel none of them. Trilogy is built as one loop instead.</p>
     <table>
       <thead><tr><th></th><th>Trilogy</th><th>Trade Ideas</th></tr></thead>
       <tbody>

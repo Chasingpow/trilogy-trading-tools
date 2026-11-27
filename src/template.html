@@ -403,6 +403,29 @@
   .proof span{font-size:12.5px;color:var(--ink-3)}
   .count-line{margin:18px 0 0;text-align:center;font-weight:700;color:var(--ink)}
 
+  /* plan comparison matrix (/pricing/ only) */
+  .matrix{margin:48px auto 0;max-width:1100px}
+  .matrix h3{font-size:22px;margin:0 0 14px;text-align:center}
+  .matrix-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
+  .matrix-scroll:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+  .matrix table{width:100%;border-collapse:collapse;font-size:14px;min-width:760px}
+  .matrix th,.matrix td{padding:11px 12px;border-bottom:1px solid var(--line);text-align:center;vertical-align:middle}
+  .matrix thead th{font-size:13px;color:var(--ink);font-weight:800;line-height:1.3}
+  .matrix thead th span{display:block;margin-top:3px;color:var(--brand-ink);font-weight:700}
+  .matrix tbody th{text-align:left;color:var(--ink-2);font-weight:600;min-width:190px}
+  .matrix th:first-child{position:sticky;left:0;background:var(--surface);z-index:1}
+  .matrix td.y{color:var(--gain-ink);font-weight:800}
+  .matrix td.n{color:var(--ink-3)}
+  .matrix tbody tr:last-child th,.matrix tbody tr:last-child td{border-bottom:0}
+  .matrix-hint{display:none;margin:0 0 8px;text-align:right;font-size:12.5px;color:var(--ink-3)}
+  @media (max-width:640px){.matrix-hint{display:block}.matrix table{font-size:13px;min-width:640px}.matrix tbody th{min-width:118px;max-width:118px}.matrix th,.matrix td{padding:10px 8px}}
+  .matrix-note{margin:10px 0 0;text-align:center;font-size:13px;color:var(--ink-3)}
+  /* usage numbers strip (homepage, renders only when src/proof.json "stats" is filled) */
+  .stats-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:16px 48px;padding:8px 24px 56px}
+  .stats-strip div{text-align:center}
+  .stats-strip b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:clamp(28px,4vw,40px);color:var(--ink)}
+  .stats-strip span{font-size:13.5px;color:var(--ink-2)}
+
   /* blog */
   .blog-wrap{max-width:780px;margin:0 auto;padding:72px 24px 96px}
   .blog-wrap h1{font-size:clamp(32px,5vw,52px);font-weight:800;letter-spacing:-.015em;margin:10px 0 28px}
@@ -870,6 +893,7 @@
 </section>
 <!-- PROOF-BLOCK (filled by the build from src/proof.json when proof entries exist) -->
 
+<!-- STATS-STRIP (filled by the build from src/proof.json "stats" when set) -->
 <!-- PAGE:pricing -->
 <!-- ============ PRICING ============ -->
 <section class="section" id="pricing">
@@ -938,7 +962,26 @@
       </div>
     </div>
 
-    <!-- PRICING-ONLY: shown on /pricing/ only (the homepage already has the full testimonial wall) -->
+    <!-- PRICING-ONLY: shown on /pricing/ only (comparison table + testimonial; the homepage keeps the shorter path) -->
+    <div class="matrix" id="compare">
+      <h3>Compare every plan</h3>
+      <p class="matrix-hint" aria-hidden="true">Swipe to compare →</p>
+      <div class="matrix-scroll" tabindex="0" role="region" aria-label="Plan comparison table, scrolls sideways on small screens">
+        <table>
+          <thead><tr><th scope="col">What you get</th><th scope="col">3T Pro Scanner<span>$175/mo</span></th><th scope="col">Halal 3T Scanner<span>$200/mo</span></th><th scope="col">Trilogy Journal<span>$100/mo</span></th><th scope="col">Wealth Builder<span>$200/yr</span></th><th scope="col">Trader Pack<span>$225/mo</span></th><th scope="col">Halal Trader Pack<span>$275/mo</span></th><th scope="col">The Full Trilogy<span>$325/mo</span></th></tr></thead>
+          <tbody>
+          <tr><th scope="row">Live gapper board, real-time data</th><td class="y" aria-label="Included">✓</td><td class="y" aria-label="Included">✓</td><td class="n" aria-label="Not included">—</td><td class="n" aria-label="Not included">—</td><td class="y" aria-label="Included">✓</td><td class="y" aria-label="Included">✓</td><td class="y" aria-label="Included">✓</td></tr>
+          <tr><th scope="row">Dual charts and audio alerts</th><td class="y" aria-label="Included">✓</td><td class="y" aria-label="Included">✓</td><td class="n" aria-label="Not included">—</td><td class="n" aria-label="Not included">—</td><td class="y" aria-label="Included">✓</td><td class="y" aria-label="Included">✓</td><td class="y" aria-label="Included">✓</td></tr>
+          <tr><th scope="row">Halal (AAOIFI-screened) universe</th><td class="n" aria-label="Not included">—</td><td class="y" aria-label="Included">✓</td><td class="n" aria-label="Not included">—</td><td class="n" aria-label="Not included">—</td><td class="n" aria-label="Not included">—</td><td class="y" aria-label="Included">✓</td><td class="y" aria-label="Included">✓</td></tr>
+          <tr><th scope="row">Journal stats: win rate, profit factor, average R</th><td class="n" aria-label="Not included">—</td><td class="n" aria-label="Not included">—</td><td class="y" aria-label="Included">✓</td><td class="n" aria-label="Not included">—</td><td class="y" aria-label="Included">✓</td><td class="y" aria-label="Included">✓</td><td class="y" aria-label="Included">✓</td></tr>
+          <tr><th scope="row">3D Edge Surface by setup</th><td class="n" aria-label="Not included">—</td><td class="n" aria-label="Not included">—</td><td class="y" aria-label="Included">✓</td><td class="n" aria-label="Not included">—</td><td class="y" aria-label="Included">✓</td><td class="y" aria-label="Included">✓</td><td class="y" aria-label="Included">✓</td></tr>
+          <tr><th scope="row">Budgeting: Trilogy Split, bills, goals</th><td class="n" aria-label="Not included">—</td><td class="n" aria-label="Not included">—</td><td class="n" aria-label="Not included">—</td><td class="y" aria-label="Included">✓</td><td class="n" aria-label="Not included">—</td><td class="n" aria-label="Not included">—</td><td class="y" aria-label="Included">✓</td></tr>
+          <tr><th scope="row">A year of Wealth Builder included</th><td class="n" aria-label="Not included">—</td><td class="n" aria-label="Not included">—</td><td class="n" aria-label="Not included">—</td><td class="y" aria-label="Included">✓</td><td class="n" aria-label="Not included">—</td><td class="n" aria-label="Not included">—</td><td class="y" aria-label="Included">✓</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="matrix-note">All prices in CAD. Monthly tools: 7-day full refund, cancel anytime. Pay the year upfront for 10% off.</p>
+    </div>
     <figure class="quote pricing-quote">
       <blockquote><p>&ldquo;The scanner flagged OMH breaking out of its morning range before I'd even pulled up the chart. Having setups come to me instead of digging through watchlists has made my mornings a lot more focused.&rdquo;</p><p>&ldquo;The scanner worked great, I was notified so fast about OMH on Nov 9th, 10th, and 11th. It was so good to finally have something work so quickly.&rdquo;</p></blockquote>
       <figcaption><span class="avatar" aria-hidden="true">RL</span><span><b>Raymond L.</b>Day trader · 3T Pro Scanner · <time datetime="2026-11">Nov 2026</time></span></figcaption>
@@ -987,7 +1030,7 @@
         <p class="b-parts">Both scanners (3T Pro + Halal 3T) + Journal + a full year of Wealth Builder</p>
         <div class="b-price num"><span class="amount">$325<small> CAD/mo</small></span><s>$492</s></div>
         <div class="yr-deal num">Year upfront: <b>$3,510</b><span class="pct">save 10%</span></div>
-        <p class="value-line">Replaces two scanner subscriptions (Trade Ideas alone starts at $127 USD/mo), a journal (TradeZella starts at $35 USD/mo) and a budget app — one price, one loop. Bought separately the four run $492 CAD/mo; together it's $325. <a href="/vs/trade-ideas">Trilogy vs Trade Ideas</a> · <a href="/vs/tradezella">vs TradeZella</a></p>
+        <p class="value-line">Most traders stack a scanner, a spreadsheet and a budget app that never talk to each other — and cancel none of them. This replaces two scanner subscriptions (Trade Ideas alone starts at $127 USD/mo), a journal (TradeZella starts at $35 USD/mo) and a budget app — one price, one loop. Bought separately the four run $492 CAD/mo; together it's $325. <a href="/vs/trade-ideas">Trilogy vs Trade Ideas</a> · <a href="/vs/tradezella">vs TradeZella</a></p>
         <p class="b-why"><b>Why together:</b> the full loop — find it, prove it, keep it. The journal tells you what your trading really earns each month, and that number goes straight into Wealth Builder's Trilogy Split, so profits become an emergency fund and investments instead of evaporating back into the market.</p>
         <span class="b-save">Both scanners and Wealth Builder's year included — save $2,000 a year</span>
       </div>
