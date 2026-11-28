@@ -1,77 +1,77 @@
 {
-  "updated": "2026-11-27",
+  "updated": "2026-11-28",
   "entries": [
     {
-      "symbol": "BGLC",
-      "company": "BioNexus Gene Lab Corp.",
-      "price": 1.26,
-      "changePct": 113.55932
+      "symbol": "DCX",
+      "company": "Digital Currency X Technol",
+      "price": 1.17,
+      "changePct": 142.38658
     },
     {
-      "symbol": "TOPP",
-      "company": "Toppoint Holdings Inc.",
-      "price": 0.565,
-      "changePct": 79.36508
+      "symbol": "POM",
+      "company": "Pomdoctor Limited",
+      "price": 3.12,
+      "changePct": 93.78882
     },
     {
-      "symbol": "HCTI",
-      "company": "Healthcare Triangle, Inc.",
-      "price": 0.4624,
-      "changePct": -83.77885
+      "symbol": "ZYN",
+      "company": "PTL Limited Class A",
+      "price": 2.43,
+      "changePct": -75.94059
     },
     {
-      "symbol": "RADX",
-      "company": "Radiopharm Theranostics Li",
-      "price": 0.81,
-      "changePct": 62
+      "symbol": "MNDR",
+      "company": "Mobile-health Network Solu",
+      "price": 0.9216,
+      "changePct": 82.56735
     },
     {
-      "symbol": "NRSN",
-      "company": "NeuroSense Therapeutics Lt",
-      "price": 1.76,
-      "changePct": 60
+      "symbol": "AEHL",
+      "company": "Antelope Enterprise Holdin",
+      "price": 12.9,
+      "changePct": 80.67227
     },
     {
-      "symbol": "RMTX",
-      "company": "Passage Bio, Inc.",
-      "price": 25.99,
-      "changePct": -80.56677
+      "symbol": "RYDE",
+      "company": "Ryde Group Ltd",
+      "price": 0.293,
+      "changePct": -57.54854
     },
     {
-      "symbol": "LONA",
-      "company": "Athira Pharma, Inc.",
-      "price": 2.71,
-      "changePct": 58.47953
+      "symbol": "KIDZ",
+      "company": "KIDZ AI Inc.",
+      "price": 1.03,
+      "changePct": 58.7791
     },
     {
-      "symbol": "RAYA",
-      "company": "Erayak Power Solution Grou",
-      "price": 0.655,
-      "changePct": 54.15391
+      "symbol": "AMOD",
+      "company": "Alpha Modus Holdings, Inc.",
+      "price": 1.02,
+      "changePct": 54.28831
     },
     {
-      "symbol": "EUDA",
-      "company": "EUDA Health Holdings Limit",
-      "price": 4.17,
-      "changePct": -53.66667
+      "symbol": "BFRG",
+      "company": "Bullfrog AI Holdings, Inc.",
+      "price": 0.219,
+      "changePct": -36.24454
     },
     {
-      "symbol": "FCUV",
-      "company": "Focus Universal Inc.",
-      "price": 5.65,
-      "changePct": 53.11653
-    },
-    {
-      "symbol": "NXAT",
-      "company": "Nexus Advanced Technologie",
-      "price": 0.6448,
-      "changePct": 52.07547
+      "symbol": "DOGZ",
+      "company": "Dogness (International) Co",
+      "price": 0.352,
+      "changePct": 54.25066
     },
     {
       "symbol": "PDC",
       "company": "Perpetuals.com Ltd",
-      "price": 0.5185,
-      "changePct": -33.21741
+      "price": 0.77,
+      "changePct": 48.5053
+    },
+    {
+      "symbol": "DARE",
+      "company": "Dare Bioscience, Inc.",
+      "price": 0.3154,
+      "changePct": -33.71164
     }
   ]
 }
